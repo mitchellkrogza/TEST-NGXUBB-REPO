@@ -145,7 +145,7 @@ GOODBOTSIFS=$IFS
 IFS=$'\n'
 echo $START1 >> $TMPNGINX1
 for line in $(cat $INPUT1); do
-printf "\t\"~${line}\"\t\t$ACTION1\n" >> $TMPNGINX1
+printf '\t\"~${line}\"\t\t$ACTION1\n' >> $TMPNGINX1
 done
 echo $END1  >> $TMPNGINX1
 IFS=$GOODBOTSIFS
