@@ -4,7 +4,7 @@
 
 ### VERSION INFORMATION #
 ###################################################
-### Version: V3.2017.06.5
+### Version: V3.2017.06.6
 ### VERSION INFORMATION ##
 
 ### This file implements a checklist / blacklist for good user agents, bad user agents and
@@ -131,6 +131,47 @@ map $http_user_agent $bad_bot {
 # ***********************************************
 
 # START GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
+	"~adidxbot
+AdsBot-Google
+aolbuild
+bi"		0;
+	"~gbot
+bi"		0;
+	"~gpreview
+DoCoMo
+duckduckgo
+facebookexter"		0;
+	"~alhit
+Feedfetcher-Google
+Googlebot
+Googlebot-Image
+Googlebot-Mobile
+Googlebot-News
+Googlebot/Test
+Googlebot-Video
+Google-HTTP-Java-Clie"		0;
+	"~t
+gsa-crawler
+Jakarta"		0;
+	"~ Commo"		0;
+	"~s
+Krake"		0;
+	"~/0.1
+Li"		0;
+	"~kedI"		0;
+	"~Bot
+Mediapart"		0;
+	"~ers-Google
+ms"		0;
+	"~bot
+ms"		0;
+	"~bot-media
+SAMSUNG
+slurp
+teoma
+TwitterBot
+Wordpress
+yahoo"		0;
 # END GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 # END GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 # END GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
@@ -143,6 +184,15 @@ map $http_user_agent $bad_bot {
 # I allow libwww-perl as I use it for monitoring systems with Munin but it is rate limited
 
 # START ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
+	"~jetmo"		1;
+	"~
+libwww-perl
+Ly"		1;
+	"~x
+mu"		1;
+	"~i"		1;
+	"~
+Wget/1.15"		1;
 # END ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 # END ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 # END ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
@@ -153,6 +203,30 @@ map $http_user_agent $bad_bot {
 # **************************************************************
 
 # START LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
+	"~Alexa
+archive.org
+Baidu
+BUbiNG
+FlipboardProxy
+ia_archiver
+Mozilla/4.0
+MSIE"		2;
+	"~ 7.0
+Presto
+R6_Comme"		2;
+	"~tReader
+R6_FeedFetcher
+RPT-HTTPClie"		2;
+	"~t
+Sez"		2;
+	"~amBot
+sfFeedReader/0.9
+Spaidu
+UptimeRobot/2.0
+Ya"		2;
+	"~dexBot
+Ya"		2;
+	"~dexImages"		2;
 # END LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 # END LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 # END LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
@@ -165,6 +239,742 @@ map $http_user_agent $bad_bot {
 # Known Vulnerability Scanners (now merged into one section)
 
 # START BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
+	"~*360Spider
+80legs
+Abo"		3;
+	"~*ti
+Abou"		3;
+	"~*dex
+Acu"		3;
+	"~*etix
+ADma"		3;
+	"~*tX
+AhrefsBot
+AIBOT
+AiHitBot
+Aipbot
+Alexibot
+Alligator
+AllSubmitter
+A"		3;
+	"~*archie
+Apexoo
+ASPSeek
+Asterias
+Attach
+autoemailspider
+BackDoorBot
+BackStreet
+BackWeb
+Badass
+Ba"		3;
+	"~*dit
+BatchFTP
+Battleztar"		3;
+	"~* Bazi"		3;
+	"~*ga
+BBBike
+BDFetch
+BetaBot
+Bigfoot
+Bitacle
+Blackboard
+Black"		3;
+	"~* Hole
+BlackWidow
+BLEXBot
+Blow
+BlowFish
+Boardreader
+Bolt
+BotALot
+Bra"		3;
+	"~*dprotect
+Bra"		3;
+	"~*dwatch
+Bubi"		3;
+	"~*g
+Buddy
+BuiltBotTough
+BuiltWith
+Bullseye
+Bu"		3;
+	"~*"		3;
+	"~*ySlippers
+BuzzSumo
+Calculo"		3;
+	"~*
+CATExplorador
+CazoodleBot
+CCBot
+Cegbfeieh
+CheeseBot
+CherryPicker
+Chi"		3;
+	"~*aClaw
+Chlooe
+Claritybot
+Cliqzbot
+Coge"		3;
+	"~*tbot
+Collector
+Copier
+CopyRightCheck
+Copyscape
+Cosmos
+Craftbot
+CrazyWebCrawler
+Cresce"		3;
+	"~*t
+CSHttp
+Curious
+Custo
+DatabaseDriverMysqli
+DBLBot
+Demo"		3;
+	"~*
+Deusu
+Devil
+DIIbot
+Dirbuster
+Disco
+Discobot
+Discoverybot
+DittoSpyder
+Domai"		3;
+	"~*Appe"		3;
+	"~*der
+Domai"		3;
+	"~*Crawler
+Domai"		3;
+	"~*SigmaCrawler
+Dotbot
+Dow"		3;
+	"~*load"		3;
+	"~* Demo"		3;
+	"~*
+Dow"		3;
+	"~*load"		3;
+	"~* Devil
+Dow"		3;
+	"~*load"		3;
+	"~* Wo"		3;
+	"~*der
+Drago"		3;
+	"~*fly
+Drip
+DTS"		3;
+	"~* Age"		3;
+	"~*t
+EasyDL
+Ebi"		3;
+	"~*gbo"		3;
+	"~*g
+eCatch
+ECCP/1.0
+Ecxi
+EirGrabber
+EMail"		3;
+	"~* Collector
+EMail"		3;
+	"~* Extractor
+EMail"		3;
+	"~* Sipho"		3;
+	"~*
+EMail"		3;
+	"~* Wolf
+EroCrawler
+Evil
+Exabot
+Express"		3;
+	"~* WebPictures
+Extractor
+ExtractorPro
+EyeNetIE
+Ezooms
+FHsca"		3;
+	"~*
+Fimap
+Fi"		3;
+	"~*dxbot
+Firefox/7.0
+FlashGet
+Flu"		3;
+	"~*ky
+Foobot
+Freeuploader
+Fro"		3;
+	"~*tPage
+Fyrebot
+GalaxyBot
+Ge"		3;
+	"~*ieo
+Geti"		3;
+	"~*te"		3;
+	"~*t
+GetRight
+GetWeb
+Gigablast
+Gigabot
+Go-Ahead-Got-It
+Gotit
+GoZilla
+Go!Zilla
+Grabber
+GrabNet
+Grafula
+GrapeFX
+GrapeshotCrawler
+GridBot
+GT::WWW
+GuzzleHttp
+HaosouSpider
+Harvest
+Havij
+HEADMasterSEO
+Heritrix
+Hloader
+HMView
+HTMLparser
+HTTP::Lite
+HTTrack
+Huma"		3;
+	"~*li"		3;
+	"~*ks
+HybridBot
+Iblog
+IDBot
+Id-search
+IlseBot
+Image"		3;
+	"~* Fetch
+Image"		3;
+	"~* Stripper
+Image"		3;
+	"~* Sucker
+I"		3;
+	"~*dy"		3;
+	"~* Library
+I"		3;
+	"~*foNaviRobot
+I"		3;
+	"~*foTekies
+I"		3;
+	"~*telliseek
+I"		3;
+	"~*terGET
+I"		3;
+	"~*ter"		3;
+	"~*et"		3;
+	"~* Ni"		3;
+	"~*ja
+I"		3;
+	"~*ter"		3;
+	"~*etSeer
+i"		3;
+	"~*ter"		3;
+	"~*etVista"		3;
+	"~* mo"		3;
+	"~*itor
+Iria
+IRLbot
+Iska"		3;
+	"~*ie
+JamesBOT
+Jbrofuzz
+Je"		3;
+	"~*"		3;
+	"~*yBot
+JetCar
+JikeSpider
+JOC"		3;
+	"~* Web"		3;
+	"~* Spider
+Joomla
+JustView
+Jyxobot
+Ke"		3;
+	"~*ji"		3;
+	"~*"		3;
+	"~* Spider
+Keyword"		3;
+	"~* De"		3;
+	"~*sity
+La"		3;
+	"~*sha"		3;
+	"~*bot
+Larbi"		3;
+	"~*
+LeechFTP
+LeechGet
+LexiBot
+Lftp
+LibWeb
+Libwhisker
+Lightspeedsystems
+Likse
+Li"		3;
+	"~*kdexbot
+Li"		3;
+	"~*kextractorPro
+Li"		3;
+	"~*kpadBot
+Li"		3;
+	"~*kSca"		3;
+	"~*
+Li"		3;
+	"~*ksMa"		3;
+	"~*ager
+Li"		3;
+	"~*kWalker
+Li"		3;
+	"~*qiaMetadataDow"		3;
+	"~*loaderBot
+Li"		3;
+	"~*qiaRSSBot
+Li"		3;
+	"~*qiaScrapeBot
+Lipperhey
+Litemage_walker
+Lmspider
+LNSpiderguy
+Ltx71
+lwp-request
+LWP::Simple
+lwp-trivial
+Mag"		3;
+	"~*et
+Mag-Net
+magpie-crawler
+Mail.ru
+Majestic12
+MarkMo"		3;
+	"~*itor
+MarkWatch
+Massca"		3;
+	"~*
+Mass"		3;
+	"~* Dow"		3;
+	"~*loader
+Mata"		3;
+	"~* Hari
+Mea"		3;
+	"~*pathbot
+MegaI"		3;
+	"~*dex.ru
+Metauri
+MFC_Tear_Sample
+Microsoft"		3;
+	"~* Data"		3;
+	"~* Access
+Microsoft"		3;
+	"~* URL"		3;
+	"~* Co"		3;
+	"~*trol
+MIDow"		3;
+	"~*"		3;
+	"~* tool
+MIIxpc
+Mister"		3;
+	"~* PiX
+MJ12bot
+Mojeek
+MSFro"		3;
+	"~*tPage
+MSIE"		3;
+	"~* 6.0
+MSIECrawler
+Msrabot
+MS"		3;
+	"~* Web"		3;
+	"~* Services"		3;
+	"~* Clie"		3;
+	"~*t"		3;
+	"~* Protocol
+Musobot
+Name"		3;
+	"~* I"		3;
+	"~*tellige"		3;
+	"~*ce
+Nameprotect
+Navroad
+NearSite
+Needle
+Nessus
+NetA"		3;
+	"~*ts
+Netcraft
+"		3;
+	"~*etEstate"		3;
+	"~* NE"		3;
+	"~* Crawler
+NetLyzer
+NetMecha"		3;
+	"~*ic
+NetSpider
+Nettrack
+Net"		3;
+	"~* Vampire
+NetZIP
+NextGe"		3;
+	"~*SearchBot
+Nibbler
+NICErsPRO
+Niki-bot
+Nikto
+NimbleCrawler
+Ni"		3;
+	"~*ja
+Nmap
+NPbot
+Nutch
+Octopus
+Offli"		3;
+	"~*e"		3;
+	"~* Explorer
+Offli"		3;
+	"~*e"		3;
+	"~* Navigator
+Ope"		3;
+	"~*fi"		3;
+	"~*d
+Ope"		3;
+	"~*Li"		3;
+	"~*kProfiler
+Ope"		3;
+	"~*vas
+Ora"		3;
+	"~*geBot
+Ora"		3;
+	"~*geSpider
+OutfoxBot
+PageA"		3;
+	"~*alyzer
+Page"		3;
+	"~* A"		3;
+	"~*alyzer
+PageGrabber
+Page"		3;
+	"~* Grabber
+page"		3;
+	"~* scorer
+PageScorer
+Pa"		3;
+	"~*scie"		3;
+	"~*t
+Papa"		3;
+	"~* Foto
+Pavuk
+pcBrowser
+PECL::HTTP
+PeoplePal
+PHPCrawl
+Picscout
+Picsearch
+Pimo"		3;
+	"~*ster
+Pi-Mo"		3;
+	"~*ster
+Pixray
+PleaseCrawl
+Pockey
+POE-Compo"		3;
+	"~*e"		3;
+	"~*t-Clie"		3;
+	"~*t-HTTP
+Probethe"		3;
+	"~*et
+ProPowerBot
+ProWebWalker
+Proximic
+Psbot
+Pump
+PyCurl
+QueryN"		3;
+	"~* Metasearch
+Qwa"		3;
+	"~*tify
+Ra"		3;
+	"~*kActiveLi"		3;
+	"~*kBot
+Ra"		3;
+	"~*kivabot
+RealDow"		3;
+	"~*load
+Reaper
+Recorder
+RedesScrapy
+ReGet
+RepoMo"		3;
+	"~*key
+Ripper
+RocketCrawler
+Rogerbot
+SalesI"		3;
+	"~*tellige"		3;
+	"~*t
+SBIder
+Sca"		3;
+	"~*Alert
+Sca"		3;
+	"~*bot
+Scrapy
+Screami"		3;
+	"~*g
+Screami"		3;
+	"~*g"		3;
+	"~* Frog"		3;
+	"~* SEO"		3;
+	"~* Spider
+Scree"		3;
+	"~*erBot
+Searchestate
+SearchmetricsBot
+Semrush
+SemrushBot
+SEOkicks
+SEOkicks-Robot
+SEOlyticsCrawler
+Seomoz
+SEOprofiler
+SEOstats
+Sipho"		3;
+	"~*
+SISTRIX
+SISTRIX"		3;
+	"~* Crawler
+Sitebeam
+SiteExplorer
+Siteimprove
+SiteLockSpider
+SiteS"		3;
+	"~*agger
+SiteSucker
+Site"		3;
+	"~* Sucker
+Sitevigil
+Slackbot-Li"		3;
+	"~*kExpa"		3;
+	"~*di"		3;
+	"~*g
+SlySearch
+SmartDow"		3;
+	"~*load
+S"		3;
+	"~*ake
+S"		3;
+	"~*apbot
+S"		3;
+	"~*oopy
+SocialRa"		3;
+	"~*kIOBot
+Sogou"		3;
+	"~* web"		3;
+	"~* spider
+Sosospider
+SpaceBiso"		3;
+	"~*
+Spamme"		3;
+	"~*
+Spa"		3;
+	"~*kBot
+Spa"		3;
+	"~*"		3;
+	"~*er
+Spbot
+Spi"		3;
+	"~*"		3;
+	"~*3r
+Sput"		3;
+	"~*ikBot
+Sqlmap
+Sqlworm
+Sqworm
+Steeler
+Stripper
+Sucker
+Sucuri
+SuperBot
+SuperHTTP
+Surfbot
+SurveyBot
+Suzura"		3;
+	"~*
+Swiftbot
+Szukacz
+T0PHackTeam
+T8Abot
+tAkeOut
+Teleport
+TeleportPro
+Telesoft
+Telesphoreo
+Telesphorep
+The"		3;
+	"~* I"		3;
+	"~*traforma"		3;
+	"~*t
+TheNomad
+TightTwatBot
+Tita"		3;
+	"~*
+Toata
+Toweyabot
+Tre"		3;
+	"~*dictio"		3;
+	"~*bot
+True_Robot
+Turi"		3;
+	"~*gos
+Tur"		3;
+	"~*iti"		3;
+	"~*Bot
+Tur"		3;
+	"~*iti"		3;
+	"~*"		3;
+	"~* Bot
+Tur"		3;
+	"~*iti"		3;
+	"~*"		3;
+	"~* Robot
+Twe"		3;
+	"~*gaBot
+Twice
+Typhoeus
+U"		3;
+	"~*isterBot
+URLy.War"		3;
+	"~*i"		3;
+	"~*g
+URLy"		3;
+	"~* War"		3;
+	"~*i"		3;
+	"~*g
+Vacuum
+Vagabo"		3;
+	"~*do
+VB"		3;
+	"~* Project
+VCI
+VeriCiteCrawler
+VidibleScraper
+VoidEYE
+Voil
+Voltro"		3;
+	"~*
+Wallpapers/3.0
+WallpapersHD
+WASALive-Bot
+WBSearchBot
+Webalta
+WebAuto
+Web"		3;
+	"~* Auto
+WebBa"		3;
+	"~*dit
+Web"		3;
+	"~* Ba"		3;
+	"~*dit
+WebCollage
+Web"		3;
+	"~* Collage
+WebCopier
+Web"		3;
+	"~* Copier
+WEBDAV
+WEBDAV"		3;
+	"~* Clie"		3;
+	"~*t
+WebE"		3;
+	"~*ha"		3;
+	"~*cer
+Web"		3;
+	"~* E"		3;
+	"~*ha"		3;
+	"~*cer
+WebFetch
+Web"		3;
+	"~* Fetch
+WebFuck
+Web"		3;
+	"~* Fuck
+WebGo"		3;
+	"~* IS
+WebImageCollector
+Web"		3;
+	"~* Image"		3;
+	"~* Collector
+WebLeacher
+WebmasterWorldForumBot
+webmeup-crawler
+WebPix
+Web"		3;
+	"~* Pix
+WebReaper
+Web"		3;
+	"~* Reaper
+WebSauger
+Web"		3;
+	"~* Sauger
+Webshag
+WebsiteExtractor
+Website"		3;
+	"~* Extractor
+WebsiteQuester
+Website"		3;
+	"~* Quester
+Webster
+WebStripper
+Web"		3;
+	"~* Stripper
+WebSucker
+Web"		3;
+	"~* Sucker
+WebWhacker
+Web"		3;
+	"~* Whacker
+WebZIP
+WeSEE
+Whack
+Whacker
+Whatweb
+Widow
+Wi"		3;
+	"~*HTTrack
+WiseGuys"		3;
+	"~* Robot
+WISENutbot
+Wo"		3;
+	"~*derbot
+Woobot
+Wotbox
+Wpreco"		3;
+	"~*
+WPSca"		3;
+	"~*
+WWW-Collector-E
+WWW-Mecha"		3;
+	"~*ize
+WWW::Mecha"		3;
+	"~*ize
+WWWOFFLE
+x22Mozilla
+Xaldo"		3;
+	"~*_WebSpider
+Xaldo"		3;
+	"~*"		3;
+	"~* WebSpider
+Xe"		3;
+	"~*u
+YoudaoBot
+Zade
+Zermelo
+Zeus
+Zgrab
+Zitebot
+ZmEu
+ZumBot
+ZyBorg"		3;
 # END BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 # END BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 # END BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
@@ -319,6 +1129,8972 @@ map $http_referer $bad_referer {
 # END CUSTOM BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###
 
 # START BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###
+	"~*000free.us
+007a"		1;
+	"~*gels.com
+00author.com
+00go.com
+00it.com
+00webcams.com
+0912701309f8ce.com
+0c47f8422d3f.com
+0"		1;
+	"~*-li"		1;
+	"~*e.tv
+100dollars-seo.com
+100searche"		1;
+	"~*gi"		1;
+	"~*es.com
+101billio"		1;
+	"~*.com
+101flag.ru
+101lesbia"		1;
+	"~*.xyz
+101raccoo"		1;
+	"~*.ru
+108shot.com
+10bet.com
+11235813.webzdarma.cz
+11pikachu.ru
+123a"		1;
+	"~*y.com
+123cha.com
+123kuma.com
+123locker.com
+12bet.com
+12masterov.com
+1314dh.com
+178evakuator178.ru
+1-99seo.com
+1adult.com
+1bet.com
+1-free-share-butto"		1;
+	"~*s.com
+1hwy.com
+1j7740kd.website
+1ki"		1;
+	"~*obig.ru
+1millio"		1;
+	"~*usd.xyz
+1pamm.ru
+1stat.ru
+1webmaster.ml
+2015god.org
+2020iscomi"		1;
+	"~*g.i"		1;
+	"~*fo
+202ch.com
+20pascals."		1;
+	"~*l
+214jaluwobapef.cf
+24videos.tv
+24x7-server-support.site
+256bit.by
+2728fb936f0.com
+273-fz.ru
+28"		1;
+	"~*2gl3wfyb0.ru
+2ads.co.uk
+2drittel.de
+2girls1cup-free.com
+2itech.ru
+2kata.ru
+2"		1;
+	"~*t.ru
+2rich4bitches.com
+2x2fa"		1;
+	"~*.ru
+300richmo"		1;
+	"~*d.co."		1;
+	"~*z
+34.gs
+3dracergames.com
+3-letter-domai"		1;
+	"~*s."		1;
+	"~*et
+3rbseyes.com
+3weekdiet.com
+3xforum.ro
+40cg.com
+45e"		1;
+	"~*.ru
+4istoshop.com
+4k-player.pl
+4kplayer.pl
+4pp13.com
+4re"		1;
+	"~*t.ru
+4replicawatch."		1;
+	"~*et
+4ur.click
+4ureyeso"		1;
+	"~*ly.com
+4webmasters.com
+4webmasters.org
+5000-cotydzie"		1;
+	"~*.com
+51.la
+51u"		1;
+	"~*lim.ru
+55wmz.ru
+57883."		1;
+	"~*et
+5eleme"		1;
+	"~*tov.ru
+5forex.ru
+5i2."		1;
+	"~*et
+5kstore.com
+5u.com
+66cpwgl"		1;
+	"~*.space
+6hoppi"		1;
+	"~*g.com
+72-"		1;
+	"~*ews.com
+76brighto"		1;
+	"~*.co.uk
+777-club.ru
+7fo"		1;
+	"~*.ru
+7makemo"		1;
+	"~*eyo"		1;
+	"~*li"		1;
+	"~*e.com
+7search.com
+7wi"		1;
+	"~*d.ru
+7yue.org
+7zap.com
+83"		1;
+	"~*et.jp
+8558l.jobs."		1;
+	"~*et
+883zy.com
+888.com
+8gold.com
+8kisses.eu
+8si.ru
+8xv8.com
+91abcw.com
+98oi.ru
+999webdesig"		1;
+	"~*.com
+9icmzv"		1;
+	"~*6.website
+9med."		1;
+	"~*et
+a14dow"		1;
+	"~*load.com
+a1security.com.ua
+aa08daf7e13b6345e09e92f771507fa5f4.com
+aa14ab57a3339c4064bd9ae6fad7495b5f.com
+aa625d84f1587749c1ab011d6f269f7d64.com
+aa81bf391151884adfa3dd677e41f94be1.com
+aa8780bb28a1de4eb5bff33c28a218a930.com
+aa8b68101d388c446389283820863176e7.com
+aa9bd78f328a6a41279d0fad0a88df1901.com
+aa9d046aab36af4ff182f097f840430d51.com
+aaa38852e886ac4af1a3cff9b47cab6272.com
+aab94f698f36684c5a852a2ef272e031bb.com
+aac500b7a15b2646968f6bd8c6305869d7.com
+aac52006ec82a24e08b665f4db2b5013f7.com
+aad1f4acb0a373420d9b0c4202d38d94fa.com
+aadroid."		1;
+	"~*et
+aarbur.com
+aaro"		1;
+	"~*abel.com
+abba"		1;
+	"~*reddy.com
+abclau"		1;
+	"~*cher.com
+abctoppictures."		1;
+	"~*et
+abie"		1;
+	"~*te.ru
+abovetheriver"		1;
+	"~*c.com
+absolutelya"		1;
+	"~*alog.com
+absolute-s.ru
+absugars.com
+abtasty.com
+abusora.com
+abwa.tk
+academia-"		1;
+	"~*sk.org
+acads."		1;
+	"~*et
+accessoires-mode.i"		1;
+	"~*
+acc.eu.org
+acgs.tk
+acheterviagrafr24.com
+acortarurl.es
+actio"		1;
+	"~*"		1;
+	"~*ooz.com
+activepr.ru
+actulite.com
+acu"		1;
+	"~*etix-referrer.com
+adamoads.com
+ada"		1;
+	"~*ih.com
+adcash.com
+adclickservice.com
+adclickthru."		1;
+	"~*et
+add-add.me"		1;
+	"~*
+addbi"		1;
+	"~*.me"		1;
+	"~*
+addblueoff.com.ua
+addray.pro
+addtoadd.me"		1;
+	"~*
+adelly.bg
+adexprts.com
+adf.ly
+adhome.biz
+adidas.frwebs.fr
+adimmix.com
+adi"		1;
+	"~*terax.com
+adktrailmap.com
+adloads.com
+adloads."		1;
+	"~*et
+adma"		1;
+	"~*aerofoil.com
+adma"		1;
+	"~*.gr
+adma"		1;
+	"~*.se
+admatic.com.tr
+admi"		1;
+	"~*shop.com
+admitad.com
+ad"		1;
+	"~*otbad.com
+adpremium.org
+adre"		1;
+	"~*ali"		1;
+	"~*-stk.ru
+ads-cool.pro
+adserver-e7.com
+adservme.com
+adsfresh.me"		1;
+	"~*
+ads.gold
+adsla"		1;
+	"~*d.me"		1;
+	"~*
+adssafeprotected.com
+ads-seo.me"		1;
+	"~*
+ads.tremorhub.com
+adtech.de
+adtech.fr
+adtech.us
+adtiger.tk
+adult3dgames.com
+adultactio"		1;
+	"~*cam.com
+adultfrie"		1;
+	"~*dfi"		1;
+	"~*der.com
+adultfullhd.com
+adultgalls.com
+adultmeeto"		1;
+	"~*li"		1;
+	"~*e.i"		1;
+	"~*fo
+adult"		1;
+	"~*et.i"		1;
+	"~*
+adultwebhosti"		1;
+	"~*g.i"		1;
+	"~*fo
+adva"		1;
+	"~*cedclea"		1;
+	"~*er.com
+adva"		1;
+	"~*cedsoftwaresupport.com
+adve"		1;
+	"~*tureparkcostarica.com
+adverster.com
+advertisi"		1;
+	"~*gtag."		1;
+	"~*et
+adviceforum.i"		1;
+	"~*fo
+advocatemsk.ru
+advokateg.ru
+ad-words.ru
+adzerg.com
+adzpower.com
+aero2.ru
+aerogo.com
+affiliate-fr.com
+affordablewebsitesa"		1;
+	"~*dmobileapps.com
+affrh2015.com
+afftrack001.com
+afmuseum.com
+afora.ru
+afsla"		1;
+	"~*kpille"		1;
+	"~*2017"		1;
+	"~*l.eu
+agadelha.com.br
+agahi"		1;
+	"~*ameh.com
+agardomai"		1;
+	"~*s.com
+agecheckadult.com
+agha"		1;
+	"~*y"		1;
+	"~*a.com
+agreda.pluto.ro
+agroeco"		1;
+	"~*om.kz
+agysya.ru
+ahrefs.com
+aimaya"		1;
+	"~*gzhi.com
+air-edem.ru
+airla"		1;
+	"~*dsea.i"		1;
+	"~*fo
+airmaxshoes-2016.com
+akama.com
+akita.kz
+aktivator-wi"		1;
+	"~*dows10.blogspot.com
+akuh"		1;
+	"~*i.by
+akusherok.ru
+akvamaster.dp.ua
+alarmob"		1;
+	"~*i"		1;
+	"~*sk.ru
+albamargroup.com
+alborza"		1;
+	"~*.com
+albumsuper.i"		1;
+	"~*fo
+alekseevec.ru
+alert-fdm.xyz
+alert-fjg.xyz
+alert-hgd.xyz
+alert-jdh.xyz
+alessa"		1;
+	"~*draleo"		1;
+	"~*e.com
+alfa9.com
+alfa-img.com
+alfa-medosmotr.ru
+alfapro.ru
+alf-img.com
+algeria"		1;
+	"~*embassy.co.i"		1;
+	"~*
+alibestsale.com
+alie"		1;
+	"~*wheel.es
+alie"		1;
+	"~*wheels.de
+aliexpresscashback.club
+aliexpress.com
+alif-ba-ta.com
+alive-ua.com
+all4i"		1;
+	"~*vest.i"		1;
+	"~*fo
+all4i"		1;
+	"~*vest.ru
+allboard.xobor.de
+allcredits.su
+alldow"		1;
+	"~*load.pw
+alldubai.biz
+allesoh"		1;
+	"~*egirls."		1;
+	"~*et
+allformi"		1;
+	"~*ecraft.ru
+allk"		1;
+	"~*ow.i"		1;
+	"~*fo
+allkrim.com
+all"		1;
+	"~*ews24.i"		1;
+	"~*
+all"		1;
+	"~*ews.md
+all-"		1;
+	"~*umber.com
+alloysteel.ru
+allpdfmags."		1;
+	"~*et
+allsilver925.co.il
+all-streami"		1;
+	"~*g-media.com
+alltheviews.com
+allwidewallpapers.com
+allwome"		1;
+	"~*.i"		1;
+	"~*fo
+aloofly.com
+alot.com
+alphacaroli"		1;
+	"~*as.com
+alphaforum.ru
+alphahoverboards.com
+alpharma."		1;
+	"~*et
+alphavisio"		1;
+	"~*s."		1;
+	"~*et
+alpi"		1;
+	"~*ism.ru
+alveris.ru
+alyeskaresort.com
+am15."		1;
+	"~*et
+ama"		1;
+	"~*da-por"		1;
+	"~*.ga
+amateurgalls.com
+amateurlivechat.org
+amateurmatch.com
+amazo"		1;
+	"~*-adsystem.com
+amazo"		1;
+	"~*-seo-service.com
+amehdaily.com
+amigobulls.com
+amoi.t"		1;
+	"~*
+amospalla.es
+ample-awards-today.us
+ampower.me
+am-se.com
+amt-k.ru
+amyfoxfit"		1;
+	"~*ess.com
+a"		1;
+	"~*aksma.i"		1;
+	"~*fo
+a"		1;
+	"~*al-acrobats.com
+a"		1;
+	"~*al-acrobats.hol.es
+a"		1;
+	"~*alytics-ads.xyz
+a"		1;
+	"~*apa-i"		1;
+	"~*"		1;
+	"~*s.ru
+a"		1;
+	"~*-do"		1;
+	"~*ut.com
+a"		1;
+	"~*dpolice.com
+a"		1;
+	"~*droid4fu"		1;
+	"~*.org
+a"		1;
+	"~*droids-store.com
+a"		1;
+	"~*droid-style.com
+a"		1;
+	"~*droid-systems.ru
+a"		1;
+	"~*droid-vsem.org
+a"		1;
+	"~*gigree"		1;
+	"~*e.com
+a"		1;
+	"~*imali.deagosti"		1;
+	"~*ipassio"		1;
+	"~*.it
+a"		1;
+	"~*imebox.com.ua
+a"		1;
+	"~*ime.dougasouko.com
+a"		1;
+	"~*jalika.co.i"		1;
+	"~*
+a"		1;
+	"~*limebel.kiev.ua
+a"		1;
+	"~*o"		1;
+	"~*ymizeme.pro
+a"		1;
+	"~*ticrawler.org
+a"		1;
+	"~*ti-virus-removal.i"		1;
+	"~*fo
+aosexko"		1;
+	"~*takte."		1;
+	"~*et
+aoshe"		1;
+	"~*g-tech.com
+apartame"		1;
+	"~*twroclaw.eu
+apartme"		1;
+	"~*tbay.ru
+apartme"		1;
+	"~*trati"		1;
+	"~*gs.com
+apartme"		1;
+	"~*t.ru
+apccargo.com
+apiada"		1;
+	"~*ak"		1;
+	"~*et-a.akamaihd."		1;
+	"~*et
+apiallge"		1;
+	"~*iusi"		1;
+	"~*fo-a.akamaihd."		1;
+	"~*et
+apiappe"		1;
+	"~*ablei"		1;
+	"~*fo-a.akamaihd."		1;
+	"~*et
+apibatbrowsecom-a.akamaihd."		1;
+	"~*et
+apibetwee"		1;
+	"~*li"		1;
+	"~*es"		1;
+	"~*-a.akamaihd."		1;
+	"~*et
+apibrowsesmart"		1;
+	"~*e-a.akamaihd."		1;
+	"~*et
+apidiamo"		1;
+	"~*data"		1;
+	"~*et-a.akamaihd."		1;
+	"~*et
+apifasterlighti"		1;
+	"~*-a.akamaihd."		1;
+	"~*et
+apiholdi"		1;
+	"~*gmypage-a.akamaihd."		1;
+	"~*et
+apiitsthirtee"		1;
+	"~*de-a.akamaihd."		1;
+	"~*et
+apili"		1;
+	"~*kswiftco-a.akamaihd."		1;
+	"~*et
+apimegabrowsebiz-a.akamaihd."		1;
+	"~*et
+apimoss"		1;
+	"~*eti"		1;
+	"~*fo-a.akamaihd."		1;
+	"~*et
+apimou"		1;
+	"~*tai"		1;
+	"~*bikei-a.akamaihd."		1;
+	"~*et
+apioasisspace"		1;
+	"~*et-a.akamaihd."		1;
+	"~*et
+apioutobox"		1;
+	"~*et-a.akamaihd."		1;
+	"~*et
+apiportalmorecom-a.akamaihd."		1;
+	"~*et
+apishops.ru
+apispri"		1;
+	"~*gsmart"		1;
+	"~*e-a.akamaihd."		1;
+	"~*et
+apiwebwebgetcom-a.akamaihd."		1;
+	"~*et
+apiwoode"		1;
+	"~*sealcom-a.akamaihd."		1;
+	"~*et
+apparel-offer.com
+apper.de
+appfastplay.com
+appfixi"		1;
+	"~*g.space
+appiq.mobi
+appleid-verificatio"		1;
+	"~*.com
+applicatio"		1;
+	"~*g29.com
+app-ready.xyz
+approved.su
+apps-a"		1;
+	"~*alytics."		1;
+	"~*et
+appsaurus.com
+apptester.tk
+aproposde.com
+ap.se"		1;
+	"~*ai.br
+apxeo.i"		1;
+	"~*fo
+aquarium-pro.ru
+arabgirls.adultgalls.com
+arabsexxxtube.com
+arabseyes.com
+aramaicmedia.org
+arate.ru
+arcadepages.com
+arcadeplayhouse.com
+architecturebest.com
+arclk."		1;
+	"~*et
+arcteryxsale.o"		1;
+	"~*li"		1;
+	"~*e
+arcteryxstore.o"		1;
+	"~*li"		1;
+	"~*e
+are"		1;
+	"~*a"		1;
+	"~*ews.com.ua
+are"		1;
+	"~*da-avtoprokat-kras"		1;
+	"~*odar.ru
+are"		1;
+	"~*dakvartir.kz
+are"		1;
+	"~*das."		1;
+	"~*et
+are"		1;
+	"~*datora.ru
+are"		1;
+	"~*da-yeisk.ru
+arewater.com
+arkartex.ru
+arkkivoltti."		1;
+	"~*et
+arpelsreplica.xyz
+arraty.altervista.org
+artave"		1;
+	"~*uegarde"		1;
+	"~*studios.com
+artdeko.i"		1;
+	"~*fo
+artefakct.com
+articlesdirectoryme.i"		1;
+	"~*fo
+artparquet.ru
+artpicso.com
+aruplighti"		1;
+	"~*g.com
+arvut.org
+as5000.com
+asacopaco.tk
+ascat.por"		1;
+	"~*
+asdfg.pro
+asdfz.pro
+asia-forum.ru
+asie"		1;
+	"~*girls."		1;
+	"~*et
+asmxsatadriveri"		1;
+	"~*.aircus.com
+asophoto.com
+asrv-a.akamaihd."		1;
+	"~*et
+asrv-a.akamoihd."		1;
+	"~*et
+asrvrep-a.akamaihd."		1;
+	"~*et
+asrvvv-a.akamaihd."		1;
+	"~*et
+assce"		1;
+	"~*ihotosidea.blogspot.com
+assce"		1;
+	"~*ihotosidea.blogspot.co.za
+assee"		1;
+	"~*o"		1;
+	"~*tvo"		1;
+	"~*li"		1;
+	"~*e.ru
+assee"		1;
+	"~*o"		1;
+	"~*tv.ru
+astrochicks.com
+atelielembra"		1;
+	"~*caquee"		1;
+	"~*ca"		1;
+	"~*ta.com.br
+atla"		1;
+	"~*t-auto.i"		1;
+	"~*fo
+atlasvkusov.ru
+atleticpharm.org
+atley.eu.p"		1;
+	"~*
+atmagroup.ru
+atout-e"		1;
+	"~*ergie-69.com
+atovh.local-fi"		1;
+	"~*ders.com
+audioba"		1;
+	"~*gout.com
+audiofree.ru
+ausergrubhof.i"		1;
+	"~*fo
+ausmepa.org.au
+auspolice.com
+aussie-prizes.com
+australia-ope"		1;
+	"~*i"		1;
+	"~*g-times.com
+auto4style.ru
+autoblogger24.i"		1;
+	"~*fo
+autobre"		1;
+	"~*"		1;
+	"~*ero.it
+autobudpostach.club
+autochoixspi"		1;
+	"~*elli.com
+autogrep.ru
+autoloa"		1;
+	"~*s.com
+autolombard-kras"		1;
+	"~*odar.ru
+auto-moto-elektro"		1;
+	"~*ika.cz
+auto"		1;
+	"~*ew.biz
+autoplate.i"		1;
+	"~*fo
+autor"		1;
+	"~*.ru
+auto.rusvile.lt
+autotop.com.ua
+autotre"		1;
+	"~*ds.today
+autoua.top
+autovideobroadcast.com
+autowebmarket.com.ua
+auto-zapchasti.org
+availit.weebly.com
+avek.ru
+aversis."		1;
+	"~*et
+aviapa"		1;
+	"~*da.ru
+aviav.co
+aviav.eu
+aviav.org
+aviav.ru
+aviav.ru.com
+avirasecureserver.com
+avitocars.ru
+aviva-limoux.com
+avkzarabotok.com
+avkzarabotok.i"		1;
+	"~*fo
+avo"		1;
+	"~*-"		1;
+	"~*ovosib.ru
+avo"		1;
+	"~*-severozapad.ru
+avo"		1;
+	"~*-ukrai"		1;
+	"~*e.com
+avramstroy.ru
+avtoare"		1;
+	"~*da.by
+avtochehli.by
+avtocredit-legko.ru
+avtoi"		1;
+	"~*teres.ru
+avtolombard-kras"		1;
+	"~*odar.com
+avtolombard-kras"		1;
+	"~*odar.ru
+avtovolop.ru
+awe"		1;
+	"~*cy.com
+axbocz."		1;
+	"~*et
+ayaki"		1;
+	"~*o."		1;
+	"~*et
+aya"		1;
+	"~*aspa.com
+ayerbo.xhost.ro
+azad"		1;
+	"~*egar.com
+azartclub.org
+azartmix.com
+azart"		1;
+	"~*iy-bo"		1;
+	"~*us.com
+azazapor"		1;
+	"~*.com
+azazu.ru
+azbaseimages."		1;
+	"~*et
+azbukadiets.ru
+azbukafree.com
+azbuka-mo.ru
+azlex.uz
+azte.ch
+b2b-lou"		1;
+	"~*ge.com
+babespcs.com
+babieca.com
+bablo"		1;
+	"~*ow.ru
+babygu"		1;
+	"~*s.ru
+back.dog
+backgrou"		1;
+	"~*dpictures."		1;
+	"~*et
+backli"		1;
+	"~*k4u."		1;
+	"~*et
+backli"		1;
+	"~*kwatch.com
+backuperwebcam.weebly.com
+bad-stars."		1;
+	"~*et
+baersaratov.ru
+bag77.ru
+bagcio"		1;
+	"~*derlab.com
+bagso"		1;
+	"~*sale.o"		1;
+	"~*li"		1;
+	"~*e
+baixar-musicas-gratis.com
+baksma"		1;
+	"~*.com
+baladur.ru
+bala.gete"		1;
+	"~*joyme"		1;
+	"~*t."		1;
+	"~*et
+balitouroffice.com
+balka"		1;
+	"~*farma.org
+balka"		1;
+	"~*farma.ru
+balla-boo.se
+balois.worldbreak.com
+baltgem.com
+bambi.ck.ua
+bamo.xsl.pt
+ba"		1;
+	"~*a"		1;
+	"~*.tv
+ba"		1;
+	"~*g-hotties.com
+ba"		1;
+	"~*gla-chat-uk-paralud.ga
+ba"		1;
+	"~*kcrediti.ru
+ba"		1;
+	"~*ki76.ru
+ba"		1;
+	"~*kiem.pl
+ba"		1;
+	"~*kofthewext.com
+ba"		1;
+	"~*"		1;
+	"~*erads.de
+ba"		1;
+	"~*"		1;
+	"~*erba"		1;
+	"~*k.ru
+ba"		1;
+	"~*"		1;
+	"~*erco"		1;
+	"~*"		1;
+	"~*ect."		1;
+	"~*et
+ba"		1;
+	"~*"		1;
+	"~*erpower.com
+ba"		1;
+	"~*"		1;
+	"~*erspace.com
+ba"		1;
+	"~*"		1;
+	"~*erswap.com
+ba"		1;
+	"~*"		1;
+	"~*ertesti"		1;
+	"~*g.com
+barbourjackets.o"		1;
+	"~*li"		1;
+	"~*e
+bard-real.com.ua
+bar"		1;
+	"~*fur"		1;
+	"~*ituremart.com
+basedecor.ru
+bashtime.ru
+basisches-wasser."		1;
+	"~*et
+bata"		1;
+	"~*ga."		1;
+	"~*et
+battlecar"		1;
+	"~*ival.su
+bauspare"		1;
+	"~*.bz.it
+bayareaaeroclub.org
+bazaro"		1;
+	"~*li"		1;
+	"~*e24.ru
+bbtec."		1;
+	"~*et
+bcmp.org
+bdsmgalls."		1;
+	"~*et
+beachpics.com
+beauby.ru
+beauty-b0x.pl
+beauty-bracelet.com
+beauty-cli"		1;
+	"~*ic.ru
+beauty-thi"		1;
+	"~*gs.com
+becuo.com
+beda"		1;
+	"~*dbreakfast.com
+bedcapdealers.com
+beli"		1;
+	"~*ka.com.ua
+beli"		1;
+	"~*vestdom.by
+belstaffstore.o"		1;
+	"~*li"		1;
+	"~*e
+be"		1;
+	"~*chmarkcommu"		1;
+	"~*icatio"		1;
+	"~*s.co.uk
+be"		1;
+	"~*sbargai"		1;
+	"~*s."		1;
+	"~*et
+berdasoviva"		1;
+	"~*.ru
+berli"		1;
+	"~*i"		1;
+	"~*sl.com
+berrymall.ru
+best-busi"		1;
+	"~*essma"		1;
+	"~*.ru
+bestbuy.ca
+bestcalovebracelet.c"		1;
+	"~*
+bestchoice.cf
+best-coupo"		1;
+	"~*-offer.com
+bestcurs.org
+bestdooz.com
+bestdraws.com
+bestempresas.es
+best-games.today
+bestimagecoollibrary.com
+bestkfiledxd.cf
+bestmarriages.com
+bestmobilityscooterstoday.com
+bestofferswalkmydogouteveryday.gq
+bestofpicture.com
+bestofupload.i"		1;
+	"~*fo
+bestplacetobuyeriacta.jw.lt
+bestprice"		1;
+	"~*i"		1;
+	"~*ja.com
+bestprofits-there.com
+best-seo-offer.com
+best-seo-software.xyz
+best-seo-solutio"		1;
+	"~*.com
+bestssaker.com
+bestwaystogetpaid.us
+bestwebsiteawards.com
+bestwebsitesawards.com
+bestwri"		1;
+	"~*klecream"		1;
+	"~*ow.com
+bet365.com
+beta.hotkeys.com
+beto"		1;
+	"~*ka.pro
+bet-prog"		1;
+	"~*oz.com
+betterhdpor"		1;
+	"~*.com
+betterscooter.com
+betu"		1;
+	"~*e.o"		1;
+	"~*li"		1;
+	"~*ewebshop."		1;
+	"~*et
+betwi"		1;
+	"~*service.com
+beya"		1;
+	"~*.host.sk
+bezcmexa.ru
+bezspor"		1;
+	"~*o.ru
+beztuberkuleza.ru
+bfz.biz
+bharatdefe"		1;
+	"~*cekavach.com
+bidbuy.co.kr
+bidr.trellia"		1;
+	"~*.com
+bif-ru.i"		1;
+	"~*fo
+bigames.o"		1;
+	"~*li"		1;
+	"~*e
+big-boards.i"		1;
+	"~*fo
+bigcareer.i"		1;
+	"~*fo
+bigcities.org
+biglistofwebsites.com
+bigpe"		1;
+	"~*isguide.com
+biketa"		1;
+	"~*k.ga
+biki"		1;
+	"~*i-image.com
+bildsuche.ru
+billiard-classic.com.ua
+bimatoprost-careprost.com
+bimatoprost-careprost.com.ua
+bi"		1;
+	"~*aryoptio"		1;
+	"~*scops.i"		1;
+	"~*fo
+bi"		1;
+	"~*go8888.com
+bi"		1;
+	"~*omo.com
+bi"		1;
+	"~*omo.kz
+bioca.org
+bio-japa"		1;
+	"~*."		1;
+	"~*et
+bio-market.kz
+bio-optomarket.ru
+bioscorp.ru
+bio.trade-jp."		1;
+	"~*et
+birzha-truda.eu
+bitcoi"		1;
+	"~*pile.com
+bitcoi"		1;
+	"~*s-live.ru
+bitpor"		1;
+	"~*o.sx
+bizcheapjerseyswholesalechi"		1;
+	"~*a.com
+bizfly.i"		1;
+	"~*fo
+biz"		1;
+	"~*esluxe.ru
+biz"		1;
+	"~*esreal"		1;
+	"~*ost.ru
+biz"		1;
+	"~*esschat."		1;
+	"~*et
+bizru.i"		1;
+	"~*fo
+bja"		1;
+	"~*shee.ru
+bjetjt.com
+bjorkbacke"		1;
+	"~*."		1;
+	"~*u
+bk"		1;
+	"~*s.v"		1;
+	"~*
+blackcurra"		1;
+	"~*thumidifiers.site
+blackhatworth.com
+blackle.com
+blackpla"		1;
+	"~*et.com
+blackwitchcraft.ru
+blagovest-med.ru
+blavia.00author.com
+blockworld.ru
+blog.f00kcla"		1;
+	"~*.de
+bloggedpor"		1;
+	"~*.com
+blogge"		1;
+	"~*.be
+bloggerads."		1;
+	"~*et
+bloggers."		1;
+	"~*l
+blogig.org
+blog.koorg.ru
+blogos.kz
+blogpor"		1;
+	"~*.i"		1;
+	"~*
+blogqpot.com
+blog.remote-computer.de
+blogs.rediff.com
+blogster.com
+blogtotal.de
+blog.yam.com
+bloke.com
+blpmovies.com
+bluejays-jerseys.us
+bluerobot.i"		1;
+	"~*fo
+bluesma"		1;
+	"~*."		1;
+	"~*u
+blue-square.biz
+bmwhighperformers.com
+board.f00d.de
+boazpower.com
+bobba.dzaba.com
+bobi"		1;
+	"~*oz.com
+bochemit.com.ua
+bocoarchives.org
+bodybuildi"		1;
+	"~*g-shop.biz
+bolez"		1;
+	"~*ikogi.com
+bolez"		1;
+	"~*iorga"		1;
+	"~*ov.ru
+bolitgorlo."		1;
+	"~*et
+bombla.org
+bo"		1;
+	"~*a"		1;
+	"~*za-fortu"		1;
+	"~*e.me"		1;
+	"~*
+bo"		1;
+	"~*gacams.com
+bo"		1;
+	"~*gior"		1;
+	"~*os.i"		1;
+	"~*fo
+bo"		1;
+	"~*ux."		1;
+	"~*extview.ru
+bo"		1;
+	"~*villa"		1;
+	"~*.com
+boobsimge.com
+bookhome.i"		1;
+	"~*fo
+bookmaker-bet.com
+bookmark4you.com
+bookmark4you.com.biz
+boole.o"		1;
+	"~*li"		1;
+	"~*ewebshop."		1;
+	"~*et
+boostmyppc.com
+bosefux.esy.es
+bosma"		1;
+	"~*.pluto.ro
+bouda.kvalit"		1;
+	"~*e.cz
+bpro1.top
+brai"		1;
+	"~*s2.biz
+brai"		1;
+	"~*sa"		1;
+	"~*deggs.blogspot.com
+brai"		1;
+	"~*xs.us
+braip.com.br
+brakehawk.com
+bra"		1;
+	"~*dov.ru
+break-the-chai"		1;
+	"~*s.com
+breastaugme"		1;
+	"~*tatio"		1;
+	"~*.co.za
+breget74.ru
+bre"		1;
+	"~*dbutik.ru
+brewdom.ru
+brg8.com
+brimsto"		1;
+	"~*ehillfortress.org
+bristolhostel.com
+bristolhotel.com
+bristolhotel.com.ua
+brk-rti.ru
+brokergid.ru
+bro"		1;
+	"~*zeaid-a.akamaihd."		1;
+	"~*et
+brothers-smaller.ru
+browsepulse-a.akamaihd."		1;
+	"~*et
+browserprotecter.com
+brus.city
+brus-vsem.ru
+brya"		1;
+	"~*sk.zrus.org
+bscodecs.com
+b-styles.xyz
+btc4u.ru
+btv"		1;
+	"~*.ru
+bucha"		1;
+	"~*a"		1;
+	"~*shardware.com
+budpost.com.ua
+bugof.gq
+buigas.00it.com
+builtwith.com
+bum.com.ru
+bumsko"		1;
+	"~*takte.org
+bupropio"		1;
+	"~*-sr-150-mg.us
+buqayy0.livejour"		1;
+	"~*al.com
+buqyxa.ri"		1;
+	"~*cia"		1;
+	"~*.i"		1;
+	"~*fo
+burger-imperia.com
+burkesales.com
+bur"		1;
+	"~*-fat.ga
+busi"		1;
+	"~*ess-made-fu"		1;
+	"~*.com
+busi"		1;
+	"~*esxxl.com
+bus-offer.com
+butto"		1;
+	"~*s-for-website.com
+butto"		1;
+	"~*s-for-your-website.com
+buya"		1;
+	"~*tiviralwp.com
+buybest1.biz
+buy-cheap-o"		1;
+	"~*li"		1;
+	"~*e.i"		1;
+	"~*fo
+buy-cheap-pills-order-o"		1;
+	"~*li"		1;
+	"~*e.com
+buydissertatio"		1;
+	"~*."		1;
+	"~*et
+buyessay3.blogspot.ru
+buyessay"		1;
+	"~*ow.biz
+buyessayo"		1;
+	"~*li"		1;
+	"~*e19.blogspot.ru
+buy-forum.ru
+buyfrie"		1;
+	"~*d.ru
+buyhoverboard.com
+buyk.host.sk
+buy-loft.ru
+buy"		1;
+	"~*orxx.com
+buypa"		1;
+	"~*icdisorderpill.com
+buyparajumpers.o"		1;
+	"~*li"		1;
+	"~*e
+buypillsordero"		1;
+	"~*li"		1;
+	"~*e.com
+buypuppies.ca
+buyscabiescream.com
+buytiza"		1;
+	"~*idi"		1;
+	"~*eo"		1;
+	"~*li"		1;
+	"~*e.blogspot.com
+buytiza"		1;
+	"~*idi"		1;
+	"~*eo"		1;
+	"~*li"		1;
+	"~*e"		1;
+	"~*oprescriptio"		1;
+	"~*.blogspot.com
+buyviagraa.blogspot.com
+buzzo"		1;
+	"~*click.com
+buzzsumo.com
+buzzurl.jp
+bvlgaribracelet.xyz
+bvlgariri"		1;
+	"~*g.xyz
+bvlgariwallet.xyz
+byco"		1;
+	"~*text.com
+byme.se
+bytimeda"		1;
+	"~*ce.ru
+bzero1jewelry."		1;
+	"~*et
+cablecar.us
+cacheimages.com
+cactussoft.biz
+cakemediahq.com.au
+cakesplus.com.au
+calc-for-credit.ru
+calcularpagera"		1;
+	"~*k.com
+califor"		1;
+	"~*ia"		1;
+	"~*ews.cf
+callawaygolfoutlet.o"		1;
+	"~*li"		1;
+	"~*e
+callawaygolfstore.o"		1;
+	"~*li"		1;
+	"~*e
+callejo"		1;
+	"~*delpozo.es
+callmd5map.com
+call-of-duty.i"		1;
+	"~*fo
+calstaterealty.us
+calvet.altervista.org
+camde"		1;
+	"~*memorials.com
+camdolls.com
+cam-ko"		1;
+	"~*takte.org
+ca"		1;
+	"~*dcstuccoa"		1;
+	"~*dsto"		1;
+	"~*e.com
+ca"		1;
+	"~*delluxsklep.pl
+ca"		1;
+	"~*diceloves.us
+ca"		1;
+	"~*d.jp
+ca"		1;
+	"~*dleha"		1;
+	"~*dmade.com
+ca"		1;
+	"~*dlewoodde"		1;
+	"~*talce"		1;
+	"~*tre.com.au
+ca"		1;
+	"~*dycrushshop.com
+ca"		1;
+	"~*dy-glam-hp.com
+ca"		1;
+	"~*dypeople.se
+ca"		1;
+	"~*dyti"		1;
+	"~*er.com
+ca"		1;
+	"~*o"		1;
+	"~*cdriverq3.pe"		1;
+	"~*.io
+ca"		1;
+	"~*role.com
+ca"		1;
+	"~*yougethighofftiza"		1;
+	"~*idi"		1;
+	"~*e.blogspot.com
+ca"		1;
+	"~*zo"		1;
+	"~*i.ru
+capacitacio"		1;
+	"~*yapre"		1;
+	"~*dizaje.com
+capture-room.com
+carabela.com.do
+carapics.com
+cardiosport.com.ua
+cardsharp1.ru
+cardul.ru
+carfax.com.ua
+cari"		1;
+	"~*a-sy.de
+carloa"		1;
+	"~*s.com
+carmuffler."		1;
+	"~*et
+carsdi"		1;
+	"~*ed.org
+carso"		1;
+	"~*.gete"		1;
+	"~*joyme"		1;
+	"~*t."		1;
+	"~*et
+carsplate.com
+cartech"		1;
+	"~*ic.ru
+cartierbraceletsreplica.pw
+cartierbracelet.xyz
+cartierjusteu"		1;
+	"~*clou.xyz
+cartierlove2u.com
+cartierlove2u.xyz
+cartierlovebraceletreplica.xyz
+cartierlovebracelet.xyz
+cartierloveri"		1;
+	"~*greplica.xyz
+cartierlovestore.xyz
+cartierlove.xyz
+cartierreplica.pw
+cartierreplica.top
+cartierreplica.wi"		1;
+	"~*
+cartierreplica.xyz
+cartierri"		1;
+	"~*g.xyz
+cartiertri"		1;
+	"~*ity.xyz
+cartierwatch.xyz
+casabla"		1;
+	"~*cama"		1;
+	"~*or.co.za
+cashkitte"		1;
+	"~*-a.akamaihd."		1;
+	"~*et
+casho"		1;
+	"~*ads.com
+casi"		1;
+	"~*orewards.i"		1;
+	"~*fo
+casti"		1;
+	"~*gba"		1;
+	"~*k.ru
+catalogs-parts.com
+caveavi"		1;
+	"~*s.fr
+cayado.s"		1;
+	"~*"		1;
+	"~*.gr
+cbb1smartlist12.click
+cbcseward.com
+cbox.ws
+ccbill.com
+cctva.tv
+cd"		1;
+	"~*cash.com
+cd"		1;
+	"~*cash."		1;
+	"~*et
+cd"		1;
+	"~*cash.org
+cd"		1;
+	"~*"		1;
+	"~*etwok.xyz
+cejewelry.xyz
+celebsopics.com
+cellfu"		1;
+	"~*.mobi
+ceme"		1;
+	"~*taresearch.se
+c-e"		1;
+	"~*glish.ru
+ce"		1;
+	"~*okos.ru
+ce"		1;
+	"~*oval.ru
+ce"		1;
+	"~*traletermice.us
+ce"		1;
+	"~*trdebut.ru
+ce"		1;
+	"~*tre-i"		1;
+	"~*digo.org.ua
+ce"		1;
+	"~*trumcoachi"		1;
+	"~*gu.com
+ceotrk.com
+cercacamio"		1;
+	"~*.it
+cete.ru
+cezartabac.ro
+cfacarrosserie74.com
+cfcl.co.uk
+cfjump.com
+cfsrati"		1;
+	"~*g.so"		1;
+	"~*icwall.com
+c-gai"		1;
+	"~*sbourg.com
+cgi2."		1;
+	"~*i"		1;
+	"~*te"		1;
+	"~*do.co.jp
+charmstroy.i"		1;
+	"~*fo
+chast"		1;
+	"~*oepor"		1;
+	"~*o.com
+chatroulette.o"		1;
+	"~*li"		1;
+	"~*e
+chatroulette.si
+chatroulette.world
+chat.ru
+chatseo.com
+chcu."		1;
+	"~*et
+cheapbarbour.o"		1;
+	"~*li"		1;
+	"~*e
+cheapbelstaff.o"		1;
+	"~*li"		1;
+	"~*e
+cheapcigarettesc.i"		1;
+	"~*fo
+cheapestjerseyso"		1;
+	"~*wholesale.com
+cheapestjerseys-wholesale.com
+cheapjerseysa.com
+cheapjerseysap.com
+cheapjerseysbizwholesale.us
+cheapjerseysfootballshop.com
+cheapmarmot.o"		1;
+	"~*li"		1;
+	"~*e
+cheapmo"		1;
+	"~*cler.pw
+cheapmo"		1;
+	"~*cler.wi"		1;
+	"~*
+cheap-pills-"		1;
+	"~*orx.com
+cheapsergiorossi.o"		1;
+	"~*li"		1;
+	"~*e
+cheatcode-lita12.rhcloud.com
+checkhit.com
+checkm8.com
+checkpagera"		1;
+	"~*k."		1;
+	"~*et
+checktext.org
+chee-by.biz
+chel"		1;
+	"~*ytruck.ru
+chelyabi"		1;
+	"~*sk.xrus.org
+cherrypoi"		1;
+	"~*tplace.ca
+cherubi"		1;
+	"~*imobili.it
+chiblackhawks-jerseys.com
+chimiver.i"		1;
+	"~*fo
+chi"		1;
+	"~*acheapelitejerseys.com
+chi"		1;
+	"~*aelitecheapjerseys.com
+chi"		1;
+	"~*ajerseyswholesalecoupo"		1;
+	"~*s.com
+chi"		1;
+	"~*ese-amezo"		1;
+	"~*.com
+chiptu"		1;
+	"~*i"		1;
+	"~*ger.com
+chlooe.com
+chocolateslim-origi"		1;
+	"~*al.com
+chocoslim.pro
+choosecuisi"		1;
+	"~*e.com
+christia"		1;
+	"~*loubouti"		1;
+	"~*outlet.wi"		1;
+	"~*
+christia"		1;
+	"~*loubouti"		1;
+	"~*replica.pw
+christia"		1;
+	"~*loubouti"		1;
+	"~*replica.wi"		1;
+	"~*
+christia"		1;
+	"~*loubouti"		1;
+	"~*saleo"		1;
+	"~*li"		1;
+	"~*e.us
+christia"		1;
+	"~*loubouti"		1;
+	"~*saleoutleto"		1;
+	"~*li"		1;
+	"~*e.us
+christia"		1;
+	"~*loubouti"		1;
+	"~*shoes.xyz
+chuckguilford.com
+cialisovercou"		1;
+	"~*teratwalmartusa.com
+cialiswithoutadoctor."		1;
+	"~*et
+ciekawi"		1;
+	"~*ki.pl
+cie"		1;
+	"~*um.fr
+cigarpass.com
+ci"		1;
+	"~*eacademy.ru
+ci"		1;
+	"~*emae"		1;
+	"~*ergy-hd.ru
+ciproa"		1;
+	"~*dtiza"		1;
+	"~*idi"		1;
+	"~*e.blogspot.com
+citize"		1;
+	"~*clsdriveri7.pe"		1;
+	"~*.io
+cityadspix.com
+citysecurity."		1;
+	"~*u
+ci.ua
+civilwartheater.com
+cjs.com.ru
+clarithromyci"		1;
+	"~*500mg.com
+clash-cla"		1;
+	"~*s.ru
+classicakuh"		1;
+	"~*i.ru
+classiquebijoux.ru
+claytra"		1;
+	"~*sformatio"		1;
+	"~*s.i"		1;
+	"~*fo
+clayvasedesig"		1;
+	"~*s.tk
+clea"		1;
+	"~*-virus-mac.com
+clever"		1;
+	"~*t.com
+clickaider.com
+clickhype.com
+clicki"		1;
+	"~*text."		1;
+	"~*et
+clickpapa.com
+clickso.com
+clicksor.com
+clicksor."		1;
+	"~*et
+clicksotrk.com
+clipart"		1;
+	"~*ew.com
+clips.ua.ac.be
+clksite.com
+clmforexeu.com
+cl.s7.exct."		1;
+	"~*et
+club-musics.ru
+club-samodelki"		1;
+	"~*.ru
+cmd.kz
+cmhomestayage"		1;
+	"~*cy.com
+c"		1;
+	"~*travelre.com
+cobaltpro.ru
+cocyq.i"		1;
+	"~*wtrade.com
+coderstate.com
+codq.i"		1;
+	"~*fo
+codysbbq.com
+cog"		1;
+	"~*itiveseo.com
+coi"		1;
+	"~*direct.io
+coi"		1;
+	"~*sspb.com
+coldfilm.ru
+colehaa"		1;
+	"~*outlet.store
+collegeessay19.blogspot.ru
+cometorussia."		1;
+	"~*et
+comissio"		1;
+	"~*ka."		1;
+	"~*et
+commu"		1;
+	"~*isave.co.za
+commu"		1;
+	"~*ity.allhiphop.com
+com-o"		1;
+	"~*li"		1;
+	"~*esupport.host
+com-o"		1;
+	"~*li"		1;
+	"~*esupport.site
+compa"		1;
+	"~*ies-catalog.com
+complia"		1;
+	"~*ce-alexa.top
+complia"		1;
+	"~*ce-alex.top
+complia"		1;
+	"~*ce-a"		1;
+	"~*drew.top
+complia"		1;
+	"~*ce-barak.top
+complia"		1;
+	"~*ce-bria"		1;
+	"~*.top
+complia"		1;
+	"~*ce-checker-7.i"		1;
+	"~*fo
+complia"		1;
+	"~*ce-checker.i"		1;
+	"~*fo
+complia"		1;
+	"~*ce-do"		1;
+	"~*.top
+complia"		1;
+	"~*ce-ele"		1;
+	"~*a.top
+complia"		1;
+	"~*ce-fred.top
+complia"		1;
+	"~*ce-george.top
+complia"		1;
+	"~*ce-irvi"		1;
+	"~*.top
+complia"		1;
+	"~*ce-iva"		1;
+	"~*.top
+complia"		1;
+	"~*ce-jack.top
+complia"		1;
+	"~*ce-ja"		1;
+	"~*e.top
+complia"		1;
+	"~*ce-jessica.top
+complia"		1;
+	"~*ce-jess.top
+complia"		1;
+	"~*ce-joh"		1;
+	"~*.top
+complia"		1;
+	"~*ce-josh.top
+complia"		1;
+	"~*ce-julia"		1;
+	"~*"		1;
+	"~*a.top
+complia"		1;
+	"~*ce-julia.top
+complia"		1;
+	"~*ce-margo.top
+complia"		1;
+	"~*ce-mark.top
+complia"		1;
+	"~*ce-mary.top
+complia"		1;
+	"~*ce-"		1;
+	"~*elso"		1;
+	"~*.top
+complia"		1;
+	"~*ce-olga.top
+complia"		1;
+	"~*ce-viktor.top
+complia"		1;
+	"~*ce-walter.top
+complia"		1;
+	"~*ce-walt.top
+complia"		1;
+	"~*ce-willy.top
+compucelu"		1;
+	"~*lock."		1;
+	"~*et
+com-secure.dow"		1;
+	"~*load
+com-supportce"		1;
+	"~*ter.website
+co"		1;
+	"~*cealthyself.com
+co"		1;
+	"~*ciergegroup.org
+co"		1;
+	"~*cordexoticre"		1;
+	"~*tals.com
+co"		1;
+	"~*fib.ifmo.ru
+co"		1;
+	"~*"		1;
+	"~*ectio"		1;
+	"~*stre"		1;
+	"~*th.com
+co"		1;
+	"~*ocer-sa"		1;
+	"~*abria.com
+co"		1;
+	"~*sta"		1;
+	"~*taservice."		1;
+	"~*et
+co"		1;
+	"~*strumac.com.mx
+co"		1;
+	"~*textualyield.com
+cookielawblog.wordpress.com
+cooki"		1;
+	"~*gmeat.ru
+coolbar.pro
+coolgramgoods.com
+cooli"		1;
+	"~*goods.com
+coolwallpapers-hd.com
+cool-weddi"		1;
+	"~*g."		1;
+	"~*et
+coop-gamers.ru
+copblock.org
+copypaste.traderzpla"		1;
+	"~*et.i"		1;
+	"~*
+copyrightclaims.org
+cordstrap.cc
+cor"		1;
+	"~*ersto"		1;
+	"~*e-cou"		1;
+	"~*tertops.com
+cor"		1;
+	"~*omase.wi"		1;
+	"~*
+corta.co
+cosmetic.do"		1;
+	"~*"		1;
+	"~*a7753191.ru
+cottageofgrace.com
+cougfa"		1;
+	"~*.i"		1;
+	"~*fo
+cou"		1;
+	"~*ciltally.com
+cou"		1;
+	"~*tbertwistdisp26.soup.io
+cou"		1;
+	"~*ter.bloke.com
+cou"		1;
+	"~*terbot.com
+cou"		1;
+	"~*tercrazy.com
+cou"		1;
+	"~*ter.yadro.ru
+cou"		1;
+	"~*try-chic.ru
+courtshipgift.com
+covadhosti"		1;
+	"~*g.biz
+covet"		1;
+	"~*ica.com
+cowblog.fr
+cpabegi"		1;
+	"~*s.ru
+craftburg.ru
+crafthubs.com
+crafti"		1;
+	"~*sta.ru
+cra"		1;
+	"~*ly."		1;
+	"~*et
+crazyboost.pro
+crd.cla"		1;
+	"~*.su
+creams.makeforum.eu
+creativehuti"		1;
+	"~*dia.com
+creditmo"		1;
+	"~*ey.com.ua
+crest3d.ru
+crest-poloski.ru
+crests.com
+crests.org
+crirussia"		1;
+	"~*.ru
+crystalslot.com
+cscwtalkto.site
+cs-passio"		1;
+	"~*.pl
+cubook.super"		1;
+	"~*ew.org
+cubs-jerseys.us
+culturevie.i"		1;
+	"~*fo
+cupday.com
+custodieva.ru
+customboxes4less.com
+customcatchca"		1;
+	"~*.com
+customchocolate.busi"		1;
+	"~*ess-for-home.com
+customcollegeessays."		1;
+	"~*et
+custom-electric-guitar.com
+customergrowthsystems.com
+customerguru.i"		1;
+	"~*
+custom-product-labels.com
+customsua.com.ua
+cutalltheshit.com
+cvety24.by
+cxpromote.com
+cyclobe"		1;
+	"~*zapri"		1;
+	"~*evstiza"		1;
+	"~*idi"		1;
+	"~*e.blogspot.com
+cymbaltaa"		1;
+	"~*dtiza"		1;
+	"~*idi"		1;
+	"~*e.blogspot.com
+cyper"		1;
+	"~*huset.se
+cyprusbuyproperties.com
+cyse.tk
+czat.wp.pl
+dailyra"		1;
+	"~*k."		1;
+	"~*et
+dailystre"		1;
+	"~*gth.org
+dairyi"		1;
+	"~*dia.i"		1;
+	"~*
+dalavia.ru
+damedi"		1;
+	"~*gel.ya.ru
+dame-"		1;
+	"~*s.kz
+da"		1;
+	"~*ashop.ru
+da"		1;
+	"~*ceu"		1;
+	"~*iverse.ru
+da"		1;
+	"~*diyabeats.i"		1;
+	"~*
+da"		1;
+	"~*gphoto.trade
+da"		1;
+	"~*schawbel.com
+daooda.com
+daptravel.com
+darkbooks.org
+darmebel.com.ua
+darodar.com
+dataloadi"		1;
+	"~*g."		1;
+	"~*et
+data-mi"		1;
+	"~*i"		1;
+	"~*g.tk
+data.vtc.pw
+date-withme.com
+dati"		1;
+	"~*g-time-"		1;
+	"~*ow.com
+datsu"		1;
+	"~*-do.com
+davebestdeals.com
+daydream-studio.ru
+daymusam.com
+day-"		1;
+	"~*ews.i"		1;
+	"~*fo
+dbmkfhqk.bloger.i"		1;
+	"~*dex.hr
+dcj-"		1;
+	"~*"		1;
+	"~*.ru
+ddlmega."		1;
+	"~*et
+ddospa"		1;
+	"~*el.com
+ddpills.com
+deadli"		1;
+	"~*kchecker.com
+dealighted.com
+dealitright.click
+dealwifi.com
+dea"		1;
+	"~*moore.ie
+dear-diary.ru
+dece"		1;
+	"~*ttools.com
+decoratio"		1;
+	"~*spcs.com
+deda-moroza-zakaz.ru
+degerlu"		1;
+	"~*d."		1;
+	"~*et
+dekoratio"		1;
+	"~*.us
+dekorkeramik.ru
+delayreferat.ru
+delfi"		1;
+	"~*-aqua.com.ua
+dellalimov.com
+deluxedumps.com
+deme"		1;
+	"~*ageur.com
+de"		1;
+	"~*gi-pod-zalog-"		1;
+	"~*edvizhimosti.ru
+de"		1;
+	"~*ive"		1;
+	"~*.1bb.ru
+de"		1;
+	"~*-"		1;
+	"~*och24.ru
+de"		1;
+	"~*talpearls.com.au
+depositfiles-por"		1;
+	"~*.ga
+descargar-musica-gratis."		1;
+	"~*et
+desig"		1;
+	"~*devise.com
+desig"		1;
+	"~*-ideas.i"		1;
+	"~*fo
+desig"		1;
+	"~*-la"		1;
+	"~*ds.ru
+desti"		1;
+	"~*atio"		1;
+	"~*realestate.com
+detalizaciya-tut.biz
+detective01.ru
+detki-opt.ru
+detskie-ko"		1;
+	"~*struktory.ru
+detskie-zabavi.ru
+deutschehobbyhure"		1;
+	"~*."		1;
+	"~*et
+devochki.top
+dev-seo.blog
+de.zapmeta.com
+dfiles.me
+dfwu1013.i"		1;
+	"~*fo
+dfwu1019.i"		1;
+	"~*fo
+diarioaco"		1;
+	"~*cagua.com
+dickssporti"		1;
+	"~*ggoods.com
+diegolopezcasta"		1;
+	"~*.com
+diesel-parts28.ru
+dieswae"		1;
+	"~*e.com
+dieta-perso"		1;
+	"~*al"		1;
+	"~*a.pl
+diffbot.com
+digest-project.ru
+digila"		1;
+	"~*der.libero.it
+digitalfaq.com
+digital-sale.su
+digital-video-processi"		1;
+	"~*g.com
+dig"		1;
+	"~*itasdata.se
+dikx.gd"		1;
+	"~*
+dildofotze"		1;
+	"~*."		1;
+	"~*et
+dimi"		1;
+	"~*ishedvalueoforego"		1;
+	"~*.com
+dimki"		1;
+	"~*o.ru
+di"		1;
+	"~*kolove.ya.ru
+dipstar.org
+directivepub.com
+directrev.com
+discou"		1;
+	"~*tbarbour.o"		1;
+	"~*li"		1;
+	"~*e
+discou"		1;
+	"~*tliv.com
+discovertreasure-a.akamaihd."		1;
+	"~*et
+discovertreasure"		1;
+	"~*ow.com
+dispo.de
+disrupti"		1;
+	"~*gdi"		1;
+	"~*"		1;
+	"~*erparties.com
+distver.ru
+div.as
+divatraffic.com
+divide"		1;
+	"~*do.ru
+diy-ha"		1;
+	"~*dmade-ideas.com
+djekxa.ru
+djo"		1;
+	"~*watch.ru
+djstools.com
+dktr.ru
+dkvorota.ru
+dlya-a"		1;
+	"~*droid.org
+dms-sw.ru
+d"		1;
+	"~*epr-avtospar.com.ua
+d"		1;
+	"~*epropetrovsk.mistr-x.org
+d"		1;
+	"~*eprsvet.com.ua
+docstoc.com
+doctissimo.fr
+doctormakarova.ru
+dodlive.mil
+doeco.ru
+dogbreedspicture."		1;
+	"~*et
+dogclothi"		1;
+	"~*g.store
+dogoimage.com
+dojki-hd.com
+dokfilms."		1;
+	"~*et
+doktoro"		1;
+	"~*li"		1;
+	"~*e."		1;
+	"~*o
+dokume"		1;
+	"~*talki"		1;
+	"~*o."		1;
+	"~*et
+domai"		1;
+	"~*2008.com
+domai"		1;
+	"~*crawler.com
+domai"		1;
+	"~*ea"		1;
+	"~*ebla"		1;
+	"~*c.com
+domai"		1;
+	"~*satcost.com
+domai"		1;
+	"~*-submit.i"		1;
+	"~*fo
+domai"		1;
+	"~*-tracker.com
+domash"		1;
+	"~*eerupor"		1;
+	"~*o.com
+domcra"		1;
+	"~*."		1;
+	"~*et
+domik-derev"		1;
+	"~*e.ru
+domi"		1;
+	"~*ateforex.ml
+domi"		1;
+	"~*atio"		1;
+	"~*.ml
+domi"		1;
+	"~*i.cat
+domi"		1;
+	"~*terior.org
+domoysshop.ru
+domz"		1;
+	"~*a"		1;
+	"~*iy.ru
+do"		1;
+	"~*"		1;
+	"~*a7753191.ru
+do"		1;
+	"~*vito.u"		1;
+	"~*as.cz
+dorratex.t"		1;
+	"~*
+doska-vsem.ru
+dostavimvdom.ru
+dostavka-v-krym.com
+dostavka-v-ukrai"		1;
+	"~*u.ru
+dosug-lux.ru
+dot"		1;
+	"~*etdotcom.org
+doublepimp.com
+dow"		1;
+	"~*loaddy."		1;
+	"~*et
+dow"		1;
+	"~*loadeer."		1;
+	"~*et
+dow"		1;
+	"~*loader12.ru
+dow"		1;
+	"~*loadkakaotalk.com
+dow"		1;
+	"~*loadmefira"		1;
+	"~*aratb1972.xpg.com.br
+dow"		1;
+	"~*load-of-the-warez.blogspot.com
+dow"		1;
+	"~*tuptv.gq
+doxypor"		1;
+	"~*o.com
+doyouk"		1;
+	"~*owtheword-flummox.ml
+dpihati"		1;
+	"~*h.gov.v"		1;
+	"~*
+drillsaw.ru
+drivi"		1;
+	"~*g.kiev.ua
+droidlook."		1;
+	"~*et
+drugspowerstore.com
+drugstoreforyou.com
+dru"		1;
+	"~*kmoms."		1;
+	"~*et
+drupa.com
+druzhba"		1;
+	"~*y.ru
+druzhi"		1;
+	"~*i"		1;
+	"~*evge"		1;
+	"~*iy63.blogspot.com
+dstroy.su
+dustyorate.com
+dvd-famille.com
+dvervmoskvu.ru
+dvr.biz.ua
+dvrlists.com
+dyshagi.ru
+dyt."		1;
+	"~*et
+e2click.com
+e705."		1;
+	"~*et
+eachdayisagift.review
+ea"		1;
+	"~*dsgallery.com
+eaplay.ru
+earl-brow"		1;
+	"~*.i"		1;
+	"~*fo
+eas-seo.com
+easycommerce.cf
+easy"		1;
+	"~*c.io
+easyshoppermac.com
+easytu"		1;
+	"~*i"		1;
+	"~*gshop.ru
+easyukrai"		1;
+	"~*e.com
+e-avo"		1;
+	"~*.ru
+e-biz"		1;
+	"~*es.i"		1;
+	"~*fo
+e-buyeasy.com
+ec-file.i"		1;
+	"~*fo
+e-colla"		1;
+	"~*tes.com
+e-commerce-seo1.com
+e-commerce-seo.com
+ecommerce-seo.com
+ecommerce-seo.org
+eco"		1;
+	"~*om.co
+ecook"		1;
+	"~*a.com.ua
+ecxtracki"		1;
+	"~*g.com
+edelstahlschor"		1;
+	"~*stei"		1;
+	"~*-123.de
+editmedios.com
+ed-shop01.ru
+educatio"		1;
+	"~*-cz.ru
+ee77ee.com
+efkt.jp
+egovaleo.it
+egvar."		1;
+	"~*et
+ekateri"		1;
+	"~*burg.xrus.org
+ek"		1;
+	"~*-art.se
+ekobata.ru
+ekosmetyki."		1;
+	"~*et.pl
+ekspertmed.com
+ekto.ee
+e-kwiaciarz.pl
+eladkarako.com
+eladkarako.github.io
+eldiariodeguadalajara.com
+electio"		1;
+	"~*.i"		1;
+	"~*terfere"		1;
+	"~*cer.ru
+electricwheelchairsarea.com
+electrik-ave"		1;
+	"~*ue.com
+electro"		1;
+	"~*icadirect.com
+electro-prom.com
+elektir.ru
+elektrischezi.ca"		1;
+	"~*alblog.com
+elektrischeziga.livejour"		1;
+	"~*al.com
+elektrischezigarette1.blog.pl
+elektrischezigarette1.o"		1;
+	"~*sugar.com
+elektrischezigarette2.devhub.com
+elektrischezigarette2.o"		1;
+	"~*sugar.com
+elektrischezigarettekaufe"		1;
+	"~*2.cowblog.fr
+elektrischezigarette"		1;
+	"~*1.blogse."		1;
+	"~*l
+elektrischezigarette"		1;
+	"~*2.beeplog.com
+elektro"		1;
+	"~*ischezigarette2.mex.tl
+elektro"		1;
+	"~*ischezigarettekaufe"		1;
+	"~*1.beeplog.com
+elektro"		1;
+	"~*ischezigarettekaufe"		1;
+	"~*1.myblog.de
+elektro"		1;
+	"~*ischezigarettekaufe"		1;
+	"~*2.tumblr.com
+elektro"		1;
+	"~*ischezi.livejour"		1;
+	"~*al.com
+elektrozigarette1.dreamwidth.org
+elektrozigarette2.webs.com
+elektrozigarette2.wordpressy.pl
+elektrozigarettekaufe"		1;
+	"~*1.devhub.com
+elektrozigarettekaufe"		1;
+	"~*2.blogse."		1;
+	"~*l
+elektrozigarette"		1;
+	"~*1.postbit.com
+elektrozigarette"		1;
+	"~*1.tumblr.com
+elektrozigarette"		1;
+	"~*1.webs.com
+elektrozigarette"		1;
+	"~*2.y"		1;
+	"~*.lt
+elidelcream.weebly.com
+elitedollars.com
+elitepcgames.com
+elitesportsadvisor.com
+elkace"		1;
+	"~*tr.ru
+elmacho.xyz
+elmifarha"		1;
+	"~*gi.com
+el-"		1;
+	"~*atio"		1;
+	"~*.com
+eloco"		1;
+	"~*cream.blogspot.com
+eloxal.ru
+elstal.com.pl
+elvel.com.ua
+elve"		1;
+	"~*ar.com
+embedle.com
+emediate.eu
+empathica.com
+empirepoker.com
+empis.magix."		1;
+	"~*et
+e"		1;
+	"~*.altezza.travel
+e"		1;
+	"~*codable.com
+e"		1;
+	"~*ergydiet24.ru
+e"		1;
+	"~*ergydiet-i"		1;
+	"~*fo.ru
+e"		1;
+	"~*ergy-ua.com
+e"		1;
+	"~*ge-fotze"		1;
+	"~*.i"		1;
+	"~*fo
+e"		1;
+	"~*gi"		1;
+	"~*ebay.ru
+e"		1;
+	"~*gi"		1;
+	"~*es-usa.com
+e"		1;
+	"~*glate.com
+e"		1;
+	"~*glishdictio"		1;
+	"~*aryfree.com
+e"		1;
+	"~*glishgamer.com
+e"		1;
+	"~*ha"		1;
+	"~*d.se
+e"		1;
+	"~*skedesquashclub.se
+e"		1;
+	"~*ter"		1;
+	"~*et.ee
+e"		1;
+	"~*vaseslotusama.com
+eo"		1;
+	"~*pal.com
+eorogo.top
+epicbrogami"		1;
+	"~*g.com
+ep"		1;
+	"~*go.bz
+e-poker-2005.com
+eralph.tk
+erectile.bid
+eredijovo"		1;
+	"~*.com
+ereko.ru
+ero-advertisi"		1;
+	"~*g.com
+eropor"		1;
+	"~*osex.ru
+erot.co
+erotik0049.com
+erotikchat-24.com
+erotik-koste"		1;
+	"~*los."		1;
+	"~*et
+erotikstories.ru
+erotiktreff24.i"		1;
+	"~*fo
+erotische-geschichte"		1;
+	"~*-xxl.com
+errorfixi"		1;
+	"~*g.space
+es5.com
+escortplius.com
+escort-russia"		1;
+	"~*.com
+escortslet."		1;
+	"~*et
+esfchat.tk
+eshop4u.jp
+eshop.md
+es"		1;
+	"~*m.ru
+espacei"		1;
+	"~*ve"		1;
+	"~*toristes.com
+essayservicewriti"		1;
+	"~*g.org
+este-li"		1;
+	"~*e.com.ua
+estibot.com
+eu-cookie-law.blogspot.com
+eu-cookie-law.i"		1;
+	"~*fo
+euge"		1;
+	"~*evaultstorage.com
+eupor"		1;
+	"~*star.i"		1;
+	"~*fo
+euromasterclass.ru
+euro"		1;
+	"~*is-free.com
+europages.com.ru
+europea"		1;
+	"~*-torches.ru
+europea"		1;
+	"~*watches.ru
+eurosamodelki.ru
+euroskat.ru
+evaashop.ru
+evehemmi"		1;
+	"~*g.blogspot.com.au
+eve"		1;
+	"~*i"		1;
+	"~*g-dati"		1;
+	"~*g-club.i"		1;
+	"~*fo
+eve"		1;
+	"~*t-tracki"		1;
+	"~*g.com
+everflora.ru
+everypo"		1;
+	"~*y.ru
+evide"		1;
+	"~*ceclea"		1;
+	"~*ergold.com
+evrotekhservis.ru
+excaliburfilms.com
+excha"		1;
+	"~*geit.gq
+excha"		1;
+	"~*ges-bet.com
+exct."		1;
+	"~*et
+executehosti"		1;
+	"~*g.com
+exhibitio"		1;
+	"~*plus.eu
+exmasters.com
+exoclick.com
+exo"		1;
+	"~*li"		1;
+	"~*e.i"		1;
+	"~*fo
+expdom.com
+expertblog.i"		1;
+	"~*fo
+expert"		1;
+	"~*aya-oce"		1;
+	"~*ka.ru
+exportshop.us
+expresstoplivo.ru
+extads."		1;
+	"~*et
+exte"		1;
+	"~*er.org
+extrabot.com
+extractora"		1;
+	"~*dbur"		1;
+	"~*er.com
+extremal-blog.com
+extremepor"		1;
+	"~*os."		1;
+	"~*et
+extremez."		1;
+	"~*et
+extstat.com
+eyelike.com.ua
+eyemagi"		1;
+	"~*atio"		1;
+	"~*.com
+eyes-o"		1;
+	"~*-you.ga
+eyessurgery.ru
+ez8motelseaworldsa"		1;
+	"~*diego.com
+ezigarettekaufe"		1;
+	"~*1.hpage.com
+ezigarettekaufe"		1;
+	"~*2.blox.pl
+ezigarettekaufe"		1;
+	"~*2.mpbloggar.se
+ezigarettekaufe"		1;
+	"~*2.yolasite.com
+ezigarettekaufe"		1;
+	"~*.myblog.de
+ezigarette"		1;
+	"~*kaufe"		1;
+	"~*1.devia"		1;
+	"~*tart.com
+ezigarette"		1;
+	"~*kaufe"		1;
+	"~*1.pagi"		1;
+	"~*a.gr
+ezigarette"		1;
+	"~*kaufe"		1;
+	"~*2.dreamwidth.org
+ezigarette"		1;
+	"~*shop1.yolasite.com
+ezigarette"		1;
+	"~*shop2.myblog.de
+ezigarette"		1;
+	"~*shop2.postbit.com
+ezigaretteshop2.mywapblog.com
+ezigaretteshop2.vefblog."		1;
+	"~*et
+ezigaretteshop.webs.com
+ezofest.sk
+ezrvre"		1;
+	"~*tals.com
+f00kcla"		1;
+	"~*.de
+f012.de
+f07.de
+f0815.de
+f5mtrack.com
+fable.i"		1;
+	"~*.ua
+facebook-mobile.xyz
+factory"		1;
+	"~*ightclub.com
+faili"		1;
+	"~*gmarriege.blogspot.com
+fakeha"		1;
+	"~*dbags.xyz
+falcoware.com
+family1st.ca
+familyholiday.ml
+familyphysicia"		1;
+	"~*.ru
+famix.xyz
+fa"		1;
+	"~*dlr.com
+fa"		1;
+	"~*oboi.com
+fa"		1;
+	"~*pagerobot.com
+fa"		1;
+	"~*tasticpixcool.com
+faptita"		1;
+	"~*s.com
+faraco"		1;
+	"~*trol.ir
+farm26.ru
+farmi"		1;
+	"~*gworm.com
+farmprofi."		1;
+	"~*et
+fashio"		1;
+	"~*i"		1;
+	"~*deed.ml
+fashio"		1;
+	"~*-mk."		1;
+	"~*et
+fashio"		1;
+	"~*-stickers.ru
+fastcrawl.com
+fastfixi"		1;
+	"~*g.tech
+fast-wordpress-start.com
+fatmaelgar"		1;
+	"~*y.com
+favorcosmetics.com
+favoritemo"		1;
+	"~*ey.ru
+favor"		1;
+	"~*ews.com
+faz99.com
+fba-mexico.com
+fbdow"		1;
+	"~*loader.com
+fdzo"		1;
+	"~*e.org
+fealq.com
+fearcrow.com
+feargames.ru
+feel-pla"		1;
+	"~*et.com
+feeriaclub.ru
+fefo.gd"		1;
+	"~*
+femdom.twiclub.i"		1;
+	"~*
+femmesde"		1;
+	"~*udees.com
+fe"		1;
+	"~*oyl.batcave."		1;
+	"~*et
+feori"		1;
+	"~*a.ru
+ferieboligkbh.dk
+fermersovet.ru
+ferretsoft.com
+fertilitetsradgiv"		1;
+	"~*i"		1;
+	"~*ge"		1;
+	"~*.se
+fetishi"		1;
+	"~*side.com
+fetroshok.ru
+fettefraue"		1;
+	"~*."		1;
+	"~*et
+fickblock18.com
+ficke"		1;
+	"~*bumse"		1;
+	"~*."		1;
+	"~*et
+ficke"		1;
+	"~*privat.i"		1;
+	"~*fo
+fickko"		1;
+	"~*taktehobbyhure"		1;
+	"~*.com
+fickko"		1;
+	"~*takte.org
+fickluder69.com
+fidelityfu"		1;
+	"~*di"		1;
+	"~*g.com
+fifa-coi"		1;
+	"~*s.o"		1;
+	"~*li"		1;
+	"~*e
+figuri"		1;
+	"~*gmo"		1;
+	"~*eyout.com
+filerockstar298.weebly.com
+filesmo"		1;
+	"~*ster.por"		1;
+	"~*
+filesvi"		1;
+	"~*e.com
+filkhbr.com
+filmbokep69.com
+filmetricsasia.com
+filmfa"		1;
+	"~*atic.com
+filmgo.ru
+filmidivx.com
+film-o"		1;
+	"~*e.ru
+fil.ru
+filu"		1;
+	"~*ika.com.ru
+fi"		1;
+	"~*a"		1;
+	"~*cehi"		1;
+	"~*t.eu
+fi"		1;
+	"~*a"		1;
+	"~*celoa"		1;
+	"~*.us
+fi"		1;
+	"~*a"		1;
+	"~*cepoi"		1;
+	"~*ts.eu
+fi"		1;
+	"~*a"		1;
+	"~*cetip.eu
+fi"		1;
+	"~*d1frie"		1;
+	"~*d.com
+fi"		1;
+	"~*dacheaplawyers.com
+fi"		1;
+	"~*da"		1;
+	"~*ysex.com
+fi"		1;
+	"~*dcla"		1;
+	"~*.org
+fi"		1;
+	"~*dpik.com
+fi"		1;
+	"~*dsexguide.com
+fi"		1;
+	"~*dthe.pet
+fi"		1;
+	"~*stroy."		1;
+	"~*et
+fi"		1;
+	"~*teks.ru
+fi"		1;
+	"~*use.com
+fireads.me"		1;
+	"~*
+firesub.pl
+firma-legio"		1;
+	"~*.ru
+fishi"		1;
+	"~*gwholesale.us
+fitflopo"		1;
+	"~*li"		1;
+	"~*e.store
+fit"		1;
+	"~*esspiks.com
+fit"		1;
+	"~*ess-video."		1;
+	"~*et
+fiuxy.com
+fiverr.com
+fix-website-errors.com
+flash4fu"		1;
+	"~*.com
+flashba"		1;
+	"~*"		1;
+	"~*er"		1;
+	"~*ow.com
+flavors.me
+flex4lau"		1;
+	"~*ch.ru
+flipper.top
+flirt4free.com
+f-loaded.de
+floati"		1;
+	"~*g-share-butto"		1;
+	"~*s.com
+floori"		1;
+	"~*gi"		1;
+	"~*stallatio"		1;
+	"~*-edmo"		1;
+	"~*to"		1;
+	"~*.com
+floridahu"		1;
+	"~*ti"		1;
+	"~*gfishi"		1;
+	"~*gadve"		1;
+	"~*tures.com
+floridamhca.org
+florida-tourism."		1;
+	"~*et
+flowersbazar.com
+flowwwers.com
+flprog.com
+flytourisme.org
+fm-upgrade.ru
+focali"		1;
+	"~*k.com
+fodelsedagsprese"		1;
+	"~*ter."		1;
+	"~*u
+fok."		1;
+	"~*l
+folowsite.com
+f-o"		1;
+	"~*li"		1;
+	"~*e.de
+footbalive.org
+footballfarrago.com
+fore"		1;
+	"~*sicpsychiatry.ru
+forex21.ru
+forexgb.ru
+forex-i"		1;
+	"~*dextop20.ru
+forex.osobye.ru
+forex-procto.ru
+forexu"		1;
+	"~*io"		1;
+	"~*."		1;
+	"~*et
+formi"		1;
+	"~*ecrafters.ru
+formseo.com
+forms-mtm.ru
+formularz-ko"		1;
+	"~*kurs.tk
+forodvd.com
+forpack"		1;
+	"~*i"		1;
+	"~*gsutveckli"		1;
+	"~*g.se
+forpostlock.ru
+forsex.i"		1;
+	"~*fo
+forum20.smailik.org
+forum69.i"		1;
+	"~*fo
+forum.doctissimo.fr
+forum-e"		1;
+	"~*gi"		1;
+	"~*eeri"		1;
+	"~*g.ru
+forum.poker4life.ru
+forumprofi.de
+forums.toucharcade.com
+forum.tvmir.org
+fotopop.club
+foto-sisek.por"		1;
+	"~*galleries.top
+foto-telok."		1;
+	"~*et
+fototravel.eu
+fotoxxxru.com
+fotze"		1;
+	"~*-ficke"		1;
+	"~*.com
+foxi"		1;
+	"~*socks.ru
+foxtechfpv.com
+foxweber.com
+foxydeal.com
+freakycheats.com
+freecamdollars.com
+free-deals.faith
+free-fbook-traffic.com
+free-fb-traffic.com
+free-floati"		1;
+	"~*g-butto"		1;
+	"~*s.com
+free-glute"		1;
+	"~*.ru
+freejabs.com
+free-laptop-reward.com
+freelifetimefuckbook.com
+freelotto.com
+freemags.cc
+freemai"		1;
+	"~*te"		1;
+	"~*a"		1;
+	"~*cesysforpca"		1;
+	"~*dmac.top
+free"		1;
+	"~*ode.i"		1;
+	"~*fo
+free"		1;
+	"~*om.li"		1;
+	"~*k
+freeseedso"		1;
+	"~*li"		1;
+	"~*e.com
+free-share-butto"		1;
+	"~*s.blogspot.com
+free-share-butto"		1;
+	"~*s.com
+free-share-butto"		1;
+	"~*s.top
+freesitetest.com
+free-social-butto"		1;
+	"~*s.com
+free-stock-illustratio"		1;
+	"~*.com
+freeta"		1;
+	"~*godow"		1;
+	"~*load.com
+free-traffic.xyz
+freeuploader.com
+freeuploader.ml
+free-video-tool.com
+freewebs.com
+freewhatsappload.com
+freshberry.com.ua
+freshdz.com
+freshmac.space
+freshsuperbloop.com
+freshwallpapers.i"		1;
+	"~*fo
+freza-sverlo.ru
+frivgame250.com
+fr."		1;
+	"~*etlog.com
+froggytube.com
+fro"		1;
+	"~*t.ru
+fro"		1;
+	"~*t.to
+frvo.alpta"		1;
+	"~*dem.ru
+fsakhali"		1;
+	"~*.ru
+fsalas.com
+ft"		1;
+	"~*s.ru
+fuckmill.com
+fuel-gas.com
+fugarif.ga
+fullfileaccess.com
+fullgirl.ru
+fu"		1;
+	"~*2cell."		1;
+	"~*et
+fu"		1;
+	"~*crushgames.com
+fu"		1;
+	"~*gamela"		1;
+	"~*ds.com
+fu"		1;
+	"~*girlsgames."		1;
+	"~*et
+fu"		1;
+	"~*"		1;
+	"~*ypica.com
+fu"		1;
+	"~*po"		1;
+	"~*sel.com
+fu"		1;
+	"~*too"		1;
+	"~*ez.com
+futbolkisales.ru
+fx-brokers-review.com
+fxgallery.com
+fxtips.ru
+fyl.com.ru
+fym.com.ru
+g33.org
+g7m.pl
+gabeshop.ru
+gael-s.ru
+gagrasector.ru
+galaxy-family.ru
+galaxyflowers.ru
+galeo"		1;
+	"~*.com
+gallerily.com
+galleryawesome.com
+gallerylisti"		1;
+	"~*g.com
+gallictures.com
+gambli"		1;
+	"~*g"		1;
+	"~*erd.com
+gamedayhouse.com
+game-mmorpg."		1;
+	"~*et
+gameo"		1;
+	"~*asia.com
+gameplexcity.com
+gamerextra.com
+gamerscorps.com
+games.kolossale.ru
+gamesprite.me
+game-top.su
+gamevalue7.weebly.com
+gamewrath.com
+gami"		1;
+	"~*g-jour"		1;
+	"~*al.com
+gami"		1;
+	"~*gspark.com
+garde"		1;
+	"~*e.ru
+gay.adultgalls.com
+gay-file.com
+gaygalls."		1;
+	"~*et
+gaytube.com
+gazobeto"		1;
+	"~*-p.com.ua
+gazoblok."		1;
+	"~*et.ua
+gazpor"		1;
+	"~*o.com
+gaz-voshod.ru
+gcup.ru
+gdce"		1;
+	"~*tre.ru
+gdebestkupit.ru
+ge0ip.com
+ge0ip."		1;
+	"~*et
+ge0ip.org
+gearcraft.us
+geckoa"		1;
+	"~*dfly.com
+geilehausfraue"		1;
+	"~*."		1;
+	"~*et
+geile-lelly.eu
+geileweiber.tk
+gelezki.com
+gemara.com
+gembird.com
+ge"		1;
+	"~*eralpor"		1;
+	"~*.org
+ge"		1;
+	"~*ericlowlate"		1;
+	"~*cyasiodriverhq.aircus.com
+ge"		1;
+	"~*eric-pills-o"		1;
+	"~*li"		1;
+	"~*e.com
+ge"		1;
+	"~*ericviagrasilde"		1;
+	"~*afiled."		1;
+	"~*et
+ge"		1;
+	"~*erousdeal-a.akamaihd."		1;
+	"~*et
+ge"		1;
+	"~*etworx.com
+ge"		1;
+	"~*tamici"		1;
+	"~*eyedrops.blogspot.com
+geoads.com
+germes-tra"		1;
+	"~*s.com
+germetiki.com.ua
+getaclueamerica.com
+get-free-social-traffic.com
+get-free-traffic-"		1;
+	"~*ow.com
+getlaid-xxxhookupdirect.com
+getlamborghi"		1;
+	"~*i.ga
+getmiro.com
+getmyads24.com
+getoutofdebtfree.org
+getpopu"		1;
+	"~*der.com
+getprismatic.com
+getrespo"		1;
+	"~*se.com
+get-seo-domai"		1;
+	"~*.com
+get-your-social-butto"		1;
+	"~*s.i"		1;
+	"~*fo
+gfaq.ru
+gg-are"		1;
+	"~*a.ru
+ggiaro.com
+gg.zzyjxs.com
+ghazel.ru
+gher"		1;
+	"~*"		1;
+	"~*qr.skyrock.com
+gheus.altervista.org
+ghostvisitor.com
+gifspics.com
+gigablast.com
+gilbertba"		1;
+	"~*da."		1;
+	"~*et
+gilso"		1;
+	"~*chiro.xyz
+girlgamerdaily.com
+girlpor"		1;
+	"~*.ru
+girlsatgames.ru
+girlspicsa.com
+girls-ufa.ru
+give"		1;
+	"~*2.com
+gk-atla"		1;
+	"~*t.i"		1;
+	"~*fo
+gktt.ru
+gkvector.ru
+glall.ru
+glass-msk.ru
+glastecfilms.com.my
+glavprofit.ru
+glcomputers.ru
+glicol.kz
+global-ics.co.za
+globalscam.ga
+globalsurfari.com
+globatur.ru
+globetrotti"		1;
+	"~*g-culture.ru
+glogow.pl
+glopages.ru
+g"		1;
+	"~*e8.com
+go2album.com
+go2jump.org
+go2mike.ru
+goatse.ru
+gobo"		1;
+	"~*go.i"		1;
+	"~*fo
+goforexvps.com
+gogalleryawesome.com
+gogps.me
+gojiberriess.apishops.ru
+gok-kaste"		1;
+	"~*."		1;
+	"~*et
+goldadpremium.com
+golda"		1;
+	"~*dcard.ru
+golde"		1;
+	"~*-catalog.pro
+golde"		1;
+	"~*ggames.com
+golde"		1;
+	"~*-praga.ru
+goldpa"		1;
+	"~*"		1;
+	"~*i"		1;
+	"~*gtools.com
+golfresa.luca"		1;
+	"~*ia.se
+golmau.host.sk
+gomusix.com
+go"		1;
+	"~*extmedia.com
+good-mummy.ru
+good"		1;
+	"~*ightjour"		1;
+	"~*al.com
+goodprotei"		1;
+	"~*.ru
+goodwriterssales.com
+googglet.com
+googlefeud.com
+google-liar.ru
+googlemare.com
+googlepositio"		1;
+	"~*s.com
+googlsucks.com
+googst2.ru
+goo."		1;
+	"~*e.jp
+goosefishpost.bid
+gopixdatabase.com
+gopro-o"		1;
+	"~*li"		1;
+	"~*e.i"		1;
+	"~*fo
+gorabagrata.ru
+goroda-vsego-mira.ru
+gorodservis.ru
+gosarhivrt.ru
+gosreg.amchs.ru
+gotomo"		1;
+	"~*te"		1;
+	"~*egro."		1;
+	"~*et
+gotorussia.com
+gotwebsite1.com
+gourcy.altervista.org
+gowreckdivi"		1;
+	"~*g.com
+gox.com.ua
+gpirate.com
+gpms.org.my
+gq-catalog.gq
+gra"		1;
+	"~*d-chle"		1;
+	"~*.ru
+graphicwe.org
+graphid.com
+gratis-sexko"		1;
+	"~*takte.com
+gratuitbaise.com
+greatfi"		1;
+	"~*d-a.akamaihd."		1;
+	"~*et
+greatgrace.ru
+greatzip.com
+gree"		1;
+	"~*dream.com.ua
+gree"		1;
+	"~*-tea.tv
+gree"		1;
+	"~*zaim.ru
+gribkovye-zaboleva"		1;
+	"~*iya.com
+gribokstop.com
+grizzlysgrill.com
+groupmo"		1;
+	"~*ey.ru
+growmyfu"		1;
+	"~*ds.ca
+growshop.es
+grtyi.com
+grupografico-pilar.com.ar
+gsasearche"		1;
+	"~*gi"		1;
+	"~*era"		1;
+	"~*ker.pw
+gsasearche"		1;
+	"~*gi"		1;
+	"~*era"		1;
+	"~*ker.site
+gsasearche"		1;
+	"~*gi"		1;
+	"~*era"		1;
+	"~*ker.space
+gsasearche"		1;
+	"~*gi"		1;
+	"~*era"		1;
+	"~*ker.top
+gsasearche"		1;
+	"~*gi"		1;
+	"~*era"		1;
+	"~*ker.xyz
+gsbs.com.ua
+gsmlab.pl
+gsmtlf.ru
+g.starmoe.xyz
+gstatey."		1;
+	"~*et
+gta-club.ru
+gta-top.ru
+gtopstats.com
+guardli"		1;
+	"~*k.com
+guardli"		1;
+	"~*k.org
+guge.io
+guiadeserraazul.com
+guildebzh.i"		1;
+	"~*fo
+guitar-master.org
+gu"		1;
+	"~*gamesz.com
+guod.me
+guruofcasi"		1;
+	"~*o.com
+gwagka.com
+gwebtools.com
+gwebtools.com.br
+gwhwpxbw.bloger.i"		1;
+	"~*dex.hr
+gyffu.com
+h2mo"		1;
+	"~*li"		1;
+	"~*e.com
+habermetre.com
+hacktougroup.ru
+hahashka.ru
+haikuware.com
+hamilto"		1;
+	"~*.ca
+hampto"		1;
+	"~*oaks.ca
+ha"		1;
+	"~*dicapbathtubarea.com
+ha"		1;
+	"~*dicapva"		1;
+	"~*sarea.com
+ha"		1;
+	"~*dicapva"		1;
+	"~*today.com
+ha"		1;
+	"~*dsa"		1;
+	"~*dlegs.ru
+ha"		1;
+	"~*i"		1;
+	"~*k.biz.ly
+hasfu"		1;
+	"~*.com
+hatdc.org
+hauleddes.com
+hausfraue"		1;
+	"~*sex18.com
+havepussy.com
+hayate.biz
+hazardky."		1;
+	"~*et
+hcate.com
+hd720ki"		1;
+	"~*o.ru
+hdapp1008-a.akamaihd."		1;
+	"~*et
+hd-film.pl
+hd-filmy."		1;
+	"~*et
+hdfreepor"		1;
+	"~*o."		1;
+	"~*et
+hdimagegallery."		1;
+	"~*et
+hdimagelib.com
+hdpixe"		1;
+	"~*t.com
+hdpixio"		1;
+	"~*.com
+hdseriale.pl
+hdwallpapers-free.com
+hdwalls.xyz
+hdx"		1;
+	"~*xxtube.mobi
+headpress.ru
+healbio.ru
+healgastro.com
+heali"		1;
+	"~*g-dysplasia.ru
+healmytrauma.i"		1;
+	"~*fo
+heartofbeiji"		1;
+	"~*g.blogspot.com
+heatpower.ru
+hebr.mydd"		1;
+	"~*s-flir.com
+helicalpile.us
+heliko."		1;
+	"~*o
+helpmymacfaster.trade
+helvetia.com.ua
+hem.passage"		1;
+	"~*.se
+he"		1;
+	"~*taiheroes.com
+herehloadibs.cf
+hermesbelts.xyz
+hermesbirki"		1;
+	"~*ha"		1;
+	"~*dbagoutlets.com
+hermesbracelets.xyz
+hermesreplica.pw
+hermesreplica.wi"		1;
+	"~*
+herokuapp.com
+hesteel.pl
+hetma"		1;
+	"~*ship.xyz
+hidefiles.org
+hidemyass.com
+hifidesig"		1;
+	"~*.ru
+highla"		1;
+	"~*d-homes.com
+high-speed1."		1;
+	"~*et
+highspeed5."		1;
+	"~*et
+highstairs-a.akamaihd."		1;
+	"~*et
+hikesearch."		1;
+	"~*et
+hildi"		1;
+	"~*ghr.se
+histats.com
+histock.i"		1;
+	"~*fo
+historichometeam.com
+hitsbox.i"		1;
+	"~*fo
+hiwibyh.bugs3.com
+hjaoopoa.top
+hkdiiohi.skyrock.com
+hkladys.com
+hledejvshopech.cz
+hmmm.cz
+hmywwogw.bloger.i"		1;
+	"~*dex.hr
+hobbyhure"		1;
+	"~*24."		1;
+	"~*et
+hobbyhure"		1;
+	"~*-date"		1;
+	"~*ba"		1;
+	"~*k.com
+hobild."		1;
+	"~*et
+hol.es
+holidaypics.org
+hollywoodactress.i"		1;
+	"~*fo
+homea"		1;
+	"~*dhealth.ru
+homedecoguide.i"		1;
+	"~*fo
+homedecorpicture.us
+homedo.fabpage.com
+homegarde"		1;
+	"~*lova.com
+homei"		1;
+	"~*"		1;
+	"~*s.com
+homelygarde"		1;
+	"~*.com
+homemade.gq
+homemature."		1;
+	"~*et
+home.myplaycity.com
+hopeo"		1;
+	"~*thestreet.co.uk
+hopor"		1;
+	"~*o.com
+horoshieok"		1;
+	"~*a.com
+hostcritique.com
+hoste.octopis.com
+hosti"		1;
+	"~*gclub.lk
+hosti"		1;
+	"~*g-tracker.com
+host"		1;
+	"~*ow.me"		1;
+	"~*
+host-protectio"		1;
+	"~*.com
+hostsshop.ru
+hotblog.top
+hotchatdate.com
+hotdl.i"		1;
+	"~*
+hotel-mkad.ru
+hote"		1;
+	"~*ergy.ru
+hotgirlhdwallpaper.com
+hothor.se
+hotkeys.com
+hotloa"		1;
+	"~*s.ru
+hotshoppymac.com
+hotsocialz.com
+houdom."		1;
+	"~*et
+housediz.com
+housekuba.org
+housemila"		1;
+	"~*.ru
+houseofgaga.ru
+houseofrose.com
+house.sieradd"		1;
+	"~*s.com
+housto"		1;
+	"~*-viki"		1;
+	"~*gs.com
+hoverboard360.at
+hoverboard360.de
+hoverboard360.es
+hoverboard360."		1;
+	"~*l
+hoverboard360.se
+hoverboardforsaledirect.com
+howlo"		1;
+	"~*gdoestiza"		1;
+	"~*idi"		1;
+	"~*estayi"		1;
+	"~*yoursystem.blogspot.com
+howmuchdoestiza"		1;
+	"~*idi"		1;
+	"~*ecost.blogspot.com
+howope"		1;
+	"~*.ru
+hplaserjetpdriver8y.pe"		1;
+	"~*.io
+hptwaakw.blog.fc2.com
+hreade.com
+href.li
+hscsscotla"		1;
+	"~*d.com
+hspli"		1;
+	"~*e.com
+htmlcor"		1;
+	"~*er.com
+https-legalrc.biz
+hubbble.com
+huh"		1;
+	"~*.altervista.org
+huimi"		1;
+	"~*764128.com
+hulfi"		1;
+	"~*gto"		1;
+	"~*post.com
+hully.altervista.org
+huma"		1;
+	"~*orightswatch.org
+hu"		1;
+	"~*dejo.com
+hu"		1;
+	"~*terboots.o"		1;
+	"~*li"		1;
+	"~*e
+husky-shop.cz
+hustoo"		1;
+	"~*.over-blog.com
+hut1.ru
+hvd-store.com
+hybrid.ru
+hydropump.su
+hyiphu"		1;
+	"~*ter.org
+hyipma"		1;
+	"~*ager.i"		1;
+	"~*
+hystersister.com
+i4track."		1;
+	"~*et
+iamsport.org
+ibb.com.ua
+icaseclub.ru
+ico.re
+ictiza"		1;
+	"~*idi"		1;
+	"~*ehcl4mg.blogspot.com
+idc.com.ua
+idealtits."		1;
+	"~*et
+ideawheel.com
+idege"		1;
+	"~*vezeto.eu
+ideibiz"		1;
+	"~*esa2015.ru
+ideoworld.org
+ido3.com
+ie.57883."		1;
+	"~*et
+ifirestarter.ru
+iflycapetow"		1;
+	"~*.co.za
+ifmo.ru
+igadgetsworld.com
+igrovyeavtomaty777.ru
+igru-xbox."		1;
+	"~*et
+ii"		1;
+	"~*stalll-fii1leis.jus0wil.pp.ua
+iklysha.ml
+ilikevitaly.com
+ilme"		1;
+	"~*."		1;
+	"~*et
+iloveitaly.ru
+ilovevitaly.com
+ilovevitaly.ru
+ilte.i"		1;
+	"~*fo
+imabase.com
+imadedi"		1;
+	"~*"		1;
+	"~*er."		1;
+	"~*et
+imagecoolpub.com
+imagerydatabase.com
+images-graphics-pics.com
+images.gyffu.com
+imediadesk.com
+imfamous.i"		1;
+	"~*fo
+imgarcade.com
+imgata.com
+imi"		1;
+	"~*e"		1;
+	"~*t.com
+imitex-plus.ru
+immobiliaremassaro.com
+imperia31.ru
+imperiafilm.ru
+impisr.edu"		1;
+	"~*sk.ru
+impisr.ru
+import-sales.com
+impresagaia.it
+i"		1;
+	"~*babes.sexushost.com
+i"		1;
+	"~*bou"		1;
+	"~*dli"		1;
+	"~*ks.wi"		1;
+	"~*
+i"		1;
+	"~*boxdollars.com
+i"		1;
+	"~*clk.com
+i"		1;
+	"~*colors.club
+i"		1;
+	"~*creasewwwtraffic.i"		1;
+	"~*fo
+i"		1;
+	"~*detiske.ya.ru
+i"		1;
+	"~*diaki"		1;
+	"~*o."		1;
+	"~*et
+i"		1;
+	"~*dia"		1;
+	"~*medicaltourismshop.com
+i"		1;
+	"~*diasourcemart.i"		1;
+	"~*
+i"		1;
+	"~*do-export.ru
+i"		1;
+	"~*et-traffic.com
+i"		1;
+	"~*fazavr.ru
+i"		1;
+	"~*fobabki.ru
+i"		1;
+	"~*foko"		1;
+	"~*kurs.ru
+i"		1;
+	"~*formatiece"		1;
+	"~*tro.be
+i"		1;
+	"~*fospot.pt
+i"		1;
+	"~*fostatsvc.com
+i"		1;
+	"~*fowarcraft.ru
+i"		1;
+	"~*mate-locator.us
+i"		1;
+	"~*"		1;
+	"~*odgfdriverhm.aircus.com
+i"		1;
+	"~*ome.com.ua
+i"		1;
+	"~*sider.pro
+i"		1;
+	"~*som"		1;
+	"~*iagami"		1;
+	"~*gfestival.com
+i"		1;
+	"~*sta-add.pro
+i"		1;
+	"~*telhdgraphicsgtdrive6w.metroblog.com
+i"		1;
+	"~*tellekt21.ru
+i"		1;
+	"~*teres"		1;
+	"~*ie-faktu.ru
+i"		1;
+	"~*terfere"		1;
+	"~*cer.ru
+i"		1;
+	"~*terfucks."		1;
+	"~*et
+i"		1;
+	"~*terior-stickers.ru
+i"		1;
+	"~*termesh."		1;
+	"~*et
+i"		1;
+	"~*ter"		1;
+	"~*et-apteka.ru
+i"		1;
+	"~*ter"		1;
+	"~*etartfair.com
+i"		1;
+	"~*ter"		1;
+	"~*etproviderstucso"		1;
+	"~*.com
+i"		1;
+	"~*tervsem.ru
+i"		1;
+	"~*timshop-fa"		1;
+	"~*tasy.ru
+i"		1;
+	"~*vesti"		1;
+	"~*gclub.ru
+i"		1;
+	"~*vestmac.com
+i"		1;
+	"~*vest-pamm.ru
+i"		1;
+	"~*vestpamm.ru
+i"		1;
+	"~*vestsuccess.org
+i"		1;
+	"~*vestyb.com
+i"		1;
+	"~*vestzalog.ru
+i"		1;
+	"~*vitefashio"		1;
+	"~*.com
+i"		1;
+	"~*vivo.hu
+i"		1;
+	"~*z"		1;
+	"~*.ru
+io9.com
+iomoio."		1;
+	"~*et
+iope"		1;
+	"~*i"		1;
+	"~*ghours.co.uk
+iplogger.org
+iplusbit.blogspot.co.za
+ipostroika.ru
+iptool.xyz
+iqbazar.ru
+iqoptio"		1;
+	"~*-bi"		1;
+	"~*.com
+iqoptio"		1;
+	"~*.com
+iqoptio"		1;
+	"~*.pro
+iqs.biz.ua
+iradiology.ru
+iru"		1;
+	"~*far.com
+iscblog.i"		1;
+	"~*fo
+i-service.kz
+isistaylorpor"		1;
+	"~*.i"		1;
+	"~*fo
+iskalko.ru
+isla"		1;
+	"~*dmi"		1;
+	"~*i"		1;
+	"~*gsupply.wordpress.com
+isoveti.ru
+ispa"		1;
+	"~*iya-costa-bla"		1;
+	"~*ca.ru
+ista"		1;
+	"~*bulit.com
+istiza"		1;
+	"~*idi"		1;
+	"~*eaco"		1;
+	"~*trolledsubsta"		1;
+	"~*ce.blogspot.com
+istiza"		1;
+	"~*idi"		1;
+	"~*ea"		1;
+	"~*arcoticdrug.blogspot.com
+istiza"		1;
+	"~*idi"		1;
+	"~*ea"		1;
+	"~*opiate.blogspot.com
+istiza"		1;
+	"~*idi"		1;
+	"~*elikexa"		1;
+	"~*ax.blogspot.com
+istmira.ru
+istock-mebel.ru
+istripper.com
+itbc.kiev.ua
+itis4you.com
+it-max.com.ua
+itrevolutio"		1;
+	"~*.cf
+itro"		1;
+	"~*ics.ca
+itsdp3.com
+itservicesthatworkforyou.com
+iusstf.org
+iva"		1;
+	"~*stroi.ru
+ivoiretech"		1;
+	"~*ocom.ci
+iwa"		1;
+	"~*tmyfreecash.com
+iwa"		1;
+	"~*ttodeliver.com
+ix20.ru
+izhevsk.xrus.org
+izhevsk.zrus.org
+izismile.com
+izoll.ru
+j33x.com
+jackwolfski"		1;
+	"~*outlet.o"		1;
+	"~*li"		1;
+	"~*e
+jamiembrow"		1;
+	"~*.com
+ja"		1;
+	"~*avibekke"		1;
+	"~*."		1;
+	"~*o
+ja"		1;
+	"~*erikholst.se
+ja"		1;
+	"~*ettabridal.com
+japa"		1;
+	"~*-beari"		1;
+	"~*gs.ru
+japfm.com
+jaso"		1;
+	"~*parti"		1;
+	"~*gto"		1;
+	"~*.com
+javatex.co.id
+javitas.i"		1;
+	"~*fo
+javrip."		1;
+	"~*et
+jaxcube.i"		1;
+	"~*fo
+je7.us
+je"		1;
+	"~*"		1;
+	"~*yfire.ru
+jerseychi"		1;
+	"~*abizwholesale.com
+jerseychi"		1;
+	"~*abizwholesale.us
+jerseysbizwholesalecheap.com
+jerseyschi"		1;
+	"~*abizwholesale.us
+jerseyssportsshop.com
+jerseyswholesalechi"		1;
+	"~*alimited.com
+jerseywholesalebizchi"		1;
+	"~*a.com
+jerseywholesalechi"		1;
+	"~*abiz.com
+jerseywholesaleelitestore.com
+jetsli.de
+jillepille.com
+jimmychoosale.o"		1;
+	"~*li"		1;
+	"~*e
+jjbabskoe.ru
+job.icivil.ir
+joessmogtesto"		1;
+	"~*ly.com
+joha"		1;
+	"~*"		1;
+	"~*esburgsi"		1;
+	"~*gles.co.za
+joh"		1;
+	"~*robertso"		1;
+	"~*i"		1;
+	"~*c.com
+joi"		1;
+	"~*games.org
+jolic2.com
+jo"		1;
+	"~*gose."		1;
+	"~*i"		1;
+	"~*ja
+jour"		1;
+	"~*alhome.com
+jour"		1;
+	"~*eydow"		1;
+	"~*thescale.i"		1;
+	"~*fo
+jpcycles.com
+j-times.ru
+juliadiets.com
+juliaworld."		1;
+	"~*et
+jumptap.com
+jus0wil.pp.ua
+justbcause.com
+justdati"		1;
+	"~*g.o"		1;
+	"~*li"		1;
+	"~*e
+justkilli"		1;
+	"~*gti.me
+jwss.cc
+kaac.ru
+kabbalah-red-bracelets.com
+kadashihotel.com
+kala"		1;
+	"~*dra"		1;
+	"~*is.gr
+kalb.ru
+kamagragelusa."		1;
+	"~*et
+kamalsi"		1;
+	"~*ha.com
+kambasoft.com
+kam-dom.ru
+kame"		1;
+	"~*-e.ru
+kamorel.com
+ka"		1;
+	"~*image.com
+karachev-city.ru
+karade"		1;
+	"~*e.com
+karpu"		1;
+	"~*-iris.ru
+karti"		1;
+	"~*g196.ru
+karti"		1;
+	"~*iresto.com
+karusel-market.ru
+kashubadesig"		1;
+	"~*.ru
+katjimej.blog.fc2.com
+katushka."		1;
+	"~*et
+kaza"		1;
+	"~*.xrus.org
+kaza"		1;
+	"~*.zrus.org
+kazi"		1;
+	"~*ogames.lv
+kaz.kz
+kazre"		1;
+	"~*t.com
+kchaxto"		1;
+	"~*.com
+kee"		1;
+	"~*outlet.o"		1;
+	"~*li"		1;
+	"~*e
+kerwi"		1;
+	"~*a"		1;
+	"~*dcariza.com
+ketoa"		1;
+	"~*ha"		1;
+	"~*oi.i"		1;
+	"~*fo
+ketrzy"		1;
+	"~*.pl
+keywordhut.com
+keywordski"		1;
+	"~*g.com
+keywords-mo"		1;
+	"~*itori"		1;
+	"~*g-success.com
+keywords-mo"		1;
+	"~*itori"		1;
+	"~*g-your-success.com
+keyword-suggestio"		1;
+	"~*s.com
+keywordsuggest.org
+keywordsuggests.com
+keywordteam."		1;
+	"~*et
+kfo"		1;
+	"~*.eu
+kidd.reu"		1;
+	"~*io"		1;
+	"~*watch.com
+kiev.ua
+kihi.gd"		1;
+	"~*
+kii"		1;
+	"~*oma"		1;
+	"~*iak.pl
+kimcurlrvsms.com
+ki"		1;
+	"~*obaks.com
+ki"		1;
+	"~*obest.pl
+ki"		1;
+	"~*occcp."		1;
+	"~*et
+ki"		1;
+	"~*ofak."		1;
+	"~*et
+ki"		1;
+	"~*o-filmi.com
+ki"		1;
+	"~*oflux."		1;
+	"~*et
+ki"		1;
+	"~*o-fu"		1;
+	"~*.ru
+ki"		1;
+	"~*ogolos.ru
+ki"		1;
+	"~*ogo"		1;
+	"~*ew.ru
+ki"		1;
+	"~*ohall.ru
+ki"		1;
+	"~*ohit1.ru
+ki"		1;
+	"~*o-key.i"		1;
+	"~*fo
+ki"		1;
+	"~*oma"		1;
+	"~*iatv.pl
+ki"		1;
+	"~*ople"		1;
+	"~*.ru
+ki"		1;
+	"~*opolet."		1;
+	"~*et
+ki"		1;
+	"~*o-rati"		1;
+	"~*g.ru
+ki"		1;
+	"~*ostorm."		1;
+	"~*et
+ki"		1;
+	"~*otorka.ru
+kipri"		1;
+	"~*form.com
+kirov.zrus.org
+kiwe-a"		1;
+	"~*alytics.com
+kiwi237au.tk
+kladrus.ru
+klei"		1;
+	"~*e-titte"		1;
+	"~*.biz
+kletkimeha"		1;
+	"~*.ru
+kliksaya.com
+kmd-pto.ru
+kmgamex.cf
+k"		1;
+	"~*dxbkdx.bloger.i"		1;
+	"~*dex.hr
+k"		1;
+	"~*igo"		1;
+	"~*osha."		1;
+	"~*et
+k"		1;
+	"~*ogg."		1;
+	"~*et
+k"		1;
+	"~*owyour"		1;
+	"~*extmove.com
+kocha"		1;
+	"~*elli.com
+kol-e"		1;
+	"~*ergo.ru
+koleso24.com.ua
+kollesa.ru
+kolotiloff.ru
+komp-pomosch.ru
+komputer"		1;
+	"~*aya-pomosh-moscow.ru
+komputers-best.ru
+ko"		1;
+	"~*goultry."		1;
+	"~*et
+ko"		1;
+	"~*grua"		1;
+	"~*.com
+ko"		1;
+	"~*kursov."		1;
+	"~*et
+ko"		1;
+	"~*kursowo-24.pl
+ko"		1;
+	"~*opliseme"		1;
+	"~*a.com
+ko"		1;
+	"~*tei"		1;
+	"~*er24.com
+ko"		1;
+	"~*turkrasoty.ru
+koopilka.com
+koptims.tiu.ru
+koral.se
+koro"		1;
+	"~*irealestate.gr
+kosmetyki.tm.pl
+kosova.de
+koste"		1;
+	"~*loser-sex.com
+koste"		1;
+	"~*los-sexvideos.com
+kosy"		1;
+	"~*ka-games.ru
+kotaku.com
+kovesszucs.atw.hu
+kozh"		1;
+	"~*iebolez"		1;
+	"~*i.com
+krafte.ru
+kraljeva-sutjeska.com
+krasivoe-hd.com
+krasivoe-hd."		1;
+	"~*et
+krasivye-devushki."		1;
+	"~*et
+kras"		1;
+	"~*odar-avtolombards.ru
+kras"		1;
+	"~*odar.ru
+kras"		1;
+	"~*odar.xrus.org
+kras"		1;
+	"~*odar.zrus.org
+kredit-pod-zalog-kras"		1;
+	"~*odar.ru
+kriokomora.i"		1;
+	"~*fo
+kry"		1;
+	"~*ica.i"		1;
+	"~*fo
+ks1234.com
+ktotut."		1;
+	"~*et
+ku6.com
+kumuk.i"		1;
+	"~*fo
+ku"		1;
+	"~*g-fu-ru.com
+kupit-ade"		1;
+	"~*u.ru
+kursy-ege.ru
+kusta"		1;
+	"~*ay.kz
+kutikomi."		1;
+	"~*et
+kuzi"		1;
+	"~*sp.ru
+kvartira-sutoch"		1;
+	"~*o.com
+kvartir-remo"		1;
+	"~*t.biz
+kvartiry-remo"		1;
+	"~*t.ucoz.ru
+kw21.org
+kwzf."		1;
+	"~*et
+labelwater.se
+labplus.ru
+labvis.host.sk
+lacasamorett.com
+lacave."		1;
+	"~*tic.fr
+lacloop.i"		1;
+	"~*fo
+ladov.ru
+la-fa.ru
+lafourmiliaire.com
+lafriore.ru
+lampokrat.ws
+la"		1;
+	"~*adelreyfa"		1;
+	"~*s.us
+la"		1;
+	"~*asshop.ru
+la"		1;
+	"~*check."		1;
+	"~*et
+la"		1;
+	"~*doftracki"		1;
+	"~*g.com
+la"		1;
+	"~*dreferat.ru
+la"		1;
+	"~*dscapi"		1;
+	"~*g.ce"		1;
+	"~*ter
+la"		1;
+	"~*guagecode.com
+la"		1;
+	"~*kar"		1;
+	"~*s.com
+laparfumotec.com
+lapitec.eu
+laptop-4-less.com
+laptoper."		1;
+	"~*et
+larchik."		1;
+	"~*et
+larutti.ru
+lasvegaslocka"		1;
+	"~*dsafe.com
+laudit.ru
+lauli"		1;
+	"~*i.soclog.se
+law-check-eight.xyz
+law-check-"		1;
+	"~*i"		1;
+	"~*e.xyz
+law-check-seve"		1;
+	"~*.xyz
+law-check-two.xyz
+laxdrills.com
+layola.biz.tc
+lazy-z.com
+ldrtrack.com
+lead"		1;
+	"~*.pl
+leadwayau.com
+leboard.ru
+ledis.top
+ledpolice.ru
+legalrc.biz
+lego4x4.ru
+le"		1;
+	"~*vred.org
+ler"		1;
+	"~*ur."		1;
+	"~*et
+lesbia"		1;
+	"~*.xyz
+lesci"		1;
+	"~*q.com
+letmacwork.world
+letolove.ru
+letsart.ru
+letslowbefast.today
+letto.by
+levaqui"		1;
+	"~*750mg.blogspot.com
+lexaproge"		1;
+	"~*eric.li"		1;
+	"~*k
+lezbiya"		1;
+	"~*ki."		1;
+	"~*et
+lflash.ru
+libertybilisim.com
+lida-ru.com
+lider-zhaluzi.kiev.ua
+li-er.ru
+lietaer.com
+life.biz.ua
+lifebyleese.com
+life-i"		1;
+	"~*style.com
+light.ifmo.ru
+lighti"		1;
+	"~*ghomes."		1;
+	"~*et
+lig"		1;
+	"~*ofix.ua
+likesdesig"		1;
+	"~*.com
+likesuccess.com
+liky.co.ua
+limads.me"		1;
+	"~*
+limtu.ifmo.ru
+li"		1;
+	"~*col"		1;
+	"~*theatre.com
+li"		1;
+	"~*erdrilli"		1;
+	"~*g.com
+li"		1;
+	"~*k.ac
+li"		1;
+	"~*kare"		1;
+	"~*a.com
+li"		1;
+	"~*kbolic.com
+li"		1;
+	"~*kbuddies.com
+li"		1;
+	"~*kdebrideur.xyz
+li"		1;
+	"~*kpulse.com
+li"		1;
+	"~*kredirect.biz
+li"		1;
+	"~*krr.com
+li"		1;
+	"~*kshari"		1;
+	"~*gt.com
+li"		1;
+	"~*kwithi"		1;
+	"~*.com
+liquimo"		1;
+	"~*do.com
+liru"		1;
+	"~*et.ru
+lisque.batcave."		1;
+	"~*et
+littleberry.ru
+littlesu"		1;
+	"~*raiser.com
+liupis.com
+livefixer.com
+livei"		1;
+	"~*ter"		1;
+	"~*et.ro
+livei"		1;
+	"~*ter"		1;
+	"~*et.ru
+livejasmi"		1;
+	"~*.com
+liver-chi"		1;
+	"~*tai.org
+liverpool.gsofootball.com
+live-sexcam.tk
+live-sexchat.ru
+liveshoppersmac.com
+livetsomudveksli"		1;
+	"~*gstude"		1;
+	"~*t.bloggersdelight.dk
+liveu.i"		1;
+	"~*foteka.hu
+livi"		1;
+	"~*gca"		1;
+	"~*arias.com
+livi"		1;
+	"~*groomdecor.i"		1;
+	"~*fo
+ljusihus.se
+lkbe"		1;
+	"~*"		1;
+	"~*ettoutlet.o"		1;
+	"~*li"		1;
+	"~*e
+lkbe"		1;
+	"~*"		1;
+	"~*ettstore.o"		1;
+	"~*li"		1;
+	"~*e
+llastbuy.ru
+lmrauctio"		1;
+	"~*.com
+loadi"		1;
+	"~*gpages.me
+loadopia.com
+lob.com.ru
+localflirtbuddies.com
+localmatchbook.com
+locatio"		1;
+	"~*desaiso"		1;
+	"~*.com
+lockerz.com
+locksmith.jp
+lodki-pvh.dp.ua
+loftdigital.eu
+logi"		1;
+	"~*duepu"		1;
+	"~*ti.it
+lol-smurfs.com
+lombardfi"		1;
+	"~*der.ru
+lomb.co
+lombia.co
+lombia.com
+lomza.i"		1;
+	"~*fo
+lo"		1;
+	"~*ely-mature.com
+lo"		1;
+	"~*gadve"		1;
+	"~*ture.com
+lo"		1;
+	"~*g-beach-air-co"		1;
+	"~*ditio"		1;
+	"~*i"		1;
+	"~*g.com
+lo"		1;
+	"~*ggree"		1;
+	"~*.i"		1;
+	"~*fo
+losa"		1;
+	"~*geles-ads.com
+lost-alpha.ru
+lostfilm-o"		1;
+	"~*li"		1;
+	"~*e.ru
+lotto6888.com
+lottospri"		1;
+	"~*g.com
+loubouti"		1;
+	"~*booties.xyz
+loubouti"		1;
+	"~*replica.pw
+loubouti"		1;
+	"~*replica.xyz
+loubouti"		1;
+	"~*shoes.xyz
+louisvuitto"		1;
+	"~*outletstore."		1;
+	"~*et
+love-baby.cz
+lovelycraftyhome.com
+lowephotos.i"		1;
+	"~*fo
+low-format.ru
+lsex.xyz
+ltvperf.com
+lubetube.com
+luckyshop."		1;
+	"~*et.ua
+lumb.co
+lutherstable.org
+luxmagazi"		1;
+	"~*e.cf
+luxup.ru
+ly"		1;
+	"~*gdalhudterapi."		1;
+	"~*o
+lyrster.com
+m0r0zk0-krava.ru
+m1media."		1;
+	"~*et
+m3gadow"		1;
+	"~*load.pl
+m4ever."		1;
+	"~*et
+m5home.ru
+mabdoola.blogspot.com
+macdamaged.space
+macdamaged.tech
+mackeeper-ce"		1;
+	"~*ter.club
+mackeeper-la"		1;
+	"~*d-672695126.us-east-1.elb.amazo"		1;
+	"~*aws.com
+mac"		1;
+	"~*ewtech.com
+macresource.co.uk
+mac-shield.com
+mactechi"		1;
+	"~*fo.i"		1;
+	"~*fo
+madot.o"		1;
+	"~*li"		1;
+	"~*ewebshop."		1;
+	"~*et
+mafcards.ru
+magazi"		1;
+	"~*-pics.ru
+magazi"		1;
+	"~*tia"		1;
+	"~*de.ru
+magda-gadalka.ru
+mage"		1;
+	"~*to-crew."		1;
+	"~*et
+magicalfi"		1;
+	"~*d-a.akamaihd."		1;
+	"~*et
+magicdiet.gq
+magicplayer-s.acestream."		1;
+	"~*et
+maglid.ru
+mail.all"		1;
+	"~*ews24.i"		1;
+	"~*
+mai"		1;
+	"~*li"		1;
+	"~*ehobby."		1;
+	"~*et
+makedo.ru
+make-mo"		1;
+	"~*ey-o"		1;
+	"~*li"		1;
+	"~*e.com
+makemo"		1;
+	"~*eyo"		1;
+	"~*li"		1;
+	"~*e.com
+makis."		1;
+	"~*u
+maladot.com
+malls.com
+mall.uk
+malwareremovalce"		1;
+	"~*ter.com
+ma"		1;
+	"~*ipulyator-peterburg.ru
+ma"		1;
+	"~*tramusic.ru
+ma"		1;
+	"~*ualterap.roleforum.ru
+ma"		1;
+	"~*uscript.su
+ma"		1;
+	"~*ve.i"		1;
+	"~*fo
+ma"		1;
+	"~*yresultshub-a.akamaihd."		1;
+	"~*et
+mapquestz.us
+mararoom.ru
+marblestyle.ru
+marcogrup.com
+marcoisla"		1;
+	"~*dvacatio"		1;
+	"~*s."		1;
+	"~*et
+marcowebo"		1;
+	"~*yodziezowe.pl
+marida"		1;
+	"~*.com.ua
+mari"		1;
+	"~*etraffic.com
+marketi"		1;
+	"~*gtech"		1;
+	"~*iques.i"		1;
+	"~*fo
+marketla"		1;
+	"~*d.ml
+markjaybeefractal.com
+marktforschu"		1;
+	"~*g-stuttgart.com
+marmitaco.cat
+marmotstore.o"		1;
+	"~*li"		1;
+	"~*e
+marsgata"		1;
+	"~*.com
+martli"		1;
+	"~*ker.com
+marwer.i"		1;
+	"~*fo
+masle"		1;
+	"~*ka.kz
+massage-i"		1;
+	"~*fo."		1;
+	"~*l
+masserect.com
+master-muz"		1;
+	"~*achas.ru
+masterseek.com
+mastershef.club
+masturbate.co.uk
+matb3aa.com
+matchpal-a.akamaihd."		1;
+	"~*et
+matematikus.i"		1;
+	"~*fo
+mathgym.com.au
+mature.free-websites.com
+max-eclat.me"		1;
+	"~*
+maximilitary.ru
+maxtho"		1;
+	"~*.com
+maxxtor.eu
+mazda-roadsters.com
+mbiologi.ru
+mcadamssupplyco.com
+mcar.i"		1;
+	"~*.ua
+mc"		1;
+	"~*amaratech.com
+mebel-alait.ru
+mebelcomplekt.ru
+mebeldekor.com.ua
+mebel-vstroika.ru
+meble-bogart.i"		1;
+	"~*fo
+mecash.ru
+meda"		1;
+	"~*estesia.ru
+meddesk.ru
+mediawhirl."		1;
+	"~*et
+medici"		1;
+	"~*acom.ru
+medici"		1;
+	"~*e-4u.org
+medici"		1;
+	"~*es-choice.com
+medicovi.com
+medictube.ru
+medi-fitt.hu
+medispai"		1;
+	"~*stitute.com.au
+medizi"		1;
+	"~*reise"		1;
+	"~*.de
+medkletki.ru
+medkritika.ru
+medmajor.ru
+medosmotr-ufa.ru
+meds-o"		1;
+	"~*li"		1;
+	"~*e24.com
+medtherapy.ru
+meduza-co"		1;
+	"~*sult.ru
+med-zdorovie.com.ua
+mee"		1;
+	"~*do-free-traffic.ga
+meeti"		1;
+	"~*grai"		1;
+	"~*storm.bid
+meetlocalchicks.com
+megaapteka.ru
+mega-bo"		1;
+	"~*y-2017.pl
+mega-bo"		1;
+	"~*y2017.pl
+megahdpor"		1;
+	"~*o."		1;
+	"~*et
+megai"		1;
+	"~*dex.ru
+megaki"		1;
+	"~*o."		1;
+	"~*et
+mega-polis.biz.ua
+megavolt."		1;
+	"~*et.ua
+meget.co.za
+me-ke.com
+meltwater.com
+members.gha"		1;
+	"~*aweb.com
+me"		1;
+	"~*etie.ru
+me"		1;
+	"~*healed."		1;
+	"~*et
+me"		1;
+	"~*sa"		1;
+	"~*dals.xyz
+me"		1;
+	"~*ste"		1;
+	"~*"		1;
+	"~*isforums.com
+mere.host.sk
+merryhouse.co.uk
+mesbuta.i"		1;
+	"~*fo
+message-war"		1;
+	"~*i"		1;
+	"~*g."		1;
+	"~*et
+mesto-x.com
+metabar.ru
+metalo"		1;
+	"~*ly.i"		1;
+	"~*fo
+metarip.ru
+metaxalo"		1;
+	"~*evstiza"		1;
+	"~*idi"		1;
+	"~*e.blogspot.com
+methodsmarketi"		1;
+	"~*g.com
+mex-a"		1;
+	"~*"		1;
+	"~*ushka.ru
+mexicosleevegastrectomy.com
+mexicotravel"		1;
+	"~*et.com
+mhi-systems.ru
+mhtr.be
+micasai"		1;
+	"~*vest.com
+michaelkorsoutlet.store
+michaelkorsoutletstore."		1;
+	"~*et
+michaelkorssaleoutleto"		1;
+	"~*li"		1;
+	"~*e."		1;
+	"~*et
+microsearch.ru
+microsoftportal."		1;
+	"~*et
+microstatic.pl
+midst.eu
+mielec.pl
+mige"		1;
+	"~*te.com
+mikrobiologies.ru
+milbluepri"		1;
+	"~*t.com
+millio"		1;
+	"~*are.com
+mi"		1;
+	"~*dbox.co.za
+mi"		1;
+	"~*ecraft-"		1;
+	"~*eo.ru
+mi"		1;
+	"~*ecraft-rus.org
+mi"		1;
+	"~*egam.com
+mi"		1;
+	"~*i.7zap.com
+mi"		1;
+	"~*iads.ca
+mi"		1;
+	"~*"		1;
+	"~*eapoliscopiers.com
+mi"		1;
+	"~*yetki.ru
+mir-betti"		1;
+	"~*g.ru
+mir-busi"		1;
+	"~*ess-24.ru
+mir-limuzi"		1;
+	"~*ov.ru
+mirmedi"		1;
+	"~*fo.ru
+mirobuvi.com.ua
+mirtorre"		1;
+	"~*t."		1;
+	"~*et
+mirzo"		1;
+	"~*ru."		1;
+	"~*et
+misa"		1;
+	"~*desig"		1;
+	"~*.se
+missclub.i"		1;
+	"~*fo
+missviet"		1;
+	"~*am.org
+misswell."		1;
+	"~*et
+misterjtbarbers.com
+mister-shop.com
+mistr-x.org
+mitrasou"		1;
+	"~*d.ru
+mixed-wrestli"		1;
+	"~*g.ru
+mixtapetorre"		1;
+	"~*t.com
+mjchamo"		1;
+	"~*ix.org
+mlvc4zzw.space
+mmgq.ru
+mmofreegames.o"		1;
+	"~*li"		1;
+	"~*e
+mmog-play.ru
+mmoguider.ru
+mmstat.com
+m"		1;
+	"~*crftpcs.com
+m"		1;
+	"~*ogabukaff."		1;
+	"~*et
+mobilemedia.md
+mobilierla"		1;
+	"~*d.com
+mobioffertrck.com
+mobot.site
+mobplayer."		1;
+	"~*et
+mobplayer.ru
+mobsfu"		1;
+	"~*."		1;
+	"~*et
+mobstarr.com
+mockupui.com
+modabutik.ru
+mode"		1;
+	"~*amebel.ru
+moese"		1;
+	"~*-ficke"		1;
+	"~*.com
+moeso"		1;
+	"~*ce.com
+moi-glazki.ru
+moivestiy.biz
+mojowhois.com
+mokrayakiska.com
+mole.pluto.ro
+mo"		1;
+	"~*archfi"		1;
+	"~*d-a.akamaihd."		1;
+	"~*et
+mo"		1;
+	"~*arhs.i"		1;
+	"~*fo
+mo"		1;
+	"~*clerboots.xyz
+mo"		1;
+	"~*clercheap.xyz
+mo"		1;
+	"~*clercoats.xyz
+mo"		1;
+	"~*clerjacketsoutlet.pw
+mo"		1;
+	"~*clerjacketsoutlet.wi"		1;
+	"~*
+mo"		1;
+	"~*clero"		1;
+	"~*li"		1;
+	"~*e.xyz
+mo"		1;
+	"~*cleroutleto"		1;
+	"~*li"		1;
+	"~*e.pw
+mo"		1;
+	"~*cleroutleto"		1;
+	"~*li"		1;
+	"~*e.wi"		1;
+	"~*
+mo"		1;
+	"~*cleroutleto"		1;
+	"~*li"		1;
+	"~*e.xyz
+mo"		1;
+	"~*clervests.xyz
+mo"		1;
+	"~*etizatio"		1;
+	"~*ki"		1;
+	"~*g."		1;
+	"~*et
+mo"		1;
+	"~*etizer.com-01.site
+mo"		1;
+	"~*ey-every-day.com
+mo"		1;
+	"~*eymaster.ru
+mo"		1;
+	"~*eytop.ru
+mo"		1;
+	"~*eyviki"		1;
+	"~*g-a.akamaihd."		1;
+	"~*et
+mo"		1;
+	"~*itorwebsitespeed.com
+mo"		1;
+	"~*thlywi"		1;
+	"~*"		1;
+	"~*ers.com
+moomi-daeri.com
+morefastermac.trade
+more-letom.ru
+morepowero"		1;
+	"~*mac.trade
+morf.s"		1;
+	"~*"		1;
+	"~*.gr
+morlat.altervista.org
+moroccosurfadve"		1;
+	"~*tures.com
+moscow-cli"		1;
+	"~*i"		1;
+	"~*g.ru
+moscow-regio"		1;
+	"~*.ru
+moscow.xrus.org
+mosdverka.ru
+moskva."		1;
+	"~*odup.ru
+mosrif.ru
+mossmesi.com
+mosta"		1;
+	"~*tikor.ru
+most.gov.iq
+most-kerch.org
+mototsikl.org
+mou"		1;
+	"~*tai"		1;
+	"~*stream.ms
+moviemail-o"		1;
+	"~*li"		1;
+	"~*e.co.uk
+movies-i"		1;
+	"~*-theaters."		1;
+	"~*et
+moviezbo"		1;
+	"~*kerssk.cf
+mowser.com
+moxo.com
+moyakuh"		1;
+	"~*ia.ru
+moyaterapiya.ru
+moz.com
+mp3films.ru
+mp3ri"		1;
+	"~*gto"		1;
+	"~*e.i"		1;
+	"~*fo
+mrbitsa"		1;
+	"~*dbytes.com
+mrcsa.com.au
+mri"		1;
+	"~*sidesales.com
+mriyadh.com
+mrlmedia."		1;
+	"~*et
+mrmo"		1;
+	"~*eymustache.com
+mrsdalloways.com
+mrwhite.biz
+msfsaar.de
+msk-diplomat.com
+mttwtrack.com
+mturkco"		1;
+	"~*te"		1;
+	"~*t.com
+mug-"		1;
+	"~*a-chas-moscow.ru
+muizre.ru
+mulberryoutleto"		1;
+	"~*li"		1;
+	"~*eeu.com
+mu"		1;
+	"~*doaberra"		1;
+	"~*te.com
+muschisexbilder.com
+musezo"		1;
+	"~*e.ru
+musezo"		1;
+	"~*e.su
+musicas.baixar-musicas-gratis.com
+musicdaddy."		1;
+	"~*et
+musicspire.o"		1;
+	"~*li"		1;
+	"~*e
+musicstock.me
+music.utrolive.ru
+musicvidz.ru
+musirc.com
+mustat.com
+mustwi"		1;
+	"~*eblog.com
+muzapor"		1;
+	"~*.com
+muz-baza."		1;
+	"~*et
+muz"		1;
+	"~*achas-service.ru
+muz-shoes.ru
+muztops.ru
+mvpicto"		1;
+	"~*.co.uk
+mwtplud"		1;
+	"~*.review
+mya"		1;
+	"~*yo"		1;
+	"~*e."		1;
+	"~*et
+my-bc.ru
+my-big-family.com
+mybi"		1;
+	"~*aryoptio"		1;
+	"~*srobot.com
+myblogregistercm.tk
+mycaf.it
+my-cash-bot.co
+mydeathspace.com
+mydirtyhobby.com
+mydirtystuff.com
+mydow"		1;
+	"~*loade"		1;
+	"~*gi"		1;
+	"~*e.com
+mydow"		1;
+	"~*lodablefiles.com
+myfreecams.com
+myfreemp3.eu
+myfreetutorials.com
+myftpupload.com
+mygameplus.com
+mygameplus.ru
+myhealthcare.com
+myhitmp3.club
+myi"		1;
+	"~*dospace.com
+myiptest.com
+myki"		1;
+	"~*gs.pw
+mylesosibirsk.ru
+mylida.org
+myliveblog.ru
+myo"		1;
+	"~*li"		1;
+	"~*epayday.co
+my.opera.com
+myperiod.club
+mypets.by
+myplaycity.com
+mypri"		1;
+	"~*tscree"		1;
+	"~*.com
+myseoco"		1;
+	"~*sulta"		1;
+	"~*t.com
+myshopmatemac.com
+mystats.xyz
+mywallpaper.top
+myyour.eu
+"		1;
+	"~*a15.ru
+"		1;
+	"~*acap.ru
+"		1;
+	"~*ac-beari"		1;
+	"~*gs.ru
+"		1;
+	"~*agdak.ru
+"		1;
+	"~*ailsimg.com
+"		1;
+	"~*ajade"		1;
+	"~*."		1;
+	"~*o
+"		1;
+	"~*aj-filmy24.pl
+"		1;
+	"~*alogovyy-kodeks.ru
+"		1;
+	"~*ame"		1;
+	"~*ectar.com
+"		1;
+	"~*aperehresti.i"		1;
+	"~*fo
+"		1;
+	"~*aphukete.ru
+"		1;
+	"~*ardula"		1;
+	"~*.com
+"		1;
+	"~*arkologiya-belgorod.ru
+"		1;
+	"~*arkologiya-orel.ru
+"		1;
+	"~*arkologiya-pe"		1;
+	"~*za.ru
+"		1;
+	"~*arkologiya-peterburg.ru
+"		1;
+	"~*arkologiya-voro"		1;
+	"~*ezh.ru
+"		1;
+	"~*arosty.com
+"		1;
+	"~*aruto"		1;
+	"~*aruto.ru
+"		1;
+	"~*astroyke."		1;
+	"~*et
+"		1;
+	"~*astydollars.com
+"		1;
+	"~*ate.com
+"		1;
+	"~*a-telefo"		1;
+	"~*.biz
+"		1;
+	"~*atio"		1;
+	"~*albreakdow"		1;
+	"~*.com
+"		1;
+	"~*aturalbreakthroughsresearch.com
+"		1;
+	"~*aval.jislaaik.com
+"		1;
+	"~*bsproject.ru
+"		1;
+	"~*egociosdasha.com
+"		1;
+	"~*egral.pluto.ro
+"		1;
+	"~*eobux-bg.i"		1;
+	"~*fo
+"		1;
+	"~*eodow"		1;
+	"~*load.webcam
+"		1;
+	"~*erudlogistik.ru
+"		1;
+	"~*etallergy.ru
+"		1;
+	"~*etfacet."		1;
+	"~*et
+"		1;
+	"~*etoil."		1;
+	"~*o
+"		1;
+	"~*etpics.org
+"		1;
+	"~*et-radar.com
+"		1;
+	"~*etworkad."		1;
+	"~*et
+"		1;
+	"~*eva"		1;
+	"~*sk.ru
+"		1;
+	"~*ew7ob.com
+"		1;
+	"~*ew-apps.ru
+"		1;
+	"~*ewhairstylesforme"		1;
+	"~*2014.com
+"		1;
+	"~*ew-post.tk
+"		1;
+	"~*ewsperuse.com
+"		1;
+	"~*ews-readers.ru
+"		1;
+	"~*ewstraveller.ru
+"		1;
+	"~*ewstudio.tv
+"		1;
+	"~*ewtechspb.ru
+"		1;
+	"~*ewyorkhotelsmotels.i"		1;
+	"~*fo
+"		1;
+	"~*extco"		1;
+	"~*seil.com
+"		1;
+	"~*extl"		1;
+	"~*k12.com
+"		1;
+	"~*fljerseyscheapbiz.us
+"		1;
+	"~*fljerseyscheapchi"		1;
+	"~*abiz.com
+"		1;
+	"~*fljerseysforsalewholesaler.com
+"		1;
+	"~*fljerseys.o"		1;
+	"~*li"		1;
+	"~*e
+"		1;
+	"~*gps1.ru
+"		1;
+	"~*hl09.ru
+"		1;
+	"~*hl17coi"		1;
+	"~*s.exblog.jp
+"		1;
+	"~*hl17coi"		1;
+	"~*sforps3.gratisblog.biz
+"		1;
+	"~*ibbler.silktide.com
+"		1;
+	"~*icefloor.co.uk
+"		1;
+	"~*icovideo.jp
+"		1;
+	"~*ightvisio"		1;
+	"~*746.weebly.com
+"		1;
+	"~*iki-mlt.ru
+"		1;
+	"~*ikitsyri"		1;
+	"~*gedrivelg.pe"		1;
+	"~*.io
+"		1;
+	"~*ikkiewart.ru
+"		1;
+	"~*i"		1;
+	"~*gessaybe.me
+"		1;
+	"~*ippo"		1;
+	"~*-beari"		1;
+	"~*gs.ru
+"		1;
+	"~*iroo.i"		1;
+	"~*fo
+"		1;
+	"~*l."		1;
+	"~*etlog.com
+"		1;
+	"~*oclego"		1;
+	"~*li"		1;
+	"~*e.i"		1;
+	"~*fo
+"		1;
+	"~*odup.ru
+"		1;
+	"~*ofreezi"		1;
+	"~*gmac.work
+"		1;
+	"~*o"		1;
+	"~*ews.co
+"		1;
+	"~*ootri"		1;
+	"~*o.com
+"		1;
+	"~*ordstar.pro
+"		1;
+	"~*ordvp"		1;
+	"~*.com
+"		1;
+	"~*ormalegal.ru
+"		1;
+	"~*orthfacestore.o"		1;
+	"~*li"		1;
+	"~*e
+"		1;
+	"~*orththeface.store
+"		1;
+	"~*otaria-desalas.com
+"		1;
+	"~*otebook-pro.ru
+"		1;
+	"~*otfastfood.ru
+"		1;
+	"~*ottyu.xyz
+"		1;
+	"~*oumeda.com
+"		1;
+	"~*ovatech.v"		1;
+	"~*
+"		1;
+	"~*ovember-lax.com
+"		1;
+	"~*ovgorod.xrus.org
+"		1;
+	"~*ovosibirsk.xrus.org
+"		1;
+	"~*ovosti-hi-tech.ru
+"		1;
+	"~*owtorre"		1;
+	"~*ts.com
+"		1;
+	"~*poet.ru
+"		1;
+	"~*rv.co.za
+"		1;
+	"~*satc."		1;
+	"~*et
+"		1;
+	"~*tic.fr
+"		1;
+	"~*ucia.biz.ly
+"		1;
+	"~*udepatch."		1;
+	"~*et
+"		1;
+	"~*udo.ca
+"		1;
+	"~*ufaq.com
+"		1;
+	"~*uit-artisa"		1;
+	"~*ale.com
+"		1;
+	"~*ullrefer.com
+"		1;
+	"~*uup.i"		1;
+	"~*fo
+"		1;
+	"~*vformula.ru
+"		1;
+	"~*vssf.com
+"		1;
+	"~*yfi"		1;
+	"~*a"		1;
+	"~*ce.ml
+"		1;
+	"~*zfilecloud.weebly.com
+o00.i"		1;
+	"~*
+oakleyglasseso"		1;
+	"~*li"		1;
+	"~*e.us
+oakridgemo.com
+oballergiya.ru
+obesidadealgarve.com
+ob"		1;
+	"~*al.org
+obuv-kupit.ru
+ochistka-stokov.ru
+oco"		1;
+	"~*to.ru
+oda.as
+o-dach"		1;
+	"~*ik.ru
+oddamzadarmo.eu
+odesproperty.com
+odywpjtw.bloger.i"		1;
+	"~*dex.hr
+offer.camp
+offergroup.i"		1;
+	"~*fo
+offers.byco"		1;
+	"~*text.com
+offf.i"		1;
+	"~*fo
+office-wi"		1;
+	"~*dows.ru
+offside2.5v.pl
+offtime.ru
+ohmyri"		1;
+	"~*gs.com
+oil-td.ru
+okel.co
+oklogistic.ru
+okmusic.jp
+okout.ru
+okroshki.ru
+oktube.ru
+ok-ua.i"		1;
+	"~*fo
+old-rock.com
+olva"		1;
+	"~*to.ru
+olympescort.com
+omsk.xrus.org
+o"		1;
+	"~*clickpredictiv.com
+o"		1;
+	"~*clkads.com
+o"		1;
+	"~*eclickfiles.com
+o"		1;
+	"~*efilms."		1;
+	"~*et
+o"		1;
+	"~*e-gear.com
+o"		1;
+	"~*emi"		1;
+	"~*utesite.it
+o"		1;
+	"~*escree"		1;
+	"~*.cc
+o"		1;
+	"~*eshotdate.com
+o"		1;
+	"~*etravelguides.com
+o"		1;
+	"~*lai"		1;
+	"~*besplat"		1;
+	"~*o.ru
+o"		1;
+	"~*li"		1;
+	"~*adverts.com
+o"		1;
+	"~*li"		1;
+	"~*e7777.com
+o"		1;
+	"~*li"		1;
+	"~*ebay.ru
+o"		1;
+	"~*li"		1;
+	"~*edomai"		1;
+	"~*s.ru
+o"		1;
+	"~*li"		1;
+	"~*efilmz."		1;
+	"~*et
+o"		1;
+	"~*li"		1;
+	"~*e-hit.i"		1;
+	"~*fo
+o"		1;
+	"~*li"		1;
+	"~*e.ktc45.ru
+o"		1;
+	"~*li"		1;
+	"~*eku.com
+o"		1;
+	"~*li"		1;
+	"~*emeeti"		1;
+	"~*g"		1;
+	"~*ow.com
+o"		1;
+	"~*li"		1;
+	"~*emegax.com
+o"		1;
+	"~*li"		1;
+	"~*eserialy.ru
+o"		1;
+	"~*li"		1;
+	"~*eslotmaschi"		1;
+	"~*e.com
+o"		1;
+	"~*li"		1;
+	"~*e-templatestore.com
+o"		1;
+	"~*li"		1;
+	"~*etvseries.me
+o"		1;
+	"~*li"		1;
+	"~*ewriti"		1;
+	"~*gjobs17.blogspot.ru
+o"		1;
+	"~*li"		1;
+	"~*e-x.ru
+o"		1;
+	"~*load.pw
+o"		1;
+	"~*lyforemo"		1;
+	"~*t.ru
+o"		1;
+	"~*lythegames.com
+o"		1;
+	"~*lywoma"		1;
+	"~*.org
+o"		1;
+	"~*s-add.me"		1;
+	"~*
+o"		1;
+	"~*strapo"		1;
+	"~*.purplesphere.i"		1;
+	"~*
+o-o-11-o-o.com
+o-o-6-o-o.com
+o-o-6-o-o.ru
+o-o-8-o-o.com
+o-o-8-o-o.ru
+ooo-gotovie.ru
+ooo-ol"		1;
+	"~*i.ru
+ope"		1;
+	"~*frost.com
+ope"		1;
+	"~*frost."		1;
+	"~*et
+ope"		1;
+	"~*library.org
+ope"		1;
+	"~*mediasoft.com
+ope"		1;
+	"~*multipleurl.com
+ope"		1;
+	"~*-odyssey.org
+ope"		1;
+	"~*stat.com
+opi"		1;
+	"~*io"		1;
+	"~*reelle.com
+ops.picscout.com
+optibuymac.com
+optitrade24.com
+oralsexfilme."		1;
+	"~*et
+ora"		1;
+	"~*ga.host.sk
+order"		1;
+	"~*orxx.com
+orel-reshka."		1;
+	"~*et
+ore"		1;
+	"~*burg-gsm.ru
+ore"		1;
+	"~*-cats.ru
+orgasmus-virtual.com
+orho"		1;
+	"~*it.com
+origi"		1;
+	"~*-my.ru
+ororod"		1;
+	"~*ik.goodbb.ru
+orso"		1;
+	"~*et.ru
+osb.se11.ru
+osoz"		1;
+	"~*a"		1;
+	"~*ie-"		1;
+	"~*arkotikam."		1;
+	"~*et
+ossmalta.com
+ostroike.org
+ostrovtaxi.ru
+otbeliva"		1;
+	"~*ie-zubov.com
+ourtherapy.ru
+ourville.i"		1;
+	"~*fo
+outperso"		1;
+	"~*als.com
+outrageousdeal-a.akamaihd."		1;
+	"~*et
+outshop.ru
+ovirus.ru
+owathemes.com
+ow"		1;
+	"~*shop.cf
+owohho.com
+oxford-book.com.ua
+oy"		1;
+	"~*at.i"		1;
+	"~*fo
+ozas."		1;
+	"~*et
+oz-offers.com
+ozoz.it
+paceform.com
+paclitor.com
+page2rss.com
+pagese"		1;
+	"~*se.com
+paido"		1;
+	"~*li"		1;
+	"~*esites.com
+paleohub.i"		1;
+	"~*fo
+palvira.com.ua
+pammik.ru
+pa"		1;
+	"~*amaforbegi"		1;
+	"~*"		1;
+	"~*ers.com
+pa"		1;
+	"~*chro.co.uk
+pa"		1;
+	"~*chro.xyz
+pa"		1;
+	"~*ouri-solare-acoperis.com
+paparazzistudios.com.au
+paperwriti"		1;
+	"~*gservice17.blogspot.ru
+paphoselectricia"		1;
+	"~*a"		1;
+	"~*dplumber.com
+parado"		1;
+	"~*toza"		1;
+	"~*et.ru
+parajumpersoutlet.o"		1;
+	"~*li"		1;
+	"~*e
+parajumpersstore.o"		1;
+	"~*li"		1;
+	"~*e
+paramou"		1;
+	"~*tmarble.co.uk
+parlame"		1;
+	"~*t.biz
+part"		1;
+	"~*er-cd"		1;
+	"~*.me"		1;
+	"~*
+part"		1;
+	"~*er-high.me"		1;
+	"~*
+part"		1;
+	"~*er-pri"		1;
+	"~*t.me"		1;
+	"~*
+part"		1;
+	"~*ersafe.me"		1;
+	"~*
+part"		1;
+	"~*ers-ship.pro
+part"		1;
+	"~*er-stop.me"		1;
+	"~*
+part"		1;
+	"~*er-trustworthy.me"		1;
+	"~*
+partybu"		1;
+	"~*"		1;
+	"~*y.ru
+pathwhelp.org
+patol01.pw
+patterso"		1;
+	"~*sweb.com
+pay2me.pl
+paydayloa"		1;
+	"~*slocal.com
+paydayo"		1;
+	"~*li"		1;
+	"~*ecom.com
+pb-dv.ru
+p-busi"		1;
+	"~*ess.ru
+pcads.ru
+pcboa.se
+pcgroup.com.uy
+pc-services.ru
+pc-test."		1;
+	"~*et
+pc-virus-d0l92j2.pw
+pdamods.ru
+pd"		1;
+	"~*s.cz
+pd"		1;
+	"~*s.dow"		1;
+	"~*load
+pearlisla"		1;
+	"~*d.ru
+pechikami"		1;
+	"~*i.ru
+peekyou.com
+pekori.to
+pelfi"		1;
+	"~*d.me
+pe"		1;
+	"~*delprog"		1;
+	"~*os.se
+pe"		1;
+	"~*isvergrote"		1;
+	"~*depille"		1;
+	"~*"		1;
+	"~*l.ovh
+pe"		1;
+	"~*spla"		1;
+	"~*4u.com
+pe"		1;
+	"~*spla"		1;
+	"~*.com
+pepperstyle.ru
+perci"		1;
+	"~*.biz.ly
+perfectio"		1;
+	"~*-pleasure.ru
+perfectpracticeweb.com
+perm-prof"		1;
+	"~*astil.ru
+perm.xrus.org
+perosa"		1;
+	"~*.com
+perso.wa"		1;
+	"~*adoo.es
+pestomou.i"		1;
+	"~*fo
+petedrummo"		1;
+	"~*d.com
+petrovka-o"		1;
+	"~*li"		1;
+	"~*e.com
+petsblogroll.com
+peugeot-club.org
+pewit.pw
+pflexads.com
+pharmacyi"		1;
+	"~*city.com
+phobia.us
+phormchi"		1;
+	"~*a.com
+photochki.com
+photo.houseofgaga.ru
+photokitche"		1;
+	"~*desig"		1;
+	"~*.com
+photorepair.ru
+photostudiolighti"		1;
+	"~*gs.com
+phuketscree"		1;
+	"~*.com
+physfu"		1;
+	"~*c.ru
+pic2fly.com
+piccdata.com
+piccshare.com
+picphotos."		1;
+	"~*et
+picscout.com
+picsearch.com
+picsfair.com
+picsforkeywordsuggestio"		1;
+	"~*.com
+pics-group.com
+picture-group.com
+picturesfrom.com
+picturesify.com
+picturesma"		1;
+	"~*ia.com
+pierrehardysale.o"		1;
+	"~*li"		1;
+	"~*e
+pigrafix.at
+pihl.se
+pijoto."		1;
+	"~*et
+pila.pl
+pi"		1;
+	"~*kduck.ga
+pi"		1;
+	"~*sdaddy.com
+pi"		1;
+	"~*stake.com
+pi"		1;
+	"~*tattoos.com
+pi"		1;
+	"~*wallpaper.top
+pi"		1;
+	"~*wallpaper.xyz
+pio.polytopesexempt.com
+piratecams.com
+pirateday.ru
+piter.xrus.org
+piulatte.cz
+piumi"		1;
+	"~*iita.com
+pix24x7.com
+pixell.club
+pixelrz.com
+pixgood.com
+pix-hd.com
+pizda.lol
+pizdopletka.club
+pizza-imperia.com
+pizza-tycoo"		1;
+	"~*.com
+pk-pomosch.ru
+pkr1ha"		1;
+	"~*d.com
+pk-services.ru
+pladform.ru
+plaff-go.ru
+plastgra"		1;
+	"~*ar."		1;
+	"~*u
+plastjulgra"		1;
+	"~*ar.se
+plastweb.ru
+platesauto.com
+plati"		1;
+	"~*umdeals.gr
+playboyfiles.xblog.i"		1;
+	"~*
+playlott.com
+play-movie.pl
+play-mp3.com
+pliks.pl
+ploe"		1;
+	"~*jitmedia.azurewebsites."		1;
+	"~*et
+plohaya-kredit"		1;
+	"~*aya-istoriya.ru
+plus"		1;
+	"~*etwork.com
+pobeira"		1;
+	"~*ie.pl
+pochemychka."		1;
+	"~*et
+podship"		1;
+	"~*iki-"		1;
+	"~*sk.ru
+podship"		1;
+	"~*iki-"		1;
+	"~*t"		1;
+	"~*.ru
+poems.com.ua
+poffet."		1;
+	"~*et
+pogod"		1;
+	"~*yyeavarii.gq
+pogosh.com
+pogruzteh"		1;
+	"~*ik.ru
+poisk-zako"		1;
+	"~*a.ru
+pojdelo.weebly.com
+pokemo"		1;
+	"~*gooo.ml
+pokemo"		1;
+	"~*-go-play.o"		1;
+	"~*li"		1;
+	"~*e
+poker"		1;
+	"~*iydom.ru
+polci"		1;
+	"~*.de
+polybuild.ru
+polytopesexempt.com
+pomoc-drogowa.cba.pl
+po"		1;
+	"~*s-presse.com
+po"		1;
+	"~*tiacsolstice.i"		1;
+	"~*fo
+po"		1;
+	"~*y-busi"		1;
+	"~*ess.com
+popads."		1;
+	"~*et
+popa"		1;
+	"~*der.mobi
+popcash."		1;
+	"~*et
+popmarker.com
+poppe"		1;
+	"~*-"		1;
+	"~*w."		1;
+	"~*et
+popserve.adscpm."		1;
+	"~*et
+poptool."		1;
+	"~*et
+popup-fdm.xyz
+popup-hgd.xyz
+popup-jdh.xyz
+popup.matchmaker.com
+poquoso"		1;
+	"~*.org
+por"		1;
+	"~*555.com
+por"		1;
+	"~*dairy.i"		1;
+	"~*
+por"		1;
+	"~*galleries.top
+por"		1;
+	"~*hub-forum.ga
+por"		1;
+	"~*hubforum.tk
+por"		1;
+	"~*hub-ru.com
+por"		1;
+	"~*ma"		1;
+	"~*ia.pl
+por"		1;
+	"~*oblood.com
+por"		1;
+	"~*obrazzers.biz
+por"		1;
+	"~*odojd.ru
+por"		1;
+	"~*o-dojki."		1;
+	"~*et
+por"		1;
+	"~*ofiljmi.com
+por"		1;
+	"~*oforadult.com
+por"		1;
+	"~*ogig.com
+por"		1;
+	"~*okajf.com
+por"		1;
+	"~*oklad."		1;
+	"~*et
+por"		1;
+	"~*oklad.ru
+por"		1;
+	"~*okorol.com
+por"		1;
+	"~*olook."		1;
+	"~*et
+por"		1;
+	"~*ophoto.xyz
+por"		1;
+	"~*o-play."		1;
+	"~*et
+por"		1;
+	"~*o-raskazy.ru
+por"		1;
+	"~*osee.i"		1;
+	"~*fo
+por"		1;
+	"~*oslive."		1;
+	"~*et
+por"		1;
+	"~*o-tra"		1;
+	"~*ssexuals.ru
+por"		1;
+	"~*otubexxx."		1;
+	"~*ame
+por"		1;
+	"~*o-video-chati.ru
+por"		1;
+	"~*post.i"		1;
+	"~*
+por"		1;
+	"~*startits.xblog.i"		1;
+	"~*
+por"		1;
+	"~*-w.org
+por"		1;
+	"~*zo"		1;
+	"~*e.tv
+porodasobak."		1;
+	"~*et
+portadd.me"		1;
+	"~*
+portal-eu.ru
+port"		1;
+	"~*off.od.ua
+portside.cc
+portside.xyz
+poshiv-chehol.ru
+positive2b.ru
+pospr.waw.pl
+postclass.com
+potoideas.us
+powe"		1;
+	"~*lite24.ru
+powita"		1;
+	"~*ia.pl
+pozdravle"		1;
+	"~*iya-c.ru
+pozdrawle"		1;
+	"~*iya.com
+pozdrawle"		1;
+	"~*iya.ru
+pozvo"		1;
+	"~*im.com
+pp-budpostach.com.ua
+pr0fit-b0x.com
+pravoholdi"		1;
+	"~*g.ru
+prchecker.i"		1;
+	"~*fo
+preg"		1;
+	"~*a"		1;
+	"~*t.guru
+preparevideosafesystem4u"		1;
+	"~*ow.site
+preparevideosafesystem4u"		1;
+	"~*ow.space
+pretty-mart.com
+priceg.com
+pricheskao"		1;
+	"~*li"		1;
+	"~*e.ru
+pricheski-video.com
+pri"		1;
+	"~*ceadva"		1;
+	"~*tagesales.com
+pri"		1;
+	"~*tdirectforless.com
+pri"		1;
+	"~*tie.com
+pri"		1;
+	"~*ti"		1;
+	"~*gpeach.com
+priora-2.com
+privacyassista"		1;
+	"~*t."		1;
+	"~*et
+privatamateure.com
+privatba"		1;
+	"~*k46.ru
+privatefx.all4i"		1;
+	"~*vest.i"		1;
+	"~*fo
+privatefx-i"		1;
+	"~*.ru
+privat-girl."		1;
+	"~*et
+privatov-zapisi.ru
+privhosti"		1;
+	"~*g.com
+prize44.com
+prizeestates.cricket
+prizefestival.mobi
+prizesbook.o"		1;
+	"~*li"		1;
+	"~*e
+prizestoha"		1;
+	"~*dle.club
+prlog.ru
+prod2016.com
+prodess.ru
+producm.ru
+productarium.com
+produkto."		1;
+	"~*et
+prodvigator.ua
+proekt-gaz.ru
+proekt-mos.ru
+professio"		1;
+	"~*alwriti"		1;
+	"~*gservices15.blogspot.ru
+profitfx.o"		1;
+	"~*li"		1;
+	"~*e
+profitsport.club
+profola"		1;
+	"~*.pl
+proftests."		1;
+	"~*et
+progress-upakovka.ru
+prohoster.i"		1;
+	"~*fo
+proi"		1;
+	"~*ter."		1;
+	"~*et.ua
+projectforte.ru
+projefrio.com.br
+prokotov.com
+prom23.ru
+promalp-u"		1;
+	"~*iversal.ru
+prombudpostach.com.ua
+promgirldresses.xyz
+promodj.com
+promoforum.ru
+promoheads.com
+promover.org
+pro"		1;
+	"~*ekut.com
+pro"		1;
+	"~*.pro
+pro-okis.ru
+proposal-e"		1;
+	"~*gi"		1;
+	"~*e.com
+propra"		1;
+	"~*olol40mg.blogspot.com
+prosmiba"		1;
+	"~*k.ru
+prospere"		1;
+	"~*t.com
+prostitutki-almata.org
+prostitutki-asta"		1;
+	"~*a.org
+prostitutki-belgoroda.org
+prostitutki-kharkova.org
+prostitutki-kiev.org
+prostitutki-"		1;
+	"~*ovgoroda.org
+prostitutki-odessa.org
+prostitutki-rostova.org
+prostitutki-tolyatti.org
+prostitutki-tyume"		1;
+	"~*i.org
+prostitutki-yaroslavlya.org
+proxyradar.com
+prpops.com
+pr-te"		1;
+	"~*.de
+psa48.ru
+pskcijdc.bloger.i"		1;
+	"~*dex.hr
+psoriasis-file.trade
+pst2017.o"		1;
+	"~*li"		1;
+	"~*ewebshop."		1;
+	"~*et
+psvita.ru
+pts163.ru
+pufip.com
+pukapor"		1;
+	"~*.com
+pulse33.ru
+pulseo"		1;
+	"~*click.com
+purchasepills"		1;
+	"~*orx.com
+purplesphere.i"		1;
+	"~*
+push-ad.com
+pushdata.se"		1;
+	"~*dpulse.com
+pussyfleet.com
+pussysaga.com
+puteshestve"		1;
+	"~*"		1;
+	"~*ik.com
+putevka24.ru
+putiti"		1;
+	"~*.me
+puzo2arbuza.ru
+puzzleweb.ru
+pwwysydh.com
+pxhdwsm.com
+py100.ru
+pyramidlitho.webs.com
+pyrodesig"		1;
+	"~*s.com.au
+qcstrtvt.bloger.i"		1;
+	"~*dex.hr
+qexyfu.bugs3.com
+qitt.ru
+qld10000."		1;
+	"~*et
+q-moto.ru
+qpypcx.com
+qualitymarketzo"		1;
+	"~*e.com
+quality-traffic.com
+qua"		1;
+	"~*gcao"		1;
+	"~*s.com
+quebec-bi"		1;
+	"~*.com
+quelle.ru
+questio"		1;
+	"~*marque.ch
+quickbuck.com
+quickloa"		1;
+	"~*ba"		1;
+	"~*k.com
+quick-offer.com
+quick-seeker.com
+quit-smoki"		1;
+	"~*g.ga
+quizzitch."		1;
+	"~*et
+qwarckoi"		1;
+	"~*e.com
+qwesa.ru
+raavidesig"		1;
+	"~*s.com
+rabotaetvse.ru
+rabot.host.sk
+rada.ru
+radiogambli"		1;
+	"~*g.com
+ragecash.com
+rai"		1;
+	"~*bowice.ru
+raisedseo.com
+ra"		1;
+	"~*dalljhoward.com
+ra"		1;
+	"~*dki-sex.com
+ra"		1;
+	"~*k-checker.o"		1;
+	"~*li"		1;
+	"~*e
+ra"		1;
+	"~*ki"		1;
+	"~*g2017.ga
+ra"		1;
+	"~*ki"		1;
+	"~*gchart.de
+ra"		1;
+	"~*ki"		1;
+	"~*gs-a"		1;
+	"~*alytics.com
+ra"		1;
+	"~*ksays.com
+ra"		1;
+	"~*ksca"		1;
+	"~*"		1;
+	"~*er.com
+ra"		1;
+	"~*ksig"		1;
+	"~*als.com
+ra"		1;
+	"~*kso"		1;
+	"~*ic.com
+ra"		1;
+	"~*kso"		1;
+	"~*ic.i"		1;
+	"~*fo
+ra"		1;
+	"~*kso"		1;
+	"~*ic.org
+rapevideosmovies.com
+rapidgator-por"		1;
+	"~*.ga
+rapidokbrai"		1;
+	"~*.com
+raste"		1;
+	"~*iya-vs-zombi.ru
+razamicroelectro"		1;
+	"~*ics.com
+razorweb-a.akamaihd."		1;
+	"~*et
+razyboard.com
+rcb101.ru
+r-co"		1;
+	"~*trol.ru
+realityki"		1;
+	"~*gs.com
+realizmobi.com
+realmo"		1;
+	"~*te."		1;
+	"~*et
+real"		1;
+	"~*ye-otzyvy.i"		1;
+	"~*fo
+real-time-a"		1;
+	"~*alytics.com
+realti"		1;
+	"~*g-moscow.ru
+realtytimes.com
+rebelmouse.com
+rebuildermedical.com
+reci"		1;
+	"~*ziireale.com
+recipedays.com
+recipedays.ru
+recordpage-a.akamaihd."		1;
+	"~*et
+redbottomheels.xyz
+red"		1;
+	"~*ise.com
+reelheroes."		1;
+	"~*et
+reeya"		1;
+	"~*aturopathy.com
+refads.pro
+refere"		1;
+	"~*cemoi.com
+refererx.com
+refudiatethissarah.i"		1;
+	"~*fo
+regio"		1;
+	"~*shop.biz
+registratciya-v-moskve.ru
+reimageplus.com
+reklama1.ru
+reklama-i-rabota.ru
+reklamuss.ru
+relax.ru
+remedyotc.com
+remmli"		1;
+	"~*g.de
+remo"		1;
+	"~*tbiz.ru
+remo"		1;
+	"~*t-comp-pomosh.ru
+remo"		1;
+	"~*t-fridge-tv.ru
+remo"		1;
+	"~*tgruzovik.ru
+remo"		1;
+	"~*t-komputerov-"		1;
+	"~*otebook.ru
+remo"		1;
+	"~*t-mobile-pho"		1;
+	"~*es.ru
+remo"		1;
+	"~*t-usta"		1;
+	"~*ovka-teh"		1;
+	"~*iki.ru
+remorcicomerciale.ro
+remote-dba.de
+remybutler.fr
+re"		1;
+	"~*ecaovilla.o"		1;
+	"~*li"		1;
+	"~*e
+re"		1;
+	"~*ecaovillasale.o"		1;
+	"~*li"		1;
+	"~*e
+re"		1;
+	"~*ewablewealth.com
+re"		1;
+	"~*teh"		1;
+	"~*o.ru
+repeatlogo.co.uk
+replicaclub.ru
+replicaloubouti"		1;
+	"~*.xyz
+replica-watch.ru
+research.ifmo.ru
+resellerclub.com
+respo"		1;
+	"~*si"		1;
+	"~*ator.com
+respo"		1;
+	"~*sive-test."		1;
+	"~*et
+respublica-otel.ru
+restaura"		1;
+	"~*tlescampi.com
+restorator-msk.ru
+resultshub-a.akamaihd."		1;
+	"~*et
+retailwith.com
+retreatia.com
+reversi"		1;
+	"~*g.cc
+rewardpoll.com
+reward-survey."		1;
+	"~*et
+reyel1985.web"		1;
+	"~*ode.fr
+rezeptiblud.ru
+rfd-split.hr
+rff-cfal.i"		1;
+	"~*fo
+rialp.gete"		1;
+	"~*joyme"		1;
+	"~*t."		1;
+	"~*et
+richi"		1;
+	"~*vestmo"		1;
+	"~*itor.com
+ric.i"		1;
+	"~*fo
+ricorsogiustizia.org
+riders.ro
+righte"		1;
+	"~*ergysolutio"		1;
+	"~*s.com.au
+ri"		1;
+	"~*g4rhi"		1;
+	"~*o.com
+ri"		1;
+	"~*gpor"		1;
+	"~*o.com
+ri"		1;
+	"~*gto"		1;
+	"~*epart"		1;
+	"~*er.com
+rique.host.sk
+risparmiocasa.bz.it
+ritlweb.com
+r"		1;
+	"~*-to-bs"		1;
+	"~*.com
+robot-forex.biz
+rocki"		1;
+	"~*gclicks.com
+rogervivierforsale.com
+roleforum.ru
+roma-kukareku.livejour"		1;
+	"~*al.com
+roofers.org.uk
+roota"		1;
+	"~*droid.org
+ros-ctm.ru
+rospromtest.ru
+rossa"		1;
+	"~*asaavedra."		1;
+	"~*et
+rossmark.ru
+rostov.xrus.org
+royal-betti"		1;
+	"~*g."		1;
+	"~*et
+royalcar-ufa.ru
+royal-i"		1;
+	"~*vestme"		1;
+	"~*ts."		1;
+	"~*et
+royalvegascasi"		1;
+	"~*o.com
+rozalli.com
+roz"		1;
+	"~*ica.com.ua
+rp9.ru
+rucrypt.com
+ru-dety.ru
+ruex.org.ua
+ruki"		1;
+	"~*o.org
+rumamba.com
+ru"		1;
+	"~*"		1;
+	"~*i"		1;
+	"~*g-li"		1;
+	"~*e.ru
+ru"		1;
+	"~*stocks.com
+ruscopybook.com
+ruse"		1;
+	"~*viro"		1;
+	"~*me"		1;
+	"~*tal."		1;
+	"~*et
+rusexy.xyz
+rusoft-zo"		1;
+	"~*e.ru
+ruspdd.com
+russia-tao.ru
+russia-today-video.ru
+russi"		1;
+	"~*tv.fr
+russkie-gorki.ru
+russkoe-zdorovie.ru
+rus-teh."		1;
+	"~*arod.ru
+rvtv.ru
+rvzr-a.akamaihd."		1;
+	"~*et
+rybalka-opt.ru
+s8-"		1;
+	"~*owy-wygraj.comli.com
+sabaapress.com
+sack."		1;
+	"~*et
+sad-torg.com.ua
+sady-urala.ru
+safe-app."		1;
+	"~*et
+saitevpatorii.com
+sakhboard.ru
+sale-japa"		1;
+	"~*.com
+saletool.ru
+salutmo"		1;
+	"~*treal.com
+samoiedo.it
+samolet.fr
+samo-soz"		1;
+	"~*a"		1;
+	"~*ie.ru
+sampleletters."		1;
+	"~*et
+sa"		1;
+	"~*atorrii.ru
+sa"		1;
+	"~*dhillso"		1;
+	"~*li"		1;
+	"~*e.com
+sa"		1;
+	"~*josestartups.com
+sa"		1;
+	"~*kt-peterburg."		1;
+	"~*odup.ru
+sa"		1;
+	"~*tasgift.ml
+sa"		1;
+	"~*tech"		1;
+	"~*ik.jimdo.com
+sa"		1;
+	"~*yuprojects.com
+sarafa"		1;
+	"~*gel.ru
+saratov.xrus.org
+sarf3omlat.com
+sarm.tk
+sashagreyblog.ga
+saugatuck.com
+savefrom.com
+savei"		1;
+	"~*dex.xyz
+savememo"		1;
+	"~*ey.co.za
+savetubevideo.com
+savi"		1;
+	"~*gsslider-a.akamaihd."		1;
+	"~*et
+sawi"		1;
+	"~*.beth.webd.pl
+sax-sex.com
+sayyoethe.blogspot.co.za
+sbdl."		1;
+	"~*o
+sbetodiod"		1;
+	"~*ye-lampy.ru
+sbor"		1;
+	"~*ik-zako"		1;
+	"~*ov.ru
+sbprabooks.com
+sbricur.com
+sbt-aqua.ru
+sbtdesig"		1;
+	"~*.co.uk
+sbwealthsolutio"		1;
+	"~*s.ca
+scalerite.co.za
+sca"		1;
+	"~*mari"		1;
+	"~*e.i"		1;
+	"~*fo
+sca"		1;
+	"~*mypho"		1;
+	"~*es.com
+sca"		1;
+	"~*"		1;
+	"~*er-alexa.top
+sca"		1;
+	"~*"		1;
+	"~*er-alex.top
+sca"		1;
+	"~*"		1;
+	"~*er-a"		1;
+	"~*drew.top
+sca"		1;
+	"~*"		1;
+	"~*er-barak.top
+sca"		1;
+	"~*"		1;
+	"~*er-bria"		1;
+	"~*.top
+sca"		1;
+	"~*"		1;
+	"~*er-do"		1;
+	"~*ald.top
+sca"		1;
+	"~*"		1;
+	"~*er-do"		1;
+	"~*.top
+sca"		1;
+	"~*"		1;
+	"~*er-ele"		1;
+	"~*a.top
+sca"		1;
+	"~*"		1;
+	"~*er-fred.top
+sca"		1;
+	"~*"		1;
+	"~*er-george.top
+sca"		1;
+	"~*"		1;
+	"~*er-irvi"		1;
+	"~*.top
+sca"		1;
+	"~*"		1;
+	"~*er-iva"		1;
+	"~*.top
+sca"		1;
+	"~*"		1;
+	"~*er-jack.top
+sca"		1;
+	"~*"		1;
+	"~*er-ja"		1;
+	"~*e.top
+sca"		1;
+	"~*"		1;
+	"~*er-jessica.top
+sca"		1;
+	"~*"		1;
+	"~*er-jess.top
+sca"		1;
+	"~*"		1;
+	"~*er-joh"		1;
+	"~*.top
+sca"		1;
+	"~*"		1;
+	"~*er-josh.top
+sca"		1;
+	"~*"		1;
+	"~*er-julia"		1;
+	"~*"		1;
+	"~*a.top
+sca"		1;
+	"~*"		1;
+	"~*er-julia.top
+sca"		1;
+	"~*"		1;
+	"~*er-margo.top
+sca"		1;
+	"~*"		1;
+	"~*er-mark.top
+sca"		1;
+	"~*"		1;
+	"~*er-marwi"		1;
+	"~*.top
+sca"		1;
+	"~*"		1;
+	"~*er-mary.top
+sca"		1;
+	"~*"		1;
+	"~*er-"		1;
+	"~*elso"		1;
+	"~*.top
+sca"		1;
+	"~*"		1;
+	"~*er-olga.top
+sca"		1;
+	"~*"		1;
+	"~*er-viktor.top
+sca"		1;
+	"~*"		1;
+	"~*er-walter.top
+sca"		1;
+	"~*"		1;
+	"~*er-walt.top
+sca"		1;
+	"~*"		1;
+	"~*er-willy.top
+sca"		1;
+	"~*safe."		1;
+	"~*et
+sce"		1;
+	"~*arii-1-se"		1;
+	"~*tyabrya.uroki.org.ua
+sce"		1;
+	"~*icmissouri.us
+schlampe"		1;
+	"~*-treffe"		1;
+	"~*.com
+school-diplomat.ru
+scoopquest.com
+score-ads.me"		1;
+	"~*
+scrapy.org
+scree"		1;
+	"~*toolkit.com
+scripted.com
+scr"		1;
+	"~*et.biz.ua
+sc-specialhost.com
+sdelai-prosto.ru
+sdelatmebel.ru
+sdi-pme.com
+sdrescher."		1;
+	"~*et
+sdsjweb.com
+seadrago"		1;
+	"~*herbery.com
+sea"		1;
+	"~*so"		1;
+	"~*li"		1;
+	"~*e24.pl
+search-error.com
+searchimage.co
+searchi"		1;
+	"~*quire.com
+searchi"		1;
+	"~*ter"		1;
+	"~*eat-a.akamaihd."		1;
+	"~*et
+searchkut.com
+searchlock.com
+searchmywi"		1;
+	"~*dow-a.akamaihd."		1;
+	"~*et
+searchtook"		1;
+	"~*ow-a.akamaihd."		1;
+	"~*et
+searchwebk"		1;
+	"~*ow-a.akamaihd."		1;
+	"~*et
+seaso"		1;
+	"~*var.ru
+seccio"		1;
+	"~*co"		1;
+	"~*trabajo.com
+secretscook.ru
+secret.x"		1;
+	"~*--oogle-wmc.com
+securityallia"		1;
+	"~*ceservices.com
+seei"		1;
+	"~*gmeerkat.com
+seemoreresultshu-a.akamaihd."		1;
+	"~*et
+seeresultshub-a.akamaihd."		1;
+	"~*et
+see-your-website-here.com
+segol.tv
+seksotur.ru
+semalt.com
+semaltmedia.com
+semp."		1;
+	"~*et
+semprofile.com
+semrush.com
+se"		1;
+	"~*ger.atspace.co.uk
+seo-2-0.com
+seoa"		1;
+	"~*alyses.com
+seocheki."		1;
+	"~*et
+seoexperime"		1;
+	"~*ty.ru
+seofied.com
+seofirmreviewsus.i"		1;
+	"~*fo
+seogadget.ru
+seoheap.com
+seokicks.de
+seomarketi"		1;
+	"~*gs.o"		1;
+	"~*li"		1;
+	"~*e
+seo-platform.com
+seoprofiler.com
+seora"		1;
+	"~*k.i"		1;
+	"~*fo
+seora"		1;
+	"~*ki"		1;
+	"~*gli"		1;
+	"~*ks.com
+seora"		1;
+	"~*ki"		1;
+	"~*gli"		1;
+	"~*ks.us
+seora"		1;
+	"~*ki"		1;
+	"~*gli"		1;
+	"~*ks.xyz
+seo-smm.kz
+seo-tools-optimizi"		1;
+	"~*g.com
+seo-traffic-ra"		1;
+	"~*ki"		1;
+	"~*g.i"		1;
+	"~*fo
+serdce"		1;
+	"~*ebolit.com
+sergiorossistore.o"		1;
+	"~*li"		1;
+	"~*e
+serialsway.ucoz.ru
+serpteh"		1;
+	"~*ika.ru
+servethis.com
+service.adtech.fr
+service.adtech.us
+service-core.ru
+servi"		1;
+	"~*g"		1;
+	"~*otice.com
+servisural.ru
+seryez"		1;
+	"~*ie-z"		1;
+	"~*akomstva.ru
+sethrolli"		1;
+	"~*s."		1;
+	"~*et
+se-weldi"		1;
+	"~*g.ru
+sexad."		1;
+	"~*et
+sexblog.pw
+sexcamamateurchat.com
+sex-dati"		1;
+	"~*g.co
+sexflirtbook.com
+sex.hotblog.top
+sexko"		1;
+	"~*takteao.i"		1;
+	"~*fo
+sexko"		1;
+	"~*takte-seite.com
+sexkrasivo."		1;
+	"~*et
+sexobzor.i"		1;
+	"~*fo
+sexpartygirls."		1;
+	"~*et
+sexphoto.site
+sex-pr."		1;
+	"~*et
+sexreliz.com
+sexsaoy.com
+sexsearch.com
+sex-sex-sex5.com
+sexstream.pl
+sextracker.be
+sex-tracker.com
+sextracker.com
+sex-tracker.de
+sextracker.de
+sexvideo-sex.com
+sexvpor"		1;
+	"~*o.ru
+sex-watch.com
+sexyali.com
+sexy-pi"		1;
+	"~*gs.com
+sexy-scree"		1;
+	"~*-savers.com
+sexystrippe.i"		1;
+	"~*fo
+sexytee"		1;
+	"~*s.hol.es
+sexytre"		1;
+	"~*d.ru
+sfd-chess.ru
+sfj-ror."		1;
+	"~*o
+shakhtar-do"		1;
+	"~*eck.ru
+sharebutto"		1;
+	"~*."		1;
+	"~*et
+sharebutto"		1;
+	"~*.org
+share-butto"		1;
+	"~*s-for-free.com
+sharebutto"		1;
+	"~*.to
+shariki-zuma-li"		1;
+	"~*es.ru
+sharpchalle"		1;
+	"~*ge.com
+shell-pmr.ru
+shemalegalls.blogpor"		1;
+	"~*.i"		1;
+	"~*
+shemale-sex."		1;
+	"~*et
+sherlock.se
+shijia"		1;
+	"~*.ac.c"		1;
+	"~*
+shiksabd.com
+shi"		1;
+	"~*ikiev.com.ua
+ship-marvel.co.ua
+shisha-swag.de
+shitmovs.com
+shivafur"		1;
+	"~*ishi"		1;
+	"~*gs.com
+shlyahte"		1;
+	"~*.ru
+shmetall.com.ua
+shoda"		1;
+	"~*hq.com
+shoeso"		1;
+	"~*li"		1;
+	"~*ebuy.c"		1;
+	"~*
+shoeso"		1;
+	"~*li"		1;
+	"~*ebuy.xyz
+shop.acim.org
+shopcheermakeup.i"		1;
+	"~*fo
+shop-electro"		1;
+	"~*.ru
+shoplvlv.us
+shoppi"		1;
+	"~*gjequiti.com.br
+shoppi"		1;
+	"~*gmiracles.co.uk
+shoppytoolmac.com
+shopvilleroyboch.com.ua
+shopwme.ru
+shop.xz618.com
+shtaket"		1;
+	"~*iki.ru
+shtora66.ru
+sibdevice.ru
+sibecoprom.ru
+sibtest.ru
+sibvitr.ru
+sicfor.bcu.cc
+sideeffectsoftiza"		1;
+	"~*idi"		1;
+	"~*e.blogspot.com
+sierraapps.com
+sigmu"		1;
+	"~*d-freud.co.uk
+sig"		1;
+	"~*al03.ru
+sig"		1;
+	"~*oredom.com
+sig"		1;
+	"~*x.i"		1;
+	"~*fo
+siha.de
+silde"		1;
+	"~*afilcitratemed.com
+silktide.com
+silverage.ru
+silvermature."		1;
+	"~*et
+similardeals."		1;
+	"~*et
+simo"		1;
+	"~*3.ru
+simple-image.com.ua
+simplepooltips.com
+simple-share-butto"		1;
+	"~*s.com
+simply."		1;
+	"~*et
+simpoed.ufop.br
+sim-service."		1;
+	"~*et
+sims-sims.ru
+si"		1;
+	"~*dragosa.comxa.com
+si"		1;
+	"~*el.i"		1;
+	"~*fo
+si"		1;
+	"~*estesia.host.sk
+sisiy"		1;
+	"~*as.ru
+sispe.com.br
+site3.free-share-butto"		1;
+	"~*s.com
+site5.com
+site-a"		1;
+	"~*alyzer.com
+site-auditor.o"		1;
+	"~*li"		1;
+	"~*e
+sitebeam."		1;
+	"~*et
+siteexpress.co.il
+siteo"		1;
+	"~*omy.com
+siteripz."		1;
+	"~*et
+site-speed-checker.site
+site-speed-check.site
+sitevaluatio"		1;
+	"~*.com
+sitevaluatio"		1;
+	"~*.org
+sitevalued.com
+sitopreferito.it
+si-u"		1;
+	"~*ique.com
+sivs.ru
+s-iwa"		1;
+	"~*tyou.com
+sixcooler.de
+sizeplus.work
+skachat-besplat"		1;
+	"~*o-obrazcy.ru
+skatestick.bid
+sk.golde"		1;
+	"~*-praga.ru
+ski"		1;
+	"~*crate."		1;
+	"~*et
+sklad-24.ru
+skladvaz.ru
+skutecz"		1;
+	"~*a-dieta.co.pl
+skutecz"		1;
+	"~*etabletki"		1;
+	"~*aporostwlosow.pl
+skylta.com
+sky-mi"		1;
+	"~*e.ru
+skytraf.xyz
+skyway24.ru
+slavic-magic.ru
+slavkokacu"		1;
+	"~*ko.de
+slayerlife.com
+sledstvie-veli."		1;
+	"~*et
+slimcd"		1;
+	"~*.com
+slim.sella"		1;
+	"~*y.ru
+slkrm.ru
+slo"		1;
+	"~*echka.ru
+slowmacfaster.trade
+slowmac.tech
+sluga"		1;
+	"~*arodu.ru
+slujbauborki.ru
+smailik.org
+small-game.com
+small-games.biz
+smartadserver.com
+smart-bala"		1;
+	"~*cewheel.com
+smartbala"		1;
+	"~*ceworld.com
+smartpet.ru
+smart-scripts.com
+smartshoppymac.com
+smichovbike.cz
+smokewithrabbits.com
+sms2x2.ru
+smstraf.ru
+s"		1;
+	"~*ip.to
+s"		1;
+	"~*ip.tw
+s"		1;
+	"~*jack.i"		1;
+	"~*fo
+s"		1;
+	"~*jatie-geroi"		1;
+	"~*ovoy-lomki.ru
+s"		1;
+	"~*omer1.ru
+s"		1;
+	"~*ow."		1;
+	"~*vr163.com
+s"		1;
+	"~*owpla"		1;
+	"~*es.com
+s"		1;
+	"~*ts.shell-pmr.ru
+s"		1;
+	"~*works.com
+s"		1;
+	"~*yatie-lomki-v-stacio"		1;
+	"~*are.ru
+soaksoak.ru
+sobecjvuwa.com.ru
+soblaz"		1;
+	"~*u."		1;
+	"~*et
+socas.pluto.ro
+soc-eco"		1;
+	"~*om-problems.ru
+socialbookmarksubmissio"		1;
+	"~*.org
+social-butto"		1;
+	"~*s.com
+social-butto"		1;
+	"~*s.xyz
+socialbutto"		1;
+	"~*s.xyz
+social-butto"		1;
+	"~*.xyz
+socialbutto"		1;
+	"~*.xyz
+social-fu"		1;
+	"~*.ru
+socialmadesimple.com
+social-search.me
+socialseet.ru
+social-s-ggg.xyz
+social-s-hhh.xyz
+social-s-iii.xyz
+socialtrade.biz
+social-vest"		1;
+	"~*ik.ru
+soc-proof.su
+soda.media
+sodexo.com
+sofit-dmd.ru
+soft1.ru
+softli"		1;
+	"~*esolutio"		1;
+	"~*s.me
+softomix.com
+softomix."		1;
+	"~*et
+softo"		1;
+	"~*icads.com
+soft-program.com
+soft-termi"		1;
+	"~*al.ru
+softtor.com
+softxaker.ru
+soheavyblog.com
+sohoi"		1;
+	"~*dia."		1;
+	"~*et
+solicita.i"		1;
+	"~*fo
+solitaire-game.ru
+solmarket.by
+sol"		1;
+	"~*plast.ru
+so"		1;
+	"~*ata-arctica.wz.cz
+so"		1;
+	"~*goo.wz.cz
+so"		1;
+	"~*gpla"		1;
+	"~*et.ru
+so"		1;
+	"~*"		1;
+	"~*ikforme.ru
+sopha"		1;
+	"~*g8.com
+sortthemesitesby.com
+sosdepotdebila"		1;
+	"~*.com
+soserfis.com
+sotkal.lark.ru
+sou"		1;
+	"~*dfrost.org
+soup.io
+souve"		1;
+	"~*ir.cc
+souve"		1;
+	"~*irua.com
+sovetogorod.ru
+soviet-portal.do.am
+sovi"		1;
+	"~*steel.ru
+spacash.com
+space4update.pw
+space4updati"		1;
+	"~*g.wi"		1;
+	"~*
+spaceshipad.com
+spamme"		1;
+	"~*.de
+spasswelt."		1;
+	"~*et
+spasswelt.xyz
+spbchampio"		1;
+	"~*at.ru
+spb.ru
+special-por"		1;
+	"~*.com
+speedup-my.site
+spidtest.org
+spi"		1;
+	"~*2016.cf
+spi"		1;
+	"~*"		1;
+	"~*erco.ca
+spitfiremusic.com
+sple"		1;
+	"~*dorsearch-a.akamaihd."		1;
+	"~*et
+sport7777."		1;
+	"~*et
+sportbetfair.com
+sports-suppleme"		1;
+	"~*ts.us
+sport-video-obzor.ru
+spravka130.ru
+sprttrack.com
+sps-shop.com
+sptslmtrafms.com
+spyfu.com
+spylog.com
+spymac."		1;
+	"~*et
+spy-sts.com
+squidoo.com
+srdrvp.com
+srecorder.com
+sr-rek"		1;
+	"~*eskap."		1;
+	"~*o
+sstroy44.ru
+stackthatbucks.com
+stairliftsarea.com
+stairliftstrue.com
+stal-rulo"		1;
+	"~*.ru
+sta"		1;
+	"~*tho"		1;
+	"~*yscatholicchurch.org
+star61.de
+stardevi"		1;
+	"~*e.com
+stariy-baku.com
+starpages."		1;
+	"~*et
+start.myplaycity.com
+startufa.ru
+startwp.org
+statistici.ro
+statoutlook.i"		1;
+	"~*fo
+stats-public.grammarly.io
+statustroll.com
+stauga.altervista.org
+stay"		1;
+	"~*play."		1;
+	"~*et
+steame.ru
+steelmaster.lv
+stefa"		1;
+	"~*bakosab.se
+stevemo"		1;
+	"~*se"		1;
+	"~*.com
+stickers-market.ru
+stmassage.ru
+stockquotes.wooeb.com
+stoki.ru
+stop-gepatit.te.ua
+storehouse.ua
+store-rx.com
+stpolice.com
+strag-i"		1;
+	"~*vest.ru
+stra"		1;
+	"~*a-krasoty.ru
+stra"		1;
+	"~*a-sol"		1;
+	"~*ca.ru
+streetfire."		1;
+	"~*et
+streetfoodu"		1;
+	"~*covered.com
+streha-metalko.si
+stretchi"		1;
+	"~*gabuckblog.com
+stretchmate."		1;
+	"~*et
+strfls.com
+strigkaomsk.ru
+stroicol."		1;
+	"~*et
+stroilka.i"		1;
+	"~*fo
+stroimajor.ru
+stroimi"		1;
+	"~*sk.com
+stroimi"		1;
+	"~*sk.org
+stromerrealty.com
+stro"		1;
+	"~*gholdsb.ru
+stro"		1;
+	"~*gsig"		1;
+	"~*al-a.akamaihd."		1;
+	"~*et
+stroydetali.ru
+stroyhelp-dv.ru
+stroymo"		1;
+	"~*olit.su
+strv.se
+studiofaca.com
+stuff-about-mo"		1;
+	"~*ey.com
+styro.ru
+success-seo.com
+suche"		1;
+	"~*i"		1;
+	"~*deutschla"		1;
+	"~*d.com
+suche.t-o"		1;
+	"~*li"		1;
+	"~*e.de
+sugarku"		1;
+	"~*.com
+suggest-keywords.com
+sugva"		1;
+	"~*t.ru
+sukarame."		1;
+	"~*et
+sukirge"		1;
+	"~*k.dvrlists.com
+summerli"		1;
+	"~*homes411.i"		1;
+	"~*fo
+sumo.com
+superie"		1;
+	"~*ds.org
+superi"		1;
+	"~*terstitial.com
+superka"		1;
+	"~*po.com
+supermesta.ru
+super"		1;
+	"~*ew.org
+superpages.com
+supers.com.ua
+superstats.com
+supervesti.ru
+support."		1;
+	"~*opeas.sk
+surce"		1;
+	"~*tro.com
+sureo"		1;
+	"~*e.pro
+surfbuyermac.com
+surfli"		1;
+	"~*ksmedical.com
+surgut.zrus.org
+suri"		1;
+	"~*tech.ac.th
+susa"		1;
+	"~*holtphotography.com
+svarbit.com
+svarkagid.com
+svbur.ru
+svetlotorg.ru
+svetodiodoff.ru
+sv"		1;
+	"~*uppsalaorebro.se
+svtrd.com
+swagbucks.com
+swi"		1;
+	"~*ger-mobil."		1;
+	"~*et
+swi"		1;
+	"~*gerseite"		1;
+	"~*.com
+swi"		1;
+	"~*gi"		1;
+	"~*withme.ru
+swiped.su
+swsociety.se
+sygraem.com
+sympho"		1;
+	"~*yi"		1;
+	"~*tegratedhealthcare.com
+syvertse"		1;
+	"~*-da."		1;
+	"~*o
+szampo"		1;
+	"~*revita.pl
+t3chto"		1;
+	"~*ic.com
+tabletki"		1;
+	"~*aodchudza"		1;
+	"~*ie.com.pl
+taboola.com
+tacbelarus.ru
+tagil.zrus.org
+taihouse.ru
+takeprofitsystem.com
+takethatad.com
+tako3.com
+tala"		1;
+	"~*t-factory.ru
+tampabaywatch.org
+ta"		1;
+	"~*dvardshuset."		1;
+	"~*et
+ta"		1;
+	"~*ieaukcje.com.pl
+taqywu51.soup.io
+tarad.com
+tasteidea.com
+tastyfoodideas.com
+tattomedia.com
+tattoo33.ru
+tattooha.com
+tattooreligio"		1;
+	"~*.ru
+taxidermy4cash.com
+taximytishi.ru
+taxi-v-eisk.ru
+t-bygg.com
+td-33.ru
+tdsi"		1;
+	"~*g.ru
+teastory.co
+tech4master.com
+techart24.com
+tech"		1;
+	"~*opellet.gr
+tecspb.ru
+tedxrj.com
+tedy.su
+tee"		1;
+	"~*bbw.yopoi"		1;
+	"~*t.i"		1;
+	"~*
+teesdaleflyballclub.co.uk
+teh"		1;
+	"~*gr.ru
+telefo"		1;
+	"~*sexi.com
+telefo"		1;
+	"~*sexkoste"		1;
+	"~*los.tk
+telefo"		1;
+	"~*sex-oh"		1;
+	"~*e0900."		1;
+	"~*et
+telefo"		1;
+	"~*sexsofort.tk
+telegraf.by
+telegramdow"		1;
+	"~*load10.com
+telemetryverificatio"		1;
+	"~*."		1;
+	"~*et
+telesvoboda.ru
+telsis.com
+template-kid.com
+te"		1;
+	"~*gohydar.tk
+terraclicks.com
+terrafootwear.us
+teslathemes.com
+tetracsaudi.com
+texbaza.by
+textads.me"		1;
+	"~*
+thaisamkok.com
+theblue"		1;
+	"~*oodle.com
+thebluffs.com
+thecoolimages."		1;
+	"~*et
+thecoral.com.br
+thecou"		1;
+	"~*ter.com
+thedow"		1;
+	"~*loadfreeo"		1;
+	"~*li"		1;
+	"~*egames.blogspot.com
+thedow"		1;
+	"~*loadfromwarez.blogspot.com
+thefarmergame.com
+thefds."		1;
+	"~*et
+thegioixekhach.com
+theguardla"		1;
+	"~*.com
+theheroes.ru
+thejour"		1;
+	"~*al.ru
+thelottosecrets.com
+themestotal.com
+the"		1;
+	"~*eti"		1;
+	"~*fo.com
+theplacetoupdati"		1;
+	"~*g.pw
+thepokertimer.com
+theprofitsmaker."		1;
+	"~*et
+thesmartsearch."		1;
+	"~*et
+thetardistimes.ovh
+thetattoohut.com
+thetoiletpaper.com
+the-torre"		1;
+	"~*t-tracker.blogspot.com
+the-trader."		1;
+	"~*et
+the-usa-games.blogspot.com
+thewome"		1;
+	"~*life.com
+thfox.com
+thiegs.reco.ws
+thi"		1;
+	"~*.me.p"		1;
+	"~*
+thruport.com
+tia"		1;
+	"~*deural.ru
+ticketsys.i"		1;
+	"~*etwd.com
+tie"		1;
+	"~*s2010.ru
+tilido.com
+timdreby.com
+timeall"		1;
+	"~*ews.ru
+timecrimea.ru
+time-japa"		1;
+	"~*.ru
+timer4web.com
+timetorelax.biz
+titelhelde"		1;
+	"~*.eu
+titslove.yopoi"		1;
+	"~*t.i"		1;
+	"~*
+tiza"		1;
+	"~*idi"		1;
+	"~*e4mg.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*e4mgprice.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*e4mgstreetprice.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*e4mgstreetvalue.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*e4mgtablets.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*e4mguses.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*e6mg.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ea"		1;
+	"~*dcipro.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ea"		1;
+	"~*dgabape"		1;
+	"~*ti"		1;
+	"~*.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ea"		1;
+	"~*dhydrocodo"		1;
+	"~*e.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ecapsules.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ecost.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*edosage.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*edosageforsleep.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*edrugi"		1;
+	"~*teractio"		1;
+	"~*s.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*edrugtest.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*eduri"		1;
+	"~*gpreg"		1;
+	"~*a"		1;
+	"~*cy.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*efibromyalgia.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*eformigrai"		1;
+	"~*es.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*eforopiatewithdrawal.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ehcl2mg.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ehcl2mgsideeffects.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ehcl2mgtablet.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ehcl4mgisita"		1;
+	"~*arcotic.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ehcl4mgtab.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ehcl4mgtabi"		1;
+	"~*fo.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ehcl4mgtablet.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ehclsideeffects.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ehydrochloride2mg.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ehydrochloride4mgstreetvalue.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ei"		1;
+	"~*fo.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ei"		1;
+	"~*gredie"		1;
+	"~*ts.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ei"		1;
+	"~*teractio"		1;
+	"~*s.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*emusclerelaxa"		1;
+	"~*t.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*e"		1;
+	"~*arcotic.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*eo"		1;
+	"~*li"		1;
+	"~*e.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*eoral.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*eorflexeril.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*epai"		1;
+	"~*.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*epills.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*erecreatio"		1;
+	"~*aluse.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*erestlesslegsy"		1;
+	"~*drome.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*eshowupo"		1;
+	"~*drugtest.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*esideeffects.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*esideeffectsweightloss.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*esleepaid.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*estreetprice.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*estreetvalue.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*eusedfor.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*evscyclobe"		1;
+	"~*zapri"		1;
+	"~*e.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*evssoma.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*evsvalium.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ewithdrawal.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*ewithdrawalsymptoms.blogspot.com
+tiza"		1;
+	"~*idi"		1;
+	"~*eza"		1;
+	"~*aflex.blogspot.com
+tjkckpytp"		1;
+	"~*je.com
+tka"		1;
+	"~*orga"		1;
+	"~*izma.ru
+tk-assortime"		1;
+	"~*t.ru
+tks"		1;
+	"~*.ru
+tmearegio"		1;
+	"~*26.com
+tmm-kurs.ru
+tmtrck.com
+t"		1;
+	"~*aio"		1;
+	"~*li"		1;
+	"~*e.org
+t"		1;
+	"~*ctrx.com
+todohr.com
+toloka.hurtom.com
+tomatis.gospart"		1;
+	"~*er.com
+tomck.com
+to"		1;
+	"~*gkatmadura.i"		1;
+	"~*fo
+toolsky.com
+tooplay.com
+tootoo.to
+top10-way.com
+top1-seo-service.com
+top250movies.ru
+topads.me"		1;
+	"~*
+topappspro.com
+topbestgames.com
+topclickguru.com
+top-deal.com.pl
+topdow"		1;
+	"~*loads.ru
+top-karkas.ru
+topmira.com
+topquality.cf
+topshef.ru
+topsy.com
+topvidos.ru
+toro"		1;
+	"~*toplumbi"		1;
+	"~*ggroup.com
+torre"		1;
+	"~*t-"		1;
+	"~*ewgames.com
+torre"		1;
+	"~*ts.cd
+torre"		1;
+	"~*ts-tracker.com
+torr"		1;
+	"~*ada.ru
+torture.ml
+totu.i"		1;
+	"~*fo
+touchmods.fr
+tourcroatia.co.uk
+tourismvictoria.com
+tour-li"		1;
+	"~*e."		1;
+	"~*et
+toursmaps.com
+tovaroboom.vast.ru
+toxicwap.com
+toys.erolove.i"		1;
+	"~*
+tozup.com
+tpu.ru
+track112.site
+trackmedia101.com
+track-ra"		1;
+	"~*ki"		1;
+	"~*gs.o"		1;
+	"~*li"		1;
+	"~*e
+tracksurf.daooda.com
+tracksz.co
+tradedeals.biz
+traderzpla"		1;
+	"~*et.i"		1;
+	"~*
+trafaret74.ru
+traffic100.com
+traffic2cash.org
+traffic2mo"		1;
+	"~*ey.com
+trafficfactory.biz
+trafficge"		1;
+	"~*ius.xyz
+trafficju"		1;
+	"~*ky.com
+trafficju"		1;
+	"~*ky."		1;
+	"~*et
+trafficma"		1;
+	"~*ia.com
+trafficmo"		1;
+	"~*etize.org
+trafficmp.com
+traffic"		1;
+	"~*etzwerk.de
+trafficstars.com
+traffique."		1;
+	"~*et
+traffixer.com
+traffmo"		1;
+	"~*ster.i"		1;
+	"~*fo
+traffpart"		1;
+	"~*ers.com
+trahic.ru
+trahvid.com
+tramadola"		1;
+	"~*dtiza"		1;
+	"~*idi"		1;
+	"~*e.blogspot.com
+traxdom.ru
+treasuretrack-a.akamaihd."		1;
+	"~*et
+trichizobswiv.agdd"		1;
+	"~*s."		1;
+	"~*et
+trio"		1;
+	"~*.od.ua
+tripper.de
+tri-slo"		1;
+	"~*a.org
+triumf-realty.ru
+trk-4."		1;
+	"~*et
+trkdf.com
+trkur.com
+trubywriti"		1;
+	"~*g.com
+trucri.me
+trudogolik."		1;
+	"~*et
+truemfilelj.gq
+trumpetedextremes.com
+trustedhealthtips.com
+trustedmacclea"		1;
+	"~*er.com
+try-rx.com
+tsa"		1;
+	"~*."		1;
+	"~*et
+tsstcorpcddvdwshbbdriverfb.aircus.com
+tsy"		1;
+	"~*dicate.com
+ttrraacckkrr.com
+ttsq.fr
+tube8.com
+tubeli"		1;
+	"~*e.biz
+tuberkuleza"		1;
+	"~*et.ru
+tuberkulez"		1;
+	"~*ik.ru
+tuckermktg.com
+tuckpoi"		1;
+	"~*ti"		1;
+	"~*gmaso"		1;
+	"~*rysystems.com
+tula.howotorg.ru
+tula.mdverey.ru
+tupper-posuda.ru
+tupper-shop.ru
+turbo-suslik.org
+turist-stra"		1;
+	"~*i.ru
+turizm.bz
+turkeyreport.tk
+turvgori.ru
+tva"		1;
+	"~*d.ru
+tversvet.ru
+tvorozh"		1;
+	"~*aja-zapeka"		1;
+	"~*ka-recept.ru
+tvoystartup.ru
+tv-spoty.i"		1;
+	"~*fo
+tvteleport.ru
+twelvevisio"		1;
+	"~*spartyofcolorado.com
+twiclub.i"		1;
+	"~*
+twi"		1;
+	"~*citiescarservice.com
+twi"		1;
+	"~*derbella.com
+twitli"		1;
+	"~*ks.com
+twittradi"		1;
+	"~*g.com
+twittruth.com
+twodollarshows.com
+twojebook.pl
+twu.com.ua
+txxx.com
+typer.o"		1;
+	"~*e
+tytoo"		1;
+	"~*a.com
+tyume"		1;
+	"~*.xrus.org
+u17795."		1;
+	"~*eta"		1;
+	"~*gels.ru
+uac."		1;
+	"~*et.au
+ua-compa"		1;
+	"~*y.ru
+uamtrk.com
+uasb.ru
+ua.tc
+ublaze.ru
+u-cheats.ru
+uchebavchehii.ru
+uchil."		1;
+	"~*et
+ucoz.ru
+ucsol.ru
+udsgame.o"		1;
+	"~*li"		1;
+	"~*e
+ufa.xrus.org
+uggbootsoutletsale.us
+uggsale.o"		1;
+	"~*li"		1;
+	"~*e
+ugguk.o"		1;
+	"~*li"		1;
+	"~*e
+ugogo.i"		1;
+	"~*fo
+uhdtv.website
+uhodzalijami.ru
+uhod-za-sobakoj.ru
+ukkelberg."		1;
+	"~*o
+ukrobstep.com
+ukrup.com
+ultimateclassicrock.com
+ultimateset"		1;
+	"~*ewfreeallsoftupgradesystems.pw
+ultramart.biz
+umg-stroy.ru
+umitya"		1;
+	"~*gi"		1;
+	"~*."		1;
+	"~*et
+um"		1;
+	"~*ovocami"		1;
+	"~*ho.com
+um-razum.ru
+u"		1;
+	"~*derthesite.com
+u"		1;
+	"~*i.me
+u"		1;
+	"~*imodemhalfduplefw.pe"		1;
+	"~*.io
+u"		1;
+	"~*io"		1;
+	"~*markt.de
+u"		1;
+	"~*itexi"		1;
+	"~*dia.com
+u"		1;
+	"~*itygame3d.com
+u"		1;
+	"~*iversals.com.ua
+u"		1;
+	"~*maroll.ya.ru
+u"		1;
+	"~*predictable.ga
+uogo"		1;
+	"~*li"		1;
+	"~*e.com
+upstore.me
+uptime-alpha."		1;
+	"~*et
+uptimebot."		1;
+	"~*et
+uptimechecker.com
+uptime.com
+upupa."		1;
+	"~*et
+ural-buldozer.ru
+urccvfmc.bloger.i"		1;
+	"~*dex.hr
+urdoot.wi"		1;
+	"~*
+url2image.com
+urlcut.ru
+url-img.li"		1;
+	"~*k
+urlope"		1;
+	"~*er.blogspot.com.au
+urlope"		1;
+	"~*er.com
+uroffer.li"		1;
+	"~*k
+uroki."		1;
+	"~*et
+urzedowski.eu
+usacasi"		1;
+	"~*o.com
+usadacha."		1;
+	"~*et
+us-america.ru
+usdx.us
+userequip.com
+usiad."		1;
+	"~*et
+ussearche.cf
+usswrite.com
+ustio"		1;
+	"~*.ru
+utrolive.ru
+uvozdeckych.i"		1;
+	"~*fo
+uytmaster.ru
+uzu"		1;
+	"~*gil.com
+v24s."		1;
+	"~*et
+v720hd.ru
+vabasa.i"		1;
+	"~*wtrade.com
+vacuumsclea"		1;
+	"~*er.com
+vadimkravtcov.ru
+validdomai"		1;
+	"~*.xyz
+valkiria-tk.ru
+valoresito.com
+valuado.com
+valueclick.com
+va"		1;
+	"~*cleefreplica.pw
+va"		1;
+	"~*drie-ict."		1;
+	"~*l
+vapsy.com
+varbergsvi"		1;
+	"~*d.se
+varikoz24.com
+varikozdok.ru
+vashsvet.com
+vasileostrovsky-rayo"		1;
+	"~*.ru
+vavilo"		1;
+	"~*e.com
+vbabule."		1;
+	"~*et
+vduplo.ru
+vedomstvo."		1;
+	"~*et
+veerotech.com
+vega"		1;
+	"~*-foods.us
+vegascosmetics.ru
+vektorpress.ru
+vekzdorov.ru
+velli"		1;
+	"~*gs.i"		1;
+	"~*fo
+velobikestock.com
+ve"		1;
+	"~*ta-prom.ru
+ve"		1;
+	"~*tel"		1;
+	"~*os.com
+vereo.eu
+vertaform.com
+ves"		1;
+	"~*ateh"		1;
+	"~*o.com
+ves"		1;
+	"~*ateh"		1;
+	"~*o.ru
+vezuviy.su
+vgoloveboli."		1;
+	"~*et
+viagra.pp.ua
+via-gra.webstarts.com
+viagroid.ru
+via"		1;
+	"~*dpet.com
+viberdow"		1;
+	"~*load10.com
+videochat.bz
+videochat.cafe
+video-chat.c"		1;
+	"~*
+video-chat.i"		1;
+	"~*
+videochat.life
+video-chat.love
+videochat.mx
+videochat.tv.br
+videochat.world
+videochaty.ru
+video-hollywood.ru
+videojam.tv
+videokrik."		1;
+	"~*et
+videooko.weebly.com
+video--productio"		1;
+	"~*.com
+videosbox.ru
+videos-for-your-busi"		1;
+	"~*ess.com
+videotuber.ru
+video-woma"		1;
+	"~*.com
+videtubs.pl
+vielpor"		1;
+	"~*o."		1;
+	"~*et
+viel.su
+vigrx-origi"		1;
+	"~*al.ru
+viktoria-ce"		1;
+	"~*ter.ru
+vili"		1;
+	"~*gstore."		1;
+	"~*et
+villacolo"		1;
+	"~*iale.com
+villakohla"		1;
+	"~*ta."		1;
+	"~*u
+vi"		1;
+	"~*sit.ru
+vi"		1;
+	"~*ylvault.co.uk
+vip2ch.com
+vip.51.la
+vip-dom.i"		1;
+	"~*
+vip-file.com
+vipms.ru
+vip-parfumeria.ru
+vipps.com.my
+vipromoffers.com
+vipsiterip.org
+virtuagirl.com
+visa-chi"		1;
+	"~*a.ru
+visa-pasport.ru
+visio"		1;
+	"~*well.com.c"		1;
+	"~*
+visitcambridge.org
+vita.com.hr
+vitalads."		1;
+	"~*et
+vita"		1;
+	"~*ail.ru
+viteo"		1;
+	"~*lusarezzo.it
+vive"		1;
+	"~*.host.sk
+vizag.kharkov.ua
+vkak.ru
+vk-mus.ru
+vko"		1;
+	"~*taktemusic.ru
+vko"		1;
+	"~*tarkte.com
+vksaver-all.ru
+vladhistory.com
+vladimir.xrus.org
+vladimir.zrus.org
+vltai.com
+vm"		1;
+	"~*mvzsm"		1;
+	"~*.over-blog.com
+vodaodessa.com
+vod.com.ua
+voditeltrezviy.ru
+vodkoved.ru
+volgograd.xrus.org
+voloomo"		1;
+	"~*ey.com
+volume-pills.biz
+voluumtracker1.com
+voluumtrk.com
+vo"		1;
+	"~*radio.com
+voprosotvet24.ru
+voro"		1;
+	"~*ezh.xrus.org
+vostoktrade.i"		1;
+	"~*fo
+vote-up.ru
+vozbujde"		1;
+	"~*ie.com
+vp"		1;
+	"~*howto.i"		1;
+	"~*fo
+vp"		1;
+	"~*mouse.com
+vremya.eu
+vriel.batcave."		1;
+	"~*et
+vr"		1;
+	"~*electro.ru
+vrotike.ru
+vsesubwaysurfers.com
+vseuz"		1;
+	"~*aem.com
+vsexko"		1;
+	"~*takte."		1;
+	"~*et
+vtc.pw
+vucms.com
+vut.com.ru
+vvo"		1;
+	"~*.co.uk
+vykup-avto-kras"		1;
+	"~*odar.ru
+vykupavto-kras"		1;
+	"~*odar.ru
+vzglyadriv.kg
+vzlom-"		1;
+	"~*a-zakaz.com
+w3data.co
+w3javascript.com
+w7s.ru
+wahicbefa31.soup.io
+walkme.com
+wallpapers-best.com
+wallpapersdesk.i"		1;
+	"~*fo
+wapsite.me
+wareseeker.com
+war"		1;
+	"~*i"		1;
+	"~*gwar.ru
+war"		1;
+	"~*i"		1;
+	"~*gzscaler.heraeus.com
+watchdogs-2.ru
+watch-movies.ru
+watchmyfb.pl
+watchmygf."		1;
+	"~*et
+waterpurifier.club
+wcb.su
+wdfdoca"		1;
+	"~*do.com
+wdrake.com
+we-are-gamers.com
+webads.co."		1;
+	"~*z
+webala"		1;
+	"~*.ru
+web-betti"		1;
+	"~*g.ru
+web.cvut.cz
+webi"		1;
+	"~*sta"		1;
+	"~*tservice.com
+webix.biz
+webix.me
+webjam.com
+weblo.com
+webmasterhome.c"		1;
+	"~*
+webmo"		1;
+	"~*etizer."		1;
+	"~*et
+web"		1;
+	"~*ode.me
+webradiology.ru
+webs.com
+webscouter."		1;
+	"~*et
+webshoppermac.com
+websiteaccou"		1;
+	"~*ta"		1;
+	"~*t.de
+website-a"		1;
+	"~*alytics.o"		1;
+	"~*li"		1;
+	"~*e
+website-a"		1;
+	"~*alyzer.i"		1;
+	"~*fo
+website-date"		1;
+	"~*ba"		1;
+	"~*k.de
+websiteexplorer.i"		1;
+	"~*fo
+website-speed-checker.site
+website-speed-check.site
+website-speed-up.site
+website-speed-up.top
+websites-reviews.com
+websitevaluebot.com
+webtherapy.ru
+weburlope"		1;
+	"~*er.com
+wechatdow"		1;
+	"~*load10.com
+weclipart.com
+weddi"		1;
+	"~*g0ve"		1;
+	"~*ues.tk
+weddi"		1;
+	"~*gdresses.xyz
+weddi"		1;
+	"~*g-salo"		1;
+	"~*."		1;
+	"~*et
+weekes.biz.tc
+weightatrai"		1;
+	"~*i"		1;
+	"~*g.com
+wejdz-tu.pl
+welck.octopis.com
+welcomeauto.ru
+wellcome2slove"		1;
+	"~*ia.ru
+wemarketi"		1;
+	"~*g.se
+weprik.ru
+wesharepics.com
+wesharepics.i"		1;
+	"~*fo
+wesharepics.site
+westermarka"		1;
+	"~*jou.se
+westsextube.com
+westum.se
+westvilletowi"		1;
+	"~*gservices.co.za
+wetgames.ru
+whatistiza"		1;
+	"~*idi"		1;
+	"~*e2mg.blogspot.com
+whatistiza"		1;
+	"~*idi"		1;
+	"~*ehclusedfor.blogspot.com
+whatsappdow"		1;
+	"~*load10.com
+whatsupi"		1;
+	"~*foley.com
+whatzmyip."		1;
+	"~*et
+wheelchairliftsarea.com
+whereiske"		1;
+	"~*today.com
+where-toget.com
+whipme.yopoi"		1;
+	"~*t.i"		1;
+	"~*
+whiteelepha"		1;
+	"~*twelli"		1;
+	"~*gto"		1;
+	"~*.com
+whiteproduct.com
+wholesalecheapjerseysfree.com
+wholesalejerseychi"		1;
+	"~*aoutlet.com
+wholesalejerseychi"		1;
+	"~*ashop.com
+wholesalejerseys-cheapest.com
+wholesalejerseyscheapjerseys.us.com
+wholesalejerseysgaa.com
+wholesale"		1;
+	"~*fljerseys.us.com
+wholi"		1;
+	"~*kstome.com
+whos.amu"		1;
+	"~*g.us
+whoso"		1;
+	"~*myserver.com
+wieseversa."		1;
+	"~*o
+wikes.20fr.com
+wildcattube.com
+wildworld.site
+williamrobso"		1;
+	"~*property.com
+wi"		1;
+	"~*dowssearch-exp.com
+wi"		1;
+	"~*eitudes.wordpress.com
+wi"		1;
+	"~*eratio"		1;
+	"~*.com
+wi"		1;
+	"~*gsoffury2.com
+wi"		1;
+	"~*gsofrefuge."		1;
+	"~*et
+wi"		1;
+	"~*"		1;
+	"~*er7777."		1;
+	"~*et
+wi"		1;
+	"~*terclassichockeyjerseys.com
+wi"		1;
+	"~*wotgold.pl
+wi"		1;
+	"~*x-play.ru
+wiose"		1;
+	"~*"		1;
+	"~*y-bo"		1;
+	"~*-1500.pl
+witherrom55.eklablog.fr
+withsta"		1;
+	"~*di"		1;
+	"~*gheartwarmi"		1;
+	"~*g.com
+w-jour"		1;
+	"~*al.ru
+wma-x.com
+w"		1;
+	"~*oz.de
+womama.ru
+woma"		1;
+	"~*-h.ru
+woma"		1;
+	"~*-orgasm.ru
+woma"		1;
+	"~*-tampo"		1;
+	"~*.ru
+wome"		1;
+	"~*s-jour"		1;
+	"~*al."		1;
+	"~*et
+wome"		1;
+	"~*splay."		1;
+	"~*et
+wome"		1;
+	"~*sterritory.ru
+wo"		1;
+	"~*derfulflowers.biz
+woodyguthrie.se
+wordpresscore.com
+wordpress-crew."		1;
+	"~*et
+word-vorlage"		1;
+	"~*."		1;
+	"~*et
+word-vorlage"		1;
+	"~*.xyz
+works.if.ua
+worldhistory.biz
+worldi"		1;
+	"~*ter"		1;
+	"~*etauthority.com
+worldis.me
+worldlovers.ru
+world-mmo.com
+worldmusicfests.com
+worldoffiles.ru
+worldtraveler.world
+wormix-cheats.ru
+wosik-dach.service-for-web.de
+wowas31.ucoz.ru
+woweb.com.ua
+writi"		1;
+	"~*gservices17.blogspot.ru
+wro"		1;
+	"~*a.it
+ws.ampower.me
+wsgames.ru
+wstroika.ru
+wtsi"		1;
+	"~*dia.i"		1;
+	"~*
+wttaver"		1;
+	"~*.com
+wurr.voila."		1;
+	"~*et
+ww1943.ru
+www.are"		1;
+	"~*da-yeisk.ru
+wygraj-ski"		1;
+	"~*y.wi"		1;
+	"~*
+wygraj-teraz.com
+wy"		1;
+	"~*iki-lista.pl
+wzgyyq.com
+xaijo.com
+xbaboo"		1;
+	"~*.com
+xblog.i"		1;
+	"~*
+xboxster.ru
+xcc24.pl
+xchat26.myfreecams.com
+xclicks."		1;
+	"~*et
+xcombear.ru
+xdoza.com
+xedserver.com
+xep.i"		1;
+	"~*fo
+xev.ru
+xfire.com
+xgft"		1;
+	"~*lrt.bloger.i"		1;
+	"~*dex.hr
+xi"		1;
+	"~*gzi-visio"		1;
+	"~*.com
+xjlottery.com
+xjrul.com
+xkaz.org
+x-lime."		1;
+	"~*et
+xlolitka.com
+xlovecam.com
+xmladserver.com
+xmli"		1;
+	"~*de.com
+xmro"		1;
+	"~*ta.com
+x-musics.com
+x"		1;
+	"~*--1-8sbcpb0bdm8k6a.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--24-glceagatoq7c2a6ioc.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*-----6kcaac"		1;
+	"~*bl"		1;
+	"~*i5c5bicdpcmficy.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*-----6kccaibs5cb8afhjrfmix2"		1;
+	"~*.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*------7cdbapdecfd4ak1b"		1;
+	"~*0amjffj7afu3y.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*-----7kcabaipgeakzcss7bjdqdwpf"		1;
+	"~*hv.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*-----7kceclhb4abre1b4a0ccl2fxch1a.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*----7sbaaabaei0cc8aj5bj0b"		1;
+	"~*cejx.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*----7sbahjd3bt"		1;
+	"~*euw1joc.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*----7sbaphztdjeboffeiof6c.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*----7sbbagbq7bd5aheftfllo4m.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*----7sbbahaq9bb5afgiqfliv4m.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*----7sbho2agebbhlivy.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*----7sbifcamovvfggw9d.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--80aaafb"		1;
+	"~*2bc2ahdfrfkl"		1;
+	"~*6l.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--80aaagvmjabrs1aoc9luc.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--80aaajbdbddwj2alwjieei2afr3v.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--80aaaks3bbhabgbigamdr2h.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--80aafb2a.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--80aagddcgkbcqbad7amll"		1;
+	"~*ejg6dya.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--80aa"		1;
+	"~*aardaperhcem4a6i.com
+x"		1;
+	"~*--80ab4aa2g.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--80adaggc5bdhlfamsfdij4p7b.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--80aeahghtf8ac5i.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--80aebbcbcdemfkhba4byaehoejh8dza3v.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--80ahvj9e.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--80aikhbrhr."		1;
+	"~*et
+x"		1;
+	"~*--80ajbshivpv"		1;
+	"~*2i.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--80ajjbdhgmudixfjc8c5a9df8b.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--80ak6aa92e.com
+x"		1;
+	"~*--80aodi"		1;
+	"~*pgi.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*-----8kcatubaocd1b"		1;
+	"~*eepefojs1h2e.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*----8sbdbjgb1ap7a9c4czbh.x"		1;
+	"~*--p1acf
+x"		1;
+	"~*----8sbhefal"		1;
+	"~*6acifdao"		1;
+	"~*5c6f4axh.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--90ace"		1;
+	"~*ikpebbdd4f6d.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*----9sbebi2bvzr7h.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--b1adccaf1bzj.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--b1ag5cf"		1;
+	"~*.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--b1agm2d."		1;
+	"~*et
+x"		1;
+	"~*--c1acygb.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--d1abj0abs9d.i"		1;
+	"~*.ua
+x"		1;
+	"~*--e1afa"		1;
+	"~*lb"		1;
+	"~*fckd7c3d.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--e1aggki3c.x"		1;
+	"~*--80adxhks
+x"		1;
+	"~*--h1aak"		1;
+	"~*e2ba.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--h1ahbi.com.ua
+x"		1;
+	"~*--hxazdsfy.blogspot.com
+x"		1;
+	"~*----itbeirbjbi7bc6bh2d.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*----itbkqkfiq.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--l1ae"		1;
+	"~*gat.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*--lifehacer-1rb.com
+x"		1;
+	"~*--oogle-wmc.com
+x"		1;
+	"~*--q1a.x"		1;
+	"~*--b1aube0e.x"		1;
+	"~*--c1acygb.x"		1;
+	"~*--p1ai
+x"		1;
+	"~*xxa"		1;
+	"~*dxvideos.com
+x"		1;
+	"~*xx-"		1;
+	"~*.com
+xolodremo"		1;
+	"~*t.ru
+x-por"		1;
+	"~*o.video
+xportvusbdriver8i.s"		1;
+	"~*ack.ws
+xpresscare.ru
+x-rates.ru
+xrus.org
+xsio"		1;
+	"~*."		1;
+	"~*et
+x-stars.ru
+xtube.com
+xtubepor"		1;
+	"~*o."		1;
+	"~*et
+xuki.us
+xvideosbay.com
+xvideospor"		1;
+	"~*.biz
+xwatt.ru
+xxart.ru
+xxlargepop.com
+xxxdati"		1;
+	"~*glocal.us
+xxxguitars.com
+xxx"		1;
+	"~*atelefo"		1;
+	"~*.ru
+xxxrus.org
+xxx-treker.ru
+xxxtube69.com
+xz618.com
+xzlive.com
+yaak"		1;
+	"~*aa.i"		1;
+	"~*fo
+yadere"		1;
+	"~*ergy.ru
+yadro.ru
+yami"		1;
+	"~*ecraft.ru
+yaogua"		1;
+	"~*gdj.com
+yatrk.xyz
+yeartwit.com
+yebocasi"		1;
+	"~*o.com
+yebocasi"		1;
+	"~*o.co.za
+yhit.press
+y"		1;
+	"~*ym"		1;
+	"~*wbm.bloger.i"		1;
+	"~*dex.hr
+yogamatsexpert.com
+yoopsie.com
+yopoi"		1;
+	"~*t.i"		1;
+	"~*
+yorkshireccc.com
+yorkshire.com
+yottos.com
+youa"		1;
+	"~*dcredit.ru
+youbloodyripper.com
+youbrai"		1;
+	"~*boost.asia
+youdao.com
+youdesig"		1;
+	"~*er.kz
+yougetsig"		1;
+	"~*al.com
+youghbould.wordpress.com
+yougota"		1;
+	"~*ewdomai"		1;
+	"~*.com
+youjizz.vc
+youpor"		1;
+	"~*-forum.ga
+youpor"		1;
+	"~*-ru.com
+youradexcha"		1;
+	"~*ge.com
+yourads.website
+youradulthosti"		1;
+	"~*g.com
+youraticles.pl
+your-beari"		1;
+	"~*gs.com
+yourdesires.ru
+yourespo"		1;
+	"~*sive.com
+yourmovies.pl
+yourothersite.com
+yoursearch.me
+yourserverisdow"		1;
+	"~*.com
+yoursite.com
+yourtemplatefi"		1;
+	"~*der.com
+you-shall-"		1;
+	"~*ot-pass.is74.ru
+youto"		1;
+	"~*er.it
+youtubedow"		1;
+	"~*load.org
+yuarra.pluto.ro
+yubikk.i"		1;
+	"~*fo
+yugk."		1;
+	"~*et
+yugo-star.ru
+yu"		1;
+	"~*que.pluto.ro
+yurgorod.ru
+yur-p.ru
+za-fu"		1;
+	"~*-offer.com
+zahvat.ru
+zaidia.xhost.ro
+zaimhelp.ru
+zaim-pod-zalog-kras"		1;
+	"~*odar.ru
+zajm-pod-zalog-"		1;
+	"~*edvizhimosti.ru
+zajm-zalog-kras"		1;
+	"~*odar.ru
+zakazfutbolki.com
+zakazvzloma.com
+zako"		1;
+	"~*-ob-obrazova"		1;
+	"~*ii.ru
+zako"		1;
+	"~*obosago.ru
+zaloadi.ru
+zaloro.com
+zambi"		1;
+	"~*i.ru
+za-music.mymobipla"		1;
+	"~*et.com
+zaobao.com.sg
+zapiszto.pl
+zarabiaj-dzis.pl
+zarabotat-"		1;
+	"~*a-sajte.ru
+zarajbuilders.com
+zare"		1;
+	"~*ica."		1;
+	"~*et
+zarepta.com
+zaste"		1;
+	"~*chivosti."		1;
+	"~*et
+zastroyka.org
+zazagames.org
+zdesformula.ru
+zdesoboi.com
+zebradudka.com
+zebramart.ru
+zed21."		1;
+	"~*et
+zelez"		1;
+	"~*obeto"		1;
+	"~*.ru
+zero1.it
+zerocash.msk.ru
+zeroredirect10.com
+zeroredirect11.com
+zeroredirect12.com
+zeroredirect1.com
+zeroredirect2.com
+zeroredirect5.com
+zeroredirect6.com
+zeroredirect7.com
+zeroredirect8.com
+zeroredirect9.com
+zeroredirect.com
+zetgie.com.pl
+zetmaster.ru
+zho"		1;
+	"~*gwe"		1;
+	"~*li"		1;
+	"~*k.com
+zhorapa"		1;
+	"~*kratov7.blogspot.com
+zhuravlev.i"		1;
+	"~*fo
+zigarette"		1;
+	"~*o"		1;
+	"~*l.ca"		1;
+	"~*alblog.com
+zigarette"		1;
+	"~*o"		1;
+	"~*li"		1;
+	"~*ekaufe"		1;
+	"~*1.bloog.pl
+zigarette"		1;
+	"~*o"		1;
+	"~*li"		1;
+	"~*ekaufe"		1;
+	"~*1.blox.pl
+zigarette"		1;
+	"~*o"		1;
+	"~*li"		1;
+	"~*ekaufe"		1;
+	"~*2.bloog.pl
+zigarette"		1;
+	"~*o"		1;
+	"~*li"		1;
+	"~*ekaufe"		1;
+	"~*2.drupalgarde"		1;
+	"~*s.com
+zigarette"		1;
+	"~*o"		1;
+	"~*li"		1;
+	"~*ekaufe"		1;
+	"~*.tumblr.com
+zigzog.ru
+zio"		1;
+	"~*star."		1;
+	"~*et
+zkjovpdgxivg.ga
+zlat"		1;
+	"~*ajese"		1;
+	"~*.com
+z-master.ru
+zmoda.hostreo.com
+z"		1;
+	"~*akomstva-moskva77.ru
+z"		1;
+	"~*akomstvao"		1;
+	"~*lai"		1;
+	"~*.ru
+z"		1;
+	"~*akomstva-piter78.ru
+z"		1;
+	"~*a"		1;
+	"~*iyapolza.ru
+z"		1;
+	"~*aturalorigi"		1;
+	"~*al.com
+zog.li"		1;
+	"~*k
+zojirushi-products.ru
+zolotoy-lis.ru
+zo"		1;
+	"~*a-aqua.ru
+zo"		1;
+	"~*e-kev717.i"		1;
+	"~*fo
+zoolubimets.ru
+zoomi"		1;
+	"~*fo.com
+zophim.me
+zrizvtr"		1;
+	"~*pale.tk
+zrus.org
+zryydi.com
+zs2vm.top
+zscaler."		1;
+	"~*et
+zscalero"		1;
+	"~*e."		1;
+	"~*et
+zscalertwo."		1;
+	"~*et
+zverokruh-shop.cz
+zvetki.ru
+zx6.ru
+zytpirwai."		1;
+	"~*et
+zzbroya.com.ua"		1;
 # END BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###
 # END BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###
 # END BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###
@@ -378,6 +10154,28 @@ geo $validate_client {
 # UA "gsa-crawler (Enterprise; S4-E9LJ2B82FJJAA; me@mycompany.com)"
 
 # START GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
+	108.177.8.0/21
+108.177.96.0/19
+172.217.0.0/19
+173.194.0.0/16
+2001:4860:4000::/36
+203.208.60.0/24
+207.126.144.0/20
+209.85.128.0/17
+216.239.32.0/19
+216.58.192.0/19
+2404:6800:4000::/36
+2607:f8b0:4000::/36
+2800:3f0:4000::/36
+2a00:1450:4000::/36
+2c0f:fb50:4000::/36
+64.18.0.0/20
+64.233.160.0/19
+64.68.80.0/21
+66.102.0.0/20
+66.249.64.0/18
+72.14.192.0/18
+74.125.0.0/16		0;
 # END GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 # END GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 # END GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
@@ -388,12 +10186,57 @@ geo $validate_client {
 # *********
 
 # START BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
+	131.253.24.0/22
+131.253.46.0/23
+157.54.0.0/15
+157.56.0.0/14
+157.60.0.0/16
+199.30.16.0/24
+199.30.27.0/24
+207.46.0.0/16
+40.112.0.0/13
+40.120.0.0/14
+40.124.0.0/16
+40.125.0.0/17
+40.74.0.0/15
+40.76.0.0/14
+40.80.0.0/12
+40.96.0.0/12
+65.52.104.0/24
+65.52.108.0/22
+65.55.213.0/24
+65.55.217.0/24
+65.55.24.0/24
+65.55.52.0/24
+65.55.55.0/24		0;
 # END BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 # END BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 # END BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 # END BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 
 # START CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
+	103.21.244.0/22
+103.22.200.0/22
+103.31.4.0/22
+104.16.0.0/12
+108.162.192.0/18
+131.0.72.0/22
+141.101.64.0/18
+162.158.0.0/15
+172.64.0.0/13
+173.245.48.0/20
+188.114.96.0/20
+190.93.240.0/20
+197.234.240.0/22
+198.41.128.0/17
+199.27.128.0/21
+2400:cb00::/32
+2405:8100::/32
+2405:b500::/32
+2606:4700::/32
+2803:f800::/32
+2a06:98c0::/29
+2c0f:f248::/32		0;
 # END CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 # END CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 # END CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
@@ -404,6 +10247,51 @@ geo $validate_client {
 # *************************
   
 # START WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###
+		104.197.51.76		1; #makeawebsitehub.com/theme-detector/
+	108.167.189.81		1; #whatpress.
+	et
+	109.73.225.87		1; #theseotools.
+	et/wp-theme-detector
+	13.68.211.181		1; #hackertarget.com
+	142.4.218.201		1; #builtwith.com (bilby.builtwith.com / mo
+	ty.builtwith.com / tre
+	ds.builtwith.com)
+	149.56.33.22		1; #freeo
+	li
+	eseo.org/wordpress-theme-detector
+	158.69.187.171		1; #builtwith.com
+	158.69.26.58		1; #www.mythemedetector.com/detector
+	162.13.185.20		1; #makeawebsitehub.com/theme-detector/
+	173.237.189.235		1; #seo-tools.freedirectorywebsites.com/wordpress-theme-detector
+	173.255.210.133		1; #www.sca
+	wp.com
+	185.45.14.186		1; #whoiswp.com
+	192.163.217.239		1; #sca
+	wp.
+	et
+	192.185.4.40		1; #whatwpthemeisthat.com
+	192.95.29.139		1; #seotoolstatio
+	.com/wordpress-theme-detector
+	192.99.17.79		1; #builtwith.com (oscar.builtwith.com)
+	198.27.69.229		1; #builtwith.com (fluffy.builtwith.com)
+	198.58.124.46		1; #makeawebsitehub.com/theme-detector/
+	199.241.28.124		1; #wordpressthemedetector.org
+	212.71.238.108		1; #pe
+	test-tools.com (Vul
+	erability Sca
+	
+	er)
+	37.247.121.179		1; #wpthemedetector.com
+	37.60.253.215		1; #wploop.com/wordpress-theme-detector-tool/
+	45.63.68.250		1; #www.cuteseotools.
+	et/wordpress-theme-detector
+	45.79.139.191		1; #wpreco
+	.com
+	50.116.84.148		1; #detectwptheme.com
+	52.87.112.125		1; #whattheme.com
+	66.96.183.60		1; #www.callseotools.com/wordpress-theme-detector
+	89.36.223.188		1; #www.cuteseotools.
+	et/wordpress-theme-detector
 # END WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###
 # END WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###
 # END WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###
@@ -415,6 +10303,13 @@ geo $validate_client {
 # See - http://nibbler.silktide.com/
 
 # START NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###
+	52.201.238.175
+52.90.20.216
+54.161.247.146
+54.211.214.177
+54.227.194.252
+54.242.239.179
+54.242.250.203		1;
 # END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###
 # END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###
 # END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###
