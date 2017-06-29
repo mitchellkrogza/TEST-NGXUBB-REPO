@@ -7,7 +7,7 @@
 ##### Version Information #
 ##### Versio  I formatio  #
 ********************************************
-#### Version: V3.2017.06.6
+#### Version: V3.2017.06.7
 #### Bad Referrer Count: 
 #### Bad Bot Count: 
 ********************************************

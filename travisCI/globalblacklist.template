@@ -4,7 +4,11 @@
 
 ### VERSION INFORMATION #
 ###################################################
-### Version: V3.2017.06.6
+### Version: V3.2017.06.7
+### Updated: date | tr -s '[:lower:]'  '[:upper:]'
+### Bad Referrer Count: 4948
+### Bad Bot Count: 480
+###################################################
 ### VERSION INFORMATION ##
 
 ### This file implements a checklist / blacklist for good user agents, bad user agents and
