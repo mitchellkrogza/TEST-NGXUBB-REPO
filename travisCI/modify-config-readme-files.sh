@@ -34,22 +34,22 @@
 YEAR=$(date +%Y)
 MONTH=$(date +%m)
 MY_GIT_TAG=V3.$YEAR.$MONTH.$TRAVIS_BUILD_NUMBER
-BAD_REFERRERS=$(wc -l < $TRAVIS_BUILD_DIR/_generator_lists/bad-referrers.list)
-BAD_BOTS=$(wc -l < $TRAVIS_BUILD_DIR/_generator_lists/bad-user-agents.list)
+BAD_REFERRERS=$(wc -l < $TRAVIS_BUILD_DIR/_GENERATOR_LISTS/BAD-REFERRERS.list)
+BAD_BOTS=$(wc -l < $TRAVIS_BUILD_DIR/_GENERATOR_LISTS/BAD-USER-AGENTS.list)
 
 # **********************************
 # Temporary database files we create
 # **********************************
 
-_inputdbA=/tmp/lastupdated.db
-_tmpnginxA=tmpnginxA
+INPUTDBA=/tmp/lastupdated.db
+TMPNGINXA=TMPNGINXA
 
 # ***************************************************************
 # Start and End Strings to Search for to do inserts into template
 # ***************************************************************
 
-_startmarker="### VERSION INFORMATION #"
-_endmarker="### VERSION INFORMATION ##"
+STARTMARKER="### VERSION INFORMATION #"
+ENDMARKER="### VERSION INFORMATION ##"
 
 # ****************************************
 # PRINT VERSION INFORMATION INTO README.md
@@ -57,12 +57,12 @@ _endmarker="### VERSION INFORMATION ##"
 
 LASTUPDATEIFS=$IFS
 IFS=$'\n'
-echo $_startmarker >> $_tmpnginxA
-printf "********************************************\n#### Version: "$MY_GIT_TAG"\n#### Bad Referrer Count: "$BAD_REFERRERS"\n#### Bad Bot Count: "$BAD_BOTS"\n********************************************\n" >> $_tmpnginxA
-echo $_endmarker  >> $_tmpnginxA
+echo $STARTMARKER >> $TMPNGINXA
+printf "********************************************\n#### Version: "$MY_GIT_TAG"\n#### Bad Referrer Count: "$BAD_REFERRERS"\n#### Bad Bot Count: "$BAD_BOTS"\n********************************************\n" >> $TMPNGINXA
+echo $ENDMARKER  >> $TMPNGINXA
 IFS=$LASTUPDATEIFS
-mv $_tmpnginxA $_inputdbA
-ed -s $_inputdbA<<\IN
+mv $TMPNGINXA $INPUTDBA
+ed -s $INPUTDBA<<\IN
 1,/### VERSION INFORMATION #/d
 /### VERSION INFORMATION ##/,$d
 ,d
@@ -75,7 +75,7 @@ ed -s $_inputdbA<<\IN
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/README.md
 q
 IN
-rm $_inputdbA
+rm $INPUTDBA
 
 # ****************************************************
 # PRINT VERSION INFORMATION INTO AUTO-CONFIGURATION.md
@@ -83,12 +83,12 @@ rm $_inputdbA
 
 LASTUPDATEIFS2=$IFS
 IFS=$'\n'
-echo $_startmarker >> $_tmpnginxA
-printf "********************************************\n#### Version: "$MY_GIT_TAG"\n#### Bad Referrer Count: "$BAD_REFERRERS"\n#### Bad Bot Count: "$BAD_BOTS"\n********************************************\n" >> $_tmpnginxA
-echo $_endmarker  >> $_tmpnginxA
+echo $STARTMARKER >> $TMPNGINXA
+printf "********************************************\n#### Version: "$MY_GIT_TAG"\n#### Bad Referrer Count: "$BAD_REFERRERS"\n#### Bad Bot Count: "$BAD_BOTS"\n********************************************\n" >> $TMPNGINXA
+echo $ENDMARKER  >> $TMPNGINXA
 IFS=$LASTUPDATEIFS2
-mv $_tmpnginxA $_inputdbA
-ed -s $_inputdbA<<\IN
+mv $TMPNGINXA $INPUTDBA
+ed -s $INPUTDBA<<\IN
 1,/### VERSION INFORMATION #/d
 /### VERSION INFORMATION ##/,$d
 ,d
@@ -101,7 +101,7 @@ ed -s $_inputdbA<<\IN
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/AUTO-CONFIGURATION.md
 q
 IN
-rm $_inputdbA
+rm $INPUTDBA
 
 # ******************************************************
 # PRINT VERSION INFORMATION INTO MANUAL-CONFIGURATION.md
@@ -109,12 +109,12 @@ rm $_inputdbA
 
 LASTUPDATEIFS3=$IFS
 IFS=$'\n'
-echo $_startmarker >> $_tmpnginxA
-printf "********************************************\n#### Version: "$MY_GIT_TAG"\n#### Bad Referrer Count: "$BAD_REFERRERS"\n#### Bad Bot Count: "$BAD_BOTS"\n********************************************\n" >> $_tmpnginxA
-echo $_endmarker  >> $_tmpnginxA
+echo $STARTMARKER >> $TMPNGINXA
+printf "********************************************\n#### Version: "$MY_GIT_TAG"\n#### Bad Referrer Count: "$BAD_REFERRERS"\n#### Bad Bot Count: "$BAD_BOTS"\n********************************************\n" >> $TMPNGINXA
+echo $ENDMARKER  >> $TMPNGINXA
 IFS=$LASTUPDATEIFS3
-mv $_tmpnginxA $_inputdbA
-ed -s $_inputdbA<<\IN
+mv $TMPNGINXA $INPUTDBA
+ed -s $INPUTDBA<<\IN
 1,/### VERSION INFORMATION #/d
 /### VERSION INFORMATION ##/,$d
 ,d
@@ -127,7 +127,7 @@ ed -s $_inputdbA<<\IN
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/MANUAL-CONFIGURATION.md
 q
 IN
-rm $_inputdbA
+rm $INPUTDBA
 
 
 exit 0
