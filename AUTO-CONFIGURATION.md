@@ -5,7 +5,11 @@
 ##### Copyright Mitchell Krog <mitchellkrog@gmail.com>
 
 ### VERSION INFORMATION #
-
+********************************************
+#### Version: V3.2017.06.10
+#### Bad Referrer Count: 
+#### Bad Bot Count: 
+********************************************
 ### VERSION INFORMATION ##
 
 
