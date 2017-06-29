@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Generator Script for the Nginx Ultimate Bad Bot Blocker
 # Created by: Mitchell Krog (mitchellkrog@gmail.com)
 # Copyright: Mitchell Krog - https://github.com/mitchellkrogza
