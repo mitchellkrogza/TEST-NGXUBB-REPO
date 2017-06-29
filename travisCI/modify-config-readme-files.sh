@@ -69,13 +69,13 @@ ed -s $_inputdbA<<\IN
 1,/##### Version Information #/d
 /##### Version Information ##/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/README.md
+.r /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/README.md
 /##### Version Information #/x
 .t.
 .,/##### Version Information ##/-d
 #,p
 #,p used to print output replaced with w below to write
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/README.md
+w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/README.md
 q
 IN
 rm $_inputdbA
@@ -98,13 +98,13 @@ ed -s $_inputdbA<<\IN
 1,/##### Version Information #/d
 /##### Version Information ##/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/AUTO-CONFIGURATION.md
+.r /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/AUTO-CONFIGURATION.md
 /##### Version Information #/x
 .t.
 .,/##### Version Information ##/-d
 #,p
 #,p used to print output replaced with w below to write
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/AUTO-CONFIGURATION.md
+w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/AUTO-CONFIGURATION.md
 q
 IN
 rm $_inputdbA
@@ -127,13 +127,13 @@ ed -s $_inputdbA<<\IN
 1,/##### Version Information #/d
 /##### Version Information ##/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/MANUAL-CONFIGURATION.md
+.r /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/MANUAL-CONFIGURATION.md
 /##### Version Information #/x
 .t.
 .,/##### Version Information ##/-d
 #,p
 #,p used to print output replaced with w below to write
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/MANUAL-CONFIGURATION.md
+w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/MANUAL-CONFIGURATION.md
 q
 IN
 rm $_inputdbA

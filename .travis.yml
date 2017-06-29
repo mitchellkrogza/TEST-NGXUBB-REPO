@@ -1,10 +1,10 @@
 language: php
 env:
   global:
-    - secure: unp8irwVXz37jxOFbuM4NciRaq326XktPJP0UuL5m1qdrGiLQVq18cIuXClkxbnCoXzpkL0gG1XdjaD0bRKWAnwRRZBEKDRBYXyF+IcGCfG1k8HUbZoV1OTP21qUXot70YrTiZJ3NkuS32RJdFV9qRAkaM1Srf+ZRHcsZSdXaSJTooMsDLtqk9Bjh9aHEltRCDS0AT2YPANZLW4Yn2QcwBmPhv+3xNxRt2etbl1EYvjYGbKw31JJnMHvS15DJEY52coJ+n4Yw/EI9My4O9TshrAEHeWwXT+dGACdNTD9lXkohuEyc10bgWTGeD5jytm5mbVbzlML3iro0sq6gNWr1iBzGL+FkWSR0ezkbADcnxoUwZa7OHwOPcrzmgkNp6jouGk6Xhl7NQgfwJJtQYPWfOuXIVNUk1Z2Ein/lw2WMzGmEHrqs1x2gIrD83sKqULT3kZBWr4RfhUPjol+V0MZJ+KCW2yo+2C8lZDQ5LWxftoqnG/ia70nFemWsyHSqe2OvN4WfwW9zdS0kRqMZVq/r3R+y0idacFkvO5yXk7cS45tAawIUK5Ipc3fib/ERv8zoDjcIt136hXhlYo44vPr2oprDnyvLcCbdG0A4uCnPpp3Bdbcn2NqIlsXhzBV+YJokaTv5zfWSH2YX6+wdv0C3+dkFjpZaASVg/R7oxg/oXY=
+    - secure: kUfHHCaTBvPChligjyQmGtvu8jiIa8oROHP3H2mghk8UK5vG0uSNjr7EU3WgDGQpaU34Bup4Z1mpwQ1gY0RUmFN3sVbBzl5JSz4uGci3j+v3dFrCRVmuHxujCCQ/DRBTpSK1SIKBU35CMK5FA4o9M5zrJJor2ydJBE+y+Bm7oPHYkzhTKMmxwb5Lc0KhyBu7g2RPUWcZUJK2rTbosonSH88KVK+Exzcfptx7RYRZPidScDV+6nhTsJyO4gbi8gfR2DmnnLidFgne+4XUUslF/Kafe9HpMEubi/AO76yZm4zielu3+cf947yxSajv9UYF4kgmarphWhz1iSwDQm2Sl6cN1VMsd771wS4mSe6wVvv13EPnDJt7FJ/D6vRHf0VtGUEpxiEUGVkYNkhLj3R7DsQXOr2hp1bX8XOeGe9cq9CPRL/0fStM0c8iQeGZS5WAmCFqQsEIghm4ZnWH0OvCX7HxtL5k2SQGDvSzT3sK1TPm4AA9b6ZSldjy1HV3DAqXW6mtzIzaw0YHmffRIo254Gx3olpX+8TbLhYzluiKsyhDgkmWiywVdsdBLUilk3EMRj+DX9SWkX7R+sTqmwXxRr+1lHjIpdVcsKrckEiz6chVfcmA4M6e7K3VAFY+wVBJ1QhHBdvquFqiNrAHElur2UqDRS1+0aLuT9X257fKTic=
     - GIT_NAME: Travis CI
     - GIT_EMAIL: mitchellkrog@gmail.com
-    - TRAVIS_REPO_SLUG: mitchellkrogza/nginx-ultimate-bad-bot-blocker
+    - TRAVIS_REPO_SLUG: mitchellkrogza/TEST-NGXUBB-REPO
     - GIT_BRANCH: master
 sudo: required
 dist: trusty
@@ -41,6 +41,7 @@ script:
   - STATUSCODE=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE 52; then exit 0; fi
   - STATUSCODE=$(curl -I http://localhost:9000/index.php -e http://100dollars-seo.com &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE 52; then exit 0; fi
   - STATUSCODE=$(curl -I http://localhost:9000/index.php -e http://zx6.ru &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE 52; then exit 0; fi
+  - travisCI/run-curl-tests.sh
   - travisCI/modify-files-and-commit.sh
 
 before_deploy:
@@ -54,7 +55,7 @@ deploy:
   - "conf.d/globalblacklist.conf"
   skip_cleanup: true
   on:
-    repo: mitchellkrogza/nginx-ultimate-bad-bot-blocker
+    repo: mitchellkrogza/TEST-NGXUBB-REPO
     tags: false
     branches:
       except:

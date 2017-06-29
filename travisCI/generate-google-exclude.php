@@ -12,7 +12,7 @@ use Mso\IdnaConvert\IdnaConvert;
 
 class Generator
 {
-    private $projectUrl = "https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker";
+    private $projectUrl = "https://github.com/mitchellkrogza/TEST-NGXUBB-REPO";
 
 	public function generateFiles()
     {
@@ -27,7 +27,7 @@ class Generator
      */
     public function domainWorker()
     {
-        $domainsFile = "/home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/_generator_lists/bad-referrers.list";
+        $domainsFile = "/home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/_generator_lists/bad-referrers.list";
         $handle = fopen($domainsFile, "r");
         if (!$handle) {
             throw new \RuntimeException('Error opening file ' . $domainsFile);
@@ -63,7 +63,7 @@ class Generator
      */
     protected function writeToFile($filename, $data)
     {
-    $file = "/home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/$filename";
+    $file = "/home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/$filename";
 	$handle = fopen($file, 'w') or die('Cannot open file:  '.$file);
 	fwrite($handle, $data);
     }
