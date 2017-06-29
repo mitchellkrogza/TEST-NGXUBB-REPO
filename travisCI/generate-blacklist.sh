@@ -406,7 +406,8 @@ rm $INPUTDB10
 
 LASTUPDATEIFS=$IFS
 IFS=$'\n'
-NOW="$(date)"
+#NOW="$(date)"
+NOW="date | tr -s '[:lower:]'  '[:upper:]'"
 echo $STARTMARKER >> $TMPNGINXA
 printf "###################################################\n### Version: "$MY_GIT_TAG"\n### Updated: "$NOW"\n### Bad Referrer Count: "$BAD_REFERRERS"\n### Bad Bot Count: "$BAD_BOTS"\n###################################################\n" >> $TMPNGINXA
 echo $ENDMARKER  >> $TMPNGINXA
