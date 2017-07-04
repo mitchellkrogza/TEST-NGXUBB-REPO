@@ -142,31 +142,13 @@ ACTION4="3;"
 # ************************************
 
 
-#filename="$1"
-#while read -r line
-#do
-#    name="$line"
-#    echo "Name read from file - $name"
-#done < "$filename"
-
-#cat filename | while read LINE
-#do
-#echo $LINE
-#done
-
 GOODBOTSIFS=$IFS
 IFS=$'\n'
 echo $START1 >> $TMPNGINX1
-
-#while read -r line
-#do
-#for line in $(cat $INPUT1); do
 cat $INPUT1 | while read LINE
 do
 printf "\t\"~${LINE}\"\t\t$ACTION1\n" >> $TMPNGINX1
-#done < $INPUT1
 done
-
 echo $END1  >> $TMPNGINX1
 IFS=$GOODBOTSIFS
 mv $TMPNGINX1 $INPUTDB1
@@ -192,9 +174,16 @@ rm $INPUTDB1
 ALLOWEDBOTSIFS=$IFS
 IFS=$'\n'
 echo $START2 >> $TMPNGINX2
-for line in $(cat $INPUT2); do
-printf "\t\"~${line}\"\t\t$ACTION2\n" >> $TMPNGINX2
-done
+
+#for line in $(cat $INPUT2); do
+#cat $INPUT2 | while read LINE
+#do
+
+while read LINE
+do
+printf "\t\"~${LINE}\"\t\t$ACTION2\n" >> $TMPNGINX2
+done < $INPUT2
+
 echo $END2  >> $TMPNGINX2
 IFS=$ALLOWEDBOTSIFS
 mv $TMPNGINX2 $INPUTDB2
@@ -218,8 +207,10 @@ rm $INPUTDB2
 LIMITEDBOTSIFS=$IFS
 IFS=$'\n'
 echo $START3 >> $TMPNGINX3
-for line in $(cat $INPUT3); do
-printf "\t\"~${line}\"\t\t$ACTION3\n" >> $TMPNGINX3
+#for line in $(cat $INPUT3); do
+cat $INPUT3 | while read LINE
+do
+printf "\t\"~${LINE}\"\t\t$ACTION3\n" >> $TMPNGINX3
 done
 echo $END3  >> $TMPNGINX3
 IFS=$LIMITEDBOTSIFS
@@ -244,8 +235,10 @@ rm $INPUTDB3
 BADBOTSIFS=$IFS
 IFS=$'\n'
 echo $START4 >> $TMPNGINX4
-for line in $(cat $INPUT4); do
-printf "\t\"~*${line}\"\t\t$ACTION4\n" >> $TMPNGINX4
+#for line in $(cat $INPUT4); do
+cat $INPUT4 | while read LINE
+do
+printf "\t\"~*${LINE}\"\t\t$ACTION4\n" >> $TMPNGINX4
 done
 echo $END4  >> $TMPNGINX4
 IFS=$BADBOTSIFS
@@ -270,8 +263,10 @@ rm $INPUTDB4
 BADREFERER=$IFS
 IFS=$'\n'
 echo $START5 >> $TMPNGINX5
-for line in $(cat $INPUT5); do
-printf "\t\"~*${line}\"\t\t$ACTION2\n" >> $TMPNGINX5
+#for line in $(cat $INPUT5); do
+cat $INPUT5 | while read LINE
+do
+printf "\t\"~*${LINE}\"\t\t$ACTION2\n" >> $TMPNGINX5
 done
 echo $END5  >> $TMPNGINX5
 IFS=$BADREFERER
@@ -296,8 +291,10 @@ rm $INPUTDB5
 GOOGLE=$IFS
 IFS=$'\n'
 echo $START6 >> $TMPNGINX6
-for line in $(cat $INPUT6); do
-printf "\t${line}\t\t$ACTION1\n" >> $TMPNGINX6
+#for line in $(cat $INPUT6); do
+cat $INPUT6 | while read LINE
+do
+printf "\t${LINE}\t\t$ACTION1\n" >> $TMPNGINX6
 done
 echo $END6  >> $TMPNGINX6
 IFS=$GOOGLE
@@ -322,8 +319,10 @@ rm $INPUTDB6
 BING=$IFS
 IFS=$'\n'
 echo $START7 >> $TMPNGINX7
-for line in $(cat $INPUT7); do
-printf "\t${line}\t\t$ACTION1\n" >> $TMPNGINX7
+#for line in $(cat $INPUT7); do
+cat $INPUT7 | while read LINE
+do
+printf "\t${LINE}\t\t$ACTION1\n" >> $TMPNGINX7
 done
 echo $END7  >> $TMPNGINX7
 IFS=$BING
@@ -348,8 +347,10 @@ rm $INPUTDB7
 WPTHEME=$IFS
 IFS=$'\n'
 echo $START8 >> $TMPNGINX8
-for line in $(cat $INPUT8); do
-printf "\t${line}\n" >> $TMPNGINX8
+#for line in $(cat $INPUT8); do
+cat $INPUT8 | while read LINE
+do
+printf "\t${LINE}\n" >> $TMPNGINX8
 done
 echo $END8  >> $TMPNGINX8
 IFS=$WPTHEME
@@ -374,8 +375,10 @@ rm $INPUTDB8
 NIBBLER=$IFS
 IFS=$'\n'
 echo $START9 >> $TMPNGINX9
-for line in $(cat $INPUT9); do
-printf "\t${line}\t\t$ACTION2\n" >> $TMPNGINX9
+#for line in $(cat $INPUT9); do
+cat $INPUT9 | while read LINE
+do
+printf "\t${LINE}\t\t$ACTION2\n" >> $TMPNGINX9
 done
 echo $END9  >> $TMPNGINX9
 IFS=$NIBBLER
@@ -400,8 +403,10 @@ rm $INPUTDB9
 CLOUDFLARE=$IFS
 IFS=$'\n'
 echo $START10 >> $TMPNGINX10
-for line in $(cat $INPUT10); do
-printf "\t${line}\t\t$ACTION1\n" >> $TMPNGINX10
+#for line in $(cat $INPUT10); do
+cat $INPUT10 | while read LINE
+do
+printf "\t${LINE}\t\t$ACTION1\n" >> $TMPNGINX10
 done
 echo $END10  >> $TMPNGINX10
 IFS=$CLOUDFLARE
