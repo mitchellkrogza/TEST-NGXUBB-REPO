@@ -149,15 +149,23 @@ ACTION4="3;"
 #    echo "Name read from file - $name"
 #done < "$filename"
 
+#cat filename | while read LINE
+#do
+#echo $LINE
+#done
+
 GOODBOTSIFS=$IFS
 IFS=$'\n'
 echo $START1 >> $TMPNGINX1
 
-while read -r line
-do
+#while read -r line
+#do
 #for line in $(cat $INPUT1); do
+cat $INPUT1 | while read LINE
+do
 printf "\t\"~${line}\"\t\t$ACTION1\n" >> $TMPNGINX1
-done < $INPUT1
+#done < $INPUT1
+done
 
 echo $END1  >> $TMPNGINX1
 IFS=$GOODBOTSIFS
