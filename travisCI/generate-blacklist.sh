@@ -179,10 +179,15 @@ IFS=$'\n'
 echo $START2 >> $TMPNGINX2
 
 # Read input file and loop through it doing the printf output
-cat $INPUT2 | while read LINE
+#cat $INPUT2 | while read LINE
+#do
+#printf "\t\"~${LINE}\"\t\t$ACTION2\n" >> $TMPNGINX2
+#done
+
+while read LINE
 do
 printf "\t\"~${LINE}\"\t\t$ACTION2\n" >> $TMPNGINX2
-done
+done < $INPUT2
 
 echo $END2  >> $TMPNGINX2
 IFS=$ALLOWEDBOTSIFS
