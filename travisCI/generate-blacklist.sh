@@ -174,15 +174,11 @@ rm $INPUTDB1
 ALLOWEDBOTSIFS=$IFS
 IFS=$'\n'
 echo $START2 >> $TMPNGINX2
-
-#for line in $(cat $INPUT2); do
-#cat $INPUT2 | while read LINE
-#do
-
-while read LINE
+# Read input file and loop through it doing the printf output
+cat $INPUT2 | while read LINE
 do
 printf "\t\"~${LINE}\"\t\t$ACTION2\n" >> $TMPNGINX2
-done < $INPUT2
+done
 
 echo $END2  >> $TMPNGINX2
 IFS=$ALLOWEDBOTSIFS
