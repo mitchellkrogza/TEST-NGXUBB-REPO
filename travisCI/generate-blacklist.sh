@@ -192,7 +192,8 @@ echo $START2 >> $TMPNGINX2
 
 while IFS= read -r line
 do
-printf "\t\"~${line}\"\t\t$ACTION2\n" >> $TMPNGINX2
+#printf "\t\"~${line}\"\t\t$ACTION2\n" >> $TMPNGINX2
+printf '\t"~%s"\t\t%s\n' "$line" "$ACTION1"
 done < $input2
 
 
