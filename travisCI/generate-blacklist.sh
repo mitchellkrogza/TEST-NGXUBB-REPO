@@ -174,8 +174,8 @@ rm $INPUTDB1
 # ALLOWED BOTS - Create and Insert
 # ********************************
 
-ALLOWEDBOTSIFS=$IFS
-IFS=$'\n'
+#ALLOWEDBOTSIFS=$IFS
+#IFS=$'\n'
 echo $START2 >> $TMPNGINX2
 
 # Read input file and loop through it doing the printf output
@@ -197,7 +197,7 @@ done < $input2
 
 
 echo $END2  >> $TMPNGINX2
-IFS=$ALLOWEDBOTSIFS
+#IFS=$ALLOWEDBOTSIFS
 mv $TMPNGINX2 $inputdb2
 ed -s $inputdb2<<\IN
 1,/# START ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###/d
