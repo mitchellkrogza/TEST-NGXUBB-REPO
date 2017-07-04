@@ -271,7 +271,7 @@ echo $START5 >> $TMPNGINX5
 # Read input file and loop through it doing the printf output
 cat $INPUT5 | while read LINE
 do
-printf "\t\"~${LINE}\"\t\t$ACTION2\n" >> $TMPNGINX5
+printf "\t\"~*${LINE}\"\t\t$ACTION2\n" >> $TMPNGINX5
 done
 
 echo $END5  >> $TMPNGINX5
