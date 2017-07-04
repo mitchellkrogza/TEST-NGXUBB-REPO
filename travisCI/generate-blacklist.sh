@@ -190,10 +190,11 @@ echo $START2 >> $TMPNGINX2
 #echo -e -n "\t\"~${LINE}\"\t\t$ACTION2\n" >> $TMPNGINX2
 #done < $INPUT2
 
-while IFS= read -r line
+while IFS= read -r LINE
 do
 #printf "\t\"~${line}\"\t\t$ACTION2\n" >> $TMPNGINX2
-printf '\t"~%s"\t\t%s\n' "$line" "$ACTION1"
+#printf '\t"~%s"\t\t%s\n' "$line" "$ACTION1"
+printf '\t"~%s"\t\t%s\n' "${LINE}" "$ACTION2" >> "$TMPNGINX2"
 done < $input2
 
 
