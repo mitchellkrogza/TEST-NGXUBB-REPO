@@ -181,7 +181,8 @@ echo $START2 >> $TMPNGINX2
 # Read input file and loop through it doing the printf output
 cat $input2 | while read line
 do
-printf "\t\"~${line}\"\t\t$ACTION2\n" >> $TMPNGINX2
+#printf "\t\"~${line}\"\t\t$ACTION2\n" >> $TMPNGINX2
+printf "\t\"~%s\"\t\t%s\n" "${line}" "$ACTION1" >> $TMPNGINX2
 done
 
 #while read LINE
