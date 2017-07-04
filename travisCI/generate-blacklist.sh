@@ -42,7 +42,7 @@ BAD_BOTS=$(wc -l < $TRAVIS_BUILD_DIR/_GENERATOR_LISTS/BAD-USER-AGENTS.list)
 # *************************************
 
 INPUT1=$TRAVIS_BUILD_DIR/_GENERATOR_LISTS/GOOD-USER-AGENTS.list
-INPUT2=$TRAVIS_BUILD_DIR/_GENERATOR_LISTS/ALLOWED-USER-AGENTS.list
+input2=$TRAVIS_BUILD_DIR/_GENERATOR_LISTS/ALLOWED-USER-AGENTS.list
 INPUT3=$TRAVIS_BUILD_DIR/_GENERATOR_LISTS/LIMITED-USER-AGENTS.list
 INPUT4=$TRAVIS_BUILD_DIR/_GENERATOR_LISTS/BAD-USER-AGENTS.list
 INPUT5=$TRAVIS_BUILD_DIR/_GENERATOR_LISTS/BAD-REFERRERS.list
@@ -58,7 +58,7 @@ INPUT10=$TRAVIS_BUILD_DIR/_GENERATOR_LISTS/CLOUDFLARE-IP-RANGES.list
 
 INPUTDBA=/tmp/VERSION-INFORMATION.db
 INPUTDB1=/tmp/GOOD-USER-AGENTS.db
-INPUTDB2=/tmp/ALLOWED-USER-AGENTS.db
+inputdb2=/tmp/ALLOWED-USER-AGENTS.db
 INPUTDB3=/tmp/LIMITED-USER-AGENTS.db
 INPUTDB4=/tmp/BAD-USER-AGENTS.db
 INPUTDB5=/tmp/BAD-REFERRERS.db
@@ -90,7 +90,7 @@ TMPNGINX10=TMPNGINX10
 # *************************************************************
 
 sort -u $INPUT1 -o $INPUT1
-sort -u $INPUT2 -o $INPUT2
+sort -u $input2 -o $input2
 sort -u $INPUT3 -o $INPUT3
 sort -u $INPUT4 -o $INPUT4
 sort -u $INPUT5 -o $INPUT5
@@ -179,9 +179,9 @@ IFS=$'\n'
 echo $START2 >> $TMPNGINX2
 
 # Read input file and loop through it doing the printf output
-cat $INPUT2 | while read LINE
+cat $input2 | while read line
 do
-printf "\t\"~$LINE\"\t\t$ACTION2\n" >> $TMPNGINX2
+printf "\t\"~${line}\"\t\t$ACTION2\n" >> $TMPNGINX2
 done
 
 #while read LINE
@@ -191,8 +191,8 @@ done
 
 echo $END2  >> $TMPNGINX2
 IFS=$ALLOWEDBOTSIFS
-mv $TMPNGINX2 $INPUTDB2
-ed -s $INPUTDB2<<\IN
+mv $TMPNGINX2 $inputdb2
+ed -s $inputdb2<<\IN
 1,/# START ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
@@ -203,7 +203,7 @@ ed -s $INPUTDB2<<\IN
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/travisCI/globalblacklist.template
 q
 IN
-rm $INPUTDB2
+rm $inputdb2
 
 # ********************************
 # LIMITED BOTS - Create and Insert
