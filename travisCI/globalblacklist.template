@@ -165,9 +165,6 @@ map $http_user_agent $bad_bot {
 	"~Wordpress"		0;
 	"~yahoo"		0;
 # END GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
-# END GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
-# END GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
-# END GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 
 # **************************************************
 # User-Agent Strings Allowed Throug but Rate Limited
@@ -181,9 +178,6 @@ map $http_user_agent $bad_bot {
 	"~Lynx"		1;
 	"~munin"		1;
 	"~Wget/1.15"		1;
-# END ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
-# END ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
-# END ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 # END ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 
 # **************************************************************
@@ -209,9 +203,6 @@ map $http_user_agent $bad_bot {
 	"~UptimeRobot/2.0"		2;
 	"~YandexBot"		2;
 	"~YandexImages"		2;
-# END LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
-# END LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
-# END LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 # END LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 		
 # *********************************************
@@ -701,9 +692,6 @@ map $http_user_agent $bad_bot {
 	"~*ZmEu"		3;
 	"~*ZumBot"		3;
 	"~*ZyBorg"		3;
-# END BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
-# END BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
-# END BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 # END BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 }	
 	
@@ -5804,10 +5792,6 @@ map $http_referer $bad_referer {
 	"~*zytpirwai.net"		1;
 	"~*zzbroya.com.ua"		1;
 # END BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###
-# END BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###
-# END BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###
-# END BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###
-
 }
 
 
@@ -5885,9 +5869,6 @@ geo $validate_client {
 	72.14.192.0/18		0;
 	74.125.0.0/16		0;
 # END GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
-# END GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
-# END GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
-# END GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 
 # *********
 # Bing Bots
@@ -5918,9 +5899,6 @@ geo $validate_client {
 	65.55.52.0/24		0;
 	65.55.55.0/24		0;
 # END BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
-# END BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
-# END BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
-# END BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 
 # START CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 	103.21.244.0/22		0;
@@ -5945,9 +5923,6 @@ geo $validate_client {
 	2803:f800::/32		0;
 	2a06:98c0::/29		0;
 	2c0f:f248::/32		0;
-# END CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
-# END CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
-# END CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 # END CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
   
 # *************************
@@ -5984,9 +5959,6 @@ geo $validate_client {
 		66.96.183.60		1; #www.callseotools.com/wordpress-theme-detector
 		89.36.223.188		1; #www.cuteseotools.net/wordpress-theme-detector
 # END WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###
-# END WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###
-# END WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###
-# END WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###
 
 # ****************************************
 # NIBBLER - SEO testing and reporting tool
@@ -6001,9 +5973,6 @@ geo $validate_client {
 	54.227.194.252		1;
 	54.242.239.179		1;
 	54.242.250.203		1;
-# END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###
-# END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###
-# END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###
 # END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###
 
 

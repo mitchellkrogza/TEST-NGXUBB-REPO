@@ -145,10 +145,13 @@ ACTION4="3;"
 GOODBOTSIFS=$IFS
 IFS=$'\n'
 echo $START1 >> $TMPNGINX1
+
+# Read input file and loop through it doing the printf output
 cat $INPUT1 | while read LINE
 do
 printf "\t\"~${LINE}\"\t\t$ACTION1\n" >> $TMPNGINX1
 done
+
 echo $END1  >> $TMPNGINX1
 IFS=$GOODBOTSIFS
 mv $TMPNGINX1 $INPUTDB1
@@ -174,6 +177,7 @@ rm $INPUTDB1
 ALLOWEDBOTSIFS=$IFS
 IFS=$'\n'
 echo $START2 >> $TMPNGINX2
+
 # Read input file and loop through it doing the printf output
 cat $INPUT2 | while read LINE
 do
@@ -203,11 +207,13 @@ rm $INPUTDB2
 LIMITEDBOTSIFS=$IFS
 IFS=$'\n'
 echo $START3 >> $TMPNGINX3
-#for line in $(cat $INPUT3); do
+
+# Read input file and loop through it doing the printf output
 cat $INPUT3 | while read LINE
 do
 printf "\t\"~${LINE}\"\t\t$ACTION3\n" >> $TMPNGINX3
 done
+
 echo $END3  >> $TMPNGINX3
 IFS=$LIMITEDBOTSIFS
 mv $TMPNGINX3 $INPUTDB3
@@ -231,11 +237,13 @@ rm $INPUTDB3
 BADBOTSIFS=$IFS
 IFS=$'\n'
 echo $START4 >> $TMPNGINX4
-#for line in $(cat $INPUT4); do
+
+# Read input file and loop through it doing the printf output
 cat $INPUT4 | while read LINE
 do
 printf "\t\"~*${LINE}\"\t\t$ACTION4\n" >> $TMPNGINX4
 done
+
 echo $END4  >> $TMPNGINX4
 IFS=$BADBOTSIFS
 mv $TMPNGINX4 $INPUTDB4
@@ -259,11 +267,13 @@ rm $INPUTDB4
 BADREFERER=$IFS
 IFS=$'\n'
 echo $START5 >> $TMPNGINX5
-#for line in $(cat $INPUT5); do
+
+# Read input file and loop through it doing the printf output
 cat $INPUT5 | while read LINE
 do
 printf "\t\"~*${LINE}\"\t\t$ACTION2\n" >> $TMPNGINX5
 done
+
 echo $END5  >> $TMPNGINX5
 IFS=$BADREFERER
 mv $TMPNGINX5 $INPUTDB5
@@ -287,11 +297,13 @@ rm $INPUTDB5
 GOOGLE=$IFS
 IFS=$'\n'
 echo $START6 >> $TMPNGINX6
-#for line in $(cat $INPUT6); do
+
+# Read input file and loop through it doing the printf output
 cat $INPUT6 | while read LINE
 do
 printf "\t${LINE}\t\t$ACTION1\n" >> $TMPNGINX6
 done
+
 echo $END6  >> $TMPNGINX6
 IFS=$GOOGLE
 mv $TMPNGINX6 $INPUTDB6
@@ -315,11 +327,13 @@ rm $INPUTDB6
 BING=$IFS
 IFS=$'\n'
 echo $START7 >> $TMPNGINX7
-#for line in $(cat $INPUT7); do
+
+# Read input file and loop through it doing the printf output
 cat $INPUT7 | while read LINE
 do
 printf "\t${LINE}\t\t$ACTION1\n" >> $TMPNGINX7
 done
+
 echo $END7  >> $TMPNGINX7
 IFS=$BING
 mv $TMPNGINX7 $INPUTDB7
@@ -343,11 +357,13 @@ rm $INPUTDB7
 WPTHEME=$IFS
 IFS=$'\n'
 echo $START8 >> $TMPNGINX8
-#for line in $(cat $INPUT8); do
+
+# Read input file and loop through it doing the printf output
 cat $INPUT8 | while read LINE
 do
 printf "\t${LINE}\n" >> $TMPNGINX8
 done
+
 echo $END8  >> $TMPNGINX8
 IFS=$WPTHEME
 mv $TMPNGINX8 $INPUTDB8
@@ -371,11 +387,13 @@ rm $INPUTDB8
 NIBBLER=$IFS
 IFS=$'\n'
 echo $START9 >> $TMPNGINX9
-#for line in $(cat $INPUT9); do
+
+# Read input file and loop through it doing the printf output
 cat $INPUT9 | while read LINE
 do
 printf "\t${LINE}\t\t$ACTION2\n" >> $TMPNGINX9
 done
+
 echo $END9  >> $TMPNGINX9
 IFS=$NIBBLER
 mv $TMPNGINX9 $INPUTDB9
@@ -399,11 +417,13 @@ rm $INPUTDB9
 CLOUDFLARE=$IFS
 IFS=$'\n'
 echo $START10 >> $TMPNGINX10
-#for line in $(cat $INPUT10); do
+
+# Read input file and loop through it doing the printf output
 cat $INPUT10 | while read LINE
 do
 printf "\t${LINE}\t\t$ACTION1\n" >> $TMPNGINX10
 done
+
 echo $END10  >> $TMPNGINX10
 IFS=$CLOUDFLARE
 mv $TMPNGINX10 $INPUTDB10
@@ -427,7 +447,7 @@ rm $INPUTDB10
 
 LASTUPDATEIFS=$IFS
 IFS=$'\n'
-#NOW="$(date)"
+# Get DATE output into uppercase format
 NOW=$(date | tr -s '[:lower:]'  '[:upper:]')
 echo $STARTMARKER >> $TMPNGINXA
 printf "###################################################\n### Version: "$MY_GIT_TAG"\n### Updated: "$NOW"\n### Bad Referrer Count: "$BAD_REFERRERS"\n### Bad Bot Count: "$BAD_BOTS"\n###################################################\n" >> $TMPNGINXA
@@ -453,16 +473,6 @@ rm $INPUTDBA
 # Generate Additional Files and Copy Them to Folders
 # **************************************************
 
-#sudo cp $_input1 $TRAVIS_BUILD_DIR/_generator_lists/good-user-agents.list
-#sudo cp $_input2 $TRAVIS_BUILD_DIR/_generator_lists/allowed-user-agents.list
-#sudo cp $_input3 $TRAVIS_BUILD_DIR/_generator_lists/limited-user-agents.list
-#sudo cp $_input4 $TRAVIS_BUILD_DIR/_generator_lists/bad-user-agents.list
-#sudo cp $_input5 $TRAVIS_BUILD_DIR/_generator_lists/bad-referrers.list
-#sudo cp $_input6 $TRAVIS_BUILD_DIR/_generator_lists/google-ip-ranges.list
-#sudo cp $_input7 $TRAVIS_BUILD_DIR/_generator_lists/bing-ip-ranges.list
-#sudo cp $_input8 $TRAVIS_BUILD_DIR/_generator_lists/wordpress-theme-detectors.list
-#sudo cp $_input9 $TRAVIS_BUILD_DIR/_generator_lists/nibbler-seo.list
-#sudo cp $_input10 $TRAVIS_BUILD_DIR/_generator_lists/cloudflare-ip-ranges.list
 sudo cp $NGINX $TRAVIS_BUILD_DIR/conf.d/globalblacklist.conf
 sudo cp $NGINX $TRAVIS_BUILD_DIR/_sample_config_files/Engintron_for_cPanel_WHM_Configuration_Example/etc/nginx/conf.d/globalblacklist.conf
 
