@@ -141,12 +141,24 @@ ACTION4="3;"
 # GOOD USER AGENTS - Create and Insert
 # ************************************
 
+
+#filename="$1"
+#while read -r line
+#do
+#    name="$line"
+#    echo "Name read from file - $name"
+#done < "$filename"
+
 GOODBOTSIFS=$IFS
 IFS=$'\n'
 echo $START1 >> $TMPNGINX1
-for line in $(cat $INPUT1); do
+
+while read -r line
+do
+#for line in $(cat $INPUT1); do
 printf "\t\"~${line}\"\t\t$ACTION1\n" >> $TMPNGINX1
-done
+done < $INPUT1
+
 echo $END1  >> $TMPNGINX1
 IFS=$GOODBOTSIFS
 mv $TMPNGINX1 $INPUTDB1
