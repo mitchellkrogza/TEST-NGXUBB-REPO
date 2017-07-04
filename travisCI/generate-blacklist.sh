@@ -186,7 +186,7 @@ echo $START2 >> $TMPNGINX2
 
 while read LINE
 do
-printf "\t\"~\${LINE}\"\t\t$ACTION2\n" >> $TMPNGINX2
+echo -e -n "\t\"~${LINE}\"\t\t$ACTION2\n" >> $TMPNGINX2
 done < $INPUT2
 
 echo $END2  >> $TMPNGINX2
