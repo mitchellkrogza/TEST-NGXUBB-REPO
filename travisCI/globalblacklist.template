@@ -4,8 +4,8 @@
 
 ### VERSION INFORMATION #
 ###################################################
-### Version: V3.2017.07.36
-### Updated: TUE JUL  4 16:17:59 SAST 2017
+### Version: V3.2017.07.37
+### Updated: TUE JUL  4 16:39:32 SAST 2017
 ### Bad Referrer Count: 4948
 ### Bad Bot Count: 480
 ###################################################
@@ -173,11 +173,7 @@ map $http_user_agent $bad_bot {
 # I allow libwww-perl as I use it for monitoring systems with Munin but it is rate limited
 
 # START ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
-	"~jetmon"		1;
-	"~libwww-perl"		1;
-	"~Lynx"		1;
-	"~munin"		1;
-	"~Wget/1.15"		1;
+# END ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 # END ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 
 # **************************************************************
