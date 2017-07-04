@@ -163,7 +163,7 @@ echo $START1 >> $TMPNGINX1
 #for line in $(cat $INPUT1); do
 cat $INPUT1 | while read LINE
 do
-printf "\t\"~${line}\"\t\t$ACTION1\n" >> $TMPNGINX1
+printf "\t\"~${LINE}\"\t\t$ACTION1\n" >> $TMPNGINX1
 #done < $INPUT1
 done
 
