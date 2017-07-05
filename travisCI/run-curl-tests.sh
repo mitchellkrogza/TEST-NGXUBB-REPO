@@ -29,19 +29,35 @@
 #funky
 
 #if [ $status_code -ne "200" ]
-_test1=/tmp/test1.db
+#_test1=/tmp/test1.db
 
-funky () {
-curl -A "masscan" http://localhost:9000/index.php > $_test1
-if grep -Fxq "Welcome" $_test1
-then
+#funky () {
+#curl -A "masscan" http://localhost:9000/index.php > $_test1
+#if grep -Fxq "Welcome" $_test1
+#then
+#    echo "FAILED"
+#else
+#    echo "PASSED"
+#fi
+#}
+
+#funky
+
+
+OUTPUT=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}")
+if echo "$OUTPUT" | grep -q "Welcome"; then
     echo "FAILED"
-else
+    else
     echo "PASSED"
 fi
-}
 
-funky
+
+
+#OUTPUT='blah blah (Status: 200)'
+#if echo "$OUTPUT" | grep -q "(Status:\s200)"; then
+#    echo "MATCH"
+#fi
+
 
 
 #while IFS= read -r LINE
