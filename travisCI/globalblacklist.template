@@ -4,9 +4,9 @@
 
 ### VERSION INFORMATION #
 ###################################################
-### Version: V3.2017.07.61
-### Updated: Wed Jul  5 15:30:31 SAST 2017
-### Bad Referrer Count: 4947
+### Version: V3.2017.07.62
+### Updated: Wed Jul  5 15:35:08 SAST 2017
+### Bad Referrer Count: 4950
 ### Bad Bot Count: 481
 ###################################################
 ### VERSION INFORMATION ##
@@ -950,6 +950,7 @@ map $http_referer $bad_referer {
 	"~*aa9bd78f328a6a41279d0fad0a88df1901.com"		1;
 	"~*aa9d046aab36af4ff182f097f840430d51.com"		1;
 	"~*aaa38852e886ac4af1a3cff9b47cab6272.com"		1;
+	"~*aaaaaaaaaaaaaaaaaaaaaaaaaa.com"		1;
 	"~*aab94f698f36684c5a852a2ef272e031bb.com"		1;
 	"~*aac500b7a15b2646968f6bd8c6305869d7.com"		1;
 	"~*aac52006ec82a24e08b665f4db2b5013f7.com"		1;
@@ -2603,6 +2604,7 @@ map $http_referer $bad_referer {
 	"~*get-your-social-buttons.info"		1;
 	"~*gfaq.ru"		1;
 	"~*gg-arena.ru"		1;
+	"~*gggggggggggggggggggggggggg.com"		1;
 	"~*ggiaro.com"		1;
 	"~*gg.zzyjxs.com"		1;
 	"~*ghazel.ru"		1;
@@ -5777,6 +5779,7 @@ map $http_referer $bad_referer {
 	"~*zx6.ru"		1;
 	"~*zytpirwai.net"		1;
 	"~*zzbroya.com.ua"		1;
+	"~*zzzzzzzzzzzzzzzzzzzzzzzzzz.com"		1;
 # END BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###
 }
 
