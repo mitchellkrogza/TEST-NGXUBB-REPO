@@ -47,7 +47,7 @@ MONTH=$(date +"%m")
 MY_GIT_TAG=V3.$YEAR.$MONTH.$TRAVIS_BUILD_NUMBER
 BAD_REFERRERS=$(wc -l < $TRAVIS_BUILD_DIR/_generator_lists/bad-referrers.list)
 BAD_BOTS=$(wc -l < $TRAVIS_BUILD_DIR/_generator_lists/bad-user-agents.list)
-now="$(date)"
+_now="$(date)"
 
 # *************************
 # Set Start and End Markers
@@ -61,7 +61,7 @@ _endmarker="### Version Information ##"
 # Create the robots.txt file
 # **************************
 
-printf '%s\n%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s\n%s\n\n%s\n%s\n%s\n' "$_startmarker" "###################################################" "### Version: " "$MY_GIT_TAG" "### Updated: " "$now" "### Bad Referrer Count: " "$BAD_REFERRERS" "### Bad Bot Count: " "$BAD_BOTS" "###################################################" "$_endmarker" "User-agent: *" "Disallow: /wp-admin/" "Allow: /wp-admin/admin-ajax.php" >> "$_tmprobots"
+printf '%s\n%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s\n%s\n\n%s\n%s\n%s\n' "$_startmarker" "###################################################" "### Version: " "$MY_GIT_TAG" "### Updated: " "$_now" "### Bad Referrer Count: " "$BAD_REFERRERS" "### Bad Bot Count: " "$BAD_BOTS" "###################################################" "$_endmarker" "User-agent: *" "Disallow: /wp-admin/" "Allow: /wp-admin/admin-ajax.php" >> "$_tmprobots"
 while IFS= read -r LINE
 do
 printf 'User-agent: %s\n%s\n' "${LINE}" "Disallow:/" >> $_tmprobots

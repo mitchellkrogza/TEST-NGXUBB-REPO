@@ -36,6 +36,7 @@ MONTH=$(date +"%m")
 MY_GIT_TAG=V3.$YEAR.$MONTH.$TRAVIS_BUILD_NUMBER
 BAD_REFERRERS=$(wc -l < $TRAVIS_BUILD_DIR/_generator_lists/bad-referrers.list)
 BAD_BOTS=$(wc -l < $TRAVIS_BUILD_DIR/_generator_lists/bad-user-agents.list)
+_now="$(date)"
 
 # *************************************
 # Specify input lists for the generator
@@ -104,49 +105,49 @@ sort -u $_input10 -o $_input10
 # Start and End Strings to Search for to do inserts into template
 # ***************************************************************
 
-START1="# START GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
-END1="# END GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
-START2="# START ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
-END2="# END ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
-START3="# START LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
-END3="# END LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
-START4="# START BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
-END4="# END BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
-START5="# START BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###"
-END5="# END BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###"
-START6="# START GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###"
-END6="# END GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###"
-START7="# START BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###"
-END7="# END BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###"
-START8="# START WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###"
-END8="# END WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###"
-START9="# START NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###"
-END9="# END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###"
-START10="# START CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###"
-END10="# END CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###"
-STARTMARKER="### VERSION INFORMATION #"
-ENDMARKER="### VERSION INFORMATION ##"
+_start1="# START GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
+_end1="# END GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
+_start2="# START ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
+_end2="# END ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
+_start3="# START LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
+_end3="# END LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
+_start4="# START BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
+_end4="# END BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
+_start5="# START BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###"
+_end5="# END BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###"
+_start6="# START GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###"
+_end6="# END GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###"
+_start7="# START BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###"
+_end7="# END BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###"
+_start8="# START WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###"
+_end8="# END WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###"
+_start9="# START NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###"
+_end9="# END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###"
+_start10="# START CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###"
+_end10="# END CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###"
+_startmarker="### VERSION INFORMATION #"
+_endmarker="### VERSION INFORMATION ##"
 
 # **********************************
 # SET ALLOW OR DENY ACTION VARIABLES
 # **********************************
 
-ACTION1="0;"
-ACTION2="1;"
-ACTION3="2;"
-ACTION4="3;"
+_action1="0;"
+_action2="1;"
+_action3="2;"
+_action4="3;"
 
 
 # ************************************
 # GOOD USER AGENTS - Create and Insert
 # ************************************
 
-echo $START1 >> $_tmpnginx1
+printf '%s\n' "$_start1" >> $_tmpnginx1
 while IFS= read -r LINE
 do
-printf '\t"~%s"\t\t%s\n' "${LINE}" "$ACTION1" >> "$_tmpnginx1"
+printf '\t"~%s"\t\t%s\n' "${LINE}" "$_action1" >> "$_tmpnginx1"
 done < $_input1
-echo $END1  >> $_tmpnginx1
+printf '%s\n' "$_end1"  >> $_tmpnginx1
 mv $_tmpnginx1 $_inputdb1
 ed -s $_inputdb1<<\IN
 1,/# START GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###/d
@@ -167,12 +168,12 @@ rm $_inputdb1
 # ALLOWED BOTS - Create and Insert
 # ********************************
 
-echo $START2 >> $_tmpnginx2
+printf '%s\n' "$_start2" >> $_tmpnginx2
 while IFS= read -r LINE
 do
-printf '\t"~%s"\t\t%s\n' "${LINE}" "$ACTION2" >> "$_tmpnginx2"
+printf '\t"~%s"\t\t%s\n' "${LINE}" "$_action2" >> "$_tmpnginx2"
 done < $_input2
-echo $END2  >> $_tmpnginx2
+printf '%s\n' "$_end2"  >> $_tmpnginx2
 mv $_tmpnginx2 $_inputdb2
 ed -s $_inputdb2<<\IN
 1,/# START ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###/d
@@ -191,12 +192,12 @@ rm $_inputdb2
 # LIMITED BOTS - Create and Insert
 # ********************************
 
-echo $START3 >> $_tmpnginx3
+printf '%s\n' "$_start3" >> $_tmpnginx3
 while IFS= read -r LINE
 do
-printf '\t"~%s"\t\t%s\n' "${LINE}" "$ACTION3" >> "$_tmpnginx3"
+printf '\t"~%s"\t\t%s\n' "${LINE}" "$_action3" >> "$_tmpnginx3"
 done < $_input3
-echo $END3  >> $_tmpnginx3
+printf '%s\n' "$_end3"  >> $_tmpnginx3
 mv $_tmpnginx3 $_inputdb3
 ed -s $_inputdb3<<\IN
 1,/# START LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###/d
@@ -215,12 +216,12 @@ rm $_inputdb3
 # BAD BOTS - Create and Insert
 # ****************************
 
-echo $START4 >> $_tmpnginx4
+printf '%s\n' "$_start4" >> $_tmpnginx4
 while IFS= read -r LINE
 do
-printf '\t"~%s"\t\t%s\n' "${LINE}" "$ACTION4" >> "$_tmpnginx4"
+printf '\t"~%s"\t\t%s\n' "${LINE}" "$_action4" >> "$_tmpnginx4"
 done < $_input4
-echo $END4  >> $_tmpnginx4
+printf '%s\n' "$_end4"  >> $_tmpnginx4
 mv $_tmpnginx4 $_inputdb4
 ed -s $_inputdb4<<\IN
 1,/# START BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###/d
@@ -239,12 +240,12 @@ rm $_inputdb4
 # BAD REFERERS - Create and Insert
 # ********************************
 
-echo $START5 >> $_tmpnginx5
+printf '%s\n' "$_start5" >> $_tmpnginx5
 while IFS= read -r LINE
 do
-printf '\t"~*%s"\t\t%s\n' "${LINE}" "$ACTION2" >> "$_tmpnginx5"
+printf '\t"~*%s"\t\t%s\n' "${LINE}" "$_action2" >> "$_tmpnginx5"
 done < $_input5
-echo $END5  >> $_tmpnginx5
+printf '%s\n' "$_end5"  >> $_tmpnginx5
 mv $_tmpnginx5 $_inputdb5
 ed -s $_inputdb5<<\IN
 1,/# START BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###/d
@@ -263,12 +264,12 @@ rm $_inputdb5
 # GOOGLE IP RANGES - Create and Insert
 # ************************************
 
-echo $START6 >> $_tmpnginx6
+printf '%s\n' "$_start6" >> $_tmpnginx6
 while IFS= read -r LINE
 do
-printf '\t"%s"\t\t%s\n' "${LINE}" "$ACTION1" >> "$_tmpnginx6"
+printf '\t"%s"\t\t%s\n' "${LINE}" "$_action1" >> "$_tmpnginx6"
 done < $_input6
-echo $END6  >> $_tmpnginx6
+printf '%s\n' "$_end6"  >> $_tmpnginx6
 mv $_tmpnginx6 $_inputdb6
 ed -s $_inputdb6<<\IN
 1,/# START GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/d
@@ -287,12 +288,12 @@ rm $_inputdb6
 # BING IP RANGES - Create and Insert
 # **********************************
 
-echo $START7 >> $_tmpnginx7
+printf '%s\n' "$_start7" >> $_tmpnginx7
 while IFS= read -r LINE
 do
-printf '\t"%s"\t\t%s\n' "${LINE}" "$ACTION1" >> "$_tmpnginx7"
+printf '\t"%s"\t\t%s\n' "${LINE}" "$_action1" >> "$_tmpnginx7"
 done < $_input7
-echo $END7  >> $_tmpnginx7
+printf '%s\n' "$_end7"  >> $_tmpnginx7
 mv $_tmpnginx7 $_inputdb7
 ed -s $_inputdb7<<\IN
 1,/# START BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/d
@@ -311,12 +312,12 @@ rm $_inputdb7
 # Wordpress Theme Detectors - Create and Insert
 # *********************************************
 
-echo $START8 >> $_tmpnginx8
+printf '%s\n' "$_start8" >> $_tmpnginx8
 while IFS= read -r LINE
 do
 printf '"%s"\n' "${LINE}" >> "$_tmpnginx8"
 done < $_input8
-echo $END8  >> $_tmpnginx8
+printf '%s\n' "$_end8"  >> $_tmpnginx8
 mv $_tmpnginx8 $_inputdb8
 ed -s $_inputdb8<<\IN
 1,/# START WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###/d
@@ -335,12 +336,12 @@ rm $_inputdb8
 # Nibbler SEO - Create and Insert
 # *******************************
 
-echo $START9 >> $_tmpnginx9
+printf '%s\n' "$_start9" >> $_tmpnginx9
 while IFS= read -r LINE
 do
-printf '\t"%s"\t\t%s\n' "${LINE}" "$ACTION2" >> "$_tmpnginx9"
+printf '\t"%s"\t\t%s\n' "${LINE}" "$_action2" >> "$_tmpnginx9"
 done < $_input9
-echo $END9  >> $_tmpnginx9
+printf '%s\n' "$_end9"  >> $_tmpnginx9
 mv $_tmpnginx9 $_inputdb9
 ed -s $_inputdb9<<\IN
 1,/# START NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###/d
@@ -359,12 +360,12 @@ rm $_inputdb9
 # CLOUDFLARE IP RANGES - Create and Insert
 # ****************************************
 
-echo $START10 >> $_tmpnginx10
+printf '%s\n' "$_start10" >> $_tmpnginx10
 while IFS= read -r LINE
 do
-printf '\t"%s"\t\t%s\n' "${LINE}" "$ACTION1" >> "$_tmpnginx10"
+printf '\t"%s"\t\t%s\n' "${LINE}" "$_action1" >> "$_tmpnginx10"
 done < $_input10
-echo $END10  >> $_tmpnginx10
+printf '%s\n' "$_end10"  >> $_tmpnginx10
 mv $_tmpnginx10 $_inputdb10
 ed -s $_inputdb10<<\IN
 1,/# START CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/d
@@ -385,10 +386,15 @@ rm $_inputdb10
 # *******************************************************************************
 
 # Get DATE output into uppercase format
-NOW=$(date | tr -s '[:lower:]'  '[:upper:]')
-echo $STARTMARKER >> $_tmpnginxA
-printf "###################################################\n### Version: "$MY_GIT_TAG"\n### Updated: "$NOW"\n### Bad Referrer Count: "$BAD_REFERRERS"\n### Bad Bot Count: "$BAD_BOTS"\n###################################################\n" >> $_tmpnginxA
-echo $ENDMARKER  >> $_tmpnginxA
+#NOW=$(date | tr -s '[:lower:]'  '[:upper:]')
+
+#echo $_startmarker >> $_tmpnginxA
+#printf "###################################################\n### Version: "$MY_GIT_TAG"\n### Updated: "$NOW"\n### Bad Referrer Count: "$BAD_REFERRERS"\n### Bad Bot Count: "$BAD_BOTS"\n###################################################\n" >> $_tmpnginxA
+#echo $_endmarker  >> $_tmpnginxA
+
+
+printf '%s\n%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s\n%s\n' "$_startmarker" "###################################################" "### Version: " "$MY_GIT_TAG" "### Updated: " "$_now" "### Bad Referrer Count: " "$BAD_REFERRERS" "### Bad Bot Count: " "$BAD_BOTS" "###################################################" "$_endmarker" >> $_tmpnginxA
+
 mv $_tmpnginxA $_inputdbA
 ed -s $_inputdbA<<\IN
 1,/### VERSION INFORMATION #/d
