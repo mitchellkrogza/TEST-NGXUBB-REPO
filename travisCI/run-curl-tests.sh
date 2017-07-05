@@ -1,7 +1,9 @@
 #!/bin/bash
 # Curl Testing Script for Nginx Ultimate Bad Bot Blocker
 
-STATUSCODE1=$(curl -A "80legs" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE1 52; then echo "BAD BOT TEST PASSED"; exit 0; else echo "BAD BOT TEST FAILED"; exit 1; fi
+#STATUSCODE1=$(curl -A "80legs" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE1 52; then echo "BAD BOT TEST PASSED"; exit 0; else echo "BAD BOT TEST FAILED"; exit 1; fi
+
+STATUSCODE1=$(curl -A "80legs" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE1 52; then printf '%s\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n' "BAD BOT TEST FAILED"; exit 1; fi
 
 STATUSCODE2=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE2 52; then echo "BAD BOT TEST PASSED"; exit 0; else echo "BAD BOT TEST FAILED"; exit 1; fi
 
