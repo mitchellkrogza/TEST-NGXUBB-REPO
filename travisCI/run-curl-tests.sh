@@ -15,7 +15,17 @@ STATUSCODE6=$(curl -A "BingBot" http://localhost:9000/index.php &> /dev/stderr -
 
 STATUSCODE7=$(curl -A "BingBot" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test "$STATUSCODE7" -ge Welcome; then printf '%s\n\n' "GOOD BOT TEST PASSED"; exit 0; else if test "$STATUSCODE7" -le spurl; then printf '%s\n\n' "GOOD BOT TEST FAILED"; exit 1; fi
 
-STATUSCODE8=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test "$STATUSCODE8" -ge Welcome; then printf '%s\n\n' "GOOD BOT TEST FAILED"; exit 0; else if test "$STATUSCODE8" -le curl; then printf '%s\n\n' "GOOD BOT TEST PASSED"; exit 1; fi
+STATUSCODE8=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}")
+if [ $STATUSCODE8 -ne "Welcome" ]
+then
+printf '%s\n\n' "GOOD BOT TEST FAILED"
+exit 0
+else 
+printf '%s\n\n' "GOOD BOT TEST PASSED"
+exit 1
+fi
+
+#if [ $status_code -ne "200" ]
 
 #response=$(
 #    curl YOUR_URL \
@@ -26,4 +36,3 @@ STATUSCODE8=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr -
 #test "$response" -ge 200 && test "$response" -le 299
 
 exit 0
-done
