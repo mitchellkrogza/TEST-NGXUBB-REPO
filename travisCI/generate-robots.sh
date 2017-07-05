@@ -67,10 +67,13 @@ _endmarker="### Version Information ##"
 echo $_startmarker  >> $_tmprobots
 #printf '"%s"\n'
 printf '"###################################################"\n"### Version: "%s"\n"### Updated: "%s"\n"### Bad Referrer Count: "%s"\n"Bad Bot Count: "%s"\n"###################################################"\n' "$MY_GIT_TAG" "$now" "$BAD_REFERRERS" "$BAD_BOTS"  >> "$_tmprobots"
+
+#printf '\t"%s"\t\t%s\n' "${LINE}" "$ACTION2" >> "$_tmpnginx9"
+
 echo $_endmarker  >> $_tmprobots
 while IFS= read -r LINE
 do
-printf '"User-agent: "%s"\n"Disallow:/"\n' "${LINE}" >> $_tmprobots
+printf 'User-agent: %s\n%s\n' "${LINE}" "Disallow:/" >> $_tmprobots
 #printf '"###################################################"\n"### Version: "%s"\n"### Updated: "%s"\n"### Bad Referrer Count: "%s"\n"Bad Bot Count: "%s"\n"###################################################"\n' "$MY_GIT_TAG" "$now" "$BAD_REFERRERS" "$BAD_BOTS"  >> "$_tmprobots"
 done < $_input1
 #printf "###################################################\n### Version: "$MY_GIT_TAG"\n### Updated: "$now"\n### Bad Referrer Count: "$BAD_REFERRERS"\n### Bad Bot Count: "$BAD_BOTS"\n###################################################\n" >> $_tmprobots
