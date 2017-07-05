@@ -68,7 +68,7 @@ _endmarker="### Version Information ##"
 #printf '"%s"\n'
 #printf '"###################################################"\n"### Version: "%s"\n"### Updated: "%s"\n"### Bad Referrer Count: "%s"\n"Bad Bot Count: "%s"\n"###################################################"\n' "$MY_GIT_TAG" "$now" "$BAD_REFERRERS" "$BAD_BOTS"  >> "$_tmprobots"
 
-printf '%s\n%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s\n%s\%s\n%s\n%s' "$_startmarker" "###################################################" "### Version: " "$MY_GIT_TAG" "### Updated: " "$now" "### Bad Referrer Count: " "$BAD_REFERRERS" "### Bad Bot Count: " "$BAD_BOTS" "###################################################" "$_endmarker" "User-agent: *" "Disallow: /wp-admin/" "Allow: /wp-admin/admin-ajax.php" >> "$_tmprobots"
+printf '%s\n%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s\n%s\n%s\n%s\n%s\n' "$_startmarker" "###################################################" "### Version: " "$MY_GIT_TAG" "### Updated: " "$now" "### Bad Referrer Count: " "$BAD_REFERRERS" "### Bad Bot Count: " "$BAD_BOTS" "###################################################" "$_endmarker" "User-agent: *" "Disallow: /wp-admin/" "Allow: /wp-admin/admin-ajax.php" >> "$_tmprobots"
 
 #printf '\t"%s"\t\t%s\n' "${LINE}" "$ACTION2" >> "$_tmpnginx9"
 
