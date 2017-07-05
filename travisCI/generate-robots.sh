@@ -66,7 +66,9 @@ _endmarker="### Version Information ##"
 #IFS=''
 echo $_startmarker  >> $_tmprobots
 #printf '"%s"\n'
-printf '"###################################################"\n"### Version: "%s"\n"### Updated: "%s"\n"### Bad Referrer Count: "%s"\n"Bad Bot Count: "%s"\n"###################################################"\n' "$MY_GIT_TAG" "$now" "$BAD_REFERRERS" "$BAD_BOTS"  >> "$_tmprobots"
+#printf '"###################################################"\n"### Version: "%s"\n"### Updated: "%s"\n"### Bad Referrer Count: "%s"\n"Bad Bot Count: "%s"\n"###################################################"\n' "$MY_GIT_TAG" "$now" "$BAD_REFERRERS" "$BAD_BOTS"  >> "$_tmprobots"
+
+printf '%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s\n' "###################################################" "### Version: " "$MY_GIT_TAG" "### Updated: " "$now" "### Bad Referrer Count: " "$BAD_REFERRERS" "Bad Bot Count: " "$BAD_BOTS" "###################################################" >> "$_tmprobots"
 
 #printf '\t"%s"\t\t%s\n' "${LINE}" "$ACTION2" >> "$_tmpnginx9"
 
