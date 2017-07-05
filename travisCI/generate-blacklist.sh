@@ -116,8 +116,8 @@ _start3="# START LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
 _end3="# END LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
 _start4="# START BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
 _end4="# END BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###"
-_start5="# START BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###"
-_end5="# END BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###"
+_start5="# START BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###"
+_end5="# END BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###"
 _start6="# START GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###"
 _end6="# END GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###"
 _start7="# START BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###"
@@ -251,13 +251,13 @@ done < $_input5
 printf '%s\n' "$_end5"  >> $_tmpnginx5
 mv $_tmpnginx5 $_inputdb5
 ed -s $_inputdb5<<\IN
-1,/# START BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###/d
-/# END BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###/,$d
+1,/# START BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###/d
+/# END BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
 .r /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/travisCI/globalblacklist.template
-/# START BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###/x
+/# START BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###/x
 .t.
-.,/# END BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###/-d
+.,/# END BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###/-d
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/travisCI/globalblacklist.template
 q
 IN

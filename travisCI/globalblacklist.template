@@ -26,7 +26,7 @@
 ### This list was developed and is in use on a live Nginx server running some very busy web sites.
 ### It was built from the ground up using real data from daily logs and is updated almost daily.
 ### It has been extensively tested for false positives and all additions to the lists of bad user agents,
-### spam referers, rogue IP address, scanners, scrapers and domain hijacking sites are extensively checked
+### spam referrers, rogue IP address, scanners, scrapers and domain hijacking sites are extensively checked
 ### before they are added. It is monitored extensively for any false positives.
 
 ### *********
@@ -36,7 +36,7 @@
 ###	Alphabetically ordered lists for Ease of Maintenance.
 ###	Extensive Commenting for Ease of Reference.
 ###	Extensive bad_bot list
-###	Extensive bad_referer list (please excuse the nasty words and domains)
+###	Extensive bad_referrer list (please excuse the nasty words and domains)
 ###	Simple regex patterns versus complicated messy regex patterns.
 ###	Checks regardless of http / https urls or the lack of any protocol sent.
 ###	IP range blocking / whitelisting.
@@ -63,9 +63,9 @@
 ###	2 = rate limited more
 ###	3 = block completely
 
-### ***********************************************************
-### CONTRIBUTING / PULL REQUESTS / ADDING YOUR OWN BAD REFERERS
-### ***********************************************************
+### ************************************************************
+### CONTRIBUTING / PULL REQUESTS / ADDING YOUR OWN BAD REFERRERS
+### ************************************************************
 
 ### For contributing, corrections or adding bots or referrers to this repo,
 ### Send a Pull Request (PR) on any of the .list files in the _generator_lists folder
@@ -682,15 +682,15 @@ map $http_user_agent $bad_bot {
 }	
 	
 
-# ****************************************
-# SECOND BLOCK BY REFERER STRINGS AND URLS
-# ****************************************
+# *****************************************
+# SECOND BLOCK BY REFERRER STRINGS AND URLS
+# *****************************************
 
 # *****************
 # PLEASE TEST !!!!
 # *****************
 
-# ALWAYS test referers that you add. This is done manually as follows
+# ALWAYS test referrers that you add. This is done manually as follows
 
 # curl -I http://www.yourdomain.com -e http://anything.adcash.com              --- GIVES YOU: curl: (52) Empty reply from server
 # curl -I http://www.yourdomain.com -e http://www.goodwebsite.com/not-adcash   --- GIVES YOU: curl: (52) Empty reply from server
@@ -699,18 +699,20 @@ map $http_user_agent $bad_bot {
 # curl -I http://www.yourdomain.com -e http://www.google.com                   --- GIVES YOU: full html output of the web page
 # curl -I http://www.yourdomain.com -e http://www.microsoft.com                --- GIVES YOU: full html output of the web page
 
-# Because of case-insensitive matching any combination of capitilization in the names will all produce a positive hit - make sure you always test thoroughly and monitor logs. This section below also does NOT check for a preceding www. and it also does not care if the referer was sent with http https or even ftp.
+# Because of case-insensitive matching any combination of capitilization in the names will all produce a positive hit
+# make sure you always test thoroughly and monitor logs. This section below also does NOT check for a preceding www. 
+# and it also does not care if the referrer request was sent with http https or even ftp.
 
-# **********************************************************************
-# Now we map all bad referer words below to a variable called $bad_words
-# **********************************************************************
+# ***********************************************************************
+# Now we map all bad referrer words below to a variable called $bad_words
+# ***********************************************************************
 
 map $http_referer $bad_words {
     default 0;
 
-# *************************
-# Bad Referer Word Scanning
-# *************************
+# **************************
+# Bad Referrer Word Scanning
+# **************************
 
 # These are Words and Terms often found tagged onto domains or within url query strings.
 # Create and Customize Your Own Bad Referrer Words Here using the new Include File Method
@@ -734,11 +736,11 @@ map $http_referer $bad_words {
 
 }
 
-# ************************
-# Bad Referer Domain Names
-# ************************
+# *************************
+# Bad Referrer Domain Names
+# *************************
 
-# Now a list of bad referer urls these domains or any combination of them ie .com .net
+# Now a list of bad referrer urls these domains or any combination of them ie .com .net
 # will be blocked out. Doesn't matter if the protocol is http, https or even ftp
 
 # This section includes:
@@ -752,7 +754,7 @@ map $http_referer $bad_words {
 # PLEASE TEST !!!!
 # *****************
 
-# ALWAYS test referers that you add. This is done manually as follows
+# ALWAYS test referrers that you add. This is done manually as follows
 
 # curl -I http://www.yourdomain.com -e http://8gold.com --- GIVES YOU: curl: (52) Empty reply from server
 
@@ -767,7 +769,7 @@ map $http_referer $bad_words {
 # curl -I http://www.yourdomain.com -e https://subdomain.8gold.com --- GIVES YOU: curl: (52) Empty reply from server
 # curl -I http://www.yourdomain.com -e https://NOT8GolD.org        --- GIVES YOU: curl: (52) Empty reply from server
 
-# So if you see a bad referer from wearegoogle.com and you want to block them just add
+# So if you see a bad referrer from wearegoogle.com and you want to block them just add
 # them as "~*wearegoogle.com" don't ever go and do something like "~*google(-|.)" you will
 # kill all your SEO in a week. 
 
@@ -778,16 +780,16 @@ map $http_referer $bad_words {
 # In the bad referrers section I also include sites that hotlink images without permission.
 
 # ***********************************************************************
-# Now we map all good & bad referer urls to variable called #bad_referer
+# Now we map all good & bad referrer urls to variable called #bad_referer
 # ***********************************************************************
 
 map $http_referer $bad_referer {
 	hostnames;
 	default 0;
 
-# ************************************
-# GOOD REFERERS - Spared from Checking 
-# ************************************
+# *************************************
+# GOOD REFERRERS - Spared from Checking 
+# *************************************
 
 # Add all your own web site domain names and server names in this section
 
@@ -807,11 +809,11 @@ map $http_referer $bad_referer {
 # END WHITELISTED DOMAINS ### DO NOT EDIT OR REMOVE THIS LINE AT ALL ###
 # **********************************************************************  	
 
-# *******************************************
-# CUSTOM BAD REFERERS - Add your Own 
-# *******************************************
+# ***********************************
+# CUSTOM BAD REFERRERS - Add your Own 
+# ***********************************
 
-# Add any extra bad referers in the following include file to have them
+# Add any extra bad referrers in the following include file to have them
 # permanently included and blocked - avoid duplicates in your custom file
 
 # *************************************************************************
@@ -824,7 +826,7 @@ map $http_referer $bad_referer {
 # END CUSTOM BAD REFERRERS ### DO NOT EDIT OR REMOVE THIS LINE AT ALL ###
 # ***********************************************************************
 
-# START BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###
+# START BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###
 	"~*000free.us"		1;
 	"~*007angels.com"		1;
 	"~*00author.com"		1;
@@ -5776,7 +5778,7 @@ map $http_referer $bad_referer {
 	"~*zytpirwai.net"		1;
 	"~*zzbroya.com.ua"		1;
 	"~*zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz.com"		1;
-# END BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###
+# END BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###
 }
 
 
