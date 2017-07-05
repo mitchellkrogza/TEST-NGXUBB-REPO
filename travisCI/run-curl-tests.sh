@@ -51,7 +51,15 @@
 #    echo "PASSED"
 #fi
 
-if curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr | grep -i "Welcome"; then
+#if curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr | grep -i "Welcome"; then
+#   echo 'FAILED'
+#else
+#   echo 'PASSED'
+#fi
+
+_test1=/tmp/test1.db
+curl -A "masscan" http://localhost:9000/index.php > $_test1
+if grep -q 'Welcome' "$_test1"; then
    echo 'FAILED'
 else
    echo 'PASSED'
