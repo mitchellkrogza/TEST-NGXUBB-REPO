@@ -1,9 +1,9 @@
 ### Version Information #
 ###################################################
-### Version: V3.2017.07.45
-### Updated: Wed Jul  5 11:54:57 SAST 2017
+### Version: V3.2017.07.46
+### Updated: Wed Jul  5 11:58:47 SAST 2017
 ### Bad Referrer Count: 4951
-Bad Bot Count: 479
+### Bad Bot Count: 479
 ###################################################
 ### Version Information ##
 User-agent: 360Spider
