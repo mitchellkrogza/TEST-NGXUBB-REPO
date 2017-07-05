@@ -409,8 +409,8 @@ rm $_inputdbA
 # Generate Additional Files and Copy Them to Folders
 # **************************************************
 
-sudo cp $NGINX $TRAVIS_BUILD_DIR/conf.d/globalblacklist.conf
-sudo cp $NGINX $TRAVIS_BUILD_DIR/_sample_config_files/Engintron_for_CPanel_WHM_Configuration_Example/etc/nginx/conf.d/globalblacklist.conf
+sudo cp $_nginx $TRAVIS_BUILD_DIR/conf.d/globalblacklist.conf
+sudo cp $_nginx $TRAVIS_BUILD_DIR/_sample_config_files/Engintron_for_CPanel_WHM_Configuration_Example/etc/nginx/conf.d/globalblacklist.conf
 
 exit 0
 

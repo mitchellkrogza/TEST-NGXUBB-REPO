@@ -78,7 +78,7 @@ printf '\n\n' >> $_tmprobots
 #cat $_robotsinput1b |
 #while read line; do
 #printf 'User-agent: '${line}'\n Disallow:/ \n' >> $_tmprobots
-done
+#done
 sudo cp $_tmprobots $TRAVIS_BUILD_DIR/robots.txt/robots.txt
 exit 0
 
