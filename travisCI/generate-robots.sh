@@ -61,29 +61,12 @@ _endmarker="### Version Information ##"
 # Create the robots.txt file
 # **************************
 
-#cp $_input1 $_robotsinput1
-#sed 's/[\]//g' $_robotsinput1 > $_robotsinput1b
-#IFS=''
-#echo $_startmarker  >> $_tmprobots
-#printf '"%s"\n'
-#printf '"###################################################"\n"### Version: "%s"\n"### Updated: "%s"\n"### Bad Referrer Count: "%s"\n"Bad Bot Count: "%s"\n"###################################################"\n' "$MY_GIT_TAG" "$now" "$BAD_REFERRERS" "$BAD_BOTS"  >> "$_tmprobots"
-
 printf '%s\n%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s\n%s\n\n%s\n%s\n%s\n' "$_startmarker" "###################################################" "### Version: " "$MY_GIT_TAG" "### Updated: " "$now" "### Bad Referrer Count: " "$BAD_REFERRERS" "### Bad Bot Count: " "$BAD_BOTS" "###################################################" "$_endmarker" "User-agent: *" "Disallow: /wp-admin/" "Allow: /wp-admin/admin-ajax.php" >> "$_tmprobots"
-
-#printf '\t"%s"\t\t%s\n' "${LINE}" "$ACTION2" >> "$_tmpnginx9"
-
-#echo $_endmarker  >> $_tmprobots
 while IFS= read -r LINE
 do
 printf 'User-agent: %s\n%s\n' "${LINE}" "Disallow:/" >> $_tmprobots
-#printf '"###################################################"\n"### Version: "%s"\n"### Updated: "%s"\n"### Bad Referrer Count: "%s"\n"Bad Bot Count: "%s"\n"###################################################"\n' "$MY_GIT_TAG" "$now" "$BAD_REFERRERS" "$BAD_BOTS"  >> "$_tmprobots"
 done < $_input1
-#printf "###################################################\n### Version: "$MY_GIT_TAG"\n### Updated: "$now"\n### Bad Referrer Count: "$BAD_REFERRERS"\n### Bad Bot Count: "$BAD_BOTS"\n###################################################\n" >> $_tmprobots
-printf '\n\n' >> $_tmprobots
-#cat $_robotsinput1b |
-#while read line; do
-#printf 'User-agent: '${line}'\n Disallow:/ \n' >> $_tmprobots
-#done
+printf '\n' >> $_tmprobots
 sudo cp $_tmprobots $TRAVIS_BUILD_DIR/robots.txt/robots.txt
 exit 0
 
