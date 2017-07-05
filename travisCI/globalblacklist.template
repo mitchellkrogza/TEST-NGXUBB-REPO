@@ -42,8 +42,6 @@
 ###	IP range blocking / whitelisting.
 ###	Rate Limiting Functions.
 
-### *** PLEASE READ ALL INLINE NOTES ON TESTING !!!!
-
 ### ************
 ### INSTALLATION
 ### ************
@@ -53,9 +51,9 @@
 ### Installation, Setup and Update Scripts Contributed by Stuart Cardall - https://github.com/itoffshore
 ### There are also manual configuration instructions provided for those not wishing to do an auto install.
 
-### ********************************************
-###	*** PLEASE READ INLINE NOTES ON TESTING !!!!
-### ********************************************
+### ***********************************************
+###	!!!!! PLEASE READ INLINE NOTES ON TESTING !!!!!
+### ***********************************************
 
 ###	Note that: 
 ###	0 = allowed - no limits
@@ -75,9 +73,9 @@
 # FIRST BLOCK BY USER-AGENT STRINGS
 # *********************************
 
-# ***************
-# PLEASE TEST !!!
-# ***************
+# ***********************
+# !!!!! PLEASE TEST !!!!!
+# ***********************
 
 # ALWAYS test any User-Agent Strings you add here to make sure you have it right
 # Use a Chrome Extension called "User-Agent Switcher for Chrome" where you can create your
