@@ -44,14 +44,25 @@
 #funky
 
 
-OUTPUT=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}")
-if echo "$OUTPUT" | grep -q "Welcome"; then
-    echo "FAILED"
-    else
-    echo "PASSED"
+#OUTPUT=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}")
+#if echo "$OUTPUT" | grep -q "Welcome"; then
+#    echo "FAILED"
+#    else
+#    echo "PASSED"
+#fi
+
+if curl -A "masscan" http://localhost:9000/index.php | grep -q "Welcome"; then
+   echo 'FAILED'
+else
+   echo 'PASSED'
 fi
 
 
+#if prlctl list --info ubuntu-vm | grep -q "State: running"; then
+#   echo 'machine is running'
+#else
+#   echo 'machine is not running'
+#fi
 
 #OUTPUT='blah blah (Status: 200)'
 #if echo "$OUTPUT" | grep -q "(Status:\s200)"; then
