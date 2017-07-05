@@ -5816,24 +5816,11 @@ geo $validate_client {
 # END WHITELISTED IP RANGES ### DO NOT EDIT OR REMOVE THIS LINE AT ALL ###
 # ************************************************************************
 
-# ***********
-# Google Bots
-# ***********
+# ****************
+# Google IP Ranges
+# ****************
 
-# For Safety Sake Google's Known BOT IP Ranges are all white listed
-
-# UA "AdsBot-Google (+http://www.google.com/adsbot.html)"
-# UA "DoCoMo/2.0 N905i(c100;TB;W24H16) (compatible; Googlebot-Mobile/2.3; +http://www.google.com/bot.html)"
-# UA "Googlebot-Image/1.0"
-# UA "Googlebot/2.1 (+http://www.google.com/bot.html)"
-# UA "Googlebot/2.1 (+http://www.googlebot.com/bot.html)"
-# UA "Googlebot/Test (+http://www.googlebot.com/bot.html)"
-# UA "Googlebot/Test"
-# UA "Mediapartners-Google/2.1 (+http://www.googlebot.com/bot.html)"
-# UA "Mediapartners-Google/2.1"
-# UA "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
-# UA "SAMSUNG-SGH-E250/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0 (compatible; Googlebot-Mobile/2.1; +http://www.google.com/bot.html)"
-# UA "gsa-crawler (Enterprise; S4-E9LJ2B82FJJAA; me@mycompany.com)"
+# For Safety Sake all Google's Known IP Ranges are all white listed
 
 # START GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 	108.177.8.0/21		0;
@@ -5860,9 +5847,11 @@ geo $validate_client {
 	74.125.0.0/16		0;
 # END GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 
-# *********
-# Bing Bots
-# *********
+# **************
+# Bing IP Ranges
+# **************
+
+# For Safety Sake all Bing's Known IP Ranges are all white listed
 
 # START BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 	131.253.24.0/22		0;
@@ -5889,6 +5878,12 @@ geo $validate_client {
 	65.55.52.0/24		0;
 	65.55.55.0/24		0;
 # END BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
+
+# ********************
+# Cloudflare IP Ranges
+# ********************
+
+# For Safety Sake all Cloudflare's Known IP Ranges are all white listed
 
 # START CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 	103.21.244.0/22		0;
