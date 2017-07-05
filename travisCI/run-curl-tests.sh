@@ -51,7 +51,7 @@
 #    echo "PASSED"
 #fi
 
-if curl -A "masscan" http://localhost:9000/index.php | grep -q "Welcome"; then
+if curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr | grep -i "Welcome"; then
    echo 'FAILED'
 else
    echo 'PASSED'
