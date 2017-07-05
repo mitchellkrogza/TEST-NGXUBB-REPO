@@ -37,6 +37,9 @@ MY_GIT_TAG=V3.$YEAR.$MONTH.$TRAVIS_BUILD_NUMBER
 BAD_REFERRERS=$(wc -l < $TRAVIS_BUILD_DIR/_generator_lists/bad-referrers.list)
 BAD_BOTS=$(wc -l < $TRAVIS_BUILD_DIR/_generator_lists/bad-user-agents.list)
 _now="$(date)"
+# Get DATE output into uppercase format (if needed)
+#_now=$(date | tr -s '[:lower:]'  '[:upper:]')
+
 
 # *************************************
 # Specify input lists for the generator
@@ -267,7 +270,7 @@ rm $_inputdb5
 printf '%s\n' "$_start6" >> $_tmpnginx6
 while IFS= read -r LINE
 do
-printf '\t"%s"\t\t%s\n' "${LINE}" "$_action1" >> "$_tmpnginx6"
+printf '\t%s\t\t%s\n' "${LINE}" "$_action1" >> "$_tmpnginx6"
 done < $_input6
 printf '%s\n' "$_end6"  >> $_tmpnginx6
 mv $_tmpnginx6 $_inputdb6
@@ -291,7 +294,7 @@ rm $_inputdb6
 printf '%s\n' "$_start7" >> $_tmpnginx7
 while IFS= read -r LINE
 do
-printf '\t"%s"\t\t%s\n' "${LINE}" "$_action1" >> "$_tmpnginx7"
+printf '\t%s\t\t%s\n' "${LINE}" "$_action1" >> "$_tmpnginx7"
 done < $_input7
 printf '%s\n' "$_end7"  >> $_tmpnginx7
 mv $_tmpnginx7 $_inputdb7
@@ -315,7 +318,7 @@ rm $_inputdb7
 printf '%s\n' "$_start8" >> $_tmpnginx8
 while IFS= read -r LINE
 do
-printf '"%s"\n' "${LINE}" >> "$_tmpnginx8"
+printf '%s\n' "${LINE}" >> "$_tmpnginx8"
 done < $_input8
 printf '%s\n' "$_end8"  >> $_tmpnginx8
 mv $_tmpnginx8 $_inputdb8
@@ -339,7 +342,7 @@ rm $_inputdb8
 printf '%s\n' "$_start9" >> $_tmpnginx9
 while IFS= read -r LINE
 do
-printf '\t"%s"\t\t%s\n' "${LINE}" "$_action2" >> "$_tmpnginx9"
+printf '\t%s\t\t%s\n' "${LINE}" "$_action2" >> "$_tmpnginx9"
 done < $_input9
 printf '%s\n' "$_end9"  >> $_tmpnginx9
 mv $_tmpnginx9 $_inputdb9
@@ -363,7 +366,7 @@ rm $_inputdb9
 printf '%s\n' "$_start10" >> $_tmpnginx10
 while IFS= read -r LINE
 do
-printf '\t"%s"\t\t%s\n' "${LINE}" "$_action1" >> "$_tmpnginx10"
+printf '\t%s\t\t%s\n' "${LINE}" "$_action1" >> "$_tmpnginx10"
 done < $_input10
 printf '%s\n' "$_end10"  >> $_tmpnginx10
 mv $_tmpnginx10 $_inputdb10

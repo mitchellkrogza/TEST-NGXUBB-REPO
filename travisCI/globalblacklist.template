@@ -14,11 +14,12 @@
 ### This file implements a checklist / blacklist for good user agents, bad user agents and
 ### bad referrers. It also has whitelisting for your own IP's and known good IP Ranges
 ### and also has rate limiting functionality for bad bots who you only want to rate limit
-### and not actually block out entirely. It is powerful and also flexible.
+### and not actually block out entirely. It is very powerful and also very flexible.
 
 ### Created By: https://github.com/mitchellkrogza/
 ### Repo Url: https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker
 ### Copyright Mitchell Krog - <mitchellkrog@gmail.com>
+### Contributors: Stuart Cardall - https://github.com/itoffshore
 
 ### Tested on: nginx/1.10.3 (Ubuntu 16.04)
 
@@ -43,31 +44,18 @@
 
 ### *** PLEASE READ ALL INLINE NOTES ON TESTING !!!!
 
-###	I have this set up as an include in nginx.conf as
-###	Include /etc/nginx/conf.d/globalblacklist.conf
-###	This is loaded and available for any vhost to use in its config
-###	Each vhost then just needs the include file mentioned below for it to take effect.
+### ************
+### INSTALLATION
+### ************
 
-### In Most cases your nginx.conf should already have an include statement as follows
-### Include /etc/nginx/conf.d/*
-### If that is the case then you can ignore the above include statement as Nginx will 
-### load anything in the conf.d folder and make it available to all sites.
+### PLEASE use the install, setup and update scripts provided for you to ease your installation.
+### This Auto Installation procedure is documented in the README.md and AUTO-CONFIGURATION.md files.
+### Installation, Setup and Update Scripts Contributed by Stuart Cardall - https://github.com/itoffshore
+### There are also manual configuration instructions provided for those not wishing to do an auto install.
 
-### All you then need to do is use the include statements below in the server {} block of a vhost file for it to take effect.
-# 	server {
-#			#Config stuff here
-#			include /etc/nginx/bots.d/blockbots.conf
-#			include /etc/nginx/bots.d/ddos.conf
-#			#Other config stuff here
-#		 }
-
-###	Need I say, please don't just copy and paste this without reviewing what bots and
-###	referers are being blocked, you may want to exclude certain of them
-###	Also make SURE to whitelist your own IP's in the geo $bad_referer section.
-###	Know why you are using this or why you want to use it before you do, the implications
-###	are quite severe.
-
+### ********************************************
 ###	*** PLEASE READ INLINE NOTES ON TESTING !!!!
+### ********************************************
 
 ###	Note that: 
 ###	0 = allowed - no limits
@@ -75,20 +63,13 @@
 ###	2 = rate limited more
 ###	3 = block completely
 
-###	NEED I say do a "sudo nginx -t" to test the config is okay after adding these
-###	and if so then "sudo service nginx reload" for it to take effect.
+### ***********************************************************
+### CONTRIBUTING / PULL REQUESTS / ADDING YOUR OWN BAD REFERERS
+### ***********************************************************
 
-### *** MAKE SURE TO ADD to your nginx.conf ***
-### server_names_hash_bucket_size 64;
-### server_names_hash_max_size 4096;
-### limit_req_zone $binary_remote_addr zone=flood:50m rate=90r/s;
-### limit_conn_zone $binary_remote_addr zone=addr:50m;
-### to allow it to load this large set of domains into memory and to set the rate limiting zones for the DDOS filter.
-
-### ADDING YOUR OWN BAD REFERERS
-### Fork your own local copy and then
-### Send a Pull Request by following the instructions in the Pull_Requests_Here_Please folder.
-
+### For contributing, corrections or adding bots or referrers to this repo,
+### Send a Pull Request (PR) on any of the .list files in the _generator_lists folder
+### All Pull Requests will be checked for accuracy before being merged.
 
 # *********************************
 # FIRST BLOCK BY USER-AGENT STRINGS
@@ -102,18 +83,16 @@
 # Use a Chrome Extension called "User-Agent Switcher for Chrome" where you can create your
 # own custom lists of User-Agents and test them easily against your rules below.
 
-# You can also use Curl to test user-agents as per example below
-# curl -I http://www.yourdomain.com -A "GoogleBot"  << 200 OK
-# curl -I http://www.yourdomain.com -A "80legs"  <<< 444 Dropped Connection
+# You can also use curl from the command line to test user-agents as per the examples below:
 
-# Here we also allow specific User Agents to come through that we want to allow
+# curl -I http://www.yourdomain.com -A "GoogleBot"  ---- GIVES YOU: HTTP/1.1 200 OK (Meaning web page was served to Client)
+# curl -I http://www.yourdomain.com -A "80legs"     ---- GIVES YOU: curl: (52) Empty reply from server (Meaning Nginx gave a 444 Dropped Connection)
 
-# PLEASE NOTE: In all lists below I use Nginx case-insensitive matching ~* 
-# This means regardless of how you type the word, upper or lowercase or mixed it will
-# be detected by Nginx Regex. Some Names are Capitalised simply for Ease of Reading.
-# Especially important for both Googlebot and googlebot to be allowed through no?
+# In this section we allow/disallow specific User Agents / Bots.
 
+# *********************************************************************
 # Now we map all good and bad user agents to a variable called $bad_bot
+# *********************************************************************
 
 map $http_user_agent $bad_bot {
 
@@ -122,12 +101,18 @@ map $http_user_agent $bad_bot {
 # ***********************************************
 # Include your Own Custom List of Bad User Agents
 # ***********************************************
-# use the include file below to further customize your own list of additional
-# user-agents you wish to permanently block
 
-# START BLACKLISTED USER AGENTS ### DO NOT EDIT THIS LINE AT ALL ###
+# Use the include file below to further customize your own list of additional user-agents you wish to permanently block
+
+# ***********************************************************************************
+# START CUSTOM BLACKLISTED USER AGENTS ### DO NOT EDIT OR REMOVE THIS LINE AT ALL ###
+# ***********************************************************************************
+
 	include /etc/nginx/bots.d/blacklist-user-agents.conf;
-# END BLACKLISTED USER AGENTS ### DO NOT EDIT THIS LINE AT ALL ###
+
+# *********************************************************************************
+# END CUSTOM BLACKLISTED USER AGENTS ### DO NOT EDIT OR REMOVE THIS LINE AT ALL ###
+# *********************************************************************************
 
 
 # ***********************************************
@@ -169,6 +154,7 @@ map $http_user_agent $bad_bot {
 # ***************************************************
 # User-Agent Strings Allowed Through but Rate Limited
 # ***************************************************
+
 # Some people block libwww-perl, it us widely used in many valid (non rogue) agents
 # I allow libwww-perl as I use it for monitoring systems with Munin but it is rate limited
 
@@ -208,6 +194,7 @@ map $http_user_agent $bad_bot {
 # *********************************************
 # Bad User-Agent Strings That We Block Outright
 # *********************************************
+
 # This includes:
 # Known Vulnerability Scanners (now merged into one section)
 
@@ -699,40 +686,20 @@ map $http_user_agent $bad_bot {
 # SECOND BLOCK BY REFERER STRINGS AND URLS
 # ****************************************
 
-# Add here all referrer words and URL's that are to blocked.
-
 # *****************
 # PLEASE TEST !!!!
 # *****************
 
 # ALWAYS test referers that you add. This is done manually as follows
 
-# curl -I http://www.yourdomain.com -e http://anything.adcash.com
-# curl -I http://www.yourdomain.com -e http://www.goodwebsite.com/not-adcash
-# curl -I http://www.yourdomain.com -e http://www.betterwebsite.com/not/adcash
+# curl -I http://www.yourdomain.com -e http://anything.adcash.com              --- GIVES YOU: curl: (52) Empty reply from server
+# curl -I http://www.yourdomain.com -e http://www.goodwebsite.com/not-adcash   --- GIVES YOU: curl: (52) Empty reply from server
+# curl -I http://www.yourdomain.com -e http://www.betterwebsite.com/not/adcash --- GIVES YOU: curl: (52) Empty reply from server
 
-# This uses curl to send the referer string to your site and you should see an immediate
-# 403 Forbidden Error or No Response at all if you use the 444 error like I do.
+# curl -I http://www.yourdomain.com -e http://www.google.com                   --- GIVES YOU: full html output of the web page
+# curl -I http://www.yourdomain.com -e http://www.microsoft.com                --- GIVES YOU: full html output of the web page
 
-# Because of case-insensitive matching any combination of capitilization in the names
-# will all produce a positive hit - make sure you always test thoroughly and monitor logs
-# This also does NOT check for a preceding www. nor does it check for it ending in .com
-# .net .org or any long string attached at the end. It also does not care if the referer
-# was sent with http https or even ftp.
-
-# REAL WORLD EXAMPLE
-# *******************
-# If you were a photographer like me and say took a photo of a "girl" and you then posted
-# a blog showing everyone your new photo and your blog slug / permalink was
-# http://www.mysite.com/blog/photo-of-girl/
-# You can go and monitor your logs and you will see lots of 444 from other pages on your
-# site that have been clicked on sending that page as a referer so in the example below
-# you will generate a 403 error.
-
-# curl --referer http://www.mysite.com/blog/photo-of-girl/ http://www.mysite.com/
- 
-# So please be careful with these and think carefully before you add new words.
-# Remember we are trying to keep out the general riff-raff not kill your web sites.
+# Because of case-insensitive matching any combination of capitilization in the names will all produce a positive hit - make sure you always test thoroughly and monitor logs. This section below also does NOT check for a preceding www. and it also does not care if the referer was sent with http https or even ftp.
 
 # **********************************************************************
 # Now we map all bad referer words below to a variable called $bad_words
@@ -751,10 +718,19 @@ map $http_referer $bad_words {
   # customized list of bad referrer words are automatically now included for you
   # Read Comments inside bad-referrer-words.conf for customization tips.
   # Updating the main globalblacklist.conf file will not touch your custom include files
+  # BE VERY CAREFUL using the bad-referrer-words.conf file - please read the comment and
+  # examples inside the include file for detailed explanations into how seriously this can
+  # affect your own site from serving assets or other innocent sites from accessing your site
 
-# START CUSTOM BAD REFERRER WORDS ### DO NOT EDIT THIS LINE AT ALL ###
+# ******************************************************************************
+# START CUSTOM BAD REFERRER WORDS ### DO NOT EDIT OR REMOVE THIS LINE AT ALL ###
+# ******************************************************************************
+
 	include /etc/nginx/bots.d/bad-referrer-words.conf;
-# END CUSTOM BAD REFERRER WORDS ### DO NOT EDIT THIS LINE AT ALL ###
+
+# ****************************************************************************
+# END CUSTOM BAD REFERRER WORDS ### DO NOT EDIT OR REMOVE THIS LINE AT ALL ###
+# ****************************************************************************
 
 }
 
@@ -778,33 +754,28 @@ map $http_referer $bad_words {
 
 # ALWAYS test referers that you add. This is done manually as follows
 
-# curl -I http://www.yourdomain.com -e http://8gold.com
+# curl -I http://www.yourdomain.com -e http://8gold.com --- GIVES YOU: curl: (52) Empty reply from server
 
-# This uses curl to send the referer string to your site and you should see an immediate
-# 403 Forbidden Error or No Response at all if you use the 444 error like I do.
+# Because of case-insensitive matching any combination of capitilization will all produce a positive hit - make sure you always test.
 
-# Because of case-insensitive matching any combination of capitilization 
-# will all produce a positive hit - make sure you always test.
+# For Example any of the following variations below of 8gold.com will be detected and blocked
 
-# curl -I http://www.yourdomain.com -e http://NOT-8gold.com
-# curl -I http://www.yourdomain.com -e http://this.is.not8gOlD.net
-# curl -I http://www.yourdomain.com -e ftp://8gold.com
-# curl -I http://www.yourdomain.com -e ftp://www.weare8gold.NET
-# curl -I http://www.yourdomain.com -e https://subdomain.8gold.com
-# curl -I http://www.yourdomain.com -e https://NOT8GolD.org
-
-# This works exactly like the bad referer word lists above and is very strict !!!
-# I have gone for the simple stricter approach which blocks all variants for those
-# who just hop out and but another domain name.
+# curl -I http://www.yourdomain.com -e http://NOT-8gold.com        --- GIVES YOU: curl: (52) Empty reply from server
+# curl -I http://www.yourdomain.com -e http://this.is.not8gOlD.net --- GIVES YOU: curl: (52) Empty reply from server
+# curl -I http://www.yourdomain.com -e ftp://8gold.com             --- GIVES YOU: curl: (52) Empty reply from server
+# curl -I http://www.yourdomain.com -e ftp://www.weare8gold.NET    --- GIVES YOU: curl: (52) Empty reply from server
+# curl -I http://www.yourdomain.com -e https://subdomain.8gold.com --- GIVES YOU: curl: (52) Empty reply from server
+# curl -I http://www.yourdomain.com -e https://NOT8GolD.org        --- GIVES YOU: curl: (52) Empty reply from server
 
 # So if you see a bad referer from wearegoogle.com and you want to block them just add
 # them as "~*wearegoogle.com" don't ever go and do something like "~*google(-|.)" you will
-# kill all your SEO in a week. Rather also send a Pull Request by following the instructions
-# in the Pull_Requests_Here_Please folder.
+# kill all your SEO in a week. 
 
-# I also include any sites that hotlink images from my sites into the list below.
-# There are hundreds of image stealing sites out there so this list WILL grow now doubt.
+# To add your own custom bad referrers use the custom include file
+# /etc/nginx/bots.d/custom-bad-referrers.conf
+# Or send a Pull Request to add it to the global blacklist for other users.
 
+# In the bad referrers section I also include sites that hotlink images without permission.
 
 # ***********************************************************************
 # Now we map all good & bad referer urls to variable called #bad_referer
@@ -820,15 +791,21 @@ map $http_referer $bad_referer {
 
 # Add all your own web site domain names and server names in this section
 
-# WHITELIST Your Own Domain Names Here using the Include File Method
+# WHITELIST Your Own Domain Names Here using the new Include File Method
   # New Method Uses the include file below so that when pulling future updates your
   # whitelisted domain names are automatically now included for you.
   # Read Comments inside whitelist-domains.conf for customization tips.
   # Updating the main globalblacklist.conf file will not touch your custom include files
 
-# START WHITELISTED DOMAINS ### DO NOT EDIT THIS LINE AT ALL ###
+# ************************************************************************
+# START WHITELISTED DOMAINS ### DO NOT EDIT OR REMOVE THIS LINE AT ALL ###
+# ************************************************************************
+
   	include /etc/nginx/bots.d/whitelist-domains.conf;
-# END WHITELISTED DOMAINS ### DO NOT EDIT THIS LINE AT ALL ###
+
+# **********************************************************************  	
+# END WHITELISTED DOMAINS ### DO NOT EDIT OR REMOVE THIS LINE AT ALL ###
+# **********************************************************************  	
 
 # *******************************************
 # CUSTOM BAD REFERERS - Add your Own 
@@ -837,9 +814,15 @@ map $http_referer $bad_referer {
 # Add any extra bad referers in the following include file to have them
 # permanently included and blocked - avoid duplicates in your custom file
 
-# START CUSTOM BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###
+# *************************************************************************
+# START CUSTOM BAD REFERRERS ### DO NOT EDIT OR REMOVE THIS LINE AT ALL ###
+# *************************************************************************
+
   	include /etc/nginx/bots.d/custom-bad-referrers.conf;
-# END CUSTOM BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###
+
+# ***********************************************************************
+# END CUSTOM BAD REFERRERS ### DO NOT EDIT OR REMOVE THIS LINE AT ALL ###
+# ***********************************************************************
 
 # START BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###
 	"~*000free.us"		1;
@@ -5823,16 +5806,21 @@ geo $validate_client {
   # Read Comments inside whitelist-ips.conf for customization tips.
   # Updating the main globalblacklist.conf file will not touch your custom include files
   
-# START WHITELISTED IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
+# **************************************************************************
+# START WHITELISTED IP RANGES ### DO NOT EDIT OR REMOVE THIS LINE AT ALL ###
+# **************************************************************************
+
 	include /etc/nginx/bots.d/whitelist-ips.conf;
-# END WHITELISTED IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
+
+# ************************************************************************
+# END WHITELISTED IP RANGES ### DO NOT EDIT OR REMOVE THIS LINE AT ALL ###
+# ************************************************************************
 
 # ***********
 # Google Bots
 # ***********
 
-# For Safety Sake Google's Known BOT IP Ranges are all white listed in case you add
-# anything lower down that you mistakenly picked up as a bad bot.
+# For Safety Sake Google's Known BOT IP Ranges are all white listed
 
 # UA "AdsBot-Google (+http://www.google.com/adsbot.html)"
 # UA "DoCoMo/2.0 N905i(c100;TB;W24H16) (compatible; Googlebot-Mobile/2.3; +http://www.google.com/bot.html)"
@@ -5990,24 +5978,36 @@ geo $validate_client {
   # Read Comments inside blacklist-ips.conf for customization tips.
   # Updating the main globalblacklist.conf file will not touch your custom include files
 
-# START BLACKLISTED IPS ### DO NOT EDIT THIS LINE AT ALL ###
+# ********************************************************************
+# START BLACKLISTED IPS ### DO NOT EDIT OR REMOVE THIS LINE AT ALL ###
+# ********************************************************************
+
 	include /etc/nginx/bots.d/blacklist-ips.conf;
-# END BLACKLISTED IPS ### DO NOT EDIT THIS LINE AT ALL ###
+
+# ******************************************************************
+# END BLACKLISTED IPS ### DO NOT EDIT OR REMOVE THIS LINE AT ALL ###
+# ******************************************************************
 
 }
 
-# Keep own IPs out of DDOS Filter
-# Add your own IP addresses and ranges below to spare them from the rate
-# limiting DDOS filter (one per line)
-# This now automatically includes the whitelist-ips.conf file so you only
-# need to edit that include file and have it include here too for you
+# WHITELIST your own IPs from the DDOS Filter
+  # Add your own IP addresses and ranges into the custom include file whitelist-ips.conf 
+  # to spare them from the rate limiting DDOS filter.
+  # This section includes the same / single whitelist-ips.conf file so you only
+  # need to edit that include file and have it include here for you too.
 
 geo $ratelimited {
 	default 1;
 
-# START WHITELISTED IP RANGES2 ### DO NOT EDIT THIS LINE AT ALL ###
+# ***************************************************************************
+# START WHITELISTED IP RANGES2 ### DO NOT EDIT OR REMOVE THIS LINE AT ALL ###
+# ***************************************************************************
+
 	include /etc/nginx/bots.d/whitelist-ips.conf;
-# END WHITELISTED IP RANGES2 ### DO NOT EDIT THIS LINE AT ALL ###
+
+# *************************************************************************
+# END WHITELISTED IP RANGES2 ### DO NOT EDIT OR REMOVE THIS LINE AT ALL ###
+# *************************************************************************
 
 }
 
