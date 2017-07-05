@@ -34,71 +34,71 @@
 YEAR=$(date +"%Y")
 MONTH=$(date +"%m")
 MY_GIT_TAG=V3.$YEAR.$MONTH.$TRAVIS_BUILD_NUMBER
-BAD_REFERRERS=$(wc -l < $TRAVIS_BUILD_DIR/_GENERATOR_LISTS/BAD-REFERRERS.list)
-BAD_BOTS=$(wc -l < $TRAVIS_BUILD_DIR/_GENERATOR_LISTS/BAD-USER-AGENTS.list)
+BAD_REFERRERS=$(wc -l < $TRAVIS_BUILD_DIR/_generator_lists/bad-referrers.list)
+BAD_BOTS=$(wc -l < $TRAVIS_BUILD_DIR/_generator_lists/bad-user-agents.list)
 
 # *************************************
 # Specify input lists for the generator
 # *************************************
 
-INPUT1=$TRAVIS_BUILD_DIR/_GENERATOR_LISTS/GOOD-USER-AGENTS.list
-input2=$TRAVIS_BUILD_DIR/_GENERATOR_LISTS/ALLOWED-USER-AGENTS.list
-INPUT3=$TRAVIS_BUILD_DIR/_GENERATOR_LISTS/LIMITED-USER-AGENTS.list
-INPUT4=$TRAVIS_BUILD_DIR/_GENERATOR_LISTS/BAD-USER-AGENTS.list
-INPUT5=$TRAVIS_BUILD_DIR/_GENERATOR_LISTS/BAD-REFERRERS.list
-INPUT6=$TRAVIS_BUILD_DIR/_GENERATOR_LISTS/GOOGLE-IP-RANGES.list
-INPUT7=$TRAVIS_BUILD_DIR/_GENERATOR_LISTS/BING-IP-RANGES.list
-INPUT8=$TRAVIS_BUILD_DIR/_GENERATOR_LISTS/WORDPRESS-THEME-DETECTORS.list
-INPUT9=$TRAVIS_BUILD_DIR/_GENERATOR_LISTS/NIBBLER-SEO.list
-INPUT10=$TRAVIS_BUILD_DIR/_GENERATOR_LISTS/CLOUDFLARE-IP-RANGES.list
+_input1=$TRAVIS_BUILD_DIR/_generator_lists/good-user-agents.list
+_input2=$TRAVIS_BUILD_DIR/_generator_lists/allowed-user-agents.list
+_input3=$TRAVIS_BUILD_DIR/_generator_lists/limited-user-agents.list
+_input4=$TRAVIS_BUILD_DIR/_generator_lists/bad-user-agents.list
+_input5=$TRAVIS_BUILD_DIR/_generator_lists/bad-referrers.list
+_input6=$TRAVIS_BUILD_DIR/_generator_lists/google-ip-ranges.list
+_input7=$TRAVIS_BUILD_DIR/_generator_lists/bing-ip-ranges.list
+_input8=$TRAVIS_BUILD_DIR/_generator_lists/wordpress-theme-detectors.list
+_input9=$TRAVIS_BUILD_DIR/_generator_lists/nibbler-seo.list
+_input10=$TRAVIS_BUILD_DIR/_generator_lists/cloudflare-ip-ranges.list
 
 # *******************************************************
 # Declare temporary database files used during generation
 # *******************************************************
 
-INPUTDBA=/tmp/VERSION-INFORMATION.db
-INPUTDB1=/tmp/GOOD-USER-AGENTS.db
-inputdb2=/tmp/ALLOWED-USER-AGENTS.db
-INPUTDB3=/tmp/LIMITED-USER-AGENTS.db
-INPUTDB4=/tmp/BAD-USER-AGENTS.db
-INPUTDB5=/tmp/BAD-REFERRERS.db
-INPUTDB6=/tmp/GOOGLE-IP-RANGES.db
-INPUTDB7=/tmp/BING-IP-RANGES.db
-INPUTDB8=/tmp/WORDPRESS-THEME-DETECTORS.db
-INPUTDB9=/tmp/NIBBLER-SEO.db
-INPUTDB10=/tmp/CLOUDFLARE-IP-RANGES.db
+_inputdbA=/tmp/version-information.db
+_inputdb1=/tmp/good-user-agents.db
+_inputdb2=/tmp/allowed-user-agents.db
+_inputdb3=/tmp/limited-user-agents.db
+_inputdb4=/tmp/bad-user-agents.db
+_inputdb5=/tmp/bad-referrers.db
+_inputdb6=/tmp/google-ip-ranges.db
+_inputdb7=/tmp/bing-ip-ranges.db
+_inputdb8=/tmp/wordpress-theme-detectors.db
+_inputdb9=/tmp/nibbler-seo.db
+_inputdb10=/tmp/cloudflare-ip-ranges.db
 
 # **************************************************
 # Declare temporary variables used during generation
 # **************************************************
 
-NGINX=$TRAVIS_BUILD_DIR/travisCI/globalblacklist.template
-TMPNGINXA=TMPNGINXA
-TMPNGINX1=TMPNGINX1
-TMPNGINX2=TMPNGINX2
-TMPNGINX3=TMPNGINX3
-TMPNGINX4=TMPNGINX4
-TMPNGINX5=TMPNGINX5
-TMPNGINX6=TMPNGINX6
-TMPNGINX7=TMPNGINX7
-TMPNGINX8=TMPNGINX8
-TMPNGINX9=TMPNGINX9
-TMPNGINX10=TMPNGINX10
+_nginx=$TRAVIS_BUILD_DIR/travisCI/globalblacklist.template
+_tmpnginxA=_tmpnginxA
+_tmpnginx1=_tmpnginx1
+_tmpnginx2=_tmpnginx2
+_tmpnginx3=_tmpnginx3
+_tmpnginx4=_tmpnginx4
+_tmpnginx5=_tmpnginx5
+_tmpnginx6=_tmpnginx6
+_tmpnginx7=_tmpnginx7
+_tmpnginx8=_tmpnginx8
+_tmpnginx9=_tmpnginx9
+_tmpnginx10=_tmpnginx10
 
 # *************************************************************
 # Sort all input lists alphabetically and remove any duplicates
 # *************************************************************
 
-sort -u $INPUT1 -o $INPUT1
-sort -u $input2 -o $input2
-sort -u $INPUT3 -o $INPUT3
-sort -u $INPUT4 -o $INPUT4
-sort -u $INPUT5 -o $INPUT5
-sort -u $INPUT6 -o $INPUT6
-sort -u $INPUT7 -o $INPUT7
-sort -u $INPUT8 -o $INPUT8
-sort -u $INPUT9 -o $INPUT9
-sort -u $INPUT10 -o $INPUT10
+sort -u $_input1 -o $_input1
+sort -u $_input2 -o $_input2
+sort -u $_input3 -o $_input3
+sort -u $_input4 -o $_input4
+sort -u $_input5 -o $_input5
+sort -u $_input6 -o $_input6
+sort -u $_input7 -o $_input7
+sort -u $_input8 -o $_input8
+sort -u $_input9 -o $_input9
+sort -u $_input10 -o $_input10
 
 # ***************************************************************
 # Start and End Strings to Search for to do inserts into template
@@ -141,21 +141,14 @@ ACTION4="3;"
 # GOOD USER AGENTS - Create and Insert
 # ************************************
 
-
-GOODBOTSIFS=$IFS
-IFS=$'\n'
-echo $START1 >> $TMPNGINX1
-
-# Read input file and loop through it doing the printf output
-cat $INPUT1 | while read LINE
+echo $START1 >> $_tmpnginx1
+while IFS= read -r LINE
 do
-printf "\t\"~${LINE}\"\t\t$ACTION1\n" >> $TMPNGINX1
-done
-
-echo $END1  >> $TMPNGINX1
-IFS=$GOODBOTSIFS
-mv $TMPNGINX1 $INPUTDB1
-ed -s $INPUTDB1<<\IN
+printf '\t"~%s"\t\t%s\n' "${LINE}" "$ACTION1" >> "$_tmpnginx1"
+done < $_input1
+echo $END1  >> $_tmpnginx1
+mv $_tmpnginx1 $_inputdb1
+ed -s $_inputdb1<<\IN
 1,/# START GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
@@ -168,40 +161,20 @@ ed -s $INPUTDB1<<\IN
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/travisCI/globalblacklist.template
 q
 IN
-rm $INPUTDB1
+rm $_inputdb1
 
 # ********************************
 # ALLOWED BOTS - Create and Insert
 # ********************************
 
-#ALLOWEDBOTSIFS=$IFS
-#IFS=$'\n'
-echo $START2 >> $TMPNGINX2
-
-# Read input file and loop through it doing the printf output
-#cat $input2 | while read line
-#do
-#printf "\t\"~${line}\"\t\t$ACTION2\n" >> $TMPNGINX2
-#printf "\t\"~%s\"\t\t%s\n" "${line}" "$ACTION1" >> $TMPNGINX2
-#done
-
-#while read LINE
-#do
-#echo -e -n "\t\"~${LINE}\"\t\t$ACTION2\n" >> $TMPNGINX2
-#done < $INPUT2
-
+echo $START2 >> $_tmpnginx2
 while IFS= read -r LINE
 do
-#printf "\t\"~${line}\"\t\t$ACTION2\n" >> $TMPNGINX2
-#printf '\t"~%s"\t\t%s\n' "$line" "$ACTION1"
-printf '\t"~%s"\t\t%s\n' "${LINE}" "$ACTION2" >> "$TMPNGINX2"
-done < $input2
-
-
-echo $END2  >> $TMPNGINX2
-#IFS=$ALLOWEDBOTSIFS
-mv $TMPNGINX2 $inputdb2
-ed -s $inputdb2<<\IN
+printf '\t"~%s"\t\t%s\n' "${LINE}" "$ACTION2" >> "$_tmpnginx2"
+done < $_input2
+echo $END2  >> $_tmpnginx2
+mv $_tmpnginx2 $_inputdb2
+ed -s $_inputdb2<<\IN
 1,/# START ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
@@ -212,26 +185,20 @@ ed -s $inputdb2<<\IN
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/travisCI/globalblacklist.template
 q
 IN
-rm $inputdb2
+rm $_inputdb2
 
 # ********************************
 # LIMITED BOTS - Create and Insert
 # ********************************
 
-LIMITEDBOTSIFS=$IFS
-IFS=$'\n'
-echo $START3 >> $TMPNGINX3
-
-# Read input file and loop through it doing the printf output
-cat $INPUT3 | while read LINE
+echo $START3 >> $_tmpnginx3
+while IFS= read -r LINE
 do
-printf "\t\"~${LINE}\"\t\t$ACTION3\n" >> $TMPNGINX3
-done
-
-echo $END3  >> $TMPNGINX3
-IFS=$LIMITEDBOTSIFS
-mv $TMPNGINX3 $INPUTDB3
-ed -s $INPUTDB3<<\IN
+printf '\t"~%s"\t\t%s\n' "${LINE}" "$ACTION3" >> "$_tmpnginx3"
+done < $_input3
+echo $END3  >> $_tmpnginx3
+mv $_tmpnginx3 $_inputdb3
+ed -s $_inputdb3<<\IN
 1,/# START LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
@@ -242,26 +209,20 @@ ed -s $INPUTDB3<<\IN
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/travisCI/globalblacklist.template
 q
 IN
-rm $INPUTDB3
+rm $_inputdb3
 
 # ****************************
 # BAD BOTS - Create and Insert
 # ****************************
 
-BADBOTSIFS=$IFS
-IFS=$'\n'
-echo $START4 >> $TMPNGINX4
-
-# Read input file and loop through it doing the printf output
-cat $INPUT4 | while read LINE
+echo $START4 >> $_tmpnginx4
+while IFS= read -r LINE
 do
-printf "\t\"~*${LINE}\"\t\t$ACTION4\n" >> $TMPNGINX4
-done
-
-echo $END4  >> $TMPNGINX4
-IFS=$BADBOTSIFS
-mv $TMPNGINX4 $INPUTDB4
-ed -s $INPUTDB4<<\IN
+printf '\t"~%s"\t\t%s\n' "${LINE}" "$ACTION4" >> "$_tmpnginx4"
+done < $_input4
+echo $END4  >> $_tmpnginx4
+mv $_tmpnginx4 $_inputdb4
+ed -s $_inputdb4<<\IN
 1,/# START BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
@@ -272,26 +233,20 @@ ed -s $INPUTDB4<<\IN
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/travisCI/globalblacklist.template
 q
 IN
-rm $INPUTDB4
+rm $_inputdb4
 
 # ********************************
 # BAD REFERERS - Create and Insert
 # ********************************
 
-BADREFERER=$IFS
-IFS=$'\n'
-echo $START5 >> $TMPNGINX5
-
-# Read input file and loop through it doing the printf output
-cat $INPUT5 | while read LINE
+echo $START5 >> $_tmpnginx5
+while IFS= read -r LINE
 do
-printf "\t\"~*${LINE}\"\t\t$ACTION2\n" >> $TMPNGINX5
-done
-
-echo $END5  >> $TMPNGINX5
-IFS=$BADREFERER
-mv $TMPNGINX5 $INPUTDB5
-ed -s $INPUTDB5<<\IN
+printf '\t"~*%s"\t\t%s\n' "${LINE}" "$ACTION2" >> "$_tmpnginx5"
+done < $_input5
+echo $END5  >> $_tmpnginx5
+mv $_tmpnginx5 $_inputdb5
+ed -s $_inputdb5<<\IN
 1,/# START BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END BAD REFERERS ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
@@ -302,26 +257,20 @@ ed -s $INPUTDB5<<\IN
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/travisCI/globalblacklist.template
 q
 IN
-rm $INPUTDB5
+rm $_inputdb5
 
 # ************************************
 # GOOGLE IP RANGES - Create and Insert
 # ************************************
 
-GOOGLE=$IFS
-IFS=$'\n'
-echo $START6 >> $TMPNGINX6
-
-# Read input file and loop through it doing the printf output
-cat $INPUT6 | while read LINE
+echo $START6 >> $_tmpnginx6
+while IFS= read -r LINE
 do
-printf "\t${LINE}\t\t$ACTION1\n" >> $TMPNGINX6
-done
-
-echo $END6  >> $TMPNGINX6
-IFS=$GOOGLE
-mv $TMPNGINX6 $INPUTDB6
-ed -s $INPUTDB6<<\IN
+printf '\t"%s"\t\t%s\n' "${LINE}" "$ACTION1" >> "$_tmpnginx6"
+done < $_input6
+echo $END6  >> $_tmpnginx6
+mv $_tmpnginx6 $_inputdb6
+ed -s $_inputdb6<<\IN
 1,/# START GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
@@ -332,26 +281,20 @@ ed -s $INPUTDB6<<\IN
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/travisCI/globalblacklist.template
 q
 IN
-rm $INPUTDB6
+rm $_inputdb6
 
 # **********************************
 # BING IP RANGES - Create and Insert
 # **********************************
 
-BING=$IFS
-IFS=$'\n'
-echo $START7 >> $TMPNGINX7
-
-# Read input file and loop through it doing the printf output
-cat $INPUT7 | while read LINE
+echo $START7 >> $_tmpnginx7
+while IFS= read -r LINE
 do
-printf "\t${LINE}\t\t$ACTION1\n" >> $TMPNGINX7
-done
-
-echo $END7  >> $TMPNGINX7
-IFS=$BING
-mv $TMPNGINX7 $INPUTDB7
-ed -s $INPUTDB7<<\IN
+printf '\t"%s"\t\t%s\n' "${LINE}" "$ACTION1" >> "$_tmpnginx7"
+done < $_input7
+echo $END7  >> $_tmpnginx7
+mv $_tmpnginx7 $_inputdb7
+ed -s $_inputdb7<<\IN
 1,/# START BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
@@ -362,26 +305,20 @@ ed -s $INPUTDB7<<\IN
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/travisCI/globalblacklist.template
 q
 IN
-rm $INPUTDB7
+rm $_inputdb7
 
 # *********************************************
 # Wordpress Theme Detectors - Create and Insert
 # *********************************************
 
-WPTHEME=$IFS
-IFS=$'\n'
-echo $START8 >> $TMPNGINX8
-
-# Read input file and loop through it doing the printf output
-cat $INPUT8 | while read LINE
+echo $START8 >> $_tmpnginx8
+while IFS= read -r LINE
 do
-printf "\t${LINE}\n" >> $TMPNGINX8
-done
-
-echo $END8  >> $TMPNGINX8
-IFS=$WPTHEME
-mv $TMPNGINX8 $INPUTDB8
-ed -s $INPUTDB8<<\IN
+printf '\t"%s"\n' "${LINE}" >> "$_tmpnginx8"
+done < $_input8
+echo $END8  >> $_tmpnginx8
+mv $_tmpnginx8 $_inputdb8
+ed -s $_inputdb8<<\IN
 1,/# START WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
@@ -392,26 +329,20 @@ ed -s $INPUTDB8<<\IN
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/travisCI/globalblacklist.template
 q
 IN
-rm $INPUTDB8
+rm $_inputdb8
 
 # *******************************
 # Nibbler SEO - Create and Insert
 # *******************************
 
-NIBBLER=$IFS
-IFS=$'\n'
-echo $START9 >> $TMPNGINX9
-
-# Read input file and loop through it doing the printf output
-cat $INPUT9 | while read LINE
+echo $START9 >> $_tmpnginx9
+while IFS= read -r LINE
 do
-printf "\t${LINE}\t\t$ACTION2\n" >> $TMPNGINX9
-done
-
-echo $END9  >> $TMPNGINX9
-IFS=$NIBBLER
-mv $TMPNGINX9 $INPUTDB9
-ed -s $INPUTDB9<<\IN
+printf '\t"%s"\t\t%s\n' "${LINE}" "$ACTION2" >> "$_tmpnginx9"
+done < $_input9
+echo $END9  >> $_tmpnginx9
+mv $_tmpnginx9 $_inputdb9
+ed -s $_inputdb9<<\IN
 1,/# START NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
@@ -422,26 +353,20 @@ ed -s $INPUTDB9<<\IN
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/travisCI/globalblacklist.template
 q
 IN
-rm $INPUTDB9
+rm $_inputdb9
 
 # ****************************************
 # CLOUDFLARE IP RANGES - Create and Insert
 # ****************************************
 
-CLOUDFLARE=$IFS
-IFS=$'\n'
-echo $START10 >> $TMPNGINX10
-
-# Read input file and loop through it doing the printf output
-cat $INPUT10 | while read LINE
+echo $START10 >> $_tmpnginx10
+while IFS= read -r LINE
 do
-printf "\t${LINE}\t\t$ACTION1\n" >> $TMPNGINX10
-done
-
-echo $END10  >> $TMPNGINX10
-IFS=$CLOUDFLARE
-mv $TMPNGINX10 $INPUTDB10
-ed -s $INPUTDB10<<\IN
+printf '\t"%s"\t\t%s\n' "${LINE}" "$ACTION1" >> "$_tmpnginx10"
+done < $_input10
+echo $END10  >> $_tmpnginx10
+mv $_tmpnginx10 $_inputdb10
+ed -s $_inputdb10<<\IN
 1,/# START CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
@@ -452,23 +377,20 @@ ed -s $INPUTDB10<<\IN
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/travisCI/globalblacklist.template
 q
 IN
-rm $INPUTDB10
+rm $_inputdb10
 
 
 # *******************************************************************************
 # PRINT VERSION, SCRIPT RUNTIME and UPDATE INFORMATION INTO GLOBALBLACKLIST FILES
 # *******************************************************************************
 
-LASTUPDATEIFS=$IFS
-IFS=$'\n'
 # Get DATE output into uppercase format
 NOW=$(date | tr -s '[:lower:]'  '[:upper:]')
-echo $STARTMARKER >> $TMPNGINXA
-printf "###################################################\n### Version: "$MY_GIT_TAG"\n### Updated: "$NOW"\n### Bad Referrer Count: "$BAD_REFERRERS"\n### Bad Bot Count: "$BAD_BOTS"\n###################################################\n" >> $TMPNGINXA
-echo $ENDMARKER  >> $TMPNGINXA
-IFS=$LASTUPDATEIFS
-mv $TMPNGINXA $INPUTDBA
-ed -s $INPUTDBA<<\IN
+echo $STARTMARKER >> $_tmpnginxA
+printf "###################################################\n### Version: "$MY_GIT_TAG"\n### Updated: "$NOW"\n### Bad Referrer Count: "$BAD_REFERRERS"\n### Bad Bot Count: "$BAD_BOTS"\n###################################################\n" >> $_tmpnginxA
+echo $ENDMARKER  >> $_tmpnginxA
+mv $_tmpnginxA $_inputdbA
+ed -s $_inputdbA<<\IN
 1,/### VERSION INFORMATION #/d
 /### VERSION INFORMATION ##/,$d
 ,d
@@ -481,7 +403,7 @@ ed -s $INPUTDBA<<\IN
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/travisCI/globalblacklist.template
 q
 IN
-rm $INPUTDBA
+rm $_inputdbA
 
 # **************************************************
 # Generate Additional Files and Copy Them to Folders
