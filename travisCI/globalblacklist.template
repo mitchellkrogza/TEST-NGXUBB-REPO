@@ -4,8 +4,8 @@
 
 ### VERSION INFORMATION #
 ###################################################
-### Version: V3.2017.07.55
-### Updated: Wed Jul  5 13:37:00 SAST 2017
+### Version: V3.2017.07.56
+### Updated: Wed Jul  5 14:35:52 SAST 2017
 ### Bad Referrer Count: 4950
 ### Bad Bot Count: 479
 ###################################################
@@ -5836,28 +5836,28 @@ geo $validate_client {
 # UA "gsa-crawler (Enterprise; S4-E9LJ2B82FJJAA; me@mycompany.com)"
 
 # START GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
-	"108.177.8.0/21"		0;
-	"108.177.96.0/19"		0;
-	"172.217.0.0/19"		0;
-	"173.194.0.0/16"		0;
-	"2001:4860:4000::/36"		0;
-	"203.208.60.0/24"		0;
-	"207.126.144.0/20"		0;
-	"209.85.128.0/17"		0;
-	"216.239.32.0/19"		0;
-	"216.58.192.0/19"		0;
-	"2404:6800:4000::/36"		0;
-	"2607:f8b0:4000::/36"		0;
-	"2800:3f0:4000::/36"		0;
-	"2a00:1450:4000::/36"		0;
-	"2c0f:fb50:4000::/36"		0;
-	"64.18.0.0/20"		0;
-	"64.233.160.0/19"		0;
-	"64.68.80.0/21"		0;
-	"66.102.0.0/20"		0;
-	"66.249.64.0/18"		0;
-	"72.14.192.0/18"		0;
-	"74.125.0.0/16"		0;
+	108.177.8.0/21		0;
+	108.177.96.0/19		0;
+	172.217.0.0/19		0;
+	173.194.0.0/16		0;
+	2001:4860:4000::/36		0;
+	203.208.60.0/24		0;
+	207.126.144.0/20		0;
+	209.85.128.0/17		0;
+	216.239.32.0/19		0;
+	216.58.192.0/19		0;
+	2404:6800:4000::/36		0;
+	2607:f8b0:4000::/36		0;
+	2800:3f0:4000::/36		0;
+	2a00:1450:4000::/36		0;
+	2c0f:fb50:4000::/36		0;
+	64.18.0.0/20		0;
+	64.233.160.0/19		0;
+	64.68.80.0/21		0;
+	66.102.0.0/20		0;
+	66.249.64.0/18		0;
+	72.14.192.0/18		0;
+	74.125.0.0/16		0;
 # END GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 
 # *********
@@ -5865,54 +5865,54 @@ geo $validate_client {
 # *********
 
 # START BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
-	"131.253.24.0/22"		0;
-	"131.253.46.0/23"		0;
-	"157.54.0.0/15"		0;
-	"157.56.0.0/14"		0;
-	"157.60.0.0/16"		0;
-	"199.30.16.0/24"		0;
-	"199.30.27.0/24"		0;
-	"207.46.0.0/16"		0;
-	"40.112.0.0/13"		0;
-	"40.120.0.0/14"		0;
-	"40.124.0.0/16"		0;
-	"40.125.0.0/17"		0;
-	"40.74.0.0/15"		0;
-	"40.76.0.0/14"		0;
-	"40.80.0.0/12"		0;
-	"40.96.0.0/12"		0;
-	"65.52.104.0/24"		0;
-	"65.52.108.0/22"		0;
-	"65.55.213.0/24"		0;
-	"65.55.217.0/24"		0;
-	"65.55.24.0/24"		0;
-	"65.55.52.0/24"		0;
-	"65.55.55.0/24"		0;
+	131.253.24.0/22		0;
+	131.253.46.0/23		0;
+	157.54.0.0/15		0;
+	157.56.0.0/14		0;
+	157.60.0.0/16		0;
+	199.30.16.0/24		0;
+	199.30.27.0/24		0;
+	207.46.0.0/16		0;
+	40.112.0.0/13		0;
+	40.120.0.0/14		0;
+	40.124.0.0/16		0;
+	40.125.0.0/17		0;
+	40.74.0.0/15		0;
+	40.76.0.0/14		0;
+	40.80.0.0/12		0;
+	40.96.0.0/12		0;
+	65.52.104.0/24		0;
+	65.52.108.0/22		0;
+	65.55.213.0/24		0;
+	65.55.217.0/24		0;
+	65.55.24.0/24		0;
+	65.55.52.0/24		0;
+	65.55.55.0/24		0;
 # END BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 
 # START CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
-	"103.21.244.0/22"		0;
-	"103.22.200.0/22"		0;
-	"103.31.4.0/22"		0;
-	"104.16.0.0/12"		0;
-	"108.162.192.0/18"		0;
-	"131.0.72.0/22"		0;
-	"141.101.64.0/18"		0;
-	"162.158.0.0/15"		0;
-	"172.64.0.0/13"		0;
-	"173.245.48.0/20"		0;
-	"188.114.96.0/20"		0;
-	"190.93.240.0/20"		0;
-	"197.234.240.0/22"		0;
-	"198.41.128.0/17"		0;
-	"199.27.128.0/21"		0;
-	"2400:cb00::/32"		0;
-	"2405:8100::/32"		0;
-	"2405:b500::/32"		0;
-	"2606:4700::/32"		0;
-	"2803:f800::/32"		0;
-	"2a06:98c0::/29"		0;
-	"2c0f:f248::/32"		0;
+	103.21.244.0/22		0;
+	103.22.200.0/22		0;
+	103.31.4.0/22		0;
+	104.16.0.0/12		0;
+	108.162.192.0/18		0;
+	131.0.72.0/22		0;
+	141.101.64.0/18		0;
+	162.158.0.0/15		0;
+	172.64.0.0/13		0;
+	173.245.48.0/20		0;
+	188.114.96.0/20		0;
+	190.93.240.0/20		0;
+	197.234.240.0/22		0;
+	198.41.128.0/17		0;
+	199.27.128.0/21		0;
+	2400:cb00::/32		0;
+	2405:8100::/32		0;
+	2405:b500::/32		0;
+	2606:4700::/32		0;
+	2803:f800::/32		0;
+	2a06:98c0::/29		0;
+	2c0f:f248::/32		0;
 # END CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
   
 # *************************
@@ -5920,34 +5920,34 @@ geo $validate_client {
 # *************************
   
 # START WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###
-"	104.197.51.76		1; #makeawebsitehub.com/theme-detector/"
-"	108.167.189.81		1; #whatpress.net"
-"	109.73.225.87		1; #theseotools.net/wp-theme-detector"
-"	13.68.211.181		1; #hackertarget.com"
-"	142.4.218.201		1; #builtwith.com (bilby.builtwith.com / monty.builtwith.com / trends.builtwith.com)"
-"	149.56.33.22		1; #freeonlineseo.org/wordpress-theme-detector"
-"	158.69.187.171		1; #builtwith.com"
-"	158.69.26.58		1; #www.mythemedetector.com/detector"
-"	162.13.185.20		1; #makeawebsitehub.com/theme-detector/"
-"	173.237.189.235		1; #seo-tools.freedirectorywebsites.com/wordpress-theme-detector"
-"	173.255.210.133		1; #www.scanwp.com"
-"	185.45.14.186		1; #whoiswp.com"
-"	192.163.217.239		1; #scanwp.net"
-"	192.185.4.40		1; #whatwpthemeisthat.com"
-"	192.95.29.139		1; #seotoolstation.com/wordpress-theme-detector"
-"	192.99.17.79		1; #builtwith.com (oscar.builtwith.com)"
-"	198.27.69.229		1; #builtwith.com (fluffy.builtwith.com)"
-"	198.58.124.46		1; #makeawebsitehub.com/theme-detector/"
-"	199.241.28.124		1; #wordpressthemedetector.org"
-"	212.71.238.108		1; #pentest-tools.com (Vulnerability Scanner)"
-"	37.247.121.179		1; #wpthemedetector.com"
-"	37.60.253.215		1; #wploop.com/wordpress-theme-detector-tool/"
-"	45.63.68.250		1; #www.cuteseotools.net/wordpress-theme-detector"
-"	45.79.139.191		1; #wprecon.com"
-"	50.116.84.148		1; #detectwptheme.com"
-"	52.87.112.125		1; #whattheme.com"
-"	66.96.183.60		1; #www.callseotools.com/wordpress-theme-detector"
-"	89.36.223.188		1; #www.cuteseotools.net/wordpress-theme-detector"
+	104.197.51.76		1; #makeawebsitehub.com/theme-detector/
+	108.167.189.81		1; #whatpress.net
+	109.73.225.87		1; #theseotools.net/wp-theme-detector
+	13.68.211.181		1; #hackertarget.com
+	142.4.218.201		1; #builtwith.com (bilby.builtwith.com / monty.builtwith.com / trends.builtwith.com)
+	149.56.33.22		1; #freeonlineseo.org/wordpress-theme-detector
+	158.69.187.171		1; #builtwith.com
+	158.69.26.58		1; #www.mythemedetector.com/detector
+	162.13.185.20		1; #makeawebsitehub.com/theme-detector/
+	173.237.189.235		1; #seo-tools.freedirectorywebsites.com/wordpress-theme-detector
+	173.255.210.133		1; #www.scanwp.com
+	185.45.14.186		1; #whoiswp.com
+	192.163.217.239		1; #scanwp.net
+	192.185.4.40		1; #whatwpthemeisthat.com
+	192.95.29.139		1; #seotoolstation.com/wordpress-theme-detector
+	192.99.17.79		1; #builtwith.com (oscar.builtwith.com)
+	198.27.69.229		1; #builtwith.com (fluffy.builtwith.com)
+	198.58.124.46		1; #makeawebsitehub.com/theme-detector/
+	199.241.28.124		1; #wordpressthemedetector.org
+	212.71.238.108		1; #pentest-tools.com (Vulnerability Scanner)
+	37.247.121.179		1; #wpthemedetector.com
+	37.60.253.215		1; #wploop.com/wordpress-theme-detector-tool/
+	45.63.68.250		1; #www.cuteseotools.net/wordpress-theme-detector
+	45.79.139.191		1; #wprecon.com
+	50.116.84.148		1; #detectwptheme.com
+	52.87.112.125		1; #whattheme.com
+	66.96.183.60		1; #www.callseotools.com/wordpress-theme-detector
+	89.36.223.188		1; #www.cuteseotools.net/wordpress-theme-detector
 # END WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###
 
 # ****************************************
@@ -5956,13 +5956,13 @@ geo $validate_client {
 # See - http://nibbler.silktide.com/
 
 # START NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###
-	"52.201.238.175"		1;
-	"52.90.20.216"		1;
-	"54.161.247.146"		1;
-	"54.211.214.177"		1;
-	"54.227.194.252"		1;
-	"54.242.239.179"		1;
-	"54.242.250.203"		1;
+	52.201.238.175		1;
+	52.90.20.216		1;
+	54.161.247.146		1;
+	54.211.214.177		1;
+	54.227.194.252		1;
+	54.242.239.179		1;
+	54.242.250.203		1;
 # END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###
 
 
