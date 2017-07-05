@@ -1,10 +1,10 @@
 ### Version Information #
-"###################################################"
-"### Version: "V3.2017.07.44"
-"### Updated: "Wed Jul  5 11:46:11 SAST 2017"
-"### Bad Referrer Count: "4951"
-"Bad Bot Count: "479"
-"###################################################"
+###################################################
+### Version: V3.2017.07.45
+### Updated: Wed Jul  5 11:54:57 SAST 2017
+### Bad Referrer Count: 4951
+Bad Bot Count: 479
+###################################################
 ### Version Information ##
 User-agent: 360Spider
 Disallow:/
