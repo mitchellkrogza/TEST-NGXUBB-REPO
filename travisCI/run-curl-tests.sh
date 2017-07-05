@@ -13,7 +13,7 @@ STATUSCODE5=$(curl -A "GoogleBot" http://localhost:9000/index.php &> /dev/stderr
 
 STATUSCODE6=$(curl -A "BingBot" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE6 Welcome; then printf '%s\n\n' "GOOD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "GOOD BOT TEST FAILED"; exit 1; fi
 
-STATUSCODE7=$(curl -A "BingBot" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE7 52; then printf '%s\n\n' "GOOD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "GOOD BOT TEST FAILED"; exit 1; fi
+STATUSCODE7=$(curl -A "BingBot" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE7 spurl; then printf '%s\n\n' "GOOD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "GOOD BOT TEST FAILED"; exit 1; fi
 
 exit 0
 done
