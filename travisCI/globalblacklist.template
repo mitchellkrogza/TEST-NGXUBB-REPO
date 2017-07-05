@@ -4,7 +4,7 @@
 
 ### VERSION INFORMATION #
 ###################################################
-### Version: V3.2017.07.41
+### Version: V3.2017.07.42
 ### VERSION INFORMATION ##
 
 ### This file implements a checklist / blacklist for good user agents, bad user agents and
@@ -5964,6 +5964,7 @@ geo $validate_client {
 # See - http://nibbler.silktide.com/
 
 # START NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###
+# END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###
 # END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###
 # END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###
 # END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###
