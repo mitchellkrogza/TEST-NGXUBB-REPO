@@ -41,15 +41,15 @@ BAD_BOTS=$(wc -l < $TRAVIS_BUILD_DIR/_generator_lists/bad-user-agents.list)
 # Temporary database files we create
 # **********************************
 
-INPUTDBA=/tmp/lastupdated.db
-TMPNGINXA=TMPNGINXA
+_inputdbA=/tmp/lastupdated.db
+_tmpnginxA=tmpnginxA
 
 # ***************************************************************
 # Start and End Strings to Search for to do inserts into template
 # ***************************************************************
 
-STARTMARKER="### VERSION INFORMATION #"
-ENDMARKER="### VERSION INFORMATION ##"
+_startmarker="### Version Information #"
+_endmarker="### Version Information ##"
 
 # ****************************************
 # PRINT VERSION INFORMATION INTO README.md
@@ -57,25 +57,26 @@ ENDMARKER="### VERSION INFORMATION ##"
 
 #LASTUPDATEIFS=$IFS
 #IFS=$'\n'
-echo $STARTMARKER >> $TMPNGINXA
-printf "********************************************\n#### Version: "$MY_GIT_TAG"\n#### Bad Referrer Count: "$BAD_REFERRERS"\n#### Bad Bot Count: "$BAD_BOTS"\n********************************************\n" >> $TMPNGINXA
-echo $ENDMARKER  >> $TMPNGINXA
-#IFS=$LASTUPDATEIFS
-mv $TMPNGINXA $INPUTDBA
-ed -s $INPUTDBA<<\IN
-1,/### VERSION INFORMATION #/d
-/### VERSION INFORMATION ##/,$d
+#echo $STARTMARKER >> $TMPNGINXA
+#printf "********************************************\n#### Version: "$MY_GIT_TAG"\n#### Bad Referrer Count: "$BAD_REFERRERS"\n#### Bad Bot Count: "$BAD_BOTS"\n********************************************\n" >> $TMPNGINXA
+#echo $ENDMARKER  >> $TMPNGINXA
+
+printf '%s\n%s\n%s%s\n%s%s\n%s%s\n%s\n%s' "$_startmarker" "********************************************" "#### Version: " "$MY_GIT_TAG" "#### Bad Referrer Count: " "$BAD_REFERRERS" "#### Bad Bot Count: " "$BAD_BOTS" "********************************************" "$_endmarker" >> $_tmpnginxA
+mv $_tmpnginxA $_inputdbA
+ed -s $_inputdbA<<\IN
+1,/### Version Information #/d
+/### Version Information ##/,$d
 ,d
 .r /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/README.md
-/### VERSION INFORMATION #/x
+/### Version Information #/x
 .t.
-.,/### VERSION INFORMATION ##/-d
+.,/### Version Information ##/-d
 #,p
 #,p used to print output replaced with w below to write
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/README.md
 q
 IN
-rm $INPUTDBA
+rm $_inputdbA
 
 # ****************************************************
 # PRINT VERSION INFORMATION INTO AUTO-CONFIGURATION.md
@@ -83,25 +84,30 @@ rm $INPUTDBA
 
 #LASTUPDATEIFS2=$IFS
 #IFS=$'\n'
-echo $STARTMARKER >> $TMPNGINXA
-printf "********************************************\n#### Version: "$MY_GIT_TAG"\n#### Bad Referrer Count: "$BAD_REFERRERS"\n#### Bad Bot Count: "$BAD_BOTS"\n********************************************\n" >> $TMPNGINXA
-echo $ENDMARKER  >> $TMPNGINXA
+#echo $_startmarker >> $_tmpnginxA
+#printf "********************************************\n#### Version: "$MY_GIT_TAG"\n#### Bad Referrer Count: "$BAD_REFERRERS"\n#### Bad Bot Count: "$BAD_BOTS"\n********************************************\n" >> $TMPNGINXA
+#echo $ENDMARKER  >> $TMPNGINXA
 #IFS=$LASTUPDATEIFS2
-mv $TMPNGINXA $INPUTDBA
-ed -s $INPUTDBA<<\IN
-1,/### VERSION INFORMATION #/d
-/### VERSION INFORMATION ##/,$d
+#mv $TMPNGINXA $INPUTDBA
+#ed -s $INPUTDBA<<\IN
+
+printf '%s\n%s\n%s%s\n%s%s\n%s%s\n%s\n%s' "$_startmarker" "********************************************" "#### Version: " "$MY_GIT_TAG" "#### Bad Referrer Count: " "$BAD_REFERRERS" "#### Bad Bot Count: " "$BAD_BOTS" "********************************************" "$_endmarker" >> $_tmpnginxA
+mv $_tmpnginxA $_inputdbA
+ed -s $_inputdbA<<\IN
+
+1,/### Version Information #/d
+/### Version Information ##/,$d
 ,d
 .r /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/AUTO-CONFIGURATION.md
-/### VERSION INFORMATION #/x
+/### Version Information #/x
 .t.
-.,/### VERSION INFORMATION ##/-d
+.,/### Version Information ##/-d
 #,p
 #,p used to print output replaced with w below to write
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/AUTO-CONFIGURATION.md
 q
 IN
-rm $INPUTDBA
+rm $_inputdbA
 
 # ******************************************************
 # PRINT VERSION INFORMATION INTO MANUAL-CONFIGURATION.md
@@ -109,25 +115,30 @@ rm $INPUTDBA
 
 #LASTUPDATEIFS3=$IFS
 #IFS=$'\n'
-echo $STARTMARKER >> $TMPNGINXA
-printf "********************************************\n#### Version: "$MY_GIT_TAG"\n#### Bad Referrer Count: "$BAD_REFERRERS"\n#### Bad Bot Count: "$BAD_BOTS"\n********************************************\n" >> $TMPNGINXA
-echo $ENDMARKER  >> $TMPNGINXA
+#echo $STARTMARKER >> $TMPNGINXA
+#printf "********************************************\n#### Version: "$MY_GIT_TAG"\n#### Bad Referrer Count: "$BAD_REFERRERS"\n#### Bad Bot Count: "$BAD_BOTS"\n********************************************\n" >> $TMPNGINXA
+#echo $ENDMARKER  >> $TMPNGINXA
 #IFS=$LASTUPDATEIFS3
-mv $TMPNGINXA $INPUTDBA
-ed -s $INPUTDBA<<\IN
-1,/### VERSION INFORMATION #/d
-/### VERSION INFORMATION ##/,$d
+#mv $TMPNGINXA $INPUTDBA
+#ed -s $INPUTDBA<<\IN
+
+printf '%s\n%s\n%s%s\n%s%s\n%s%s\n%s\n%s' "$_startmarker" "********************************************" "#### Version: " "$MY_GIT_TAG" "#### Bad Referrer Count: " "$BAD_REFERRERS" "#### Bad Bot Count: " "$BAD_BOTS" "********************************************" "$_endmarker" >> $_tmpnginxA
+mv $_tmpnginxA $_inputdbA
+ed -s $_inputdbA<<\IN
+
+1,/### Version Information #/d
+/### Version Information ##/,$d
 ,d
 .r /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/MANUAL-CONFIGURATION.md
-/### VERSION INFORMATION #/x
+/### Version Information #/x
 .t.
-.,/### VERSION INFORMATION ##/-d
+.,/### Version Information ##/-d
 #,p
 #,p used to print output replaced with w below to write
 w /home/travis/build/mitchellkrogza/TEST-NGXUBB-REPO/MANUAL-CONFIGURATION.md
 q
 IN
-rm $INPUTDBA
+rm $_inputdbA
 
 
 exit 0

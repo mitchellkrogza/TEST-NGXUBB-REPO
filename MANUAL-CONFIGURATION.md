@@ -4,13 +4,8 @@
 ##### Created by: https://github.com/mitchellkrogza
 ##### Copyright Mitchell Krog <mitchellkrog@gmail.com>
 
-### VERSION INFORMATION #
-********************************************
-#### Version: V3.2017.07.51
-#### Bad Referrer Count: 4951
-#### Bad Bot Count: 479
-********************************************
-### VERSION INFORMATION ##
+### Version Information #
+### Version Information ##
 
 ## Update Notification System
 
