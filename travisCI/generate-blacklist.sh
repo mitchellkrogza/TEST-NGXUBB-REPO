@@ -314,7 +314,7 @@ rm $_inputdb7
 echo $START8 >> $_tmpnginx8
 while IFS= read -r LINE
 do
-printf '\t"%s"\n' "${LINE}" >> "$_tmpnginx8"
+printf '"%s"\n' "${LINE}" >> "$_tmpnginx8"
 done < $_input8
 echo $END8  >> $_tmpnginx8
 mv $_tmpnginx8 $_inputdb8

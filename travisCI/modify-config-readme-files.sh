@@ -34,8 +34,8 @@
 YEAR=$(date +%Y)
 MONTH=$(date +%m)
 MY_GIT_TAG=V3.$YEAR.$MONTH.$TRAVIS_BUILD_NUMBER
-BAD_REFERRERS=$(wc -l < $TRAVIS_BUILD_DIR/_GENERATOR_LISTS/BAD-REFERRERS.list)
-BAD_BOTS=$(wc -l < $TRAVIS_BUILD_DIR/_GENERATOR_LISTS/BAD-USER-AGENTS.list)
+BAD_REFERRERS=$(wc -l < $TRAVIS_BUILD_DIR/_generator_lists/bad-referrers.list)
+BAD_BOTS=$(wc -l < $TRAVIS_BUILD_DIR/_generator_lists/bad-user-agents.list)
 
 # **********************************
 # Temporary database files we create
@@ -55,12 +55,12 @@ ENDMARKER="### VERSION INFORMATION ##"
 # PRINT VERSION INFORMATION INTO README.md
 # ****************************************
 
-LASTUPDATEIFS=$IFS
-IFS=$'\n'
+#LASTUPDATEIFS=$IFS
+#IFS=$'\n'
 echo $STARTMARKER >> $TMPNGINXA
 printf "********************************************\n#### Version: "$MY_GIT_TAG"\n#### Bad Referrer Count: "$BAD_REFERRERS"\n#### Bad Bot Count: "$BAD_BOTS"\n********************************************\n" >> $TMPNGINXA
 echo $ENDMARKER  >> $TMPNGINXA
-IFS=$LASTUPDATEIFS
+#IFS=$LASTUPDATEIFS
 mv $TMPNGINXA $INPUTDBA
 ed -s $INPUTDBA<<\IN
 1,/### VERSION INFORMATION #/d
@@ -81,12 +81,12 @@ rm $INPUTDBA
 # PRINT VERSION INFORMATION INTO AUTO-CONFIGURATION.md
 # ****************************************************
 
-LASTUPDATEIFS2=$IFS
-IFS=$'\n'
+#LASTUPDATEIFS2=$IFS
+#IFS=$'\n'
 echo $STARTMARKER >> $TMPNGINXA
 printf "********************************************\n#### Version: "$MY_GIT_TAG"\n#### Bad Referrer Count: "$BAD_REFERRERS"\n#### Bad Bot Count: "$BAD_BOTS"\n********************************************\n" >> $TMPNGINXA
 echo $ENDMARKER  >> $TMPNGINXA
-IFS=$LASTUPDATEIFS2
+#IFS=$LASTUPDATEIFS2
 mv $TMPNGINXA $INPUTDBA
 ed -s $INPUTDBA<<\IN
 1,/### VERSION INFORMATION #/d
@@ -107,12 +107,12 @@ rm $INPUTDBA
 # PRINT VERSION INFORMATION INTO MANUAL-CONFIGURATION.md
 # ******************************************************
 
-LASTUPDATEIFS3=$IFS
-IFS=$'\n'
+#LASTUPDATEIFS3=$IFS
+#IFS=$'\n'
 echo $STARTMARKER >> $TMPNGINXA
 printf "********************************************\n#### Version: "$MY_GIT_TAG"\n#### Bad Referrer Count: "$BAD_REFERRERS"\n#### Bad Bot Count: "$BAD_BOTS"\n********************************************\n" >> $TMPNGINXA
 echo $ENDMARKER  >> $TMPNGINXA
-IFS=$LASTUPDATEIFS3
+#IFS=$LASTUPDATEIFS3
 mv $TMPNGINXA $INPUTDBA
 ed -s $INPUTDBA<<\IN
 1,/### VERSION INFORMATION #/d

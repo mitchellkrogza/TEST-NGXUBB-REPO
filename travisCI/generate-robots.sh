@@ -33,7 +33,7 @@
 # Set Input Files
 # ***************
 
-_input4a=$TRAVIS_BUILD_DIR/_generator_lists/bad-user-agents.list
+_input1=$TRAVIS_BUILD_DIR/_generator_lists/bad-user-agents.list
 _robotsinput1=/tmp/robotsinput1.txt
 _robotsinput1b=/tmp/robotsinput1b.txt
 _tmprobots=/tmp/robots.txt
@@ -61,16 +61,23 @@ _endmarker="### Version Information ##"
 # Create the robots.txt file
 # **************************
 
-cp $_input4a $_robotsinput1
-sed 's/[\]//g' $_robotsinput1 > $_robotsinput1b
-IFS=''
+#cp $_input1 $_robotsinput1
+#sed 's/[\]//g' $_robotsinput1 > $_robotsinput1b
+#IFS=''
 echo $_startmarker  >> $_tmprobots
-printf "###################################################\n### Version: "$MY_GIT_TAG"\n### Updated: "$now"\n### Bad Referrer Count: "$BAD_REFERRERS"\n### Bad Bot Count: "$BAD_BOTS"\n###################################################\n" >> $_tmprobots
+#printf '"%s"\n'
+printf '"###################################################"\n"### Version: "%s"\n"### Updated: "%s"\n"### Bad Referrer Count: "%s"\n"Bad Bot Count: "%s"\n"###################################################"\n' "$MY_GIT_TAG" "$now" "$BAD_REFERRERS" "$BAD_BOTS"  >> "$_tmprobots"
+while IFS= read -r LINE
+do
+printf '"User-agent: "%s"\n"Disallow:/"\n' "${LINE}" >> $_tmprobots
+#printf '"###################################################"\n"### Version: "%s"\n"### Updated: "%s"\n"### Bad Referrer Count: "%s"\n"Bad Bot Count: "%s"\n"###################################################"\n' "$MY_GIT_TAG" "$now" "$BAD_REFERRERS" "$BAD_BOTS"  >> "$_tmprobots"
+done < $_input1
+#printf "###################################################\n### Version: "$MY_GIT_TAG"\n### Updated: "$now"\n### Bad Referrer Count: "$BAD_REFERRERS"\n### Bad Bot Count: "$BAD_BOTS"\n###################################################\n" >> $_tmprobots
 echo $_endmarker  >> $_tmprobots
-printf "\n\n" >> $_tmprobots
-cat $_robotsinput1b |
-while read line; do
-printf 'User-agent: '${line}'\n Disallow:/ \n' >> $_tmprobots
+printf '\n\n' >> $_tmprobots
+#cat $_robotsinput1b |
+#while read line; do
+#printf 'User-agent: '${line}'\n Disallow:/ \n' >> $_tmprobots
 done
 sudo cp $_tmprobots $TRAVIS_BUILD_DIR/robots.txt/robots.txt
 exit 0
