@@ -64,7 +64,7 @@ if grep -q 'Welcome' "$_test1"; then
 else
    echo 'PASSED'
 fi
-
+echo $_test1
 
 #if prlctl list --info ubuntu-vm | grep -q "State: running"; then
 #   echo 'machine is running'
