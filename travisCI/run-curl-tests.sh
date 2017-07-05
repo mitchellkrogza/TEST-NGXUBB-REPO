@@ -15,21 +15,40 @@
 
 #STATUSCODE7=$(curl -A "BingBot" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test "$STATUSCODE7" -ge Welcome; then printf '%s\n\n' "GOOD BOT TEST PASSED"; exit 0; else if test "$STATUSCODE7" -le spurl; then printf '%s\n\n' "GOOD BOT TEST FAILED"; exit 1; fi
 
+#funky () {
+#STATUSCODE8=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}")
+#if test $STATUSCODE8 "Welcome"
+#then
+#printf '%s\n\n' "GOOD BOT TEST FAILED"
+#exit 0
+#else 
+#printf '%s\n\n' "GOOD BOT TEST PASSED"
+#exit 1
+#fi
+#}
+#funky
+
+#if [ $status_code -ne "200" ]
+_test1=/tmp/test1.db
+
 funky () {
-STATUSCODE8=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}")
-if [ $STATUSCODE8 -ne "Welcome" ]
+curl -A "masscan" http://localhost:9000/index.php > $_test1
+if grep -Fxq "Welcome" $_test1
 then
-printf '%s\n\n' "GOOD BOT TEST FAILED"
-exit 0
-else 
-printf '%s\n\n' "GOOD BOT TEST PASSED"
-exit 1
+    echo "FAILED"
+else
+    echo "PASSED"
 fi
 }
 
 funky
 
-#if [ $status_code -ne "200" ]
+
+#while IFS= read -r LINE
+#do
+#printf '\t"~%s"\t\t%s\n' "${LINE}" "$_action1" >> "$_tmpnginx1"
+#done < $_input1
+
 
 #response=$(
 #    curl YOUR_URL \
