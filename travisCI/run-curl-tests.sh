@@ -7,7 +7,7 @@ STATUSCODE1=$(curl -A "80legs" http://localhost:9000/index.php)
 echo $STATUSCODE1
 
 #truncate -s 0 $TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest1.txt
-curl -A "80legs" http://localhost:9000/index.php | tee -a $TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest1.txt
+curl -A "80legs" http://localhost:9000/index.php 2> $TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest1.txt
 cat $TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest1.txt
 grep -i '(52)' $TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest1.txt
 
