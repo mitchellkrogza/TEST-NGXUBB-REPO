@@ -57,15 +57,23 @@
 #   echo 'PASSED'
 #fi
 
-_test1=test1
-curl -A "masscan" http://localhost:9000/index.php &> $_test1
-if grep 'Welcome' $_test1; then
-   echo 'FAILED'
-else
-   echo 'PASSED'
-fi
-cat $_test1
+#_test1=test1
+#curl -A "masscan" http://localhost:9000/index.php &> $_test1
+#if grep 'Welcome' $_test1; then
+#   echo 'FAILED'
+#else
+#   echo 'PASSED'
+#fi
+#cat $_test1
 
+truncate -s 0 /tmp/curltest1.txt
+curl -A "masscan" http://localhost:9000/index.php &> /tmp/curltest1.txt
+if grep 'Welcome' /tmp/curltest1.txt; then
+   echo 'PASS'
+else
+   echo 'BAD BOT DETECTED'
+fi
+#cat /tmp/curltest1.txt
 #if prlctl list --info ubuntu-vm | grep -q "State: running"; then
 #   echo 'machine is running'
 #else
