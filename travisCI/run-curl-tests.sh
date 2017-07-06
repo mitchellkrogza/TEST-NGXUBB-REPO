@@ -19,7 +19,7 @@ else
    #exit 1
 fi
 cat $_test1
-
+grep -i '(52)' $_test1
 #}
 
 #STATUSCODE2=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE2 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
