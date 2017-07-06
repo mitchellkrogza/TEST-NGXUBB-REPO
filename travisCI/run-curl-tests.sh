@@ -50,7 +50,7 @@ fi
 # Function Curl Test 4 - Check for Bad Referrer "zx6.ru"
 run_curltest4 () {
 truncate -s 0 $_curltest4
-curl -I http://localhost:9000/index.php -e http://zx6.ru >> $_curltest4
+curl -I http://localhost:9000/index.php -e http://zx6.ru 2> $_curltest4
 if grep -i '(52)' $_curltest4; then
    echo 'BAD REFERRER DETECTED - TEST PASSED'
 else
@@ -62,8 +62,8 @@ fi
 # Function Curl Test 5 - Check for Good Bot "GoogleBot"
 run_curltest5 () {
 truncate -s 0 $_curltest5
-curl -A "GoogleBot" http://localhost:9000/index.php 2> $_curltest5
-if grep -i 'Welcome' $_curltest5; then
+curl -A "GoogleBot" http://localhost:9000/index.php &> $_curltest5
+if grep -i '200\sOK' $_curltest5; then
    echo 'GOOD BOT ALLOWED THROUGH - TEST PASSED'
 else
    echo 'GOOD BOT NOT ALLOWED THROUGH - TEST FAILED'
