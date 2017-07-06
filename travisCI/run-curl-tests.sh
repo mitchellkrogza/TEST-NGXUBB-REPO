@@ -24,6 +24,9 @@ else
 fi
 }
 
+# Activate Our Function and Run the Curl Test
+run_curltest1
+
 # Function Curl Test 2 - Check for Bad Bot "masscan"
 run_curltest2 () {
 truncate -s 0 $_curltest2
@@ -37,9 +40,7 @@ else
 fi
 }
 
-
-# Activate Our Functions and Run the Curl Tests
-run_curltest1
+# Activate Our Function and Run the Curl Test
 run_curltest2
 
 #STATUSCODE2=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE2 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
@@ -78,7 +79,7 @@ run_curltest2
 #grep '(52)' /tmp/curltest1.txt
 #grep '(52)' /tmp/curltest2.txt
 
-exit 0
+#exit 0
 
 #STATUSCODE4=$(curl -I http://localhost:9000/index.php -e http://zx6.ru &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE4 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
 
