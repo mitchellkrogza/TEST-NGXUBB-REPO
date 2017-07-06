@@ -3,8 +3,8 @@
 
 #STATUSCODE1=$(curl -A "80legs" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE1 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
 #set -x
-set -e
-set -v
+#set -e
+#set -v
 
 curltest1 () {
 truncate -s 0 /tmp/curltest1.txt
@@ -49,6 +49,8 @@ fi
 curltest1
 curltest2
 #curltest3
+cat /tmp/curltest1.txt
+cat /tmp/curltest2.txt
 
 #STATUSCODE4=$(curl -I http://localhost:9000/index.php -e http://zx6.ru &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE4 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
 
