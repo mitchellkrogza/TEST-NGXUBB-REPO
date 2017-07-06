@@ -35,9 +35,22 @@ else
 fi
 }
 
+# Function Curl Test 3 - Check for Bad Referrer "100dollars-seo.com"
+run_curltest3 () {
+truncate -s 0 $_curltest3
+curl -I http://localhost:9000/index.php -e http://100dollars-seo.com 2> $_curltest3
+if grep -i '(52)' $_curltest3; then
+   echo 'BAD REFERRER DETECTED - TEST PASSED'
+else
+   echo 'BAD REFERRER NOT DETECTED - TEST FAILED'
+   exit 1
+fi
+}
+
 # Trigger our functions to run
 run_curltest1
-run_curltest1
+run_curltest2
+run_curltest3
 
 # If everything passed then we exit with 0
 exit 0
