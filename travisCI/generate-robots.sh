@@ -34,8 +34,6 @@
 # ***************
 
 _input1=$TRAVIS_BUILD_DIR/_generator_lists/bad-user-agents.list
-#_robotsinput1=/tmp/robotsinput1.txt
-#_robotsinput1b=/tmp/robotsinput1b.txt
 _tmprobots=/tmp/robots.txt
 
 # ******************

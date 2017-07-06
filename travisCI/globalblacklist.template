@@ -12,7 +12,7 @@
 ### VERSION INFORMATION ##
 
 ### This file implements a checklist / blacklist for good user agents, bad user agents and
-### bad referrers. It also has whitelisting for your own IP's and known good IP Ranges
+### bad referrers on Nginx Web Server. It also has whitelisting for your own IP's and known good IP Ranges
 ### and also has rate limiting functionality for bad bots who you only want to rate limit
 ### and not actually block out entirely. It is very powerful and also very flexible.
 
