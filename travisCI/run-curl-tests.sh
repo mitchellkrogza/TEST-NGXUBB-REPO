@@ -68,6 +68,8 @@ curl -A "GoogleBot" http://localhost:9000/index.php &>> $_curltest5
 curl -A "BingBot" http://localhost:9000/index.php &>> $_curltest5
 curl -A "GoogleBot" http://localhost:9000/index.php 2>> $_curltest5
 curl -A "BingBot" http://localhost:9000/index.php 2>> $_curltest5
+curl -A "GoogleBot" http://localhost:9000/index.php 2>&1>> $_curltest5
+curl -A "BingBot" http://localhost:9000/index.php 2>&1>> $_curltest5
 if grep -i 'Welcome' $_curltest5; then
    echo 'GOOD BOT ALLOWED THROUGH - TEST PASSED'
 else
