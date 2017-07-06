@@ -17,15 +17,30 @@ truncate -s 0 $_curltest1
 curl -A "80legs" http://localhost:9000/index.php 2> $_curltest1
 if grep -i '(52)' $_curltest1; then
    echo 'BAD BOT DETECTED - TEST PASSED'
-   #exit 0
+   exit 0
 else
    echo 'BAD BOT NOT DETECTED - TEST FAILED'
-   #exit 1
+   exit 1
 fi
 }
 
+# Function Curl Test 1 - Check for Bad Bot "masscan"
+curltest2 () {
+truncate -s 0 $_curltest2
+curl -A "masscan" http://localhost:9000/index.php 2> $_curltest2
+if grep -i '(52)' $_curltest2; then
+   echo 'BAD BOT DETECTED - TEST PASSED'
+   exit 0
+else
+   echo 'BAD BOT NOT DETECTED - TEST FAILED'
+   exit 1
+fi
+}
+
+
 # Activate Our Functions and Run the Curl Tests
 curltest1
+curltest2
 
 #STATUSCODE2=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE2 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
 
