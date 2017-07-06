@@ -7,8 +7,8 @@ set -e
 set -v
 
 curltest1 () {
-sudo truncate -s 0 /tmp/curltest1.txt
-sudo curl -A "80legs" http://localhost:9000/index.php &> /tmp/curltest1.txt
+truncate -s 0 /tmp/curltest1.txt
+curl -A "80legs" http://localhost:9000/index.php &> /tmp/curltest1.txt
 if grep '(52)' /tmp/curltest1.txt; then
    echo 'BAD BOT DETECTED - TEST PASSED'
    exit 0
@@ -22,7 +22,7 @@ fi
 
 curltest2 () {
 truncate -s 0 /tmp/curltest2.txt
-sudo curl -A "masscan" http://localhost:9000/index.php &> /tmp/curltest2.txt
+curl -A "masscan" http://localhost:9000/index.php &> /tmp/curltest2.txt
 if grep '(52)' /tmp/curltest2.txt; then
    echo 'BAD BOT DETECTED - TEST PASSED'
    exit 0
