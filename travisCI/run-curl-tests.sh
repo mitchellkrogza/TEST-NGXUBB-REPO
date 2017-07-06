@@ -8,18 +8,20 @@
 
 #curltest1 () {
 #truncate -s 0 /tmp/curltest1.txt
-_test1=/tmp/test1.db
-curl -A "80legs" http://localhost:9000/index.php 2>&1 > $_test1
+#_test1=/tmp/test1.db
+curl -A "80legs" http://localhost:9000/index.php 2>&1 > /tmp/test1.txt
 #grep '(52)' $_test1 &> /dev/stderr
-if grep -i '(52)' $_test1; then
+
+cat /tmp/test1.txt
+grep -i '(52)' /tmp/test1.txt
+
+if grep -i '(52)' /tmp/test1.txt; then
    echo 'BAD BOT DETECTED - TEST PASSED'
    #exit 0
 else
    echo 'BAD BOT NOT DETECTED - TEST FAILED'
    #exit 1
 fi
-cat $_test1
-grep -i '(52)' $_test1
 #}
 
 #STATUSCODE2=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE2 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
