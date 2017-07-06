@@ -8,30 +8,32 @@
 
 #curltest1 () {
 #truncate -s 0 /tmp/curltest1.txt
-curl -A "80legs" http://localhost:9000/index.php &> /tmp/curltest1.txt
-cat /tmp/curltest1.txt
-if grep -i '52' /tmp/curltest1.txt; then
+_test1=/tmp/test1.db
+curl -A "80legs" http://localhost:9000/index.php &> $_test1
+if grep -i '(52)' $_test1; then
    echo 'BAD BOT DETECTED - TEST PASSED'
    #exit 0
 else
    echo 'BAD BOT NOT DETECTED - TEST FAILED'
    #exit 1
 fi
+cat $_test1
+
 #}
 
 #STATUSCODE2=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE2 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
 
 #curltest2 () {
 #truncate -s 0 /tmp/curltest2.txt
-curl -A "masscan" http://localhost:9000/index.php &> /tmp/curltest2.txt
-cat /tmp/curltest2.txt
-if grep -i '(52)' /tmp/curltest2.txt; then
-   echo 'BAD BOT DETECTED - TEST PASSED'
+#curl -A "masscan" http://localhost:9000/index.php &> /tmp/curltest2.txt
+#cat /tmp/curltest2.txt
+#if grep -i '(52)' /tmp/curltest2.txt; then
+#   echo 'BAD BOT DETECTED - TEST PASSED'
    #exit 0
-else
-   echo 'BAD BOT NOT DETECTED - TEST FAILED'
+#else
+#   echo 'BAD BOT NOT DETECTED - TEST FAILED'
    #exit 1
-fi
+#fi
 #}
 
 #STATUSCODE3=$(curl -I http://localhost:9000/index.php -e http://100dollars-seo.com &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE3 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
