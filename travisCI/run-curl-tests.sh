@@ -62,8 +62,8 @@ fi
 # Function Curl Test 5 - Check for Good Bot "GoogleBot"
 run_curltest5 () {
 truncate -s 0 $_curltest5
-curl -i -A "GoogleBot" http://localhost:9000/index.php 2> $_curltest5
-if grep -i '200\sOK' $_curltest5; then
+curl -i -A "GoogleBot" http://localhost:9000/index.php 2&> $_curltest5
+if grep -i 'Welcome' $_curltest5; then
    echo 'GOOD BOT ALLOWED THROUGH - TEST PASSED'
 else
    echo 'GOOD BOT NOT ALLOWED THROUGH - TEST FAILED'
