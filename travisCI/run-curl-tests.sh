@@ -12,7 +12,7 @@ _curltest6=$TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest6.txt
 
 
 # Function Curl Test 1 - Check for Bad Bot "80legs"
-curltest1 () {
+run_curltest1 () {
 truncate -s 0 $_curltest1
 curl -A "80legs" http://localhost:9000/index.php 2> $_curltest1
 if grep -i '(52)' $_curltest1; then
@@ -24,8 +24,8 @@ else
 fi
 }
 
-# Function Curl Test 1 - Check for Bad Bot "masscan"
-curltest2 () {
+# Function Curl Test 2 - Check for Bad Bot "masscan"
+run_curltest2 () {
 truncate -s 0 $_curltest2
 curl -A "masscan" http://localhost:9000/index.php 2> $_curltest2
 if grep -i '(52)' $_curltest2; then
@@ -39,8 +39,8 @@ fi
 
 
 # Activate Our Functions and Run the Curl Tests
-curltest1
-curltest2
+run_curltest1
+run_curltest2
 
 #STATUSCODE2=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE2 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
 
