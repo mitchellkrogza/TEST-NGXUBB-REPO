@@ -3,9 +3,40 @@
 
 #STATUSCODE1=$(curl -A "80legs" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE1 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
 
+truncate -s 0 /tmp/curltest1.txt
+curl -A "80legs" http://localhost:9000/index.php &> /tmp/curltest1.txt
+if grep '(52)' /tmp/curltest1.txt; then
+   echo 'BAD BOT DETECTED - TEST PASSED'
+   exit 0
+else
+   echo 'BAD BOT NOT DETECTED - TEST FAILED'
+   exit 1
+fi
+
 #STATUSCODE2=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE2 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
 
+truncate -s 0 /tmp/curltest2.txt
+curl -A "masscan" http://localhost:9000/index.php &> /tmp/curltest2.txt
+if grep '(52)' /tmp/curltest2.txt; then
+   echo 'BAD BOT DETECTED - TEST PASSED'
+   exit 0
+else
+   echo 'BAD BOT NOT DETECTED - TEST FAILED'
+   exit 1
+fi
+
 #STATUSCODE3=$(curl -I http://localhost:9000/index.php -e http://100dollars-seo.com &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE3 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
+
+_test3=/tmp/curltest3.txt
+truncate -s 0 $_test3
+curl -I http://localhost:9000/index.php -e http://100dollars-seo.com &> $_test3
+if grep '(52)' $_test3; then
+   echo 'BAD BOT DETECTED - TEST PASSED'
+   exit 0
+else
+   echo 'BAD BOT NOT DETECTED - TEST FAILED'
+   exit 1
+fi
 
 #STATUSCODE4=$(curl -I http://localhost:9000/index.php -e http://zx6.ru &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE4 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
 
@@ -66,13 +97,13 @@
 #fi
 #cat $_test1
 
-truncate -s 0 /tmp/curltest1.txt
-curl -A "masscan" http://localhost:9000/index.php &> /tmp/curltest1.txt
-if grep 'Welcome' /tmp/curltest1.txt; then
-   echo 'PASS'
-else
-   echo 'BAD BOT DETECTED'
-fi
+#truncate -s 0 /tmp/curltest1.txt
+#curl -A "masscan" http://localhost:9000/index.php &> /tmp/curltest1.txt
+#if grep 'Welcome' /tmp/curltest1.txt; then
+#   echo 'PASS'
+#else
+#   echo 'BAD BOT DETECTED'
+#fi
 #cat /tmp/curltest1.txt
 #if prlctl list --info ubuntu-vm | grep -q "State: running"; then
 #   echo 'machine is running'
