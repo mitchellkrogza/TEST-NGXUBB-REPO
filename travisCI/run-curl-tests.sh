@@ -9,7 +9,7 @@
 curltest1 () {
 truncate -s 0 /tmp/curltest1.txt
 curl -A "80legs" http://localhost:9000/index.php &> /tmp/curltest1.txt
-if grep '(52)' /tmp/curltest1.txt; then
+if grep '52' /tmp/curltest1.txt; then
    echo 'BAD BOT DETECTED - TEST PASSED'
    #exit 0
 else
@@ -51,8 +51,8 @@ curltest2
 #curltest3
 cat /tmp/curltest1.txt
 cat /tmp/curltest2.txt
-grep '(52)' /tmp/curltest1.txt
-grep '(52)' /tmp/curltest2.txt
+#grep '(52)' /tmp/curltest1.txt
+#grep '(52)' /tmp/curltest2.txt
 
 exit 0
 
