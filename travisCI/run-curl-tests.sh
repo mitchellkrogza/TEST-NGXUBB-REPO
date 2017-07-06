@@ -11,10 +11,10 @@ truncate -s 0 /tmp/curltest1.txt
 curl -A "80legs" http://localhost:9000/index.php &> /tmp/curltest1.txt
 if grep '(52)' /tmp/curltest1.txt; then
    echo 'BAD BOT DETECTED - TEST PASSED'
-   exit 0
+   #exit 0
 else
    echo 'BAD BOT NOT DETECTED - TEST FAILED'
-   exit 1
+   #exit 1
 fi
 }
 
@@ -25,10 +25,10 @@ truncate -s 0 /tmp/curltest2.txt
 curl -A "masscan" http://localhost:9000/index.php &> /tmp/curltest2.txt
 if grep '(52)' /tmp/curltest2.txt; then
    echo 'BAD BOT DETECTED - TEST PASSED'
-   exit 0
+   #exit 0
 else
    echo 'BAD BOT NOT DETECTED - TEST FAILED'
-   exit 1
+   #exit 1
 fi
 }
 
@@ -51,6 +51,10 @@ curltest2
 #curltest3
 cat /tmp/curltest1.txt
 cat /tmp/curltest2.txt
+grep '(52)' /tmp/curltest1.txt
+grep '(52)' /tmp/curltest2.txt
+
+exit 0
 
 #STATUSCODE4=$(curl -I http://localhost:9000/index.php -e http://zx6.ru &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE4 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
 
