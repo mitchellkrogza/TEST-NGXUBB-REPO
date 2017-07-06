@@ -3,12 +3,12 @@
 
 #STATUSCODE1=$(curl -A "80legs" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE1 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
 
-truncate -s 0 $TRAVIS_BUILD_DIR/_curl_tests/curltest1.txt
-sudo curl -A "80legs" http://localhost:9000/index.php &> $TRAVIS_BUILD_DIR/_curl_tests/curltest1.txt
-cat $TRAVIS_BUILD_DIR/_curl_tests/curltest1.txt
-grep -i '(52)' $TRAVIS_BUILD_DIR/_curl_tests/curltest1.txt
+truncate -s 0 $TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest1.txt
+sudo curl -A "80legs" http://localhost:9000/index.php &> $TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest1.txt
+cat $TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest1.txt
+grep -i '(52)' $TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest1.txt
 
-if grep -i '(52)' $TRAVIS_BUILD_DIR/_curl_tests/curltest1.txt; then
+if grep -i '(52)' $TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest1.txt; then
    echo 'BAD BOT DETECTED - TEST PASSED'
    #exit 0
 else
