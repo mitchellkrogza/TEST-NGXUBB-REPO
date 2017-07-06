@@ -9,7 +9,8 @@
 #curltest1 () {
 #truncate -s 0 /tmp/curltest1.txt
 _test1=/tmp/test1.db
-curl -A "80legs" http://localhost:9000/index.php &> $_test1
+curl -A "80legs" http://localhost:9000/index.php 2>&1 > $_test1
+#grep '(52)' $_test1 &> /dev/stderr
 if grep -i '(52)' $_test1; then
    echo 'BAD BOT DETECTED - TEST PASSED'
    #exit 0
