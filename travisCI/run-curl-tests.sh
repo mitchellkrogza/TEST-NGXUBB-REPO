@@ -6,7 +6,7 @@
 #set -e
 #set -v
 
-curltest1 () {
+#curltest1 () {
 #truncate -s 0 /tmp/curltest1.txt
 curl -A "80legs" http://localhost:9000/index.php &> /tmp/curltest1.txt
 cat /tmp/curltest1.txt
@@ -17,11 +17,11 @@ else
    echo 'BAD BOT NOT DETECTED - TEST FAILED'
    #exit 1
 fi
-}
+#}
 
 #STATUSCODE2=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE2 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
 
-curltest2 () {
+#curltest2 () {
 #truncate -s 0 /tmp/curltest2.txt
 curl -A "masscan" http://localhost:9000/index.php &> /tmp/curltest2.txt
 cat /tmp/curltest2.txt
@@ -32,24 +32,24 @@ else
    echo 'BAD BOT NOT DETECTED - TEST FAILED'
    #exit 1
 fi
-}
+#}
 
 #STATUSCODE3=$(curl -I http://localhost:9000/index.php -e http://100dollars-seo.com &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE3 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
 
-curltest3 () {
-_test3=/tmp/curltest3.txt
-truncate -s 0 $_test3
-curl -I http://localhost:9000/index.php -e http://100dollars-seo.com &> $_test3
-if grep '(52)' $_test3; then
-   echo 'BAD BOT DETECTED - TEST PASSED'
-   exit 0
-else
-   echo 'BAD BOT NOT DETECTED - TEST FAILED'
-   exit 1
-fi
-}
-curltest1
-curltest2
+#curltest3 () {
+#_test3=/tmp/curltest3.txt
+#truncate -s 0 $_test3
+#curl -I http://localhost:9000/index.php -e http://100dollars-seo.com &> $_test3
+#if grep '(52)' $_test3; then
+#   echo 'BAD BOT DETECTED - TEST PASSED'
+#   exit 0
+#else
+#   echo 'BAD BOT NOT DETECTED - TEST FAILED'
+#   exit 1
+#fi
+#}
+#curltest1
+#curltest2
 #curltest3
 
 #grep '(52)' /tmp/curltest1.txt
