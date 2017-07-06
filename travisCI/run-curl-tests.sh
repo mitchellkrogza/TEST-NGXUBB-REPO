@@ -1,14 +1,20 @@
 #!/bin/bash
 # Curl Testing Script for Nginx Ultimate Bad Bot Blocker
 
-#STATUSCODE1=$(curl -A "80legs" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE1 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
+# Set Location of our Curl Test Results Files
 
 _curltest1=$TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest1.txt
+_curltest2=$TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest2.txt
+_curltest3=$TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest3.txt
+_curltest4=$TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest4.txt
+_curltest5=$TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest5.txt
+_curltest6=$TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest6.txt
+
+
+# Function Curl Test 1 - Check for Bad Bot "80legs"
+curltest1 () {
 truncate -s 0 $_curltest1
 curl -A "80legs" http://localhost:9000/index.php 2> $_curltest1
-#cat $TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest1.txt
-#grep -i '(52)' $_curltest1
-
 if grep -i '(52)' $_curltest1; then
    echo 'BAD BOT DETECTED - TEST PASSED'
    #exit 0
@@ -16,7 +22,10 @@ else
    echo 'BAD BOT NOT DETECTED - TEST FAILED'
    #exit 1
 fi
+}
 
+# Activate Our Functions and Run the Curl Tests
+curltest1
 
 #STATUSCODE2=$(curl -A "masscan" http://localhost:9000/index.php &> /dev/stderr --write-out "%{http_code}") | if test $STATUSCODE2 52; then printf '%s\n\n' "BAD BOT TEST PASSED"; exit 0; else printf '%s\n\n' "BAD BOT TEST FAILED"; exit 1; fi
 
