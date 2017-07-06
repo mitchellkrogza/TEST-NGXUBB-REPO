@@ -9,7 +9,8 @@
 #curltest1 () {
 #truncate -s 0 /tmp/curltest1.txt
 #_test1=/tmp/test1.db
-curl -A "80legs" http://localhost:9000/index.php 2>&1 > /tmp/test1.txt
+sudo touch /tmp/test1.txt
+sudo curl -A "80legs" http://localhost:9000/index.php &> /tmp/test1.txt
 #grep '(52)' $_test1 &> /dev/stderr
 
 cat /tmp/test1.txt
