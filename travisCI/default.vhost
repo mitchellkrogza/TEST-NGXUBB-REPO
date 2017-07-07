@@ -1,7 +1,6 @@
 server {
 	#listen *:9000;
-	listen 80;
-	listen [::]:80;
+	listen *:80;
 
 	root /var/www/html;
 	server_name localhost;
