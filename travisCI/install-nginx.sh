@@ -74,6 +74,12 @@ sudo cp $TRAVIS_BUILD_DIR/travisCI/default.vhost /etc/nginx/sites-available/defa
 
 sudo ln -s /etc/nginx/sites-available/default.vhost /etc/nginx/sites-enabled/default.vhost
 
+# *********************
+# Force reload of Nginx
+# *********************
+
+sudo service nginx reload
+
 # ********************
 # Run setup-ngxblocker
 # ********************

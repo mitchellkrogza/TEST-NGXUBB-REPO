@@ -37,6 +37,8 @@ script:
   #- sudo dpkg --get-selections | grep apache
   - sudo lsof -nPi | grep ":80 (LISTEN)"
   - ls -la /etc/nginx/sites-enabled/
+  - ls -la /etc/nginx/sites-available/
+  - ls -la /var/www/html/
   - cat /etc/nginx/nginx.conf
   - bash travisCI/modify-files-and-commit.sh
 
