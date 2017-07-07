@@ -58,7 +58,7 @@ sudo chmod +x /usr/sbin/update-ngxblocker
 # **********************
 
 cd /usr/sbin
-sudo ./install-ngxblocker -x
+sudo ./install-ngxblocker -x -r https://raw.githubusercontent.com/mitchellkrogza/TEST-NGXUBB-REPO/master
 
 # ********************************************************
 # Copy our default.vhost file into Nginx /sites-available/
