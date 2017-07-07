@@ -31,6 +31,12 @@
 # Start Getting Nginx Ready for Testing the Nginx Bad Bot Blocker
 # ***************************************************************
 
+# First let's uninstall Apache2
+sudo service apache2 stop
+sudo apt-get purge apache2 apache2-utils apache2.2-bin apache2-common -y
+sudo apt-get autoremove -y
+sudo rm -rf /etc/apache2
+
 # *************************************************
 # Delete default site created by Nginx Installation
 # *************************************************
