@@ -39,29 +39,6 @@ sudo rm /etc/nginx/sites-available/default
 sudo rm /etc/nginx/sites-enabled/default
 sudo rm /var/www/html/*
 
-# ***********************************************************************
-# Download the Nginx Bad Bot Blocker setup files from the Live Repository
-# ***********************************************************************
-
-sudo wget https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/install-ngxblocker -O /usr/sbin/install-ngxblocker
-sudo wget https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/setup-ngxblocker -O /usr/sbin/setup-ngxblocker
-sudo wget https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/update-ngxblocker -O /usr/sbin/update-ngxblocker
-
-# **************************************************
-# Set our install and setup scripts to be executable
-# **************************************************
-
-sudo chmod +x /usr/sbin/install-ngxblocker
-sudo chmod +x /usr/sbin/setup-ngxblocker
-sudo chmod +x /usr/sbin/update-ngxblocker
-
-# **********************
-# Run Install-NgxBlocker
-# **********************
-
-cd /usr/sbin
-sudo ./install-ngxblocker -x -r https://raw.githubusercontent.com/mitchellkrogza/TEST-NGXUBB-REPO/master
-
 # ********************************************************
 # Copy our default.vhost file into Nginx /sites-available/
 # ********************************************************
@@ -85,6 +62,29 @@ sudo cp $TRAVIS_BUILD_DIR/travisCI/index.html /var/www/html/index.html
 # **********************
 
 sudo service nginx restart
+
+# ***********************************************************************
+# Download the Nginx Bad Bot Blocker setup files from the Live Repository
+# ***********************************************************************
+
+sudo wget https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/install-ngxblocker -O /usr/sbin/install-ngxblocker
+sudo wget https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/setup-ngxblocker -O /usr/sbin/setup-ngxblocker
+sudo wget https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/update-ngxblocker -O /usr/sbin/update-ngxblocker
+
+# **************************************************
+# Set our install and setup scripts to be executable
+# **************************************************
+
+sudo chmod +x /usr/sbin/install-ngxblocker
+sudo chmod +x /usr/sbin/setup-ngxblocker
+sudo chmod +x /usr/sbin/update-ngxblocker
+
+# **********************
+# Run Install-NgxBlocker
+# **********************
+
+cd /usr/sbin
+sudo ./install-ngxblocker -x -r https://raw.githubusercontent.com/mitchellkrogza/TEST-NGXUBB-REPO/master
 
 # ********************
 # Run setup-ngxblocker
