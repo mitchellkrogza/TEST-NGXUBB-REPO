@@ -11,6 +11,8 @@ _curltest4=$TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest4.txt
 _curltest5=$TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest5.txt
 _curltest6=$TRAVIS_BUILD_DIR/travisCI/_curl_tests/curltest6.txt
 
+echo $_myip
+
 
 # Function Curl Test 1 - Check for Bad Bot "80legs"
 run_curltest1 () {
