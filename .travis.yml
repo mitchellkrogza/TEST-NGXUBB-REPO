@@ -33,7 +33,7 @@ install:
 
 script:
   #- dig +short myip.opendns.com @resolver1.opendns.com
-  - bash travisCI/get-local-ip.sh
+  #- bash travisCI/get-local-ip.sh
   - sh -x travisCI/install-nginx.sh
   - bash travisCI/run-curl-tests.sh
   #- sudo dpkg --get-selections | grep apache
