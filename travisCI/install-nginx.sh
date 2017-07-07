@@ -36,6 +36,7 @@
 # *************************************************
 
 sudo rm /etc/nginx/sites-available/default
+sudo rm /etc/nginx/sites-enabled/default
 
 # ***********************************************************************
 # Download the Nginx Bad Bot Blocker setup files from the Live Repository
