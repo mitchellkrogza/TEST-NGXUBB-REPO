@@ -38,13 +38,13 @@ script:
   - bash travisCI/run-curl-tests.sh
   #- sudo dpkg --get-selections | grep apache
   - sudo lsof -nPi | grep ":80 (LISTEN)"
-  - sudo lsof -nPi | grep ":8080 (LISTEN)"
-  - ls -la /etc/nginx/sites-enabled/
-  - ls -la /etc/nginx/sites-available/
-  - ls -la /var/www/html/
+  #- sudo lsof -nPi | grep ":8080 (LISTEN)"
+  #- ls -la /etc/nginx/sites-enabled/
+  #- ls -la /etc/nginx/sites-available/
+  #- ls -la /var/www/html/
   #- cat /etc/nginx/nginx.conf
-  - ls -la /etc/
-  - sudo netstat -tanpu
+  #- ls -la /etc/
+  #- sudo netstat -tanpu
   #- sudo nginx -V
   - cat /etc/nginx/sites-available/default.vhost
   - bash travisCI/modify-files-and-commit.sh
