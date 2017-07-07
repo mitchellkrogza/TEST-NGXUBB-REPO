@@ -36,6 +36,7 @@ script:
   - bash travisCI/run-curl-tests.sh
   #- sudo dpkg --get-selections | grep apache
   - sudo lsof -nPi | grep ":80 (LISTEN)"
+  - sudo lsof -nPi | grep ":8080 (LISTEN)"
   - ls -la /etc/nginx/sites-enabled/
   - ls -la /etc/nginx/sites-available/
   - ls -la /var/www/html/
