@@ -42,6 +42,7 @@ script:
   #- cat /etc/nginx/nginx.conf
   #- ls -la /etc/
   #- sudo nginx -V
+  - cat /etc/nginx/sites-available/default.vhost
   - bash travisCI/modify-files-and-commit.sh
 
 before_deploy:
