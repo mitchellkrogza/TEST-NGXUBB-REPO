@@ -1,9 +1,7 @@
 server {
-	#listen *:9000;
-	listen *:80;
-
-	root /var/www/html;
+	listen 127.0.0.1:80;
 	server_name localhost;
+	root /var/www/html;
 	index index.html;
 	charset UTF-8;
 
