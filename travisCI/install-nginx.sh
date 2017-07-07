@@ -74,11 +74,17 @@ sudo cp $TRAVIS_BUILD_DIR/travisCI/default.vhost /etc/nginx/sites-available/defa
 
 sudo ln -s /etc/nginx/sites-available/default.vhost /etc/nginx/sites-enabled/default.vhost
 
-# *********************
-# Force reload of Nginx
-# *********************
+# ***********************************************************
+# Copy our index.php file into the default site's root folder
+# ***********************************************************
 
-sudo service nginx reload
+sudo cp $TRAVIS_BUILD_DIR/travisCI/index.html /var/www/html/index.html
+
+# **********************
+# Force restart of Nginx
+# **********************
+
+sudo service nginx restart
 
 # ********************
 # Run setup-ngxblocker
@@ -98,12 +104,6 @@ sudo ./setup-ngxblocker -x
 # ************************
 
 sudo nginx -c /etc/nginx/nginx.conf
-
-# ***********************************************************
-# Copy our index.php file into the default site's root folder
-# ***********************************************************
-
-sudo cp $TRAVIS_BUILD_DIR/travisCI/index.html /var/www/html/index.html
 
 # ****************************************************************************************
 # Run update-ngxblocker test which downloads latest globalblacklist.conf and reloads Nginx

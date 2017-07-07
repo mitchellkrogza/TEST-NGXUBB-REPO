@@ -39,7 +39,7 @@ script:
   - ls -la /etc/nginx/sites-enabled/
   - ls -la /etc/nginx/sites-available/
   - ls -la /var/www/html/
-  - cat /etc/nginx/nginx.conf
+  #- cat /etc/nginx/nginx.conf
   - bash travisCI/modify-files-and-commit.sh
 
 before_deploy:
