@@ -4,7 +4,8 @@ server {
 	listen [::]:80;
 
 	root /var/www/html;
-	server_name localhost;
+	server_name nginxbadbotblocker.com;
+	index index.php;
 	charset UTF-8;
 
     location / {
