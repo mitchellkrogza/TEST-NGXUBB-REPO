@@ -40,6 +40,8 @@ script:
   - ls -la /etc/nginx/sites-available/
   - ls -la /var/www/html/
   #- cat /etc/nginx/nginx.conf
+  - ls -la /etc/
+  - sudo nginx -V
   - bash travisCI/modify-files-and-commit.sh
 
 before_deploy:
