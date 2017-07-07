@@ -102,7 +102,7 @@ sudo cp $TRAVIS_BUILD_DIR/travisCI/index.php /var/www/html/index.php
 # ****************************************************************************************
 
 cd /usr/sbin
-sudo ./update-ngxblocker -e mitchellkrog@gmail.com
+sudo ./update-ngxblocker -r https://raw.githubusercontent.com/mitchellkrogza/TEST-NGXUBB-REPO/master -e mitchellkrog@gmail.com
 
 # *********************
 # Force reload of Nginx
