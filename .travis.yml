@@ -34,7 +34,7 @@ install:
 script:
   - bash travisCI/install-nginx.sh
   - bash travisCI/run-curl-tests.sh
-  - dpkg --get-selections | grep apache
+  - sudo dpkg --get-selections | grep apache
   - bash travisCI/modify-files-and-commit.sh
 
 before_deploy:
