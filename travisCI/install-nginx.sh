@@ -57,11 +57,18 @@ sudo ln -s /etc/nginx/sites-available/default.vhost /etc/nginx/sites-enabled/def
 
 sudo cp $TRAVIS_BUILD_DIR/travisCI/index.html /var/www/html/index.html
 
+# **************************
+# Kill all port 80 processes
+# **************************
+
+sudo fuser -k 80/tcp
+
 # **********************
 # Force restart of Nginx
 # **********************
 
-sudo service nginx restart
+sudo service nginx stop
+sudo service nginx start
 
 # ***********************************************************************
 # Download the Nginx Bad Bot Blocker setup files from the Live Repository
