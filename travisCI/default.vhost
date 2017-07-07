@@ -1,9 +1,5 @@
 server {
-	#listen 80;
-	#listen 80 default_server;
-	#listen 8080 default_server;
-	listen localhost:80 default_server;
-	#listen [::]:80 default_server;
+	listen *:80 default_server;
 	server_name localhost;
 	root /var/www/html;
 	index index.html;
