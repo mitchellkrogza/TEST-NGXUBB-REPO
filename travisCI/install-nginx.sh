@@ -37,6 +37,7 @@
 
 sudo rm /etc/nginx/sites-available/default
 sudo rm /etc/nginx/sites-enabled/default
+sudo rm /var/www/html/*
 
 # ***********************************************************************
 # Download the Nginx Bad Bot Blocker setup files from the Live Repository
@@ -96,7 +97,7 @@ sudo nginx -c /etc/nginx/nginx.conf
 # Copy our index.php file into the default site's root folder
 # ***********************************************************
 
-sudo cp $TRAVIS_BUILD_DIR/travisCI/index.php /var/www/html/index.php
+sudo cp $TRAVIS_BUILD_DIR/travisCI/index.html /var/www/html/index.html
 
 # ****************************************************************************************
 # Run update-ngxblocker test which downloads latest globalblacklist.conf and reloads Nginx
